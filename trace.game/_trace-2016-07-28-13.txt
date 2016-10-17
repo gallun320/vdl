@@ -1,0 +1,78 @@
+28.07 13:09:20 TRACE: Invalid message 'GET / HTTP/1.1
+Host: 127.0.0.1:2010
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+'
+28.07 13:09:20 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+28.07 13:09:20 TRACE: Invalid message 'GET / HTTP/1.1
+Host: 127.0.0.1:2010
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+'
+28.07 13:09:20 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+28.07 13:09:20 TRACE: Invalid message 'GET / HTTP/1.1
+Host: 127.0.0.1:2010
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+'
+28.07 13:09:20 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+28.07 13:09:20 TRACE: Invalid message 'GET / HTTP/1.1
+Host: 127.0.0.1:2010
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+'
+28.07 13:09:20 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+28.07 13:09:20 TRACE: Invalid message 'GET / HTTP/1.1
+Host: 127.0.0.1:2010
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+'
+28.07 13:09:20 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+28.07 13:09:20 TRACE: Invalid message 'GET / HTTP/1.1
+Host: 127.0.0.1:2010
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+'
+28.07 13:09:20 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160

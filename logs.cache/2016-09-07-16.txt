@@ -1,0 +1,116 @@
+07.09 16:44:26 TIMER: Starting timer...
+07.09 16:44:27 TIMER: Timer running...
+07.09 16:44:27 DB: SELECT * FROM GameVars
+07.09 16:44:27 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+07.09 16:44:27 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+07.09 16:44:27 DB: SELECT * FROM Shops WHERE ID = 1
+07.09 16:44:27 TEMP: load ./tmp/quest_daily_ids
+07.09 16:44:27 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+07.09 16:44:28 TEMP: save ./tmp/quest_daily_ids
+07.09 16:44:28 NET: ??? request core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+07.09 16:44:28 QUEUE: vdl.0 (thread) response server.login
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM LocalizationStrings
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 84.68 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM GameVars
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.13 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 2.24 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.75 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.38 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 32.71 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/quest.getDaily
+07.09 16:44:28 TIME: core/quest.getDaily : 0.07 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM UserAttributeTypes
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 12.92 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM UserVariableTypes
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.45 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+07.09 16:44:28 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 10.59 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM ItemGroups
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.39 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM Bundles ORDER BY ID
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 9.66 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM BundleItems ORDER BY ID
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 12.85 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/shop.getList { _type => core/shop.getList }
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/shop.getList
+07.09 16:44:28 TIME: core/shop.getList : 0.42 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM EffectAttributeTypes
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.37 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM Effects
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.29 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+07.09 16:44:28 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 1.69 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+07.09 16:44:28 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 2.3 ms
+07.09 16:44:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+07.09 16:44:28 DB: SELECT * FROM Badges
+07.09 16:44:28 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:44:28 TIME: core/server.query : 11.79 ms
+07.09 16:44:28 TIMER: Clans cache...
+07.09 16:44:28 TIMER: Clans cache: 0ms
+07.09 16:44:28 TIMER: Clans cache...
+07.09 16:44:28 TIMER: Clans cache: 0ms
+07.09 16:46:43 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM Users WHERE Name = E'test7', _type => core/server.query }
+07.09 16:46:43 DB: SELECT ID FROM Users WHERE Name = E'test7'
+07.09 16:46:43 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:46:43 TIME: core/server.query : 145.34 ms
+07.09 16:46:43 NET: vdl.0 (thread) request core/server.query { q => SELECT nextval('Users_id_seq') AS id, _type => core/server.query }
+07.09 16:46:43 DB: SELECT nextval('Users_id_seq') AS id
+07.09 16:46:43 QUEUE: vdl.0 (thread) response core/server.query
+07.09 16:46:43 TIME: core/server.query : 289.44 ms
+07.09 16:46:43 NET: vdl.0 (thread) request core/user.register { password => test, name => test7, fullParams => { password => test, name => test7, networkid => , params => {obj: 1}, networktype => , messageType => user.register, id => 8 }, networkid => , connectionID => 98614904, networktype => , email => , id => 8, _type => core/user.register }
+07.09 16:46:43 QUEUE: vdl.0 (thread) response core/user.register
+07.09 16:46:43 TIME: core/user.register : 0.08 ms
+07.09 16:46:43 ASYNCDB: INSERT INTO Users (ID, Name, NetworkID, NetworkType, Password, Email, RegDate) VALUES (8,E'test7',E'',E'',E'test',E'', now())
+07.09 16:46:43 ASYNCDB: INSERT INTO UserRatings (UserID, Points) VALUES (8, 0)
+07.09 16:46:43 STATS: cache [user], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+07.09 16:46:43 STATS: cache [user], segments [1 calls, 0 hits, 0 misses]
+07.09 16:46:43 STATS: cache [user], database [136 calls, 0 reads, 0 writes]
+07.09 16:46:43 STATS: cache [user], lock [1 calls, 1 attempts, 0 failures]
+07.09 16:46:43 READDB: SELECT * FROM Users WHERE ID = 8
+07.09 16:46:43 STATS: cache manager [1], get [1 calls, total 0.05 sec spent, avg 47.58 ms]
+07.09 16:46:43 STATS: cache manager [1], update [0 calls, total 0 sec spent, avg -21474836.48 ms]
+07.09 16:46:43 READDB: SELECT * FROM Users WHERE ID = 1
+07.09 16:46:43 READDB: SELECT ID FROM UserQuests WHERE ID = 8
+07.09 16:46:43 READDB: INSERT INTO UserQuests (ID) VALUES (8)
+07.09 16:46:43 QUEUE: vdl.0 (thread) response core/user.registerResponse
+07.09 16:46:49 WRITEDB: UPDATE Users SET name = E'test7', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-09-07 16:46:43.688817+03', language = E'  ', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}' WHERE ID = 8
+07.09 16:46:54 BLOCKREMOVE: user 1 removed
+07.09 16:46:59 BLOCKREMOVE: user 8 removed

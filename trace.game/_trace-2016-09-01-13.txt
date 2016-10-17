@@ -1,0 +1,14 @@
+01.09 13:03:58 TRACE: battle.find : std@random_int
+01.09 13:03:58 TRACE: battle.find : 
+Called from /usr/share/haxe/std/neko/_std/Std.hx line 61
+Called from modules/VDLBattleModule.hx line 58
+Called from modules/VDLBattleModule.hx line 40
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+01.09 13:05:58 TRACE: battle.find : std@random_int
+01.09 13:05:58 TRACE: battle.find : 
+Called from /usr/share/haxe/std/neko/_std/Std.hx line 61
+Called from modules/VDLBattleModule.hx line 58
+Called from modules/VDLBattleModule.hx line 40
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176

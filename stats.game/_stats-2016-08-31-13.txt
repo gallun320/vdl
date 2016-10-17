@@ -1,0 +1,8 @@
+31.08 13:55:02 STATS: vdl.0 cache, locks:0
+31.08 13:55:02 STATS: vdl.0 cache, locks:0
+31.08 13:55:02 STATS: vdl.0 cache, locks:0
+31.08 13:55:02 STATS: vdl.0 cache, locks:0
+31.08 13:55:02 STATS: vdl.0 cache, locks:0
+31.08 13:55:02 STATS: vdl.0 cache, locks:0
+31.08 13:55:02 STATS: vdl.0 cache, locks:0
+31.08 13:55:02 STATS: vdl.0 cache, locks:0

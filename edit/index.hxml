@@ -1,0 +1,21 @@
+-dce no
+-neko index.n
+-main ServerVDL
+-cp ../../../
+-cp ../../../external-libs/thx-lib/
+-cp ../../../external-libs/npostgres/
+
+-resource ../../../snipe/edit/www/tpl/page.header.htpl@page.header
+-resource ../../../snipe/edit/www/tpl/page.footer.htpl@page.footer
+-resource ../../../snipe/edit/www/tpl/page.top.htpl@page.top
+-resource ../../../snipe/edit/www/tpl/main.htpl@main
+-resource ../../../snipe/edit/www/tpl/image.list.htpl@image.list
+-resource ../../../snipe/edit/www/tpl/form.header.htpl@form.header
+-resource ../../../snipe/edit/www/tpl/form.footer.htpl@form.footer
+-resource ../../../snipe/edit/www/tpl/form.row.htpl@form.row
+-resource ../../../snipe/edit/www/tpl/list.header.htpl@list.header
+-resource ../../../snipe/edit/www/tpl/list.footer.htpl@list.footer
+-resource ../../../snipe/edit/www/tpl/list.row.htpl@list.row
+-resource ../../../snipe/edit/www/tpl/item.edit.params.htpl@item.edit.params
+-resource ../../../snipe/edit/www/tpl/calendar.list.htpl@calendar.list
+-resource ../../../snipe/edit/www/tpl/quest.edit.params.htpl@quest.edit.params

@@ -1,0 +1,6 @@
+07.09 16:46:43 STATS: cache [user], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+07.09 16:46:43 STATS: cache [user], segments [1 calls, 0 hits, 0 misses]
+07.09 16:46:43 STATS: cache [user], database [136 calls, 0 reads, 0 writes]
+07.09 16:46:43 STATS: cache [user], lock [1 calls, 1 attempts, 0 failures]
+07.09 16:46:43 STATS: cache manager [1], get [1 calls, total 0.05 sec spent, avg 47.58 ms]
+07.09 16:46:43 STATS: cache manager [1], update [0 calls, total 0 sec spent, avg -21474836.48 ms]

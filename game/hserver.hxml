@@ -1,0 +1,6 @@
+-main ServerVDL
+-neko hserver.n
+
+-cp ../../../
+-cp ../../../tools/threadname/
+-cp ../../../external-libs/hxnet/

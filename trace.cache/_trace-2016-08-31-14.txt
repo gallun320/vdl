@@ -1,0 +1,35 @@
+31.08 14:19:54 TRACE: vdl/cache.battle.create : Invalid field access : id
+31.08 14:19:54 TRACE: vdl/cache.battle.create : 
+Called from modules/VDLCache.hx line 175
+Called from modules/VDLCache.hx line 92
+Called from modules/VDLCache.hx line 66
+Called from modules/VDLCache.hx line 55
+Called from snipe/cache/CacheServer.hx line 487
+31.08 14:22:52 TRACE: vdl/cache.battle.create : Invalid field access : id
+31.08 14:22:52 TRACE: vdl/cache.battle.create : 
+Called from modules/VDLCache.hx line 175
+Called from modules/VDLCache.hx line 92
+Called from modules/VDLCache.hx line 66
+Called from modules/VDLCache.hx line 55
+Called from snipe/cache/CacheServer.hx line 487
+31.08 14:24:55 TRACE: vdl/cache.battle.create : Invalid field access : id
+31.08 14:24:55 TRACE: vdl/cache.battle.create : 
+Called from modules/VDLCache.hx line 175
+Called from modules/VDLCache.hx line 92
+Called from modules/VDLCache.hx line 66
+Called from modules/VDLCache.hx line 55
+Called from snipe/cache/CacheServer.hx line 487
+31.08 14:27:38 TRACE: vdl/cache.battle.create : Invalid field access : id
+31.08 14:27:38 TRACE: vdl/cache.battle.create : 
+Called from modules/VDLCache.hx line 175
+Called from modules/VDLCache.hx line 92
+Called from modules/VDLCache.hx line 66
+Called from modules/VDLCache.hx line 55
+Called from snipe/cache/CacheServer.hx line 487
+31.08 14:30:59 TRACE: vdl/cache.battle.create : Invalid field access : id
+31.08 14:30:59 TRACE: vdl/cache.battle.create : 
+Called from modules/VDLCache.hx line 175
+Called from modules/VDLCache.hx line 92
+Called from modules/VDLCache.hx line 66
+Called from modules/VDLCache.hx line 55
+Called from snipe/cache/CacheServer.hx line 487

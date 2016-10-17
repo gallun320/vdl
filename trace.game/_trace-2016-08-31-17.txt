@@ -1,0 +1,38 @@
+31.08 17:31:44 TRACE: battle.find : cacheRequest exception { _type => vdl/cache.battle.find }
+31.08 17:31:44 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 74
+Called from modules/VDLBattleModule.hx line 45
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 17:39:47 TRACE: battle.find : Unsupported operation
+31.08 17:39:47 TRACE: battle.find : 
+Called from modules/VDLBattleModule.hx line 54
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 17:49:41 TRACE: battle.find : Invalid field access : id
+31.08 17:49:41 TRACE: battle.find : 
+Called from modules/VDLBattleModule.hx line 52
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 17:49:55 TRACE: battle.find : Invalid field access : id
+31.08 17:49:55 TRACE: battle.find : 
+Called from modules/VDLBattleModule.hx line 52
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 17:57:06 TRACE: battle.find : Unsupported operation
+31.08 17:57:06 TRACE: battle.find : 
+Called from modules/VDLBattleModule.hx line 54
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 17:57:55 TRACE: battle.find : Unsupported operation
+31.08 17:57:55 TRACE: battle.find : 
+Called from modules/VDLBattleModule.hx line 54
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176

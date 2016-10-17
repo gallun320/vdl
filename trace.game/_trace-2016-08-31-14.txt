@@ -1,0 +1,41 @@
+31.08 14:19:19 TRACE: User not logon yet.
+31.08 14:19:54 TRACE: battle.find : cacheRequest exception { selfId => 2, _type => vdl/cache.battle.create }
+31.08 14:19:54 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 73
+Called from modules/VDLBattleModule.hx line 47
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 14:22:52 TRACE: battle.find : cacheRequest exception { selfId => 2, _type => vdl/cache.battle.create }
+31.08 14:22:52 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 73
+Called from modules/VDLBattleModule.hx line 47
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 14:24:55 TRACE: battle.find : cacheRequest exception { selfId => 2, _type => vdl/cache.battle.create }
+31.08 14:24:55 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 73
+Called from modules/VDLBattleModule.hx line 47
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 14:27:38 TRACE: battle.find : cacheRequest exception { selfId => 2, _type => vdl/cache.battle.create }
+31.08 14:27:38 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 73
+Called from modules/VDLBattleModule.hx line 47
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 14:30:59 TRACE: battle.find : cacheRequest exception { selfId => 2, _type => vdl/cache.battle.create }
+31.08 14:30:59 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 73
+Called from modules/VDLBattleModule.hx line 47
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176

@@ -1,0 +1,65 @@
+01.08 12:15:11 TRACE: Invalid message 'GET / HTTP/1.1
+User-Agent: websocket-sharp/1.0
+Host: 192.168.10.204:2010
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: O7yQDfIeEKaJkOyHpGTDSQ==
+Sec-WebSocket-Version: 13
+
+'
+01.08 12:15:11 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+01.08 12:17:23 TRACE: Invalid message 'GET / HTTP/1.1
+User-Agent: websocket-sharp/1.0
+Host: 192.168.10.204:2010
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: 1S1JFYf858H5XU/7q2rlGw==
+Sec-WebSocket-Version: 13
+
+'
+01.08 12:17:23 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+01.08 12:18:08 TRACE: Invalid message 'GET / HTTP/1.1
+User-Agent: websocket-sharp/1.0
+Host: 192.168.10.204:2010
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: 1ioXJNnDWkhRn3+IYk6nDg==
+Sec-WebSocket-Version: 13
+
+'
+01.08 12:18:08 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+01.08 12:18:24 TRACE: Invalid message 'GET / HTTP/1.1
+User-Agent: websocket-sharp/1.0
+Host: 192.168.10.204:2010
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: 4OHZYukp9lZlobrEcixs6A==
+Sec-WebSocket-Version: 13
+
+'
+01.08 12:18:24 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+01.08 12:19:00 TRACE: Invalid message 'GET / HTTP/1.1
+User-Agent: websocket-sharp/1.0
+Host: 192.168.10.204:2010
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: JHDZlHfJq1sDwY/IUDmxpA==
+Sec-WebSocket-Version: 13
+
+'
+01.08 12:19:00 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160

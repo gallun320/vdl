@@ -1,0 +1,47 @@
+14.10 19:00:05 TRACE: User not logon yet.
+14.10 19:00:36 TRACE: user.logout : No such module: user
+14.10 19:00:36 TRACE: user.logout : 
+Called from snipe/slave/Server.hx line 1159
+14.10 19:00:36 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+14.10 19:00:36 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+14.10 19:03:29 TRACE: user.logout : No such module: user
+14.10 19:03:29 TRACE: user.logout : 
+Called from snipe/slave/Server.hx line 1159
+14.10 19:03:29 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+14.10 19:03:29 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+14.10 19:13:05 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+14.10 19:13:05 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+14.10 19:15:05 TRACE: onCacheNotify(): no method startEvent in module battle
+14.10 19:17:04 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+14.10 19:17:04 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+14.10 19:19:09 TRACE: onCacheNotify(): no method startEvent in module battle
+14.10 19:21:37 TRACE: Invalid field access : id
+14.10 19:21:37 TRACE: 
+Called from modules/VDLTournamentModule.hx line 115
+Called from modules/VDLTournamentModule.hx line 106
+Called from modules/VDLTournamentModule.hx line 76
+Called from a C function
+Called from snipe/slave/Server.hx line 685
+Called from snipe/slave/CacheConnection.hx line 303
+Called from snipe/slave/ThreadServerModified.hx line 202
+14.10 19:38:12 TRACE: User not logon yet.
+14.10 19:38:17 TRACE: User not logon yet.
+14.10 19:57:08 TRACE: user.logout : No such module: user
+14.10 19:57:08 TRACE: user.logout : 
+Called from snipe/slave/Server.hx line 1159

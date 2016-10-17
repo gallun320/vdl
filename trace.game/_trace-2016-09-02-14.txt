@@ -1,0 +1,14 @@
+02.09 14:47:24 TRACE: battle.find : cacheRequest exception { roomId => 22, selfId => 2, _type => vdl/cache.battle.join }
+02.09 14:47:24 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 148
+Called from modules/VDLBattleModule.hx line 81
+Called from modules/VDLBattleModule.hx line 40
+Called from modules/VDLBattleModule.hx line 29
+Called from snipe/slave/Server.hx line 1176
+02.09 14:48:24 TRACE: logoutPost battle exception: cacheRequest exception { userId => { __name__ => [Int] }, _type => vdl/cache.battle.makeTurn }
+02.09 14:48:24 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 166
+Called from modules/VDLBattleModule.hx line 184
+Called from snipe/slave/Server.hx line 994

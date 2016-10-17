@@ -1,0 +1,8 @@
+01.09 12:10:57 TRACE: runSerialize EXCEPTION Cannot serialize [{ count => 1 },null]
+01.09 12:56:35 TRACE: battle.find : std@random_int
+01.09 12:56:35 TRACE: battle.find : 
+Called from /usr/share/haxe/std/neko/_std/Std.hx line 61
+Called from modules/VDLBattleModule.hx line 58
+Called from modules/VDLBattleModule.hx line 40
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176

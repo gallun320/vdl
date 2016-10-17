@@ -1,0 +1,227 @@
+28.07 13:03:46 TIMER: Starting timer...
+28.07 13:03:46 TIMER: Timer running...
+28.07 13:03:46 DB: SELECT * FROM GameVars
+28.07 13:03:46 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+28.07 13:03:46 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+28.07 13:03:46 DB: SELECT * FROM Shops WHERE ID = 1
+28.07 13:03:46 TEMP: load ./tmp/quest_daily_ids
+28.07 13:03:46 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+28.07 13:03:46 TEMP: save ./tmp/quest_daily_ids
+28.07 13:03:46 NET: ??? request core/server.login { host => 127.0.0.1, name => Test1.0, port => 2010, type => game, _type => core/server.login, externalHost => 127.0.0.1, externalPort => 2010 }
+28.07 13:03:46 QUEUE: Test1.0 (thread) response server.login
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM LocalizationStrings
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 7.08 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM GameVars
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.51 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.73 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.38 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.92 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.88 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/quest.getDaily
+28.07 13:03:46 TIME: core/quest.getDaily : 0.02 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM UserAttributeTypes
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.99 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM UserVariableTypes
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.49 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+28.07 13:03:46 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 1.15 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM ItemGroups
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.4 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM Bundles ORDER BY ID
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 1.23 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM BundleItems ORDER BY ID
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.63 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/shop.getList { _type => core/shop.getList }
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/shop.getList
+28.07 13:03:46 TIME: core/shop.getList : 0.02 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM EffectAttributeTypes
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.43 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM Effects
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.36 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+28.07 13:03:46 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.74 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+28.07 13:03:46 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.56 ms
+28.07 13:03:46 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+28.07 13:03:46 DB: SELECT * FROM Badges
+28.07 13:03:46 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:03:46 TIME: core/server.query : 0.35 ms
+28.07 13:04:26 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:26 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:26 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:26 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:26 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:26 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:26 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:26 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:26 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:26 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:26 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:26 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:46 TIMER: Clans cache...
+28.07 13:04:46 TIMER: Clans cache: 0ms
+28.07 13:04:48 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:48 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:48 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:48 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:48 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:48 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:48 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:48 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:48 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:48 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:04:48 NET: Client (ip:127.0.0.1) connected (clients:1)
+28.07 13:04:48 NET: Client (?.-1) disconnected (clients:0)
+28.07 13:19:56 TIMER: Starting timer...
+28.07 13:19:56 TIMER: Timer running...
+28.07 13:19:56 DB: SELECT * FROM GameVars
+28.07 13:19:56 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+28.07 13:19:56 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+28.07 13:19:56 DB: SELECT * FROM Shops WHERE ID = 1
+28.07 13:19:56 TEMP: load ./tmp/quest_daily_ids
+28.07 13:19:56 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+28.07 13:19:56 TEMP: save ./tmp/quest_daily_ids
+28.07 13:19:56 NET: ??? request core/server.login { host => 127.0.0.1, name => Test1.0, port => 2010, type => game, _type => core/server.login, externalHost => 127.0.0.1, externalPort => 2010 }
+28.07 13:19:56 QUEUE: Test1.0 (thread) response server.login
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM LocalizationStrings
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 7.72 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM GameVars
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 0.54 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 0.62 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 0.56 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 0.65 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 0.84 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/quest.getDaily
+28.07 13:19:56 TIME: core/quest.getDaily : 0.02 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM UserAttributeTypes
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 0.35 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+28.07 13:19:56 DB: SELECT * FROM UserVariableTypes
+28.07 13:19:56 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:19:56 TIME: core/server.query : 0.51 ms
+28.07 13:19:56 NET: Test1.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+28.07 13:19:56 DB: SELECT i.ID, i.GroupID, i.S28.07 13:35:55 TIMER: Starting timer...
+28.07 13:35:55 TIMER: Timer running...
+28.07 13:35:55 DB: SELECT * FROM GameVars
+28.07 13:35:55 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+28.07 13:35:55 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+28.07 13:35:55 DB: SELECT * FROM Shops WHERE ID = 1
+28.07 13:35:55 TEMP: load ./tmp/quest_daily_ids
+28.07 13:35:55 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+28.07 13:35:55 TEMP: save ./tmp/quest_daily_ids
+28.07 13:35:55 NET: ??? request core/server.login { host => 127.0.0.1, name => Test1.0, port => 2010, type => game, _type => core/server.login, externalHost => 127.0.0.1, externalPort => 2010 }
+28.07 13:35:55 QUEUE: Test1.0 (thread) response server.login
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM LocalizationStrings
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 6.1 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM GameVars
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.5 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.65 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.39 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.59 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.73 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/quest.getDaily
+28.07 13:35:55 TIME: core/quest.getDaily : 0.03 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM UserAttributeTypes
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.35 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM UserVariableTypes
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.29 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+28.07 13:35:55 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 1.2 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM ItemGroups
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.55 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM Bundles ORDER BY ID
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.44 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM BundleItems ORDER BY ID
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.39 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/shop.getList { _type => core/shop.getList }
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/shop.getList
+28.07 13:35:55 TIME: core/shop.getList : 0.03 ms
+28.07 13:35:55 NET: Test1.0 (thread) request core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+28.07 13:35:55 DB: SELECT * FROM EffectAttributeTypes
+28.07 13:35:55 QUEUE: Test1.0 (thread) response core/server.query
+28.07 13:35:55 TIME: core/server.query : 0.34 ms

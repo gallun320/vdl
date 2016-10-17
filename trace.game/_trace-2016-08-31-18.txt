@@ -1,0 +1,15 @@
+31.08 18:04:21 TRACE: User not logon yet.
+31.08 18:20:16 TRACE: battle.find : cacheRequest exception { _type => vdl/cache.battle.find }
+31.08 18:20:16 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 76
+Called from modules/VDLBattleModule.hx line 45
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 18:30:44 TRACE: battle.find : Unsupported operation
+31.08 18:30:44 TRACE: battle.find : 
+Called from modules/VDLBattleModule.hx line 54
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176

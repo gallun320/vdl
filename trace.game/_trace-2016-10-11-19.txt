@@ -1,0 +1,63 @@
+11.10 19:01:09 TRACE: Invalid field access : length
+11.10 19:01:09 TRACE: 
+Called from /usr/share/haxe/std/StringTools.hx line 229
+Called from /usr/share/haxe/std/StringTools.hx line 253
+Called from snipe/slave/modules/UserModuleCore.hx line 334
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+11.10 19:01:09 TRACE: Could not login.
+11.10 19:01:09 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+11.10 19:06:01 TRACE: Invalid field access : length
+11.10 19:06:01 TRACE: 
+Called from /usr/share/haxe/std/StringTools.hx line 229
+Called from /usr/share/haxe/std/StringTools.hx line 253
+Called from snipe/slave/modules/UserModuleCore.hx line 334
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+11.10 19:06:01 TRACE: Could not login.
+11.10 19:06:01 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+11.10 19:06:05 TRACE: User not logon yet.
+11.10 19:31:15 TRACE: Invalid field access : length
+11.10 19:31:15 TRACE: 
+Called from /usr/share/haxe/std/StringTools.hx line 229
+Called from /usr/share/haxe/std/StringTools.hx line 253
+Called from snipe/slave/modules/UserModuleCore.hx line 334
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+11.10 19:31:15 TRACE: Could not login.
+11.10 19:31:15 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+11.10 19:31:25 TRACE: User not logon yet.
+11.10 19:32:16 TRACE: Invalid field access : length
+11.10 19:32:16 TRACE: 
+Called from /usr/share/haxe/std/StringTools.hx line 229
+Called from /usr/share/haxe/std/StringTools.hx line 253
+Called from snipe/slave/modules/UserModuleCore.hx line 334
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+11.10 19:32:16 TRACE: Could not login.
+11.10 19:32:16 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+11.10 19:32:21 TRACE: User not logon yet.
+11.10 19:42:26 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+11.10 19:42:26 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 212
+Called from modules/VDLBattleModule.hx line 225
+Called from snipe/slave/Server.hx line 994
+11.10 19:57:19 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+11.10 19:57:19 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 212
+Called from modules/VDLBattleModule.hx line 225
+Called from snipe/slave/Server.hx line 994

@@ -1,0 +1,13 @@
+-main UniServerVDL
+-neko uniserver.n
+-dce no
+-D uniserver
+-D no-pattern-matching
+-D deprecation-warnings
+
+-cp game/
+-cp cache/
+-cp ../../
+-cp ../../tools/threadname/
+-cp ../../external-libs/npostgres/
+-cp ../../external-libs/hxnet/

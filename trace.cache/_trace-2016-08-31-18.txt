@@ -1,0 +1,5 @@
+31.08 18:20:16 TRACE: vdl/cache.battle.find : Invalid field access : count
+31.08 18:20:16 TRACE: vdl/cache.battle.find : 
+Called from modules/VDLCache.hx line 82
+Called from modules/VDLCache.hx line 53
+Called from snipe/cache/CacheServer.hx line 487

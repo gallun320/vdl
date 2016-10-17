@@ -1,0 +1,8 @@
+02.09 18:17:54 TRACE: battle.find : cacheRequest exception { roomId => 33, selfId => 3, _type => vdl/cache.battle.join }
+02.09 18:17:54 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 161
+Called from modules/VDLBattleModule.hx line 76
+Called from modules/VDLBattleModule.hx line 40
+Called from modules/VDLBattleModule.hx line 29
+Called from snipe/slave/Server.hx line 1176

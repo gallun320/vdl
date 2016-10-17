@@ -1,0 +1,8 @@
+02.09 21:10:08 TRACE: battle.sendtask : cacheRequest exception { roomId => 43, _type => vdl/cache.battle.infoRoom }
+02.09 21:10:08 TRACE: battle.sendtask : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 195
+Called from modules/VDLBattleModule.hx line 112
+Called from modules/VDLBattleModule.hx line 45
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176

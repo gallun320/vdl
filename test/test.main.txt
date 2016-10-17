@@ -1,0 +1,8 @@
+@send.game test.test 
+@recv.game
+errorCode = ok 
+
+@send.game test.test2 
+@recv.game
+errorCode = ok 
+

@@ -1,0 +1,9 @@
+28.07 13:03:46 STATS: Test1.0 cache, locks:0
+28.07 13:03:46 STATS: Test1.0 cache, locks:0
+28.07 13:03:46 STATS: Test1.0 cache, locks:0
+28.07 13:03:46 STATS: Test1.0 cache, locks:0
+28.07 13:03:46 STATS: Test1.0 cache, locks:0
+28.07 13:09:46 STATS: Test1.0 cache, locks:0
+28.07 13:09:46 STATS: Test1.0 cache, locks:0
+28.07 13:09:46 STATS: Test1.0 cache, locks:0
+28.07 13:09:46 STATS: Test1.0 cache, locks:0

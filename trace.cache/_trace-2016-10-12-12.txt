@@ -1,0 +1,6 @@
+12.10 12:55:31 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+12.10 12:55:31 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 107
+Called from modules/VDLCache.hx line 100
+Called from modules/VDLCache.hx line 72
+Called from snipe/cache/CacheServer.hx line 487

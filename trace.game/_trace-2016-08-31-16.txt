@@ -1,0 +1,16 @@
+31.08 16:19:06 TRACE: battle.find : cacheRequest exception { _type => vdl/cache.battle.find }
+31.08 16:19:06 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 65
+Called from modules/VDLBattleModule.hx line 45
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176
+31.08 16:22:20 TRACE: battle.find : cacheRequest exception { _type => vdl/cache.battle.find }
+31.08 16:22:20 TRACE: battle.find : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 65
+Called from modules/VDLBattleModule.hx line 45
+Called from modules/VDLBattleModule.hx line 39
+Called from modules/VDLBattleModule.hx line 31
+Called from snipe/slave/Server.hx line 1176

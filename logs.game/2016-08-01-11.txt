@@ -1,0 +1,118 @@
+01.08 11:38:14 ->>-: core/server.login { host => 192.168.10.204, name => testProject.0, port => 2010, type => game, _type => core/server.login, externalHost => 192.168.10.204, externalPort => 2010 }
+01.08 11:38:14 -<<-: server.login ok
+01.08 11:38:14 DB: SELECT * FROM LocalizationStrings
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 TIMER: Starting timer...
+01.08 11:38:14 TIMER: Timer running...
+01.08 11:38:14 DB: SELECT * FROM GameVars
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.08 11:38:14 -<<-: core/quest.getDaily ok
+01.08 11:38:14 DB: SELECT * FROM UserAttributeTypes
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM UserVariableTypes
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.08 11:38:14 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM ItemGroups
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM Bundles ORDER BY ID
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM BundleItems ORDER BY ID
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 SHOP: loading items...
+01.08 11:38:14 ->>-: core/shop.getList { _type => core/shop.getList }
+01.08 11:38:14 -<<-: core/shop.getList ok
+01.08 11:38:14 SHOP: 0 items loaded (0 sec)
+01.08 11:38:14 DB: SELECT * FROM EffectAttributeTypes
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM Effects
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+01.08 11:38:14 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+01.08 11:38:14 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:14 DB: SELECT * FROM Badges
+01.08 11:38:14 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+01.08 11:38:14 -<<-: core/server.query ok
+01.08 11:38:24 NET: Client (conid:93429628) connected to testProject.0 (clients:1)
+01.08 11:38:24 TRACE: Invalid message 'GET / HTTP/1.1
+User-Agent: websocket-sharp/1.0
+Host: 192.168.10.204:2010
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: SCORG+EQVrtX1Tu82GFx8Q==
+Sec-WebSocket-Version: 13
+
+'
+01.08 11:38:24 TRACE: 
+Called from snipe/slave/MetaServer.hx line 494
+Called from snipe/slave/ThreadServerModified.hx line 135
+Called from snipe/slave/ThreadServerModified.hx line 160
+01.08 11:38:24 NET: Client (name:null conid:93429628 TCP) disconnected from testProject.0 (clients:0)
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:39:14 STATS: testProject.0 cache, locks:0
+01.08 11:39:14 TIMER: Check auto-disconnect...
+01.08 11:57:15 STATS: testProject.0 cache, locks:0
+01.08 11:58:14 TIMER: Check auto-disconnect...
+01.08 11:58:15 STATS: testProject.0 cache, locks:0
+01.08 11:59:14 TIMER: Check auto-disconnect...
+01.08 11:59:15 STATS: testProject.0 cache, locks:0

@@ -1,0 +1,6 @@
+02.09 18:17:54 TRACE: vdl/cache.battle.join : Invalid field access : set
+02.09 18:17:54 TRACE: vdl/cache.battle.join : 
+Called from modules/VDLCache.hx line 173
+Called from modules/VDLCache.hx line 102
+Called from modules/VDLCache.hx line 57
+Called from snipe/cache/CacheServer.hx line 487

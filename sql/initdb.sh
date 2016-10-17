@@ -1,0 +1,1 @@
+for i in *.sql; do echo $i; psql -f $i $1; done;

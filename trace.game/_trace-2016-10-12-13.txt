@@ -1,0 +1,138 @@
+12.10 13:00:20 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+12.10 13:00:20 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 212
+Called from modules/VDLBattleModule.hx line 225
+Called from snipe/slave/Server.hx line 994
+12.10 13:05:54 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+12.10 13:05:54 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 212
+Called from modules/VDLBattleModule.hx line 225
+Called from snipe/slave/Server.hx line 994
+12.10 13:07:16 TRACE: Class cast error
+12.10 13:07:16 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from snipe/slave/modules/UserModuleCore.hx line 330
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+12.10 13:07:16 TRACE: Could not login.
+12.10 13:07:16 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:10:04 TRACE: Class cast error
+12.10 13:10:04 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from snipe/slave/modules/UserModuleCore.hx line 330
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+12.10 13:10:04 TRACE: Could not login.
+12.10 13:10:04 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:11:41 TRACE: Class cast error
+12.10 13:11:41 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from snipe/slave/modules/UserModuleCore.hx line 330
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+12.10 13:11:41 TRACE: Could not login.
+12.10 13:11:41 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:13:57 TRACE: Class cast error
+12.10 13:13:57 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from modules/VDLTournamentModule.hx line 386
+Called from snipe/slave/Server.hx line 876
+Called from snipe/slave/Server.hx line 1124
+12.10 13:13:57 TRACE: Could not login.
+12.10 13:13:57 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:16:21 TRACE: Class cast error
+12.10 13:16:21 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from modules/VDLTournamentModule.hx line 387
+Called from snipe/slave/Server.hx line 876
+Called from snipe/slave/Server.hx line 1124
+12.10 13:16:21 TRACE: Could not login.
+12.10 13:16:21 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:18:13 TRACE: Class cast error
+12.10 13:18:13 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from modules/VDLTournamentModule.hx line 387
+Called from snipe/slave/Server.hx line 876
+Called from snipe/slave/Server.hx line 1124
+12.10 13:18:13 TRACE: Could not login.
+12.10 13:18:13 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:33:10 TRACE: Class cast error
+12.10 13:33:10 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from modules/VDLTournamentModule.hx line 387
+Called from snipe/slave/Server.hx line 876
+Called from snipe/slave/Server.hx line 1124
+12.10 13:33:10 TRACE: Could not login.
+12.10 13:33:10 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:33:17 TRACE: User not logon yet.
+12.10 13:36:42 TRACE: Class cast error
+12.10 13:36:42 TRACE: 
+Called from snipe/lib/Params.hx line 76
+Called from snipe/slave/modules/UserModuleCore.hx line 330
+Called from snipe/slave/Server.hx line 887
+Called from snipe/slave/Server.hx line 1124
+12.10 13:36:42 TRACE: Could not login.
+12.10 13:36:42 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:37:07 TRACE: Invalid field access : length
+12.10 13:37:07 TRACE: 
+Called from /usr/share/haxe/std/haxe/crypto/Base64.hx line 47
+Called from modules/VDLTournamentModule.hx line 382
+Called from snipe/slave/Server.hx line 876
+Called from snipe/slave/Server.hx line 1124
+12.10 13:37:07 TRACE: Could not login.
+12.10 13:37:07 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:42:14 TRACE: Class cast error
+12.10 13:42:14 TRACE: 
+Called from modules/VDLTournamentModule.hx line 385
+Called from snipe/slave/Server.hx line 876
+Called from snipe/slave/Server.hx line 1124
+12.10 13:42:14 TRACE: Could not login.
+12.10 13:42:14 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:52:51 TRACE: Class cast error
+12.10 13:52:51 TRACE: 
+Called from modules/VDLTournamentModule.hx line 386
+Called from snipe/slave/Server.hx line 876
+Called from snipe/slave/Server.hx line 1124
+12.10 13:52:51 TRACE: Could not login.
+12.10 13:52:51 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+12.10 13:53:51 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+12.10 13:53:51 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 212
+Called from modules/VDLBattleModule.hx line 225
+Called from snipe/slave/Server.hx line 994

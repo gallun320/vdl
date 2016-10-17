@@ -1,0 +1,691 @@
+01.09 17:00:09 ->>-: core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+01.09 17:00:09 -<<-: server.login ok
+01.09 17:00:09 DB: SELECT * FROM LocalizationStrings
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 TIMER: Starting timer...
+01.09 17:00:09 TIMER: Timer running...
+01.09 17:00:09 DB: SELECT * FROM GameVars
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.09 17:00:09 -<<-: core/quest.getDaily ok
+01.09 17:00:09 DB: SELECT * FROM UserAttributeTypes
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM UserVariableTypes
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.09 17:00:09 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM ItemGroups
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM Bundles ORDER BY ID
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM BundleItems ORDER BY ID
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 SHOP: loading items...
+01.09 17:00:09 ->>-: core/shop.getList { _type => core/shop.getList }
+01.09 17:00:09 -<<-: core/shop.getList ok
+01.09 17:00:09 SHOP: 0 items loaded (0 sec)
+01.09 17:00:09 DB: SELECT * FROM EffectAttributeTypes
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM Effects
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+01.09 17:00:09 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+01.09 17:00:09 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 DB: SELECT * FROM Badges
+01.09 17:00:09 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+01.09 17:00:09 -<<-: core/server.query ok
+01.09 17:00:09 TIMER: Check auto-disconnect...
+01.09 17:00:09 STATS: vdl.0 cache, locks:0
+01.09 17:02:07 NET: Client (conid:62423205) connected to vdl.0 (clients:1)
+01.09 17:02:09 TIMER: Check auto-disconnect...
+01.09 17:02:09 STATS: vdl.0 cache, locks:0
+01.09 17:02:12 ++ NET: null req: user.login { password => test, name => test2, messageType => user.login }
+01.09 17:02:12 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test'
+01.09 17:02:12 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test', _type => core/server.query }
+01.09 17:02:12 -<<-: core/server.query ok
+01.09 17:02:12 STATS: vdl.0 cache connection, 21 calls, total 0.0219781398773193 sec spent, avg 1.05 ms
+01.09 17:02:12 ->>-: core/user.isOnlineID { id => 3, _type => core/user.isOnlineID }
+01.09 17:02:12 -<<-: core/user.isOnlineID ok
+01.09 17:02:12 ->>-: core/cache.get { type => user, v => -1, id => 3, _type => core/cache.get }
+01.09 17:02:12 -<<-: core/cache.get ok
+01.09 17:02:12 ->>-: core/cache.get { type => questdata, v => -1, id => 3, _type => core/cache.get }
+01.09 17:02:12 -<<-: core/cache.get ok
+01.09 17:02:12 NET: Client login (conid:62423205, id:3, name:test2)
+01.09 17:02:12 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 3, _type => core/user.loginPost, ipAddr => 172.16.30.52 }
+01.09 17:02:12 -<<-: core/user.loginPost null
+01.09 17:02:12 == NET: test2 ret: user.login { name => test2, type => user.login, errorCode => ok, id => 3 }
+01.09 17:02:12 == NET: test2 ret: user.join { name => test2, type => user.join }
+01.09 17:02:12 ++ NET: test2 req: battle.find { messageType => battle.find }
+01.09 17:02:12 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:02:12 -<<-: vdl/cache.battle.find { list => {}, count => 0, errorCode => not, _type => vdl/cache.battle.find }
+01.09 17:02:12 ->>-: vdl/cache.battle.create { selfId => 3, _type => vdl/cache.battle.create }
+01.09 17:02:12 -<<-: vdl/cache.battle.create { room => 14, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:02:12 TIME: battle.find 35.88 ms
+01.09 17:02:12 == NET: test2 ret: battle.find { room => 14, type => battle.find, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:02:19 ->>-: core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1472738532 } }}, type => user, unlock => false, id => 3, _type => core/cache.update }
+01.09 17:02:19 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+01.09 17:02:57 NET: Client (conid:421876) connected to vdl.0 (clients:2)
+01.09 17:03:01 ++ NET: null req: user.login { password => test, name => test1, messageType => user.login }
+01.09 17:03:01 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+01.09 17:03:01 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+01.09 17:03:01 -<<-: core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:03:01 ->>-: core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+01.09 17:03:01 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+01.09 17:03:01 ->>-: core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+01.09 17:03:01 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1472654256, lastLoginDate => 245, lastLoadDate => 902 }, effects => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:03:01 ->>-: core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+01.09 17:03:01 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:03:01 NET: Client login (conid:421876, id:2, name:test1)
+01.09 17:03:01 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.27.103 }
+01.09 17:03:01 -<<-: core/user.loginPost { _type => core/user.loginPost }
+01.09 17:03:01 == NET: test1 ret: user.login { name => test1, type => user.login, errorCode => ok, id => 2 }
+01.09 17:03:01 ++ NET: test1 req: battle.find { messageType => battle.find }
+01.09 17:03:01 == NET: test2 ret: user.join { name => test1, type => user.join }
+01.09 17:03:01 == NET: test1 ret: user.join { name => test2, type => user.join }
+01.09 17:03:01 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:03:01 == NET: test1 ret: user.join { name => test1, type => user.join }
+01.09 17:03:01 -<<-: vdl/cache.battle.find { list => [14], count => 1, errorCode => ok, _type => vdl/cache.battle.find }
+01.09 17:03:01 ->>-: vdl/cache.battle.join { roomId => 14, selfId => 2, _type => vdl/cache.battle.join }
+01.09 17:03:01 -<<-: vdl/cache.battle.join { secondid => 2, errorCode => true, firstid => 3, _type => vdl/cache.battle.join, player => 2 }
+01.09 17:03:01 DB: SELECT name FROM users WHERE id=2
+01.09 17:03:01 ->>-: core/server.query { q => SELECT name FROM users WHERE id=2, _type => core/server.query }
+01.09 17:03:01 -<<-: core/server.query { list => {{ name => test1 }}, errorCode => ok, _type => core/server.query }
+01.09 17:03:01 DB: SELECT name FROM users WHERE id=3
+01.09 17:03:01 ->>-: core/server.query { q => SELECT name FROM users WHERE id=3, _type => core/server.query }
+01.09 17:03:01 -<<-: core/server.query { list => {{ name => test2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:03:01 TIME: battle.find 7.63 ms
+01.09 17:03:01 == NET: test1 ret: battle.find { name => {{ name => test1 }}, type => battle.find, enemy => {{ name => test2 }}, id => 2, _type => battle.ready }
+01.09 17:03:01 == NET: test2 ret: battle.ready { name => {{ name => test2 }}, type => battle.ready, enemy => {{ name => test1 }}, id => 3 }
+01.09 17:03:01 == NET: test1 ret: battle.find { type => battle.find, errorCode => ok }
+01.09 17:05:44 ->>-: core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+01.09 17:05:44 -<<-: server.login ok
+01.09 17:05:44 DB: SELECT * FROM LocalizationStrings
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 TIMER: Starting timer...
+01.09 17:05:44 TIMER: Timer running...
+01.09 17:05:44 DB: SELECT * FROM GameVars
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.09 17:05:44 -<<-: core/quest.getDaily ok
+01.09 17:05:44 DB: SELECT * FROM UserAttributeTypes
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM UserVariableTypes
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.09 17:05:44 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM ItemGroups
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM Bundles ORDER BY ID
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM BundleItems ORDER BY ID
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 SHOP: loading items...
+01.09 17:05:44 ->>-: core/shop.getList { _type => core/shop.getList }
+01.09 17:05:44 -<<-: core/shop.getList ok
+01.09 17:05:44 SHOP: 0 items loaded (0 sec)
+01.09 17:05:44 DB: SELECT * FROM EffectAttributeTypes
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT * FROM Effects
+01.09 17:05:44 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.09 17:05:44 -<<-: core/server.query ok
+01.09 17:05:44 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part(01.09 17:27:56 ->>-: core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+01.09 17:27:56 -<<-: server.login ok
+01.09 17:27:56 DB: SELECT * FROM LocalizationStrings
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 TIMER: Starting timer...
+01.09 17:27:56 DB: SELECT * FROM GameVars
+01.09 17:27:56 TIMER: Timer running...
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.09 17:27:56 -<<-: core/quest.getDaily ok
+01.09 17:27:56 DB: SELECT * FROM UserAttributeTypes
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM UserVariableTypes
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.09 17:27:56 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM ItemGroups
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM Bundles ORDER BY ID
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM BundleItems ORDER BY ID
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 SHOP: loading items...
+01.09 17:27:56 ->>-: core/shop.getList { _type => core/shop.getList }
+01.09 17:27:56 -<<-: core/shop.getList ok
+01.09 17:27:56 SHOP: 0 items loaded (0 sec)
+01.09 17:27:56 DB: SELECT * FROM EffectAttributeTypes
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM Effects
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+01.09 17:27:56 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+01.09 17:27:56 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 DB: SELECT * FROM Badges
+01.09 17:27:56 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+01.09 17:27:56 -<<-: core/server.query ok
+01.09 17:27:56 TIMER: Check auto-disconnect...
+01.09 17:27:56 STATS: vdl.0 cache, locks:0
+01.09 17:29:00 NET: Client (conid:90164610) connected to vdl.0 (clients:1)
+01.09 17:29:02 NET: Client (conid:92762835) connected to vdl.0 (clients:2)
+01.09 17:29:12 ++ NET: null req: user.login { password => test, name => test2, messageType => user.login }
+01.09 17:29:12 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test'
+01.09 17:29:12 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test', _type => core/server.query }
+01.09 17:29:12 -<<-: core/server.query ok
+01.09 17:29:12 STATS: vdl.0 cache connection, 21 calls, total 0.0237038135528564 sec spent, avg 1.13 ms
+01.09 17:29:12 ->>-: core/user.isOnlineID { id => 3, _type => core/user.isOnlineID }
+01.09 17:29:12 -<<-: core/user.isOnlineID ok
+01.09 17:29:12 ->>-: core/cache.get { type => user, v => -1, id => 3, _type => core/cache.get }
+01.09 17:29:12 -<<-: core/cache.get ok
+01.09 17:29:12 ->>-: core/cache.get { type => questdata, v => -1, id => 3, _type => core/cache.get }
+01.09 17:29:12 -<<-: core/cache.get ok
+01.09 17:29:12 NET: Client login (conid:92762835, id:3, name:test2)
+01.09 17:29:12 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 3, _type => core/user.loginPost, ipAddr => 172.16.30.52 }
+01.09 17:29:12 -<<-: core/user.loginPost null
+01.09 17:29:12 == NET: test2 ret: user.login { name => test2, type => user.login, errorCode => ok, id => 3 }
+01.09 17:29:12 == NET: null ret: user.join { name => test2, type => user.join }
+01.09 17:29:12 == NET: test2 ret: user.join { name => null, type => user.join }
+01.09 17:29:12 == NET: test2 ret: user.join { name => test2, type => user.join }
+01.09 17:29:12 ++ NET: test2 req: battle.find { messageType => battle.find }
+01.09 17:29:12 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:29:12 -<<-: vdl/cache.battle.find { list => {}, count => 0, errorCode => not, _type => vdl/cache.battle.find }
+01.09 17:29:12 ->>-: vdl/cache.battle.create { selfId => 3, _type => vdl/cache.battle.create }
+01.09 17:29:12 -<<-: vdl/cache.battle.create { room => 15, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:29:12 TIME: battle.find 39.69 ms
+01.09 17:29:12 == NET: test2 ret: battle.find { room => 15, type => battle.find, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:29:21 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 3, _type => core/cache.update }
+01.09 17:29:21 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+01.09 17:29:56 TIMER: Check auto-disconnect...
+01.09 17:29:56 STATS: vdl.0 cache, locks:2
+01.09 17:30:09 ++ NET: null req: user.login { password => test, name => test1, messageType => user.login }
+01.09 17:30:09 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+01.09 17:30:09 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+01.09 17:30:09 -<<-: core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:30:09 ->>-: core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+01.09 17:30:09 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+01.09 17:30:09 ->>-: core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+01.09 17:30:09 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1472654256, lastLoginDate => 245, lastLoadDate => 902 }, effects => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:30:09 ->>-: core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+01.09 17:30:09 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:30:09 NET: Client login (conid:90164610, id:2, name:test1)
+01.09 17:30:09 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.27.103 }
+01.09 17:30:09 -<<-: core/user.loginPost { _type => core/user.loginPost }
+01.09 17:30:09 ++ NET: test1 req: battle.find { messageType => battle.find }
+01.09 17:30:09 == NET: test1 ret: user.login { name => test1, type => user.login, errorCode => ok, id => 2 }
+01.09 17:30:09 == NET: test2 ret: user.join { name => test1, type => user.join }
+01.09 17:30:09 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:30:09 == NET: test1 ret: user.join { name => test1, type => user.join }
+01.09 17:30:09 == NET: test1 ret: user.join { name => test2, type => user.join }
+01.09 17:30:09 -<<-: vdl/cache.battle.find { list => [15], count => 1, errorCode => ok, _type => vdl/cache.battle.find }
+01.09 17:30:09 ->>-: vdl/cache.battle.join { roomId => 15, selfId => 2, _type => vdl/cache.battle.join }
+01.09 17:30:09 -<<-: vdl/cache.battle.join { room => 15, errorCode => true, _type => vdl/cache.battle.join, player => 2 }
+01.09 17:30:09 DB: SELECT name FROM users WHERE id=2
+01.09 17:30:09 ->>-: core/server.query { q => SELECT name FROM users WHERE id=2, _type => core/server.query }
+01.09 17:30:09 -<<-: core/server.query { list => {{ name => test1 }}, errorCode => ok, _type => core/server.query }
+01.09 17:30:09 DB: SELECT name FROM users WHERE id=3
+01.09 17:30:09 ->>-: core/server.query { q => SELECT name FROM users WHERE id=3, _type => core/server.query }
+01.09 17:30:09 -<<-: core/server.query { list => {{ name => test2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:30:09 TIME: battle.find 7.52 ms
+01.09 17:30:09 == NET: test1 ret: battle.ready { name => test1, type => battle.ready, enemy.id => 3, enemy.name => test2 }
+01.09 17:30:09 == NET: test2 ret: null { name => test2, type => null, enemy.id => 2, enemy.name => test1 }
+01.09 17:30:09 == NET: test1 ret: battle.find { room => 15, type => battle.find, errorCode => true, _type => vdl/cache.battle.join, player => 2 }
+01.09 17:30:16 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 2, _type => core/cache.update }
+01.09 17:30:16 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+01.09 17:30:16 STATS: vdl.0 cache connection, 38 calls, total 0.0843560695648193 sec spent, avg 2.22 ms
+01.09 17:31:31 ->>-: core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+01.09 17:31:31 -<<-: server.login ok
+01.09 17:31:31 DB: SELECT * FROM LocalizationStrings
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 TIMER: Starting timer...
+01.09 17:31:31 TIMER: Timer running...
+01.09 17:31:31 DB: SELECT * FROM GameVars
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.09 17:31:31 -<<-: core/quest.getDaily ok
+01.09 17:31:31 DB: SELECT * FROM UserAttributeTypes
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM UserVariableTypes
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.09 17:31:31 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM ItemGroups
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM Bundles ORDER BY ID
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM BundleItems ORDER BY ID
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 SHOP: loading items...
+01.09 17:31:31 ->>-: core/shop.getList { _type => core/shop.getList }
+01.09 17:31:31 -<<-: core/shop.getList ok
+01.09 17:31:31 SHOP: 0 items loaded (0 sec)
+01.09 17:31:31 DB: SELECT * FROM EffectAttributeTypes
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT * FROM Effects
+01.09 17:31:31 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.09 17:31:31 -<<-: core/server.query ok
+01.09 17:31:31 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part(01.09 17:31:38 ->>-: core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+01.09 17:31:38 -<<-: server.login ok
+01.09 17:31:38 DB: SELECT * FROM LocalizationStrings
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 TIMER: Starting timer...
+01.09 17:31:38 TIMER: Timer running...
+01.09 17:31:38 DB: SELECT * FROM GameVars
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.09 17:31:38 -<<-: core/quest.getDaily ok
+01.09 17:31:38 DB: SELECT * FROM UserAttributeTypes
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM UserVariableTypes
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.09 17:31:38 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM ItemGroups
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM Bundles ORDER BY ID
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM BundleItems ORDER BY ID
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 SHOP: loading items...
+01.09 17:31:38 ->>-: core/shop.getList { _type => core/shop.getList }
+01.09 17:31:38 -<<-: core/shop.getList ok
+01.09 17:31:38 SHOP: 0 items loaded (0 sec)
+01.09 17:31:38 DB: SELECT * FROM EffectAttributeTypes
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM Effects
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+01.09 17:31:38 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+01.09 17:31:38 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:31:38 DB: SELECT * FROM Badges
+01.09 17:31:38 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+01.09 17:31:38 -<<-: core/server.query ok
+01.09 17:32:26 NET: Client (conid:11493166) connected to vdl.0 (clients:1)
+01.09 17:32:37 ++ NET: null req: user.login { password => test, name => test2, messageType => user.login }
+01.09 17:32:37 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test'
+01.09 17:32:37 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test', _type => core/server.query }
+01.09 17:32:37 -<<-: core/server.query ok
+01.09 17:32:37 ->>-: core/user.isOnlineID { id => 3, _type => core/user.isOnlineID }
+01.09 17:32:37 -<<-: core/user.isOnlineID ok
+01.09 17:32:37 ->>-: core/cache.get { type => user, v => -1, id => 3, _type => core/cache.get }
+01.09 17:32:37 -<<-: core/cache.get ok
+01.09 17:32:37 ->>-: core/cache.get { type => questdata, v => -1, id => 3, _type => core/cache.get }
+01.09 17:32:37 -<<-: core/cache.get ok
+01.09 17:32:37 NET: Client login (conid:11493166, id:3, name:test2)
+01.09 17:32:37 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 3, _type => core/user.loginPost, ipAddr => 172.16.30.52 }
+01.09 17:32:37 -<<-: core/user.loginPost null
+01.09 17:32:37 == NET: test2 ret: user.login { name => test2, type => user.login, errorCode => ok, id => 3 }
+01.09 17:32:37 == NET: test2 ret: user.join { name => test2, type => user.join }
+01.09 17:32:37 ++ NET: test2 req: battle.find { messageType => battle.find }
+01.09 17:32:37 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:32:37 -<<-: vdl/cache.battle.find { list => {}, count => 0, errorCode => not, _type => vdl/cache.battle.find }
+01.09 17:32:37 ->>-: vdl/cache.battle.create { selfId => 3, _type => vdl/cache.battle.create }
+01.09 17:32:37 -<<-: vdl/cache.battle.create { room => 16, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:32:37 TIME: battle.find 44.89 ms
+01.09 17:32:37 == NET: test2 ret: battle.find { room => 16, type => battle.find, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:32:38 TIMER: Check auto-disconnect...
+01.09 17:32:38 STATS: vdl.0 cache, locks:2
+01.09 17:32:43 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 3, _type => core/cache.update }
+01.09 17:32:43 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+01.09 17:32:43 STATS: vdl.0 cache connection, 28 calls, total 0.0730259418487549 sec spent, avg 2.61 ms
+01.09 17:33:23 NET: Client (conid:73144447) connected to vdl.0 (clients:2)
+01.09 17:33:37 ++ NET: null req: user.login { password => test, name => test1, messageType => user.login }
+01.09 17:33:37 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+01.09 17:33:37 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+01.09 17:33:37 -<<-: core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:33:37 ->>-: core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+01.09 17:33:37 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+01.09 17:33:37 ->>-: core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+01.09 17:33:37 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1472654256, lastLoginDate => 245, lastLoadDate => 902 }, effects => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:33:37 ->>-: core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+01.09 17:33:37 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:33:37 NET: Client login (conid:73144447, id:2, name:test1)
+01.09 17:33:37 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.27.103 }
+01.09 17:33:37 -<<-: core/user.loginPost { _type => core/user.loginPost }
+01.09 17:33:37 == NET: test2 ret: user.join { name => test1, type => user.join }
+01.09 17:33:37 ++ NET: test1 req: battle.find { messageType => battle.find }
+01.09 17:33:37 == NET: test1 ret: user.login { name => test1, type => user.login, errorCode => ok, id => 2 }
+01.09 17:33:37 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:33:37 == NET: test1 ret: user.join { name => test2, type => user.join }
+01.09 17:33:37 == NET: test1 ret: user.join { name => test1, type => user.join }
+01.09 17:33:37 -<<-: vdl/cache.battle.find { list => [16], count => 1, errorCode => ok, _type => vdl/cache.battle.find }
+01.09 17:33:37 ->>-: vdl/cache.battle.join { roomId => 16, selfId => 2, _type => vdl/cache.battle.join }
+01.09 17:33:37 -<<-: vdl/cache.battle.join { room => 16, errorCode => true, _type => vdl/cache.battle.join, player => 2 }
+01.09 17:33:37 DB: SELECT name FROM users WHERE id=2
+01.09 17:33:37 ->>-: core/server.query { q => SELECT name FROM users WHERE id=2, _type => core/server.query }
+01.09 17:33:37 -<<-: core/server.query { list => {{ name => test1 }}, errorCode => ok, _type => core/server.query }
+01.09 17:33:37 DB: SELECT name FROM users WHERE id=3
+01.09 17:33:37 ->>-: core/server.query { q => SELECT name FROM users WHERE id=3, _type => core/server.query }
+01.09 17:33:37 -<<-: core/server.query { list => {{ name => test2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:33:37 TIME: battle.find 9.4 ms
+01.09 17:33:37 == NET: test1 ret: battle.ready { name => test1, type => battle.ready, enemy.id => 3, enemy.name => test2 }
+01.09 17:33:37 == NET: test2 ret: battle.ready { name => test2, type => battle.ready, enemy.id => 2, enemy.name => test1 }
+01.09 17:33:37 == NET: test1 ret: battle.find { room => 16, type => battle.find, errorCode => true, _type => vdl/cache.battle.join, player => 2 }
+01.09 17:33:37 ++ NET: test2 req: battle.ready { messageType => battle.ready }
+01.09 17:33:37 TIME: battle.ready 0.05 ms
+01.09 17:33:38 TIMER: Check auto-disconnect...
+01.09 17:33:38 STATS: vdl.0 cache, locks:4
+01.09 17:33:43 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 2, _type => core/cache.update }
+01.09 17:33:43 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+01.09 17:33:43 STATS: vdl.0 cache connection, 38 calls, total 0.0886249542236328 sec spent, avg 2.33 ms
+01.09 17:35:52 ->>-: core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+01.09 17:35:52 -<<-: server.login ok
+01.09 17:35:52 DB: SELECT * FROM LocalizationStrings
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 TIMER: Starting timer...
+01.09 17:35:52 TIMER: Timer running...
+01.09 17:35:52 DB: SELECT * FROM GameVars
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.09 17:35:52 -<<-: core/quest.getDaily ok
+01.09 17:35:52 DB: SELECT * FROM UserAttributeTypes
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM UserVariableTypes
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.09 17:35:52 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM ItemGroups
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM Bundles ORDER BY ID
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM BundleItems ORDER BY ID
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 SHOP: loading items...
+01.09 17:35:52 ->>-: core/shop.getList { _type => core/shop.getList }
+01.09 17:35:52 -<<-: core/shop.getList ok
+01.09 17:35:52 SHOP: 0 items loaded (0 sec)
+01.09 17:35:52 DB: SELECT * FROM EffectAttributeTypes
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT * FROM Effects
+01.09 17:35:52 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.09 17:35:52 -<<-: core/server.query ok
+01.09 17:35:52 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part(01.09 17:46:04 ->>-: core/server.login { host => 172.16.35.21, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.21, externalPort => 2010 }
+01.09 17:46:04 -<<-: server.login ok
+01.09 17:46:04 DB: SELECT * FROM LocalizationStrings
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 TIMER: Starting timer...
+01.09 17:46:04 TIMER: Timer running...
+01.09 17:46:04 DB: SELECT * FROM GameVars
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+01.09 17:46:04 -<<-: core/quest.getDaily ok
+01.09 17:46:04 DB: SELECT * FROM UserAttributeTypes
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM UserVariableTypes
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+01.09 17:46:04 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM ItemGroups
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM Bundles ORDER BY ID
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM BundleItems ORDER BY ID
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 SHOP: loading items...
+01.09 17:46:04 ->>-: core/shop.getList { _type => core/shop.getList }
+01.09 17:46:04 -<<-: core/shop.getList ok
+01.09 17:46:04 SHOP: 0 items loaded (0 sec)
+01.09 17:46:04 DB: SELECT * FROM EffectAttributeTypes
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM Effects
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+01.09 17:46:04 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+01.09 17:46:04 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 DB: SELECT * FROM Badges
+01.09 17:46:04 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+01.09 17:46:04 -<<-: core/server.query ok
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:46:04 TIMER: Check auto-disconnect...
+01.09 17:46:04 STATS: vdl.0 cache, locks:0
+01.09 17:59:06 NET: Client (conid:21073148) connected to vdl.0 (clients:1)
+01.09 17:59:13 NET: Client (conid:96083373) connected to vdl.0 (clients:2)
+01.09 17:59:21 ++ NET: null req: user.login { password => test, name => test2, messageType => user.login }
+01.09 17:59:21 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test'
+01.09 17:59:21 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test2' AND Password = E'test', _type => core/server.query }
+01.09 17:59:21 -<<-: core/server.query ok
+01.09 17:59:21 STATS: vdl.0 cache connection, 21 calls, total 0.0207099914550781 sec spent, avg 0.99 ms
+01.09 17:59:21 ->>-: core/user.isOnlineID { id => 3, _type => core/user.isOnlineID }
+01.09 17:59:21 -<<-: core/user.isOnlineID ok
+01.09 17:59:21 ->>-: core/cache.get { type => user, v => -1, id => 3, _type => core/cache.get }
+01.09 17:59:21 -<<-: core/cache.get ok
+01.09 17:59:21 ->>-: core/cache.get { type => questdata, v => -1, id => 3, _type => core/cache.get }
+01.09 17:59:21 -<<-: core/cache.get ok
+01.09 17:59:21 NET: Client login (conid:96083373, id:3, name:test2)
+01.09 17:59:21 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 3, _type => core/user.loginPost, ipAddr => 172.16.30.52 }
+01.09 17:59:21 -<<-: core/user.loginPost null
+01.09 17:59:21 == NET: test2 ret: user.login { name => test2, type => user.login, errorCode => ok, id => 3 }
+01.09 17:59:21 == NET: test2 ret: user.join { name => null, type => user.join }
+01.09 17:59:21 == NET: test2 ret: user.join { name => test2, type => user.join }
+01.09 17:59:21 == NET: null ret: user.join { name => test2, type => user.join }
+01.09 17:59:21 ++ NET: test2 req: battle.find { messageType => battle.find }
+01.09 17:59:21 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:59:21 -<<-: vdl/cache.battle.find { list => {}, count => 0, errorCode => not, _type => vdl/cache.battle.find }
+01.09 17:59:21 ->>-: vdl/cache.battle.create { selfId => 3, _type => vdl/cache.battle.create }
+01.09 17:59:21 -<<-: vdl/cache.battle.create { room => 17, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:59:21 TIME: battle.find 35.9 ms
+01.09 17:59:21 == NET: test2 ret: battle.find { room => 17, type => battle.find, errorCode => ok, _type => vdl/cache.battle.create, player => 1 }
+01.09 17:59:28 ++ NET: null req: user.login { password => test, name => test1, messageType => user.login }
+01.09 17:59:28 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+01.09 17:59:28 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+01.09 17:59:28 -<<-: core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:59:28 ->>-: core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+01.09 17:59:28 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+01.09 17:59:28 ->>-: core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+01.09 17:59:28 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1472654256, lastLoginDate => 245, lastLoadDate => 902 }, effects => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:59:28 ->>-: core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+01.09 17:59:28 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 2 } }
+01.09 17:59:28 NET: Client login (conid:21073148, id:2, name:test1)
+01.09 17:59:28 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.27.103 }
+01.09 17:59:28 -<<-: core/user.loginPost { _type => core/user.loginPost }
+01.09 17:59:28 == NET: test1 ret: user.login { name => test1, type => user.login, errorCode => ok, id => 2 }
+01.09 17:59:28 == NET: test2 ret: user.join { name => test1, type => user.join }
+01.09 17:59:28 == NET: test1 ret: user.join { name => test1, type => user.join }
+01.09 17:59:28 == NET: test1 ret: user.join { name => test2, type => user.join }
+01.09 17:59:28 ++ NET: test1 req: battle.find { messageType => battle.find }
+01.09 17:59:28 ->>-: vdl/cache.battle.find { _type => vdl/cache.battle.find }
+01.09 17:59:28 -<<-: vdl/cache.battle.find { list => [17], count => 1, errorCode => ok, _type => vdl/cache.battle.find }
+01.09 17:59:28 ->>-: vdl/cache.battle.join { roomId => 17, selfId => 2, _type => vdl/cache.battle.join }
+01.09 17:59:28 -<<-: vdl/cache.battle.join { room => 17, errorCode => true, _type => vdl/cache.battle.join, player => 2 }
+01.09 17:59:28 DB: SELECT name FROM users WHERE id=2
+01.09 17:59:28 == NET: test1 ret: battle.find { room => 17, type => battle.find, errorCode => true, _type => vdl/cache.battle.join, player => 2 }
+01.09 17:59:28 ->>-: core/server.query { q => SELECT name FROM users WHERE id=2, _type => core/server.query }
+01.09 17:59:28 -<<-: core/server.query { list => {{ name => test1 }}, errorCode => ok, _type => core/server.query }
+01.09 17:59:28 DB: SELECT name FROM users WHERE id=3
+01.09 17:59:28 ->>-: core/server.query { q => SELECT name FROM users WHERE id=3, _type => core/server.query }
+01.09 17:59:28 -<<-: core/server.query { list => {{ name => test2 }}, errorCode => ok, _type => core/server.query }
+01.09 17:59:28 == NET: test1 ret: battle.ready { name => test1, type => battle.ready, enemy.id => 3, enemy.name => test2 }
+01.09 17:59:28 TIME: battle.find 6.64 ms
+01.09 17:59:28 == NET: test2 ret: battle.ready { name => test2, type => battle.ready, enemy.id => 2, enemy.name => test1 }
+01.09 17:59:28 == NET: test1 ret: battle.find { type => battle.find, errorCode => ok }
+01.09 17:59:28 ++ NET: test2 req: battle.ready { messageType => battle.ready }
+01.09 17:59:28 TIME: battle.ready 0.04 ms
+01.09 17:59:29 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 3, _type => core/cache.update }
+01.09 17:59:29 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+01.09 17:59:34 ->>-: core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1472741968 } }}, type => user, unlock => false, id => 2, _type => core/cache.update }
+01.09 17:59:34 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
