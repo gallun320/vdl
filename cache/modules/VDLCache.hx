@@ -6,7 +6,7 @@ import snipe.cache.SlaveClient;
 import snipe.cache.CacheServer;
 import snipe.lib.Params;
 import snipe.cache.Block;
-
+using Lambda;
 
  class VDLCache extends ModuleCache<CacheServer>  {
 
@@ -14,6 +14,7 @@ import snipe.cache.Block;
    public var nameTournament: String;
    public var startDate: Date;
    public var usersList: Array<Int>;
+   public var usersActive: Map<Int,Array<Int>>;
    public var battleActive: Array<Int>;
    public var battleFinished: Array<Int>;
    public var tournament: Block;
@@ -30,6 +31,8 @@ import snipe.cache.Block;
    public function new(c: CacheServer) {
      super(c);
      name = "vdl/cache";
+     tournamentGrid = new Map<Int,Dynamic>();
+     usersActive = new Map<Int,Array<Int>>();
         var timeTimers = 60;
         server.timer.add({
            name: 'Check tournament',
@@ -44,15 +47,14 @@ import snipe.cache.Block;
 
      var currentTime: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
      var res = server.query("SELECT * FROM tournament WHERE startdate = '" + currentTime + "' AND status = 'starting'");
-     trace( currentTime, res.length );
      if(res.length > 0) {
        for( el in res ) {
-         server.broadcast('game', {
+         /*server.broadcast('game', {
            _type: 'tournament.startEvent',
            tournamentId: el.id,
            round: el.round
-          });
-         //StartCall(el.id, el.round);
+          });*/
+         //StartCall(el.id, el.round, el.name);
        }
 
      }
@@ -95,6 +97,9 @@ import snipe.cache.Block;
           response = DeleteTournament(c, params);
         case 'vdl/cache.tournament.addRound':
           response = AddRound(c, params);
+        case "vdl/cache.tournament.addActive":
+          response = CheckPrepare(c, params);
+
 
 
 
@@ -148,6 +153,46 @@ import snipe.cache.Block;
      return ret;
    }
 
+
+  public function StartCall(tournamentId: Int, round: Int, name: String): Void {
+     var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
+     var tournament = ret.block;
+     /*var userList: Array<Int> = tournament.get('params', 'usersList');
+     var res = GetAvailableTournamentUsers(tournamentId);*/
+     var list: Array<Int> = tournament.get('params', 'usersList');
+     if(list == null) list = [];
+     var buffer: Float = list.length;
+     var counter: Int = 0;
+     while (buffer >= 2)
+     {
+       buffer = buffer / 2;
+       counter++;
+     }
+     var players: Int = 1;
+     while(counter > 0) {
+       players = players * 2;
+       counter--;
+     }
+     buffer = list.length - players;
+     while(buffer > 0)
+     {
+       list.remove(list[list.length - 1]);
+       buffer--;
+     }
+     buffer = list.length;
+     var bufferInt: Int = Std.int(buffer);
+     var battles: Array<Int> = new Array<Int>();
+     while (bufferInt > 0) {
+       var gameNotify = server.getClient(list[bufferInt]);
+       gameNotify.notify({
+         _type: 'tournament.accessEvent',
+         name: name,
+         client: gameNotify.id
+        });
+       bufferInt--;
+     }
+
+   }
 
    function AddRound(c: SlaveClient, params: Params): Dynamic {
      var tournamentId = params.get('tournamentId');
@@ -268,36 +313,71 @@ import snipe.cache.Block;
     }
 
     function SetGridTournament(c: SlaveClient, params: Params): Dynamic {
-      var battles = params.get('battles');
+      var battles:Array<Dynamic> = params.get('battles');
       var round = params.get('round');
       var tournament = params.get('tournamentId');
       if(tournamentGrid[tournament] == null) {
         tournamentGrid.set(tournament, {
           round: round,
-          battles: battles  
+          battles: battles
         });
-        return {errorCode: 'ok', list: battles};
+        return {errorCode: 'ok', list: battles, tournamentId: tournament};
       }
-        
-      var data = tournamentGrid.get(tournament);
-      if(data.round == round) {
-        if(round == 1 && data.round == 1) {
+        var data = tournamentGrid.get(tournament);
+        if(round == 1) {
           tournamentGrid.set(tournament, {
             round: round,
-            battles: battles  
+            battles: battles
           });
-          return {errorCode: 'ok', list: battles};  
+          return {errorCode: 'ok', list: battles, tournamentId: tournament};
         }
-        return {errorCode: 'ok', list: data.battles}; 
-      } else {
-        data.round = round;
-        data.battles = data.battles.concat(battles);
-        tournamentGrid.set(tournament, {
-          round: data.round,
-          battles: data.battles  
-        });
-        return {errorCode: 'ok', list: data.battles};
-      }
+        var cacheBattles: Array<Dynamic> = data.battles;
+
+        if(round > 1) {
+
+          if(battles.length == 0) {
+            return {errorCode: 'ok', list: cacheBattles, tournamentId: tournament};
+          }
+
+          for( el in cacheBattles  ) {
+            if(el.player1 == battles[0].player1 && el.player2 == battles[0].player2 && el.winner == -1) {
+              el.winner = battles[0].winner;
+            }
+            if(el.player2 == null) {
+              el.player2 = battles[0].winner;
+            } else {
+              cacheBattles.push({player1: battles[0].winner, player2: null, winner: -1, round: round});
+            }
+
+          }
+          tournamentGrid.set(tournament, {
+            round: round,
+            battles: cacheBattles
+          });
+          return {errorCode: 'ok', list: cacheBattles, tournamentId: tournament};
+
+        }
+        return {errorCode: 'ok', list: battles, tournamentId: tournament};
+        /*if(data.round == round) {
+          if(round == 1 && data.round == 1) {
+            tournamentGrid.set(tournament, {
+              round: round,
+              battles: battles
+            });
+            return {errorCode: 'ok', list: battles, tournamentId: tournament};
+          }
+          return {errorCode: 'ok', list: data.battles, tournamentId: tournament};
+        } else {
+          data.round = round;
+          data.battles = data.battles.concat(battles);
+          tournamentGrid.set(tournament, {
+            round: data.round,
+            battles: data.battles
+          });
+          return {errorCode: 'ok', list: data.battles, tournamentId: tournament};
+        }*/
+
+
     }
 
     function GetBattlesTournaments(c: SlaveClient, params: Params): Array<Int> {
@@ -321,6 +401,40 @@ import snipe.cache.Block;
       server.cacheManager.updated(0, 'tournament', tournamentId);
 
       return {errorCode: 'ok'};
+    }
+
+    function CheckPrepare(c: SlaveClient, params: Params): Dynamic {
+      var tournamentId: Int = params.get('tournamentId');
+      var userId: Int = params.get('userId');
+
+      var active = usersActive.get(tournamentId);
+      var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
+      var tournament = ret.block;
+      var usersList = tournament.get('params', 'usersList');
+      if(usersList == null) return {errorCode: "usersNotFound"};
+      if(active == null) active = [];
+
+      if(!active.has(userId)) {
+        active.push(userId);
+      } else {
+        return {errorCode: "userExist"};
+      }
+
+
+      if(usersList.length == active.length) {
+        for( i in 0 ... usersList.length ) {
+          var gameNotify = server.getClient(usersList[i]);
+          gameNotify.notify({
+            _type: 'tournament.startEvent',
+            tournamentId: tournamentId,
+            round: 1
+           });
+        }
+
+
+      }
+        usersActive.set(tournamentId, active);
+        return {errorCode: "ok"};
     }
 
    /*public function MakeTurnCall(c: SlaveClient, params: Params): Dynamic {

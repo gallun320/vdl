@@ -1,0 +1,26 @@
+17.10 14:15:30 TRACE: vdl/cache.tournament.setGrid : Invalid field access : get
+17.10 14:15:30 TRACE: vdl/cache.tournament.setGrid : 
+Called from modules/VDLCache.hx line 274
+Called from modules/VDLCache.hx line 93
+Called from snipe/cache/CacheServer.hx line 487
+17.10 14:21:03 TRACE: vdl/cache.tournament.setGrid : Invalid field access : get
+17.10 14:21:03 TRACE: vdl/cache.tournament.setGrid : 
+Called from modules/VDLCache.hx line 314
+Called from modules/VDLCache.hx line 93
+Called from snipe/cache/CacheServer.hx line 487
+17.10 14:22:42 TRACE: vdl/cache.tournament.setGrid : Invalid field access : get
+17.10 14:22:42 TRACE: vdl/cache.tournament.setGrid : 
+Called from modules/VDLCache.hx line 314
+Called from modules/VDLCache.hx line 93
+Called from snipe/cache/CacheServer.hx line 487
+17.10 14:25:00 TRACE: vdl/cache.tournament.setGrid : Invalid field access : h
+17.10 14:25:00 TRACE: vdl/cache.tournament.setGrid : 
+Called from modules/VDLCache.hx line 343
+Called from modules/VDLCache.hx line 93
+Called from snipe/cache/CacheServer.hx line 487
+17.10 14:42:55 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+17.10 14:42:55 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 121
+Called from modules/VDLCache.hx line 114
+Called from modules/VDLCache.hx line 78
+Called from snipe/cache/CacheServer.hx line 487

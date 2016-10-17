@@ -1,0 +1,217 @@
+17.10 15:01:44 NET: Client (conid:56191184) connected to vdl.0 (clients:1)
+17.10 15:01:45 ++ NET: null req: user.login { messageType => user.login, token => dWlkMzY= }
+17.10 15:01:45 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+17.10 15:01:45 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+17.10 15:01:45 -<<-: core/server.query ok
+17.10 15:01:45 STATS: vdl.0 cache connection, 21 calls, total 0.0205314159393311 sec spent, avg 0.98 ms
+17.10 15:01:45 ->>-: core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+17.10 15:01:45 -<<-: core/user.isOnlineID ok
+17.10 15:01:45 ->>-: core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+17.10 15:01:45 -<<-: core/cache.get ok
+17.10 15:01:45 ->>-: core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+17.10 15:01:45 -<<-: core/cache.get ok
+17.10 15:01:45 NET: Client login (conid:56191184, id:36, name:uid36)
+17.10 15:01:45 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+17.10 15:01:45 -<<-: core/user.loginPost null
+17.10 15:01:45 == NET: uid36 ret: user.login { name => uid36, type => user.login, errorCode => ok, id => 36 }
+17.10 15:01:45 == NET: uid36 ret: user.join { name => uid36, type => user.join }
+17.10 15:01:52 ++ NET: uid36 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+17.10 15:01:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+17.10 15:01:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => null, round => 1, id => 1, status => active, userList => [{ name => uid36, id => 36 },{ name => uid37, id => 37 }], battleActive => [48,49], startdate => 2016-14-10 20:30 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+17.10 15:01:52 TIME: tournament.getAvailableTournament 5.71 ms
+17.10 15:01:52 == NET: uid36 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => null, round => 1, id => 1, status => active, userList => [{ name => uid36, id => 36 },{ name => uid37, id => 37 }], battleActive => [48,49], startdate => 2016-14-10 20:30 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+17.10 15:01:53 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+17.10 15:01:53 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+17.10 15:01:56 ++ NET: uid36 req: tournament.grid { tournamentId => 1, round => 1, messageType => tournament.grid }
+17.10 15:01:56 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+17.10 15:01:56 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [36,37] }
+17.10 15:01:56 ->>-: vdl/cache.tournament.setGrid { battles => [{ player1 => 36, player2 => 37 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid }
+17.10 15:01:56 -<<-: vdl/cache.tournament.setGrid { list => [{ player1 => 36, player2 => 37 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+17.10 15:01:56 TIME: tournament.grid 0.89 ms
+17.10 15:01:56 == NET: uid36 ret: tournament.grid { list => [{ player1 => 36, player2 => 37 }], type => tournament.grid, tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+17.10 15:02:18 TIMER: Check auto-disconnect...
+17.10 15:02:18 STATS: vdl.0 cache, locks:2
+17.10 15:02:18 TIMER: Check auto-disconnect...
+17.10 15:02:18 STATS: vdl.0 cache, locks:2
+17.10 15:03:30 ++ NET: uid36 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+17.10 15:03:30 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+17.10 15:03:30 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => null, round => 1, id => 1, status => active, userList => [{ name => uid36, id => 36 },{ name => uid37, id => 37 }], battleActive => [48,49], startdate => 2016-14-10 20:30 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+17.10 15:03:30 STATS: vdl.0 cache connection, 30 calls, total 0.0340642929077148 sec spent, avg 1.14 ms
+17.10 15:03:30 TIME: tournament.getAvailableTournament 2.81 ms
+17.10 15:03:30 == NET: uid36 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => null, round => 1, id => 1, status => active, userList => [{ name => uid36, id => 36 },{ name => uid37, id => 37 }], battleActive => [48,49], startdate => 2016-14-10 20:30 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+17.10 15:03:34 ++ NET: uid36 req: tournament.grid { tournamentId => 1, round => 1, messageType => tournament.grid }
+17.10 15:03:34 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+17.10 15:03:34 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [36,37] }
+17.10 15:03:34 ->>-: vdl/cache.tournament.setGrid { battles => [{ player1 => 36, player2 => 37 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid }
+17.10 15:03:34 -<<-: vdl/cache.tournament.setGrid { list => [{ player1 => 36, player2 => 37 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+17.10 15:03:34 TIME: tournament.grid 0.91 ms
+17.10 15:03:34 == NET: uid36 ret: tournament.grid { list => [{ player1 => 36, player2 => 37 }], type => tournament.grid, tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+17.10 15:05:29 ->>-: core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+17.10 15:05:29 -<<-: server.login ok
+17.10 15:05:29 DB: SELECT * FROM LocalizationStrings
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 TIMER: Starting timer...
+17.10 15:05:29 TIMER: Timer running...
+17.10 15:05:29 DB: SELECT * FROM GameVars
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+17.10 15:05:29 -<<-: core/quest.getDaily ok
+17.10 15:05:29 DB: SELECT * FROM UserAttributeTypes
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM UserVariableTypes
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+17.10 15:05:29 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM ItemGroups
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM Bundles ORDER BY ID
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM BundleItems ORDER BY ID
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 SHOP: loading items...
+17.10 15:05:29 ->>-: core/shop.getList { _type => core/shop.getList }
+17.10 15:05:29 -<<-: core/shop.getList ok
+17.10 15:05:29 SHOP: 0 items loaded (0 sec)
+17.10 15:05:29 DB: SELECT * FROM EffectAttributeTypes
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM Effects
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+17.10 15:05:29 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+17.10 15:05:29 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 DB: SELECT * FROM Badges
+17.10 15:05:29 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+17.10 15:05:29 -<<-: core/server.query ok
+17.10 15:05:29 TIMER: Check auto-disconnect...
+17.10 15:05:29 STATS: vdl.0 cache, locks:0
+17.10 15:05:29 TIMER: Check auto-disconnect...
+17.10 15:05:29 STATS: vdl.0 cache, locks:0
+17.10 15:05:29 TIMER: Check auto-disconnect...
+17.10 15:05:29 STATS: vdl.0 cache, locks:0
+17.10 15:05:29 TIMER: Check auto-disconnect...
+17.10 15:05:29 STATS: vdl.0 cache, locks:0
+17.10 15:05:29 TIMER: Check auto-disconnect...
+17.10 15:05:29 STATS: vdl.0 cache, locks:0
+17.10 15:05:29 TIMER: Check auto-disconnect...
+17.10 15:11:30 STATS: vdl.0 cache, locks:0
+17.10 15:12:29 TIMER: Check auto-disconnect...
+17.10 15:12:30 STATS: vdl.0 cache, locks:0
+17.10 15:13:29 TIMER: Check auto-disconnect...
+17.10 15:13:30 STATS: vdl.0 cache, locks:0
+17.10 15:14:29 TIMER: Check auto-disconnect...
+17.10 15:14:30 STATS: vdl.0 cache, locks:0
+17.10 15:15:29 TIMER: Check auto-disconnect...
+17.10 15:15:30 STATS: vdl.0 cache, locks:0
+17.10 15:16:29 TIMER: Check auto-disconnect...
+17.10 15:16:30 STATS: vdl.0 cache, locks:0
+17.10 15:17:29 TIMER: Check auto-disconnect...
+17.10 15:17:30 STATS: vdl.0 cache, locks:0
+17.10 15:18:29 TIMER: Check auto-disconnect...
+17.10 15:18:30 STATS: vdl.0 cache, locks:0
+17.10 15:19:29 TIMER: Check auto-disconnect...
+17.10 15:19:30 STATS: vdl.0 cache, locks:0
+17.10 15:20:29 TIMER: Check auto-disconnect...
+17.10 15:20:30 STATS: vdl.0 cache, locks:0
+17.10 15:21:29 TIMER: Check auto-disconnect...
+17.10 15:21:30 STATS: vdl.0 cache, locks:0
+17.10 15:22:29 TIMER: Check auto-disconnect...
+17.10 15:22:30 STATS: vdl.0 cache, locks:0
+17.10 15:23:29 TIMER: Check auto-disconnect...
+17.10 15:23:30 STATS: vdl.0 cache, locks:0
+17.10 15:24:29 TIMER: Check auto-disconnect...
+17.10 15:24:30 STATS: vdl.0 cache, locks:0
+17.10 15:25:29 TIMER: Check auto-disconnect...
+17.10 15:25:30 STATS: vdl.0 cache, locks:0
+17.10 15:26:29 TIMER: Check auto-disconnect...
+17.10 15:26:30 STATS: vdl.0 cache, locks:0
+17.10 15:27:29 TIMER: Check auto-disconnect...
+17.10 15:27:30 STATS: vdl.0 cache, locks:0
+17.10 15:28:29 TIMER: Check auto-disconnect...
+17.10 15:28:30 STATS: vdl.0 cache, locks:0
+17.10 15:29:29 TIMER: Check auto-disconnect...
+17.10 15:29:30 STATS: vdl.0 cache, locks:0
+17.10 15:30:29 TIMER: Check auto-disconnect...
+17.10 15:30:30 STATS: vdl.0 cache, locks:0
+17.10 15:31:29 TIMER: Check auto-disconnect...
+17.10 15:31:30 STATS: vdl.0 cache, locks:0
+17.10 15:32:29 TIMER: Check auto-disconnect...
+17.10 15:32:30 STATS: vdl.0 cache, locks:0
+17.10 15:33:29 TIMER: Check auto-disconnect...
+17.10 15:33:30 STATS: vdl.0 cache, locks:0
+17.10 15:34:29 TIMER: Check auto-disconnect...
+17.10 15:34:30 STATS: vdl.0 cache, locks:0
+17.10 15:35:29 TIMER: Check auto-disconnect...
+17.10 15:35:30 STATS: vdl.0 cache, locks:0
+17.10 15:36:29 TIMER: Check auto-disconnect...
+17.10 15:36:30 STATS: vdl.0 cache, locks:0
+17.10 15:37:29 TIMER: Check auto-disconnect...
+17.10 15:37:30 STATS: vdl.0 cache, locks:0
+17.10 15:38:29 TIMER: Check auto-disconnect...
+17.10 15:38:30 STATS: vdl.0 cache, locks:0
+17.10 15:39:29 TIMER: Check auto-disconnect...
+17.10 15:39:30 STATS: vdl.0 cache, locks:0
+17.10 15:40:29 TIMER: Check auto-disconnect...
+17.10 15:40:30 STATS: vdl.0 cache, locks:0
+17.10 15:41:29 TIMER: Check auto-disconnect...
+17.10 15:41:30 STATS: vdl.0 cache, locks:0
+17.10 15:42:29 TIMER: Check auto-disconnect...
+17.10 15:42:30 STATS: vdl.0 cache, locks:0
+17.10 15:43:29 TIMER: Check auto-disconnect...
+17.10 15:43:30 STATS: vdl.0 cache, locks:0
+17.10 15:44:29 TIMER: Check auto-disconnect...
+17.10 15:44:30 STATS: vdl.0 cache, locks:0
+17.10 15:45:29 TIMER: Check auto-disconnect...
+17.10 15:45:30 STATS: vdl.0 cache, locks:0
+17.10 15:46:29 TIMER: Check auto-disconnect...
+17.10 15:46:30 STATS: vdl.0 cache, locks:0
+17.10 15:47:29 TIMER: Check auto-disconnect...
+17.10 15:47:30 STATS: vdl.0 cache, locks:0
+17.10 15:48:29 TIMER: Check auto-disconnect...
+17.10 15:48:30 STATS: vdl.0 cache, locks:0
+17.10 15:49:29 TIMER: Check auto-disconnect...
+17.10 15:49:30 STATS: vdl.0 cache, locks:0
+17.10 15:50:29 TIMER: Check auto-disconnect...
+17.10 15:50:30 STATS: vdl.0 cache, locks:0
+17.10 15:51:29 TIMER: Check auto-disconnect...
+17.10 15:51:30 STATS: vdl.0 cache, locks:0
+17.10 15:52:29 TIMER: Check auto-disconnect...
+17.10 15:52:30 STATS: vdl.0 cache, locks:0
+17.10 15:53:29 TIMER: Check auto-disconnect...
+17.10 15:53:30 STATS: vdl.0 cache, locks:0
+17.10 15:54:29 TIMER: Check auto-disconnect...
+17.10 15:54:30 STATS: vdl.0 cache, locks:0
+17.10 15:55:29 TIMER: Check auto-disconnect...
+17.10 15:55:30 STATS: vdl.0 cache, locks:0
+17.10 15:56:29 TIMER: Check auto-disconnect...
+17.10 15:56:30 STATS: vdl.0 cache, locks:0
+17.10 15:57:29 TIMER: Check auto-disconnect...
+17.10 15:57:30 STATS: vdl.0 cache, locks:0
+17.10 15:58:29 TIMER: Check auto-disconnect...
+17.10 15:58:30 STATS: vdl.0 cache, locks:0
+17.10 15:59:29 TIMER: Check auto-disconnect...
+17.10 15:59:30 STATS: vdl.0 cache, locks:0

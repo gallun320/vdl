@@ -66,6 +66,9 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
             response = FinishCall(c, params);
           case "tournament.grid":
             response = GetTournamentGrid(c, params);
+          case "tournament.checkPrepare":
+            response = CheckPrepare(c, params);
+
         }
 
       return response;
@@ -74,6 +77,13 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
 
       public function startEvent(msg: {tournamentId: Int, round: Int}) {
         StartCall(msg.tournamentId, msg.round);
+      }
+
+      public function accessEvent(msg: { client: Int, name: String }) {
+        server.sendTo(msg.client, {
+          _type: "tournament.prepare",
+          name: msg.name
+        });
       }
 
       public function StartCall(tournamentId: Int, round: Int): Void {
@@ -101,7 +111,6 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         var bufferInt: Int = Std.int(buffer);
         var battles: Array<Int> = new Array<Int>();
         while (bufferInt > 0) {
-          var bufferInt : Int = Std.int(buffer);
           battles.push(CreateBattle(list[bufferInt - 2], list[bufferInt - 1], tournamentId, round));
           bufferInt = bufferInt - 2;
         }
@@ -119,6 +128,8 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
 
       public function FinishCall(c: VDLClient, params: Params): Dynamic {
         var tournamentId: Int = params.get('tournamentId');
+        var player1: Int = params.get("player1");
+        var player2: Int = params.get("player2");
         var winner: Int = params.get('winnerId');
         var lose: Int = params.get('loseId');
         var battleId: Int = params.get('battleId');
@@ -126,13 +137,17 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         var battles: Array<Int> = GetBattlesTournaments(tournamentId);
         var res = GetAvailableTournamentUsers(tournamentId);
         var users: Array<Int> = res.users;
-        var ret = Finish(tournamentId, winner, lose, battleId, round, battles, users);
+        var ret = Finish(tournamentId,player1, player2, winner, lose, battleId, round, battles, users);
         return ret;
       }
 
       public function GetTournamentGrid(c: VDLClient, params: Params): Dynamic {
         var tournamentId = params.get('tournamentId');
         var round = params.get('round');
+        if(round > 1) {
+          var ret = SetGrid([], round, tournamentId);
+          return ret;
+        }
         var res = GetAvailableTournamentUsers(tournamentId);
         var list: Array<Int> = res.users;
         var buffer: Float = list.length;
@@ -158,10 +173,10 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         //var bufferLenght: Int = Std.int(buffer);
         var battles: Array<Dynamic> = new Array<Dynamic>();
         while (bufferInt > 0) {
-          battles.push({player1: list[bufferInt - 2], player2: list[bufferInt - 1], tournamentId: tournamentId, round: round});
+          battles.push({player1: list[bufferInt - 2], player2: list[bufferInt - 1], round: round, winner: -1});
           bufferInt = bufferInt - 2;
         }
-        var ret = SetGrid(battles);
+        var ret = SetGrid(battles, round, tournamentId);
         return ret;
       }
       /*public function CubeCall(c: VDLClient, params: Params): Dynamic {
@@ -202,10 +217,12 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
 
 
-      public function SetGrid(battleData: Array<Dynamic>): Dynamic {
+      public function SetGrid(battleData: Array<Dynamic>, round: Int, tournament: Int): Dynamic {
         var ret = server.cacheRequest({
             _type: 'vdl/cache.tournament.setGrid',
-            battles: battleData
+            battles: battleData,
+            round: round,
+            tournamentId: tournament
           });
         return ret;
       }
@@ -243,6 +260,14 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
       return { errorCode: "Not battle" };
     }*/
+  public function CheckPrepare(c: VDLClient, params: Params): Dynamic {
+    var tournamentId = params.get('tournamentId');
+    var userId = c.id;
+
+    AddActive(tournamentId, userId);
+
+    return  {errorCode: "ok"};
+  }
 
 public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int): Void {
         var playerOneName = server.query('SELECT name FROM users WHERE id=' + player1);
@@ -306,6 +331,8 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
     }*/
 
     public function Finish(tournamentId: Int,
+                            player1: Int,
+                            player2: Int,
                             winner: Int,
                             lose: Int,
                             battleId: Int,
@@ -326,6 +353,7 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
       DeleteRoom(battleId);
       SetBattlesTournament(arr, tournamentId, "finished");
       SetUsersTournament(users, tournamentId);
+      var ret = SetGrid([{player1: player1, player2: player2, winner: winner, round: round}], round, tournamentId);
       //server.sendTo(secondId, {_type: "battle.end"});
       if(battles.length > 0) {
          return {errorCode: "wait"};
@@ -348,6 +376,15 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
       }
       return { errorCode: 'ok', cube: arr};
     }*/
+
+    public function AddActive(tournamentId: Int, userId: Int): Void {
+      var ret = server.cacheRequest({
+          _type: "vdl/cache.tournament.addActive",
+          tournamentId: tournamentId,
+          userId: userId
+        });
+    }
+
     public function AddRound(round: Int, tournamentId: Int) {
       var ret = server.cacheRequest({
           _type: 'vdl/cache.tournament.addRound',
