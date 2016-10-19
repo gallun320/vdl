@@ -37,6 +37,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       server.subscribeModule("core/user.logoutPost", this);
       server.subscribeModule("core/user.registerPre", this);
       server.subscribeModule("core/user.loginPre", this);
+      server.subscribeModule("core/user.loginPost", this);
     }
 
   /*  public function checkTournament() {
@@ -66,8 +67,8 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
             response = FinishCall(c, params);
           case "tournament.grid":
             response = GetTournamentGrid(c, params);
-          case "tournament.checkPrepare":
-            response = CheckPrepare(c, params);
+        /*  case "tournament.checkPrepare":
+            response = CheckPrepare(c, params);*/
 
         }
 
@@ -75,18 +76,18 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
 
 
-      public function startEvent(msg: {tournamentId: Int, round: Int}) {
+      /*public function startEvent(msg: {tournamentId: Int, round: Int}) {
         StartCall(msg.tournamentId, msg.round);
-      }
+      }*/
 
-      public function accessEvent(msg: { client: Int, name: String }) {
-        server.sendTo(msg.client, {
-          _type: "tournament.prepare",
-          name: msg.name
+      public function enemyEvent(msg: { id: Int, data: Dynamic }) {
+        server.sendTo(msg.id, {
+          _type: "tournament.enemy",
+          data: msg.data
         });
       }
 
-      public function StartCall(tournamentId: Int, round: Int): Void {
+      /*public function StartCall(tournamentId: Int, round: Int): Void {
         var res = GetAvailableTournamentUsers(tournamentId);
         var list: Array<Int> = res.users;
         var buffer: Float = list.length;
@@ -124,7 +125,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         var retJoin = JoinRoom(player2, retCreate.room);
         Enemy(player1, player2, retCreate.room, tournamentId, round);
         return retCreate.room;
-      }
+      }*/
 
       public function FinishCall(c: VDLClient, params: Params): Dynamic {
         var tournamentId: Int = params.get('tournamentId');
@@ -134,10 +135,11 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         var lose: Int = params.get('loseId');
         var battleId: Int = params.get('battleId');
         var round: Int = params.get('round');
+        var dateRound: String = params.get('roundDate');
         var battles: Array<Int> = GetBattlesTournaments(tournamentId);
         var res = GetAvailableTournamentUsers(tournamentId);
         var users: Array<Int> = res.users;
-        var ret = Finish(tournamentId,player1, player2, winner, lose, battleId, round, battles, users);
+        var ret = Finish(tournamentId, dateRound, player1, player2, winner, lose, battleId, round, battles, users);
         return ret;
       }
 
@@ -260,28 +262,28 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
       return { errorCode: "Not battle" };
     }*/
-  public function CheckPrepare(c: VDLClient, params: Params): Dynamic {
+  /*public function CheckPrepare(c: VDLClient, params: Params): Dynamic {
     var tournamentId = params.get('tournamentId');
     var userId = c.id;
 
     AddActive(tournamentId, userId);
 
     return  {errorCode: "ok"};
-  }
+  }*/
 
-public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int): Void {
+/*public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int): Void {
         var playerOneName = server.query('SELECT name FROM users WHERE id=' + player1);
         var playerTwoName = server.query('SELECT name FROM users WHERE id=' + player2);
         var pOneName = playerOneName.first().name;
         var pTwoName = playerTwoName.first().name;
-        /*var pOneName = '';
+        var pOneName = '';
         var pTwoName = '';
         for(i in playerOneName) {
           pOneName = i.name;
         }
         for(i in playerTwoName) {
           pTwoName = i.name;
-        }*/
+        }
         server.sendTo(player1, {"enemy.num": 2,
         "enemy.id": player1,
         name: pOneName,
@@ -301,7 +303,7 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
         tournamentId: tournamentId,
         type: "tournament.enemy",
         _type: "tournament.enemy"});
-    }
+    }*/
 
     /*public function Task(c: VDLClient, cid: Int, params: Params) {
       var roomId = params.get('roomId');
@@ -331,6 +333,7 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
     }*/
 
     public function Finish(tournamentId: Int,
+                            dateRound: String,
                             player1: Int,
                             player2: Int,
                             winner: Int,
@@ -359,8 +362,8 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
          return {errorCode: "wait"};
        } else {
          if(users.length > 1) {
-           AddRound(++round, tournamentId);
-           StartCall(tournamentId, round);
+           AddRound(++round, tournamentId, dateRound);
+           //StartCall(tournamentId, round);
          } else {
            DeleteTournament(tournamentId);
            return {errorCode: "TournamentEnd"};
@@ -385,11 +388,12 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
         });
     }
 
-    public function AddRound(round: Int, tournamentId: Int) {
+    public function AddRound(round: Int, tournamentId: Int, dateRound: String) {
       var ret = server.cacheRequest({
           _type: 'vdl/cache.tournament.addRound',
           round: round,
-          tournamentId: tournamentId
+          tournamentId: tournamentId,
+          dateRound: dateRound
         });
     }
     public function SetBattlesTournament(battles: Array<Int>, tournamentId: Int, typeBattle: String): Void {
@@ -491,25 +495,11 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
       return ret;
     }
 
-    override function logoutPost(c: VDLClient ) {
-      /*var ret = server.query('SELECT id FROM battle WHERE firstid=' + c.id + ' OR secondid=' + c.id + ' AND finished <> true');
-      var roomId = 0;
-      for( i in ret  ) {
-        roomId = i.id;
-      }
-      var user = RoomInfo(roomId);
-      var enemId = 0;
-      if(c.id == user.firstId) {
-        enemId = user.secondId;
-      } else if(c.id == user.secondId){
-        enemId = user.firstId;
-      }
-      DeleteRoom(roomId);
-      server.sendTo(enemId, {_type: 'battle.end'});*/
-      trace('room destroy');
-    }
-
     override function registerPre(c: VDLClient, params: Params): Bool {
+      var name = params.get('name');
+      var password = params.get('password');
+      trace( params.params.length );
+      if(name != null && password != null) return true;
     var res = server.query("SELECT * FROM users");
     var nameAndPass = 'uid' + (res.length + 1);
     var pass = haxe.crypto.Base64.encode(haxe.io.Bytes.ofString(nameAndPass));
@@ -521,6 +511,7 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
     override function loginPre(c: VDLClient, params: Params): Bool {
 
       var token = params.get('token');
+      if(token == null) return true;
       var data = haxe.crypto.Base64.decode(token);
       var dataStr : String  = data.toString();
 
@@ -529,4 +520,9 @@ public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: I
 
       return true;
     }
+
+    /*override  function loginPost(c: VDLClient, params: Params, retParams: Dynamic,
+    responseParams: Dynamic) {
+      c.response('user.data', retParams.info);
+    }*/
 }

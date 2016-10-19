@@ -1,0 +1,892 @@
+18.10 14:01:35 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:01:35 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:01:35 QUEUE: vdl.0 (thread) response core/server.query
+18.10 14:01:35 TIME: core/server.query : 3.74 ms
+18.10 14:01:35 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:01:35 QUEUE: vdl.0 (thread) response core/user.isOnlineID
+18.10 14:01:35 TIME: core/user.isOnlineID : 0.13 ms
+18.10 14:01:35 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:01:35 STATS: cache [user], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+18.10 14:01:35 STATS: cache [user], segments [1 calls, 0 hits, 0 misses]
+18.10 14:01:35 STATS: cache [user], database [1282 calls, 0 reads, 0 writes]
+18.10 14:01:35 STATS: cache [user], lock [1 calls, 1 attempts, 0 failures]
+18.10 14:01:35 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:01:35 STATS: cache manager [1], get [1 calls, total 0.01 sec spent, avg 6.46 ms]
+18.10 14:01:35 STATS: cache manager [1], update [0 calls, total 0 sec spent, avg -21474836.48 ms]
+18.10 14:01:35 QUEUE: vdl.0 (thread) response core/cache.get
+18.10 14:01:35 TIME: core/cache.get : 6.85 ms
+18.10 14:01:35 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:01:35 STATS: cache [questdata], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+18.10 14:01:35 STATS: cache [questdata], segments [1 calls, 0 hits, 0 misses]
+18.10 14:01:35 STATS: cache [questdata], database [1282 calls, 0 reads, 0 writes]
+18.10 14:01:35 STATS: cache [questdata], lock [1 calls, 1 attempts, 0 failures]
+18.10 14:01:35 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:01:35 QUEUE: vdl.0 (thread) response core/cache.get
+18.10 14:01:35 TIME: core/cache.get : 2.44 ms
+18.10 14:01:35 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:01:35 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:01:35 TIME: core/user.loginPost : 0.35 ms
+18.10 14:01:44 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:01:44 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:01:44 TIME: core/cache.update : 0.26 ms
+18.10 14:01:44 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476702920,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:02:13 TIMER: Clans cache...
+18.10 14:02:13 TIMER: Clans cache: 0ms
+18.10 14:02:13 TIMER: Check tournament...
+18.10 14:02:13 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:02' AND status = 'starting'
+18.10 14:02:13 TIMER: Check tournament: 2ms
+18.10 14:03:14 TIMER: Clans cache...
+18.10 14:03:14 TIMER: Clans cache: 0ms
+18.10 14:03:14 TIMER: Check tournament...
+18.10 14:03:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:03' AND status = 'starting'
+18.10 14:03:14 TIMER: Check tournament: 1ms
+18.10 14:03:14 TIMER: Clans cache...
+18.10 14:03:14 TIMER: Clans cache: 0ms
+18.10 14:03:14 TIMER: Check tournament...
+18.10 14:03:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:04' AND status = 'starting'
+18.10 14:03:14 TIMER: Check tournament: 1ms
+18.10 14:03:14 TIMER: Clans cache...
+18.10 14:03:14 TIMER: Clans cache: 0ms
+18.10 14:03:14 TIMER: Check tournament...
+18.10 14:03:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:05' AND status = 'starting'
+18.10 14:03:14 TIMER: Check tournament: 2ms
+18.10 14:05:15 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:05:15 STATS: cache [user], get [1 calls, 0 cache hits, 1 cache misses, 0 same version, 0 not found]
+18.10 14:05:15 STATS: cache [user], segments [4 calls, 1 hits, 2 misses]
+18.10 14:05:15 STATS: cache [user], database [1502 calls, 1 reads, 1 writes]
+18.10 14:05:15 STATS: cache [user], lock [1 calls, 1 attempts, 0 failures]
+18.10 14:05:15 STATS: cache manager [1], get [2 calls, total 0.01 sec spent, avg 4.38 ms]
+18.10 14:05:15 STATS: cache manager [1], update [2 calls, total 0 sec spent, avg 0.27 ms]
+18.10 14:05:15 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:05:15 TIME: core/cache.update : 0.87 ms
+18.10 14:05:15 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:05:15 STATS: cache [questdata], get [1 calls, 0 cache hits, 1 cache misses, 0 same version, 0 not found]
+18.10 14:05:15 STATS: cache [questdata], segments [3 calls, 0 hits, 2 misses]
+18.10 14:05:15 STATS: cache [questdata], database [1502 calls, 1 reads, 0 writes]
+18.10 14:05:15 STATS: cache [questdata], lock [1 calls, 1 attempts, 0 failures]
+18.10 14:05:15 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:05:15 TIME: core/cache.update : 0.62 ms
+18.10 14:05:15 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:05:15 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:05:15 TIME: core/user.logoutPost : 0.18 ms
+18.10 14:05:15 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476702920,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:05:15 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:05:25 BLOCKREMOVE: user 36 removed
+18.10 14:05:25 BLOCKREMOVE: questdata 36 removed
+18.10 14:06:03 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:06:03 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:06:03 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:06:03 TIME: core/server.query : 3.12 ms
+18.10 14:06:03 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:06:03 STATS: cache [battle], get [1 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+18.10 14:06:03 STATS: cache [battle], segments [1 calls, 0 hits, 0 misses]
+18.10 14:06:03 STATS: cache [battle], database [1550 calls, 0 reads, 0 writes]
+18.10 14:06:03 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:06:03 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:06:03 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:06:03 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:06:03 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:06:03 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:06:03 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => mustBeLocked, version => 0, _type => core/cache.update }
+18.10 14:06:03 TIME: core/cache.update : 0.23 ms
+18.10 14:06:03 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:06:03 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => mustBeLocked, version => 0, _type => core/cache.update }
+18.10 14:06:03 TIME: core/cache.update : 0.19 ms
+18.10 14:06:03 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:06:03 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:06:03 TIME: core/user.logoutPost : 0.14 ms
+18.10 14:06:14 TIMER: Clans cache...
+18.10 14:06:14 TIMER: Clans cache: 0ms
+18.10 14:06:14 TIMER: Check tournament...
+18.10 14:06:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:06' AND status = 'starting'
+18.10 14:06:14 TIMER: Check tournament: 1ms
+18.10 14:07:07 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:07:07 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:07:07 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:07:07 TIME: core/server.query : 4.07 ms
+18.10 14:07:07 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:07:07 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:07:07 TIME: core/user.isOnlineID : 0.16 ms
+18.10 14:07:07 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:07:07 STATS: cache [user], get [1 calls, 0 cache hits, 1 cache misses, 0 same version, 0 not found]
+18.10 14:07:07 STATS: cache [user], segments [7 calls, 3 hits, 3 misses]
+18.10 14:07:07 STATS: cache [user], database [1614 calls, 1 reads, 2 writes]
+18.10 14:07:07 STATS: cache [user], lock [2 calls, 2 attempts, 0 failures]
+18.10 14:07:07 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:07:07 STATS: cache manager [1], get [3 calls, total 0.01 sec spent, avg 3.67 ms]
+18.10 14:07:07 STATS: cache manager [1], update [5 calls, total 0 sec spent, avg 0.22 ms]
+18.10 14:07:07 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476702920, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:07:07 TIME: core/cache.get : 8.34 ms
+18.10 14:07:07 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:07:07 STATS: cache [questdata], get [1 calls, 0 cache hits, 1 cache misses, 0 same version, 0 not found]
+18.10 14:07:07 STATS: cache [questdata], segments [6 calls, 2 hits, 3 misses]
+18.10 14:07:07 STATS: cache [questdata], database [1614 calls, 1 reads, 1 writes]
+18.10 14:07:07 STATS: cache [questdata], lock [2 calls, 2 attempts, 0 failures]
+18.10 14:07:07 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:07:07 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:07:07 TIME: core/cache.get : 2.19 ms
+18.10 14:07:07 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:07:07 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:07:07 TIME: core/user.loginPost : 0.12 ms
+18.10 14:07:14 TIMER: Clans cache...
+18.10 14:07:14 TIMER: Clans cache: 0ms
+18.10 14:07:14 TIMER: Check tournament...
+18.10 14:07:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:07' AND status = 'starting'
+18.10 14:07:14 TIMER: Check tournament: 1ms
+18.10 14:07:14 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:07:14 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:07:14 TIME: core/cache.update : 0.26 ms
+18.10 14:07:15 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476702920,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:08:14 TIMER: Clans cache...
+18.10 14:08:14 TIMER: Clans cache: 0ms
+18.10 14:08:14 TIMER: Check tournament...
+18.10 14:08:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:08' AND status = 'starting'
+18.10 14:08:14 TIMER: Check tournament: 1ms
+18.10 14:08:17 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:08:17 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:08:17 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:08:17 TIME: core/server.query : 2.47 ms
+18.10 14:08:17 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:08:17 STATS: cache [battle], get [2 calls, 0 cache hits, 1 cache misses, 0 same version, 1 not found]
+18.10 14:08:17 STATS: cache [battle], segments [2 calls, 0 hits, 1 misses]
+18.10 14:08:17 STATS: cache [battle], database [1684 calls, 1 reads, 0 writes]
+18.10 14:08:17 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:08:17 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:08:17 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:08:17 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:08:17 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:08:17 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:08:17 STATS: cache [user], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+18.10 14:08:17 STATS: cache [user], segments [10 calls, 4 hits, 5 misses]
+18.10 14:08:17 STATS: cache [user], database [1684 calls, 2 reads, 3 writes]
+18.10 14:08:17 STATS: cache [user], lock [2 calls, 2 attempts, 0 failures]
+18.10 14:08:17 STATS: cache manager [1], get [4 calls, total 0.01 sec spent, avg 3.2 ms]
+18.10 14:08:17 STATS: cache manager [1], update [7 calls, total 0 sec spent, avg 0.23 ms]
+18.10 14:08:17 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:08:17 TIME: core/cache.update : 0.76 ms
+18.10 14:08:17 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:08:17 STATS: cache [questdata], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+18.10 14:08:17 STATS: cache [questdata], segments [8 calls, 2 hits, 5 misses]
+18.10 14:08:17 STATS: cache [questdata], database [1684 calls, 2 reads, 1 writes]
+18.10 14:08:17 STATS: cache [questdata], lock [2 calls, 2 attempts, 0 failures]
+18.10 14:08:17 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:08:17 TIME: core/cache.update : 0.95 ms
+18.10 14:08:17 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:08:17 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:08:17 TIME: core/user.logoutPost : 0.32 ms
+18.10 14:08:18 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476702920,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:08:18 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:08:28 BLOCKREMOVE: user 36 removed
+18.10 14:08:28 BLOCKREMOVE: questdata 36 removed
+18.10 14:09:14 TIMER: Clans cache...
+18.10 14:09:14 TIMER: Clans cache: 0ms
+18.10 14:09:14 TIMER: Check tournament...
+18.10 14:09:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:09' AND status = 'starting'
+18.10 14:09:14 TIMER: Check tournament: 1ms
+18.10 14:09:14 TIMER: Clans cache...
+18.10 14:09:14 TIMER: Clans cache: 0ms
+18.10 14:09:14 TIMER: Check tournament...
+18.10 14:09:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:10' AND status = 'starting'
+18.10 14:09:14 TIMER: Check tournament: 1ms
+18.10 14:09:14 TIMER: Clans cache...
+18.10 14:09:14 TIMER: Clans cache: 0ms
+18.10 14:09:14 TIMER: Check tournament...
+18.10 14:09:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:11' AND status = 'starting'
+18.10 14:09:14 TIMER: Check tournament: 1ms
+18.10 14:09:14 TIMER: Clans cache...
+18.10 14:09:14 TIMER: Clans cache: 0ms
+18.10 14:09:14 TIMER: Check tournament...
+18.10 14:09:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:12' AND status = 'starting'
+18.10 14:09:14 TIMER: Check tournament: 0ms
+18.10 14:09:14 TIMER: Clans cache...
+18.10 14:09:14 TIMER: Clans cache: 0ms
+18.10 14:09:14 TIMER: Check tournament...
+18.10 14:09:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:13' AND status = 'starting'
+18.10 14:09:14 TIMER: Check tournament: 1ms
+18.10 14:13:22 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:13:22 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:13:22 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:13:22 TIME: core/server.query : 1.52 ms
+18.10 14:13:22 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:13:22 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:13:22 TIME: core/user.isOnlineID : 0.11 ms
+18.10 14:13:22 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:13:22 STATS: cache [user], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+18.10 14:13:22 STATS: cache [user], segments [12 calls, 6 hits, 5 misses]
+18.10 14:13:22 STATS: cache [user], database [1989 calls, 2 reads, 4 writes]
+18.10 14:13:22 STATS: cache [user], lock [3 calls, 3 attempts, 0 failures]
+18.10 14:13:22 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:13:22 STATS: cache manager [1], get [5 calls, total 0.01 sec spent, avg 3 ms]
+18.10 14:13:22 STATS: cache manager [1], update [8 calls, total 0 sec spent, avg 0.26 ms]
+18.10 14:13:22 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476702920, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:13:22 TIME: core/cache.get : 2.85 ms
+18.10 14:13:22 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:13:22 STATS: cache [questdata], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+18.10 14:13:22 STATS: cache [questdata], segments [10 calls, 4 hits, 5 misses]
+18.10 14:13:22 STATS: cache [questdata], database [1989 calls, 2 reads, 2 writes]
+18.10 14:13:22 STATS: cache [questdata], lock [3 calls, 3 attempts, 0 failures]
+18.10 14:13:22 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:13:22 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:13:22 TIME: core/cache.get : 1.86 ms
+18.10 14:13:22 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:13:22 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:13:22 TIME: core/user.loginPost : 0.17 ms
+18.10 14:13:29 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:13:29 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:13:29 TIME: core/cache.update : 0.27 ms
+18.10 14:13:29 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476702920,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:14:14 TIMER: Clans cache...
+18.10 14:14:14 TIMER: Clans cache: 0ms
+18.10 14:14:14 TIMER: Check tournament...
+18.10 14:14:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:14' AND status = 'starting'
+18.10 14:14:14 TIMER: Check tournament: 2ms
+18.10 14:14:14 TIMER: Clans cache...
+18.10 14:14:14 TIMER: Clans cache: 0ms
+18.10 14:14:14 TIMER: Check tournament...
+18.10 14:14:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:15' AND status = 'starting'
+18.10 14:14:14 TIMER: Check tournament: 1ms
+18.10 14:14:14 TIMER: Clans cache...
+18.10 14:14:14 TIMER: Clans cache: 0ms
+18.10 14:14:14 TIMER: Check tournament...
+18.10 14:14:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:16' AND status = 'starting'
+18.10 14:14:14 TIMER: Check tournament: 1ms
+18.10 14:17:13 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:17:13 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:17:13 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:17:13 TIME: core/server.query : 2.4 ms
+18.10 14:17:13 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:17:13 STATS: cache [battle], get [3 calls, 0 cache hits, 2 cache misses, 0 same version, 2 not found]
+18.10 14:17:13 STATS: cache [battle], segments [3 calls, 0 hits, 2 misses]
+18.10 14:17:13 STATS: cache [battle], database [2220 calls, 2 reads, 0 writes]
+18.10 14:17:13 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:17:13 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:17:13 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:17:13 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:17:13 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:17:13 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:17:13 STATS: cache [user], get [3 calls, 0 cache hits, 3 cache misses, 0 same version, 0 not found]
+18.10 14:17:13 STATS: cache [user], segments [15 calls, 7 hits, 7 misses]
+18.10 14:17:13 STATS: cache [user], database [2220 calls, 3 reads, 5 writes]
+18.10 14:17:13 STATS: cache [user], lock [3 calls, 3 attempts, 0 failures]
+18.10 14:17:13 STATS: cache manager [1], get [6 calls, total 0.02 sec spent, avg 2.76 ms]
+18.10 14:17:13 STATS: cache manager [1], update [10 calls, total 0 sec spent, avg 0.26 ms]
+18.10 14:17:13 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:17:13 TIME: core/cache.update : 0.77 ms
+18.10 14:17:13 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:17:13 STATS: cache [questdata], get [3 calls, 0 cache hits, 3 cache misses, 0 same version, 0 not found]
+18.10 14:17:13 STATS: cache [questdata], segments [12 calls, 4 hits, 7 misses]
+18.10 14:17:13 STATS: cache [questdata], database [2220 calls, 3 reads, 2 writes]
+18.10 14:17:13 STATS: cache [questdata], lock [3 calls, 3 attempts, 0 failures]
+18.10 14:17:13 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:17:13 TIME: core/cache.update : 0.58 ms
+18.10 14:17:13 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:17:13 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:17:13 TIME: core/user.logoutPost : 0.16 ms
+18.10 14:17:14 TIMER: Clans cache...
+18.10 14:17:14 TIMER: Clans cache: 0ms
+18.10 14:17:14 TIMER: Check tournament...
+18.10 14:17:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:17' AND status = 'starting'
+18.10 14:17:14 TIMER: Check tournament: 2ms
+18.10 14:17:14 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476702920,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:17:14 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:17:24 BLOCKREMOVE: user 36 removed
+18.10 14:17:24 BLOCKREMOVE: questdata 36 removed
+18.10 14:18:14 TIMER: Clans cache...
+18.10 14:18:14 TIMER: Clans cache: 0ms
+18.10 14:18:14 TIMER: Check tournament...
+18.10 14:18:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:18' AND status = 'starting'
+18.10 14:18:14 TIMER: Check tournament: 1ms
+18.10 14:18:14 TIMER: Clans cache...
+18.10 14:18:14 TIMER: Clans cache: 0ms
+18.10 14:18:14 TIMER: Check tournament...
+18.10 14:18:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:19' AND status = 'starting'
+18.10 14:18:14 TIMER: Check tournament: 2ms
+18.10 14:18:14 TIMER: Clans cache...
+18.10 14:18:14 TIMER: Clans cache: 0ms
+18.10 14:18:14 TIMER: Check tournament...
+18.10 14:18:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:20' AND status = 'starting'
+18.10 14:18:14 TIMER: Check tournament: 2ms
+18.10 14:20:39 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:20:39 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:20:39 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:20:39 TIME: core/server.query : 4.06 ms
+18.10 14:20:39 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:20:39 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:20:39 TIME: core/user.isOnlineID : 0.16 ms
+18.10 14:20:39 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:20:39 STATS: cache [user], get [3 calls, 0 cache hits, 3 cache misses, 0 same version, 0 not found]
+18.10 14:20:39 STATS: cache [user], segments [17 calls, 9 hits, 7 misses]
+18.10 14:20:39 STATS: cache [user], database [2425 calls, 3 reads, 6 writes]
+18.10 14:20:39 STATS: cache [user], lock [4 calls, 4 attempts, 0 failures]
+18.10 14:20:39 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:20:39 STATS: cache manager [1], get [7 calls, total 0.02 sec spent, avg 2.73 ms]
+18.10 14:20:39 STATS: cache manager [1], update [11 calls, total 0 sec spent, avg 0.27 ms]
+18.10 14:20:39 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476702920, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:20:39 TIME: core/cache.get : 3.19 ms
+18.10 14:20:39 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:20:39 STATS: cache [questdata], get [3 calls, 0 cache hits, 3 cache misses, 0 same version, 0 not found]
+18.10 14:20:39 STATS: cache [questdata], segments [14 calls, 6 hits, 7 misses]
+18.10 14:20:39 STATS: cache [questdata], database [2425 calls, 3 reads, 3 writes]
+18.10 14:20:39 STATS: cache [questdata], lock [4 calls, 4 attempts, 0 failures]
+18.10 14:20:39 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:20:39 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:20:39 TIME: core/cache.get : 2.49 ms
+18.10 14:20:39 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:20:39 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:20:39 TIME: core/user.loginPost : 0.35 ms
+18.10 14:20:44 NET: vdl.0 (thread) request core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1476789639 } }}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:20:44 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:20:44 TIME: core/cache.update : 0.29 ms
+18.10 14:20:44 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:21:14 TIMER: Clans cache...
+18.10 14:21:14 TIMER: Clans cache: 0ms
+18.10 14:21:14 TIMER: Check tournament...
+18.10 14:21:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:21' AND status = 'starting'
+18.10 14:21:14 TIMER: Check tournament: 1ms
+18.10 14:21:49 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:21:49 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:21:49 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:21:49 TIME: core/server.query : 3.16 ms
+18.10 14:21:49 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:21:49 STATS: cache [battle], get [4 calls, 0 cache hits, 3 cache misses, 0 same version, 3 not found]
+18.10 14:21:49 STATS: cache [battle], segments [4 calls, 0 hits, 3 misses]
+18.10 14:21:49 STATS: cache [battle], database [2495 calls, 3 reads, 0 writes]
+18.10 14:21:49 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:21:49 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:21:49 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:21:49 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:21:49 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:21:49 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:21:49 STATS: cache [user], get [4 calls, 0 cache hits, 4 cache misses, 0 same version, 0 not found]
+18.10 14:21:49 STATS: cache [user], segments [20 calls, 10 hits, 9 misses]
+18.10 14:21:49 STATS: cache [user], database [2495 calls, 4 reads, 7 writes]
+18.10 14:21:49 STATS: cache [user], lock [4 calls, 4 attempts, 0 failures]
+18.10 14:21:49 STATS: cache manager [1], get [8 calls, total 0.02 sec spent, avg 2.63 ms]
+18.10 14:21:49 STATS: cache manager [1], update [13 calls, total 0 sec spent, avg 0.27 ms]
+18.10 14:21:49 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:21:49 TIME: core/cache.update : 0.72 ms
+18.10 14:21:49 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:21:49 STATS: cache [questdata], get [4 calls, 0 cache hits, 4 cache misses, 0 same version, 0 not found]
+18.10 14:21:49 STATS: cache [questdata], segments [16 calls, 6 hits, 9 misses]
+18.10 14:21:49 STATS: cache [questdata], database [2495 calls, 4 reads, 3 writes]
+18.10 14:21:49 STATS: cache [questdata], lock [4 calls, 4 attempts, 0 failures]
+18.10 14:21:49 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:21:49 TIME: core/cache.update : 0.85 ms
+18.10 14:21:49 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:21:49 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:21:49 TIME: core/user.logoutPost : 0.28 ms
+18.10 14:21:49 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:21:49 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:21:59 BLOCKREMOVE: user 36 removed
+18.10 14:21:59 BLOCKREMOVE: questdata 36 removed
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:22' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:23' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:24' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:25' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 2ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:26' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:27' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:28' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:29' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 2ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:30' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:31' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 2ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:32' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:33' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:34' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:35' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:36' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:37' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:38' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:39' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:40' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:41' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 1ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:42' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:43' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:44' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:22:14 TIMER: Clans cache...
+18.10 14:22:14 TIMER: Clans cache: 0ms
+18.10 14:22:14 TIMER: Check tournament...
+18.10 14:22:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:45' AND status = 'starting'
+18.10 14:22:14 TIMER: Check tournament: 0ms
+18.10 14:45:26 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:45:26 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:45:26 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:45:26 TIME: core/server.query : 1.06 ms
+18.10 14:45:26 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:45:26 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:45:26 TIME: core/user.isOnlineID : 0.06 ms
+18.10 14:45:26 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:45:26 STATS: cache [user], get [4 calls, 0 cache hits, 4 cache misses, 0 same version, 0 not found]
+18.10 14:45:26 STATS: cache [user], segments [22 calls, 12 hits, 9 misses]
+18.10 14:45:26 STATS: cache [user], database [3912 calls, 4 reads, 8 writes]
+18.10 14:45:26 STATS: cache [user], lock [5 calls, 5 attempts, 0 failures]
+18.10 14:45:26 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:45:26 STATS: cache manager [1], get [9 calls, total 0.02 sec spent, avg 2.43 ms]
+18.10 14:45:26 STATS: cache manager [1], update [14 calls, total 0 sec spent, avg 0.28 ms]
+18.10 14:45:26 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476789639, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:45:26 TIME: core/cache.get : 1.13 ms
+18.10 14:45:26 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:45:26 STATS: cache [questdata], get [4 calls, 0 cache hits, 4 cache misses, 0 same version, 0 not found]
+18.10 14:45:26 STATS: cache [questdata], segments [18 calls, 8 hits, 9 misses]
+18.10 14:45:26 STATS: cache [questdata], database [3912 calls, 4 reads, 4 writes]
+18.10 14:45:26 STATS: cache [questdata], lock [5 calls, 5 attempts, 0 failures]
+18.10 14:45:26 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:45:26 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:45:26 TIME: core/cache.get : 3.14 ms
+18.10 14:45:26 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:45:26 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:45:26 TIME: core/user.loginPost : 0.06 ms
+18.10 14:45:34 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:45:34 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:45:34 TIME: core/cache.update : 0.12 ms
+18.10 14:45:34 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:46:14 TIMER: Clans cache...
+18.10 14:46:14 TIMER: Clans cache: 0ms
+18.10 14:46:14 TIMER: Check tournament...
+18.10 14:46:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:46' AND status = 'starting'
+18.10 14:46:14 TIMER: Check tournament: 0ms
+18.10 14:46:14 TIMER: Clans cache...
+18.10 14:46:14 TIMER: Clans cache: 0ms
+18.10 14:46:14 TIMER: Check tournament...
+18.10 14:46:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:47' AND status = 'starting'
+18.10 14:46:14 TIMER: Check tournament: 0ms
+18.10 14:46:14 TIMER: Clans cache...
+18.10 14:46:14 TIMER: Clans cache: 0ms
+18.10 14:46:14 TIMER: Check tournament...
+18.10 14:46:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:48' AND status = 'starting'
+18.10 14:46:14 TIMER: Check tournament: 0ms
+18.10 14:49:13 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:49:13 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:49:13 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:49:13 TIME: core/server.query : 0.76 ms
+18.10 14:49:13 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:49:13 STATS: cache [battle], get [5 calls, 0 cache hits, 4 cache misses, 0 same version, 4 not found]
+18.10 14:49:13 STATS: cache [battle], segments [5 calls, 0 hits, 4 misses]
+18.10 14:49:13 STATS: cache [battle], database [4139 calls, 4 reads, 0 writes]
+18.10 14:49:13 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:49:13 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:49:13 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:49:13 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:49:13 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:49:13 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:49:13 STATS: cache [user], get [5 calls, 0 cache hits, 5 cache misses, 0 same version, 0 not found]
+18.10 14:49:13 STATS: cache [user], segments [25 calls, 13 hits, 11 misses]
+18.10 14:49:13 STATS: cache [user], database [4139 calls, 5 reads, 9 writes]
+18.10 14:49:13 STATS: cache [user], lock [5 calls, 5 attempts, 0 failures]
+18.10 14:49:13 STATS: cache manager [1], get [10 calls, total 0.02 sec spent, avg 2.49 ms]
+18.10 14:49:13 STATS: cache manager [1], update [16 calls, total 0 sec spent, avg 0.26 ms]
+18.10 14:49:13 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:49:13 TIME: core/cache.update : 0.51 ms
+18.10 14:49:13 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:49:13 STATS: cache [questdata], get [5 calls, 0 cache hits, 5 cache misses, 0 same version, 0 not found]
+18.10 14:49:13 STATS: cache [questdata], segments [20 calls, 8 hits, 11 misses]
+18.10 14:49:13 STATS: cache [questdata], database [4139 calls, 5 reads, 4 writes]
+18.10 14:49:13 STATS: cache [questdata], lock [5 calls, 5 attempts, 0 failures]
+18.10 14:49:13 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:49:13 TIME: core/cache.update : 0.37 ms
+18.10 14:49:13 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:49:13 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:49:13 TIME: core/user.logoutPost : 0.11 ms
+18.10 14:49:13 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:49:13 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:49:14 TIMER: Clans cache...
+18.10 14:49:14 TIMER: Clans cache: 0ms
+18.10 14:49:14 TIMER: Check tournament...
+18.10 14:49:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:49' AND status = 'starting'
+18.10 14:49:14 TIMER: Check tournament: 0ms
+18.10 14:49:23 BLOCKREMOVE: user 36 removed
+18.10 14:49:23 BLOCKREMOVE: questdata 36 removed
+18.10 14:50:14 TIMER: Clans cache...
+18.10 14:50:14 TIMER: Clans cache: 0ms
+18.10 14:50:14 TIMER: Check tournament...
+18.10 14:50:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:50' AND status = 'starting'
+18.10 14:50:14 TIMER: Check tournament: 0ms
+18.10 14:50:14 TIMER: Clans cache...
+18.10 14:50:14 TIMER: Clans cache: 0ms
+18.10 14:50:14 TIMER: Check tournament...
+18.10 14:50:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:51' AND status = 'starting'
+18.10 14:50:14 TIMER: Check tournament: 0ms
+18.10 14:50:14 TIMER: Clans cache...
+18.10 14:50:14 TIMER: Clans cache: 0ms
+18.10 14:50:14 TIMER: Check tournament...
+18.10 14:50:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:52' AND status = 'starting'
+18.10 14:50:14 TIMER: Check tournament: 0ms
+18.10 14:50:14 TIMER: Clans cache...
+18.10 14:50:14 TIMER: Clans cache: 0ms
+18.10 14:50:14 TIMER: Check tournament...
+18.10 14:50:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:53' AND status = 'starting'
+18.10 14:50:14 TIMER: Check tournament: 0ms
+18.10 14:50:14 TIMER: Clans cache...
+18.10 14:50:14 TIMER: Clans cache: 0ms
+18.10 14:50:14 TIMER: Check tournament...
+18.10 14:50:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:54' AND status = 'starting'
+18.10 14:50:14 TIMER: Check tournament: 0ms
+18.10 14:50:14 TIMER: Clans cache...
+18.10 14:50:14 TIMER: Clans cache: 0ms
+18.10 14:50:14 TIMER: Check tournament...
+18.10 14:50:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:55' AND status = 'starting'
+18.10 14:50:14 TIMER: Check tournament: 0ms
+18.10 14:55:40 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:55:40 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:55:40 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:55:40 TIME: core/server.query : 1.59 ms
+18.10 14:55:40 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:55:40 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:55:40 TIME: core/user.isOnlineID : 0.15 ms
+18.10 14:55:40 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:55:40 STATS: cache [user], get [5 calls, 0 cache hits, 5 cache misses, 0 same version, 0 not found]
+18.10 14:55:40 STATS: cache [user], segments [27 calls, 15 hits, 11 misses]
+18.10 14:55:40 STATS: cache [user], database [4526 calls, 5 reads, 10 writes]
+18.10 14:55:40 STATS: cache [user], lock [6 calls, 6 attempts, 0 failures]
+18.10 14:55:40 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:55:40 STATS: cache manager [1], get [11 calls, total 0.03 sec spent, avg 2.44 ms]
+18.10 14:55:40 STATS: cache manager [1], update [17 calls, total 0 sec spent, avg 0.26 ms]
+18.10 14:55:40 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476789639, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:55:40 TIME: core/cache.get : 2.45 ms
+18.10 14:55:40 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:55:40 STATS: cache [questdata], get [5 calls, 0 cache hits, 5 cache misses, 0 same version, 0 not found]
+18.10 14:55:40 STATS: cache [questdata], segments [22 calls, 10 hits, 11 misses]
+18.10 14:55:40 STATS: cache [questdata], database [4526 calls, 5 reads, 5 writes]
+18.10 14:55:40 STATS: cache [questdata], lock [6 calls, 6 attempts, 0 failures]
+18.10 14:55:40 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:55:40 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:55:40 TIME: core/cache.get : 1.76 ms
+18.10 14:55:40 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:55:40 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:55:40 TIME: core/user.loginPost : 0.22 ms
+18.10 14:55:49 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:55:49 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:55:49 TIME: core/cache.update : 0.18 ms
+18.10 14:55:49 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:56:14 TIMER: Clans cache...
+18.10 14:56:14 TIMER: Clans cache: 0ms
+18.10 14:56:14 TIMER: Check tournament...
+18.10 14:56:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:56' AND status = 'starting'
+18.10 14:56:14 TIMER: Check tournament: 1ms
+18.10 14:56:19 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:56:19 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:56:19 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:56:19 TIME: core/server.query : 0.76 ms
+18.10 14:56:19 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:56:19 STATS: cache [battle], get [6 calls, 0 cache hits, 5 cache misses, 0 same version, 5 not found]
+18.10 14:56:19 STATS: cache [battle], segments [6 calls, 0 hits, 5 misses]
+18.10 14:56:19 STATS: cache [battle], database [4565 calls, 5 reads, 0 writes]
+18.10 14:56:19 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:56:19 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:56:19 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:56:19 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:56:19 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:56:19 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:56:19 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:56:19 TIME: core/cache.update : 0.13 ms
+18.10 14:56:19 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:56:19 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:56:19 TIME: core/cache.update : 0.11 ms
+18.10 14:56:19 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:56:19 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:56:19 TIME: core/user.logoutPost : 0.08 ms
+18.10 14:56:19 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:56:20 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:56:30 BLOCKREMOVE: user 36 removed
+18.10 14:56:30 BLOCKREMOVE: questdata 36 removed
+18.10 14:57:14 TIMER: Clans cache...
+18.10 14:57:14 TIMER: Clans cache: 0ms
+18.10 14:57:14 TIMER: Check tournament...
+18.10 14:57:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:57' AND status = 'starting'
+18.10 14:57:14 TIMER: Check tournament: 0ms
+18.10 14:57:34 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:57:34 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:57:34 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:57:34 TIME: core/server.query : 1.07 ms
+18.10 14:57:34 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:57:34 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:57:34 TIME: core/user.isOnlineID : 0.08 ms
+18.10 14:57:34 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:57:34 STATS: cache [user], get [6 calls, 0 cache hits, 6 cache misses, 0 same version, 0 not found]
+18.10 14:57:34 STATS: cache [user], segments [32 calls, 18 hits, 13 misses]
+18.10 14:57:34 STATS: cache [user], database [4640 calls, 6 reads, 12 writes]
+18.10 14:57:34 STATS: cache [user], lock [7 calls, 7 attempts, 0 failures]
+18.10 14:57:34 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:57:34 STATS: cache manager [1], get [13 calls, total 0.03 sec spent, avg 2.25 ms]
+18.10 14:57:34 STATS: cache manager [1], update [20 calls, total 0 sec spent, avg 0.23 ms]
+18.10 14:57:34 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476789639, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:57:34 TIME: core/cache.get : 1.38 ms
+18.10 14:57:34 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:57:34 STATS: cache [questdata], get [6 calls, 0 cache hits, 6 cache misses, 0 same version, 0 not found]
+18.10 14:57:34 STATS: cache [questdata], segments [26 calls, 12 hits, 13 misses]
+18.10 14:57:34 STATS: cache [questdata], database [4640 calls, 6 reads, 6 writes]
+18.10 14:57:34 STATS: cache [questdata], lock [7 calls, 7 attempts, 0 failures]
+18.10 14:57:34 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:57:34 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:57:34 TIME: core/cache.get : 5.41 ms
+18.10 14:57:34 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:57:34 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:57:34 TIME: core/user.loginPost : 0.26 ms
+18.10 14:57:39 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:57:39 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:57:39 TIME: core/cache.update : 0.12 ms
+18.10 14:57:40 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:58:03 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:58:03 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:58:03 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:58:03 TIME: core/server.query : 0.71 ms
+18.10 14:58:03 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:58:03 STATS: cache [battle], get [7 calls, 0 cache hits, 6 cache misses, 0 same version, 6 not found]
+18.10 14:58:03 STATS: cache [battle], segments [7 calls, 0 hits, 6 misses]
+18.10 14:58:03 STATS: cache [battle], database [4669 calls, 6 reads, 0 writes]
+18.10 14:58:03 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:58:03 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:58:03 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:58:03 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:58:03 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:58:03 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:58:03 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:58:03 TIME: core/cache.update : 0.14 ms
+18.10 14:58:03 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:58:03 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:58:03 TIME: core/cache.update : 0.12 ms
+18.10 14:58:03 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:58:03 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:58:03 TIME: core/user.logoutPost : 0.1 ms
+18.10 14:58:04 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:58:04 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:58:14 BLOCKREMOVE: user 36 removed
+18.10 14:58:14 BLOCKREMOVE: questdata 36 removed
+18.10 14:58:14 TIMER: Clans cache...
+18.10 14:58:14 TIMER: Clans cache: 0ms
+18.10 14:58:14 TIMER: Check tournament...
+18.10 14:58:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:58' AND status = 'starting'
+18.10 14:58:14 TIMER: Check tournament: 0ms
+18.10 14:58:16 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:58:16 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:58:16 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:58:16 TIME: core/server.query : 0.79 ms
+18.10 14:58:16 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:58:16 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:58:16 TIME: core/user.isOnlineID : 0.08 ms
+18.10 14:58:16 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:58:16 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:58:16 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476789639, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:58:16 TIME: core/cache.get : 1.19 ms
+18.10 14:58:16 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:58:16 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:58:16 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:58:16 TIME: core/cache.get : 0.68 ms
+18.10 14:58:16 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:58:16 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:58:16 TIME: core/user.loginPost : 0.09 ms
+18.10 14:58:24 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:58:24 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:58:24 TIME: core/cache.update : 0.11 ms
+18.10 14:58:25 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:58:33 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:58:33 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:58:33 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:58:33 TIME: core/server.query : 1.01 ms
+18.10 14:58:33 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:58:33 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:58:33 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:58:33 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:58:33 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:58:33 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:58:33 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:58:33 TIME: core/cache.update : 0.15 ms
+18.10 14:58:33 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:58:33 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:58:33 TIME: core/cache.update : 0.13 ms
+18.10 14:58:33 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:58:33 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:58:33 TIME: core/user.logoutPost : 0.11 ms
+18.10 14:58:33 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:58:33 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:58:43 BLOCKREMOVE: user 36 removed
+18.10 14:58:43 BLOCKREMOVE: questdata 36 removed
+18.10 14:59:14 TIMER: Clans cache...
+18.10 14:59:14 TIMER: Clans cache: 0ms
+18.10 14:59:14 TIMER: Check tournament...
+18.10 14:59:14 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 14:59' AND status = 'starting'
+18.10 14:59:14 TIMER: Check tournament: 0ms
+18.10 14:59:39 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36', _type => core/server.query }
+18.10 14:59:39 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid36' AND Password = E'uid36'
+18.10 14:59:39 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid36, networkid => , isbanned => false, id => 36 }}, errorCode => ok, _type => core/server.query }
+18.10 14:59:39 TIME: core/server.query : 2.51 ms
+18.10 14:59:39 NET: vdl.0 (thread) request core/user.isOnlineID { id => 36, _type => core/user.isOnlineID }
+18.10 14:59:39 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 14:59:39 TIME: core/user.isOnlineID : 0.11 ms
+18.10 14:59:39 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 36, _type => core/cache.get }
+18.10 14:59:39 STATS: cache [user], get [8 calls, 0 cache hits, 8 cache misses, 0 same version, 0 not found]
+18.10 14:59:39 STATS: cache [user], segments [42 calls, 24 hits, 17 misses]
+18.10 14:59:39 STATS: cache [user], database [4764 calls, 8 reads, 16 writes]
+18.10 14:59:39 STATS: cache [user], lock [9 calls, 9 attempts, 0 failures]
+18.10 14:59:39 READDB: SELECT * FROM Users WHERE ID = 36
+18.10 14:59:39 STATS: cache manager [1], get [17 calls, total 0.03 sec spent, avg 2.03 ms]
+18.10 14:59:39 STATS: cache manager [1], update [26 calls, total 0 sec spent, avg 0.19 ms]
+18.10 14:59:39 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid36, deleted => false, email => , networktype =>   , password => uid36, isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, networkid => , params => { inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476789639, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:59:39 TIME: core/cache.get : 7 ms
+18.10 14:59:39 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 36, _type => core/cache.get }
+18.10 14:59:39 STATS: cache [questdata], get [8 calls, 0 cache hits, 8 cache misses, 0 same version, 0 not found]
+18.10 14:59:39 STATS: cache [questdata], segments [34 calls, 16 hits, 17 misses]
+18.10 14:59:39 STATS: cache [questdata], database [4764 calls, 8 reads, 8 writes]
+18.10 14:59:39 STATS: cache [questdata], lock [9 calls, 9 attempts, 0 failures]
+18.10 14:59:39 READDB: SELECT * FROM UserQuests WHERE ID = 36
+18.10 14:59:39 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 36 } }
+18.10 14:59:39 TIME: core/cache.get : 1.54 ms
+18.10 14:59:39 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 36, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 14:59:39 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 14:59:39 TIME: core/user.loginPost : 0.09 ms
+18.10 14:59:44 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 36, _type => core/cache.update }
+18.10 14:59:44 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:59:44 TIME: core/cache.update : 0.13 ms
+18.10 14:59:44 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true, _type => core/server.query }
+18.10 14:59:44 DB: SELECT id FROM battle WHERE firstid=36 OR secondid=36 AND finished <> true
+18.10 14:59:44 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 14:59:44 TIME: core/server.query : 0.79 ms
+18.10 14:59:44 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 14:59:44 STATS: cache [battle], get [9 calls, 0 cache hits, 8 cache misses, 0 same version, 8 not found]
+18.10 14:59:44 STATS: cache [battle], segments [9 calls, 0 hits, 8 misses]
+18.10 14:59:44 STATS: cache [battle], database [4770 calls, 8 reads, 0 writes]
+18.10 14:59:44 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 14:59:44 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 14:59:44 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 14:59:44 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 14:59:44 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 14:59:44 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:59:44 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 14:59:44 TIME: core/cache.update : 0.13 ms
+18.10 14:59:44 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 36, _type => core/cache.update }
+18.10 14:59:44 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 14:59:44 TIME: core/cache.update : 0.1 ms
+18.10 14:59:44 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 36, _type => core/user.logoutPost }
+18.10 14:59:44 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 14:59:44 TIME: core/user.logoutPost : 0.08 ms
+18.10 14:59:45 WRITEDB: UPDATE Users SET name = E'uid36', deleted = E'false', email = E'', networktype = E'  ', password = E'uid36', isbanned = E'false', regdate = E'2016-10-14 18:14:45.120358+03', language = E'en', networkid = E'', params = E'{"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 36
+18.10 14:59:45 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 36
+18.10 14:59:55 BLOCKREMOVE: user 36 removed
+18.10 14:59:55 BLOCKREMOVE: questdata 36 removed

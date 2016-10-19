@@ -1,0 +1,1300 @@
+18.10 20:00:25 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=60 OR secondid=60 AND finished <> true, _type => core/server.query }
+18.10 20:00:25 DB: SELECT id FROM battle WHERE firstid=60 OR secondid=60 AND finished <> true
+18.10 20:00:25 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:00:25 TIME: core/server.query : 0.64 ms
+18.10 20:00:25 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:00:25 STATS: cache [battle], get [43 calls, 0 cache hits, 42 cache misses, 0 same version, 42 not found]
+18.10 20:00:25 STATS: cache [battle], segments [43 calls, 0 hits, 42 misses]
+18.10 20:00:25 STATS: cache [battle], database [5835 calls, 42 reads, 0 writes]
+18.10 20:00:25 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 20:00:25 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:00:25 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:00:25 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:00:25 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:00:25 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 60, _type => core/cache.update }
+18.10 20:00:25 STATS: cache [user], get [69 calls, 19 cache hits, 50 cache misses, 0 same version, 0 not found]
+18.10 20:00:25 STATS: cache [user], segments [270 calls, 182 hits, 87 misses]
+18.10 20:00:25 STATS: cache [user], database [5835 calls, 50 reads, 85 writes]
+18.10 20:00:25 STATS: cache [user], lock [56 calls, 56 attempts, 0 failures]
+18.10 20:00:25 STATS: cache manager [1], get [100 calls, total 0.08 sec spent, avg 0.8 ms]
+18.10 20:00:25 STATS: cache manager [1], update [132 calls, total 0.01 sec spent, avg 0.11 ms]
+18.10 20:00:25 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+18.10 20:00:25 TIME: core/cache.update : 0.41 ms
+18.10 20:00:25 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 60, _type => core/cache.update }
+18.10 20:00:25 STATS: cache [questdata], get [44 calls, 6 cache hits, 38 cache misses, 0 same version, 1 not found]
+18.10 20:00:25 STATS: cache [questdata], segments [174 calls, 96 hits, 77 misses]
+18.10 20:00:25 STATS: cache [questdata], database [5835 calls, 38 reads, 42 writes]
+18.10 20:00:25 STATS: cache [questdata], lock [44 calls, 44 attempts, 0 failures]
+18.10 20:00:25 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:00:25 TIME: core/cache.update : 0.28 ms
+18.10 20:00:25 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 60, _type => core/user.logoutPost }
+18.10 20:00:25 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:00:25 TIME: core/user.logoutPost : 0.07 ms
+18.10 20:00:25 WRITEDB: UPDATE Users SET name = E'uid60', deleted = E'false', email = E'', networktype = E'  ', password = E'uid60', isbanned = E'false', regdate = E'2016-10-18 19:57:48.24719+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809868,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 60
+18.10 20:00:25 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 60
+18.10 20:00:35 BLOCKREMOVE: user 60 removed
+18.10 20:00:35 BLOCKREMOVE: questdata 60 removed
+18.10 20:00:35 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid60' AND Password = E'uid60', _type => core/server.query }
+18.10 20:00:35 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid60' AND Password = E'uid60'
+18.10 20:00:35 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid60, networkid => , isbanned => false, id => 60 }}, errorCode => ok, _type => core/server.query }
+18.10 20:00:35 TIME: core/server.query : 1.35 ms
+18.10 20:00:35 NET: vdl.0 (thread) request core/user.isOnlineID { id => 60, _type => core/user.isOnlineID }
+18.10 20:00:35 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:00:35 TIME: core/user.isOnlineID : 0.08 ms
+18.10 20:00:35 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 60, _type => core/cache.get }
+18.10 20:00:35 READDB: SELECT * FROM Users WHERE ID = 60
+18.10 20:00:35 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid60, deleted => false, email => , networktype =>   , password => uid60, isbanned => false, regdate => 2016-10-18 19:57:48.24719+03, language => en, networkid => , params => { info => { city => null, year => null, email => null }, inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1476809868, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 60 } }
+18.10 20:00:35 TIME: core/cache.get : 1.63 ms
+18.10 20:00:35 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 60, _type => core/cache.get }
+18.10 20:00:35 READDB: SELECT * FROM UserQuests WHERE ID = 60
+18.10 20:00:35 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 60 } }
+18.10 20:00:35 TIME: core/cache.get : 0.98 ms
+18.10 20:00:35 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 60, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:00:35 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:00:35 TIME: core/user.loginPost : 0.12 ms
+18.10 20:00:42 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 60, _type => core/cache.update }
+18.10 20:00:42 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:00:42 TIME: core/cache.update : 0.2 ms
+18.10 20:00:42 WRITEDB: UPDATE Users SET name = E'uid60', deleted = E'false', email = E'', networktype = E'  ', password = E'uid60', isbanned = E'false', regdate = E'2016-10-18 19:57:48.24719+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809868,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 60
+18.10 20:00:47 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=60 OR secondid=60 AND finished <> true, _type => core/server.query }
+18.10 20:00:47 DB: SELECT id FROM battle WHERE firstid=60 OR secondid=60 AND finished <> true
+18.10 20:00:47 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:00:47 TIME: core/server.query : 0.66 ms
+18.10 20:00:47 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:00:47 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:00:47 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:00:47 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:00:47 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:00:47 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 60, _type => core/cache.update }
+18.10 20:00:47 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:00:47 TIME: core/cache.update : 0.12 ms
+18.10 20:00:47 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 60, _type => core/cache.update }
+18.10 20:00:47 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:00:47 TIME: core/cache.update : 0.09 ms
+18.10 20:00:47 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 60, _type => core/user.logoutPost }
+18.10 20:00:47 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:00:47 TIME: core/user.logoutPost : 0.07 ms
+18.10 20:00:47 WRITEDB: UPDATE Users SET name = E'uid60', deleted = E'false', email = E'', networktype = E'  ', password = E'uid60', isbanned = E'false', regdate = E'2016-10-18 19:57:48.24719+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809868,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 60
+18.10 20:00:47 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 60
+18.10 20:00:49 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+18.10 20:00:49 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+18.10 20:00:49 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+18.10 20:00:49 TIME: core/server.query : 0.67 ms
+18.10 20:00:49 NET: vdl.0 (thread) request core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+18.10 20:00:49 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:00:49 TIME: core/user.isOnlineID : 0.1 ms
+18.10 20:00:49 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+18.10 20:00:49 READDB: SELECT * FROM Users WHERE ID = 2
+18.10 20:00:49 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1476799454, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 2 } }
+18.10 20:00:49 TIME: core/cache.get : 6.42 ms
+18.10 20:00:49 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+18.10 20:00:49 READDB: SELECT * FROM UserQuests WHERE ID = 2
+18.10 20:00:49 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 2 } }
+18.10 20:00:49 TIME: core/cache.get : 1.18 ms
+18.10 20:00:49 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:00:49 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:00:49 TIME: core/user.loginPost : 0.27 ms
+18.10 20:00:57 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 2, _type => core/cache.update }
+18.10 20:00:57 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:00:57 TIME: core/cache.update : 0.16 ms
+18.10 20:00:57 BLOCKREMOVE: user 60 removed
+18.10 20:00:57 BLOCKREMOVE: questdata 60 removed
+18.10 20:00:57 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:01:07 TIMER: Clans cache...
+18.10 20:01:07 TIMER: Clans cache: 0ms
+18.10 20:01:07 TIMER: Check tournament...
+18.10 20:01:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:01' AND status = 'starting'
+18.10 20:01:07 TIMER: Check tournament: 1ms
+18.10 20:02:05 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true, _type => core/server.query }
+18.10 20:02:05 DB: SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true
+18.10 20:02:05 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:05 TIME: core/server.query : 0.94 ms
+18.10 20:02:05 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:05 STATS: cache [battle], get [45 calls, 0 cache hits, 44 cache misses, 0 same version, 44 not found]
+18.10 20:02:05 STATS: cache [battle], segments [45 calls, 0 hits, 44 misses]
+18.10 20:02:05 STATS: cache [battle], database [5935 calls, 44 reads, 0 writes]
+18.10 20:02:05 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 20:02:05 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:02:05 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:02:05 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:02:05 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:05 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:02:05 STATS: cache [user], get [71 calls, 19 cache hits, 52 cache misses, 0 same version, 0 not found]
+18.10 20:02:05 STATS: cache [user], segments [280 calls, 188 hits, 91 misses]
+18.10 20:02:05 STATS: cache [user], database [5935 calls, 52 reads, 89 writes]
+18.10 20:02:05 STATS: cache [user], lock [58 calls, 58 attempts, 0 failures]
+18.10 20:02:05 STATS: cache manager [1], get [104 calls, total 0.08 sec spent, avg 0.81 ms]
+18.10 20:02:05 STATS: cache manager [1], update [138 calls, total 0.01 sec spent, avg 0.11 ms]
+18.10 20:02:05 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:02:05 TIME: core/cache.update : 0.38 ms
+18.10 20:02:05 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:02:05 STATS: cache [questdata], get [46 calls, 6 cache hits, 40 cache misses, 0 same version, 1 not found]
+18.10 20:02:05 STATS: cache [questdata], segments [182 calls, 100 hits, 81 misses]
+18.10 20:02:05 STATS: cache [questdata], database [5935 calls, 40 reads, 44 writes]
+18.10 20:02:05 STATS: cache [questdata], lock [46 calls, 46 attempts, 0 failures]
+18.10 20:02:05 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:02:05 TIME: core/cache.update : 0.38 ms
+18.10 20:02:05 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 2, _type => core/user.logoutPost }
+18.10 20:02:05 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:02:05 TIME: core/user.logoutPost : 0.13 ms
+18.10 20:02:05 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:02:05 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 2
+18.10 20:02:07 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM users, _type => core/server.query }
+18.10 20:02:07 DB: SELECT * FROM users
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/server.query { list => {{ password => , name => --- DEFAULT ATTRIBUTES ---, networkid => , params => {"attrs":{},"inventory":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:45:16.008574+03, language =>   , id => 1, deleted => false }, { password => test, name => test3, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:08.364133+03, language =>   , id => 4, deleted => false }, { password => test, name => test5, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:15.596579+03, language =>   , id => 6, deleted => false }, { password => test, name => test6, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:19.233499+03, language =>   , id => 7, deleted => false }, { password => uid24, name => uid24, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:36:42.292969+03, language =>   , id => 24, deleted => false }, { password => uid25, name => uid25, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:42:14.268266+03, language =>   , id => 25, deleted => false }, { password => test, name => test7, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-09-07 16:46:43.688817+03, language =>   , id => 8, deleted => false }, { password => uid26, name => uid26, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:52:51.409771+03, language =>   , id => 26, deleted => false }, { password => uid37, name => uid37, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476461351,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 19:09:11.07001+03, language => en, id => 37, deleted => false }, { password => uid9, name => uid9, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-11 20:36:09.090394+03, language =>   , id => 9, deleted => false }, { password => uid32, name => uid32, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271969,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:32:48.215636+03, language => en, id => 32, deleted => false }, { password => uid27, name => uid27, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269621,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:53:40.789776+03, language => en, id => 27, deleted => false }, { password => uid10, name => uid10, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 11:12:48.168059+03, language =>   , id => 10, deleted => false }, { password => uid11, name => uid11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:33:27.3109+03, language =>   , id => 11, deleted => false }, { password => uid12, name => uid12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:47:26.670465+03, language =>   , id => 12, deleted => false }, { password => uid13, name => uid13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:51:08.341292+03, language =>   , id => 13, deleted => false }, { password => uid14, name => uid14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:53:34.360658+03, language =>   , id => 14, deleted => false }, { password => uid15, name => uid15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:55:14.160619+03, language =>   , id => 15, deleted => false }, { password => uid28, name => uid28, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269710,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:55:09.527211+03, language => en, id => 28, deleted => false }, { password => uid16, name => uid16, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:59:18.86185+03, language =>   , id => 16, deleted => false }, { password => test, name => test2, networkid => , params => {"attrs":{"_lastTime.24hr":1476808882,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:03.859813+03, language => en, id => 3, deleted => false }, { password => test, name => test11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:18:04.647106+03, language =>   , id => 39, deleted => false }, { password => uid29, name => uid29, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271397,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:23:17.10609+03, language => en, id => 29, deleted => false }, { password => uid17, name => uid17, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:07:15.262858+03, language =>   , id => 17, deleted => false }, { password => uid18, name => uid18, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:10:03.885555+03, language =>   , id => 18, deleted => false }, { password => uid19, name => uid19, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:11:41.868111+03, language =>   , id => 19, deleted => false }, { password => uid20, name => uid20, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:13:57.605493+03, language =>   , id => 20, deleted => false }, { password => uid21, name => uid21, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:16:21.670662+03, language =>   , id => 21, deleted => false }, { password => uid22, name => uid22, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:18:13.422519+03, language =>   , id => 22, deleted => false }, { password => uid23, name => uid23, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:33:08.78413+03, language =>   , id => 23, deleted => false }, { password => uid34, name => uid34, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476437991,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 12:39:51.725362+03, language => en, id => 34, deleted => false }, { password => uid30, name => uid30, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271613,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:26:51.842745+03, language => en, id => 30, deleted => false }, { password => test, name => test12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:21:55.316231+03, language =>   , id => 40, deleted => false }, { password => uid31, name => uid31, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271703,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:28:22.51548+03, language => en, id => 31, deleted => false }, { password => uid35, name => uid35, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476458014,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:13:33.360887+03, language => en, id => 35, deleted => false }, { password => uid33, name => uid33, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476272110,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:35:09.155569+03, language => en, id => 33, deleted => false }, { password => test, name => test13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:30:08.433611+03, language =>   , id => 41, deleted => false }, { password => uid38, name => uid38, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476782075,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:14:32.809+03, language => en, id => 38, deleted => false }, { password => test, name => test14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:31:52.285659+03, language =>   , id => 42, deleted => false }, { password => test, name => test15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:40:42.354135+03, language =>   , id => 43, deleted => false }, { password => test, name => test16, networkid => , params => {"info":{"city":"kazan"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:43:02.694689+03, language =>   , id => 44, deleted => false }, { password => uid36, name => uid36, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, id => 36, deleted => false }, { password => uid45, name => uid45, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793290,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:21:30.078736+03, language => en, id => 45, deleted => false }, { password => uid46, name => uid46, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793424,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:23:44.261533+03, language => en, id => 46, deleted => false }, { password => uid47, name => uid47, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793513,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:25:12.83212+03, language => en, id => 47, deleted => false }, { password => test, name => test4, networkid => , params => {"attrs":{"_lastTime.24hr":1476809210,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:11.728197+03, language => en, id => 5, deleted => false }, { password => test, name => test1, networkid => , params => {"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, id => 2, deleted => false }, { password => uid58, name => uid58, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809753,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:55:53.508049+03, language => en, id => 58, deleted => false }, { password => uid48, name => uid48, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807085,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:11:25.882545+03, language => en, id => 48, deleted => false }, { password => uid49, name => uid49, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807618,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:20:16.265259+03, language => en, id => 49, deleted => false }, { password => uid50, name => uid50, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807854,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:24:12.892256+03, language => en, id => 50, deleted => false }, { password => uid59, name => uid59, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809815,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:56:55.344336+03, language => en, id => 59, deleted => false }, { password => uid51, name => uid51, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808189,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:29:47.381194+03, language => en, id => 51, deleted => false }, { password => uid52, name => uid52, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808378,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:32:58.719756+03, language => en, id => 52, deleted => false }, { password => uid53, name => uid53, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808795,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:39:54.973899+03, language => en, id => 53, deleted => false }, { password => uid54, name => uid54, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808869,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:41:09.113701+03, language => en, id => 54, deleted => false }, { password => uid55, name => uid55, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809185,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:46:25.229927+03, language => en, id => 55, deleted => false }, { password => uid60, name => uid60, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809868,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:57:48.24719+03, language => en, id => 60, deleted => false }, { password => uid56, name => uid56, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809466,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:51:06.257024+03, language => en, id => 56, deleted => false }, { password => uid57, name => uid57, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809529,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:52:09.241918+03, language => en, id => 57, deleted => false }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:07 TIME: core/server.query : 3.78 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM Users WHERE Name = E'uid61', _type => core/server.query }
+18.10 20:02:07 DB: SELECT ID FROM Users WHERE Name = E'uid61'
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:07 TIME: core/server.query : 0.88 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/server.query { q => SELECT nextval('Users_id_seq') AS id, _type => core/server.query }
+18.10 20:02:07 DB: SELECT nextval('Users_id_seq') AS id
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/server.query { list => {{ id => 61 }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:07 TIME: core/server.query : 20.31 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/user.register { password => uid61, name => uid61, fullParams => { password => uid61, name => uid61, networkid => , networktype => , messageType => user.register, id => 61 }, networkid => , connectionID => 34530981, networktype => , email => , id => 61, _type => core/user.register }
+18.10 20:02:07 ASYNCDB: INSERT INTO Users (ID, Name, NetworkID, NetworkType, Password, Email, RegDate) VALUES (61,E'uid61',E'',E'',E'uid61',E'', now())
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/user.register { errorCode => ok, _type => core/user.register }
+18.10 20:02:07 TIME: core/user.register : 0.68 ms
+18.10 20:02:07 ASYNCDB: INSERT INTO UserRatings (UserID, Points) VALUES (61, 0)
+18.10 20:02:07 READDB: SELECT * FROM Users WHERE ID = 61
+18.10 20:02:07 READDB: SELECT * FROM Users WHERE ID = 1
+18.10 20:02:07 READDB: SELECT ID FROM UserQuests WHERE ID = 61
+18.10 20:02:07 READDB: INSERT INTO UserQuests (ID) VALUES (61)
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/user.registerResponse { password => uid61, name => uid61, _isNotify => true, fullParams => { password => uid61, name => uid61, networkid => , networktype => , messageType => user.register, id => 61 }, networkid => , connectionID => 34530981, networktype => , email => , id => 61, _type => core/user.registerResponse }
+18.10 20:02:07 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid61' AND Password = E'uid61', _type => core/server.query }
+18.10 20:02:07 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid61' AND Password = E'uid61'
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid61, networkid => , isbanned => false, id => 61 }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:07 TIME: core/server.query : 0.98 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/user.isOnlineID { id => 61, _type => core/user.isOnlineID }
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:02:07 TIME: core/user.isOnlineID : 0.07 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 61, _type => core/cache.get }
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid61, deleted => false, email => , networktype =>   , password => uid61, isbanned => false, regdate => 2016-10-18 20:02:07.43066+03, language =>   , networkid => , params => { info => { city => null, year => null, email => null }, inventory => { list => [] }, vars => {}, attrs => {}, effects => { list => [] } }}, version => 1, id => 61 } }
+18.10 20:02:07 TIME: core/cache.get : 0.25 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 61, _type => core/cache.get }
+18.10 20:02:07 READDB: SELECT * FROM UserQuests WHERE ID = 61
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => {}}, version => 0, id => 61 } }
+18.10 20:02:07 TIME: core/cache.get : 0.79 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 61, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:02:07 TIME: core/user.loginPost : 0.29 ms
+18.10 20:02:07 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 61 AND Date = 'today'::timestamp, _type => core/server.query }
+18.10 20:02:07 DB: SELECT ID FROM TempUserLogins WHERE UserID = 61 AND Date = 'today'::timestamp
+18.10 20:02:07 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:07 TIME: core/server.query : 0.83 ms
+18.10 20:02:07 PENDING: INSERT INTO TempUserLogins (UserID, Date) VALUES (61, 'today'::timestamp)
+18.10 20:02:07 TIMER: Clans cache...
+18.10 20:02:07 TIMER: Clans cache: 0ms
+18.10 20:02:07 TIMER: Check tournament...
+18.10 20:02:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:02' AND status = 'starting'
+18.10 20:02:07 TIMER: Check tournament: 0ms
+18.10 20:02:10 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=61 OR secondid=61 AND finished <> true, _type => core/server.query }
+18.10 20:02:10 DB: SELECT id FROM battle WHERE firstid=61 OR secondid=61 AND finished <> true
+18.10 20:02:10 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:10 TIME: core/server.query : 1.2 ms
+18.10 20:02:10 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:10 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:02:10 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:02:10 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:02:10 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:10 NET: vdl.0 (thread) request core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1476810127, lastLoginDate => 292, lastLoadDate => 1019 } }}, type => user, unlock => true, id => 61, _type => core/cache.update }
+18.10 20:02:10 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:02:10 TIME: core/cache.update : 0.19 ms
+18.10 20:02:10 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 61, _type => core/cache.update }
+18.10 20:02:10 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:02:10 TIME: core/cache.update : 0.09 ms
+18.10 20:02:10 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 61, _type => core/user.logoutPost }
+18.10 20:02:10 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:02:10 TIME: core/user.logoutPost : 0.07 ms
+18.10 20:02:12 WRITEDB: UPDATE Users SET name = E'uid61', deleted = E'false', email = E'', networktype = E'  ', password = E'uid61', isbanned = E'false', regdate = E'2016-10-18 20:02:07.43066+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810127,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 61
+18.10 20:02:12 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 61
+18.10 20:02:13 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+18.10 20:02:13 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+18.10 20:02:13 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:13 TIME: core/server.query : 0.81 ms
+18.10 20:02:13 NET: vdl.0 (thread) request core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+18.10 20:02:13 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:02:13 TIME: core/user.isOnlineID : 0.06 ms
+18.10 20:02:13 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+18.10 20:02:13 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1476799454, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 2, id => 2 } }
+18.10 20:02:13 TIME: core/cache.get : 0.27 ms
+18.10 20:02:13 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+18.10 20:02:13 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 1, id => 2 } }
+18.10 20:02:13 TIME: core/cache.get : 0.11 ms
+18.10 20:02:13 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:02:13 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:02:13 TIME: core/user.loginPost : 0.08 ms
+18.10 20:02:17 BLOCKREMOVE: user 1 removed
+18.10 20:02:22 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 2, _type => core/cache.update }
+18.10 20:02:22 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+18.10 20:02:22 TIME: core/cache.update : 0.17 ms
+18.10 20:02:22 BLOCKREMOVE: user 61 removed
+18.10 20:02:22 BLOCKREMOVE: questdata 61 removed
+18.10 20:02:22 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:02:43 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true, _type => core/server.query }
+18.10 20:02:43 DB: SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true
+18.10 20:02:43 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:43 TIME: core/server.query : 1.65 ms
+18.10 20:02:43 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:43 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:02:43 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:02:43 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:02:43 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:43 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:02:43 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 4, _type => core/cache.update }
+18.10 20:02:43 TIME: core/cache.update : 0.12 ms
+18.10 20:02:43 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:02:43 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:02:43 TIME: core/cache.update : 0.12 ms
+18.10 20:02:43 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 2, _type => core/user.logoutPost }
+18.10 20:02:43 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:02:43 TIME: core/user.logoutPost : 0.08 ms
+18.10 20:02:43 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:02:43 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 2
+18.10 20:02:45 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM users, _type => core/server.query }
+18.10 20:02:45 DB: SELECT * FROM users
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/server.query { list => {{ password => , name => --- DEFAULT ATTRIBUTES ---, networkid => , params => {"attrs":{},"inventory":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:45:16.008574+03, language =>   , id => 1, deleted => false }, { password => test, name => test3, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:08.364133+03, language =>   , id => 4, deleted => false }, { password => test, name => test5, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:15.596579+03, language =>   , id => 6, deleted => false }, { password => test, name => test6, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:19.233499+03, language =>   , id => 7, deleted => false }, { password => uid24, name => uid24, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:36:42.292969+03, language =>   , id => 24, deleted => false }, { password => uid25, name => uid25, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:42:14.268266+03, language =>   , id => 25, deleted => false }, { password => test, name => test7, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-09-07 16:46:43.688817+03, language =>   , id => 8, deleted => false }, { password => uid26, name => uid26, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:52:51.409771+03, language =>   , id => 26, deleted => false }, { password => uid37, name => uid37, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476461351,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 19:09:11.07001+03, language => en, id => 37, deleted => false }, { password => uid9, name => uid9, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-11 20:36:09.090394+03, language =>   , id => 9, deleted => false }, { password => uid32, name => uid32, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271969,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:32:48.215636+03, language => en, id => 32, deleted => false }, { password => uid27, name => uid27, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269621,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:53:40.789776+03, language => en, id => 27, deleted => false }, { password => uid10, name => uid10, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 11:12:48.168059+03, language =>   , id => 10, deleted => false }, { password => uid11, name => uid11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:33:27.3109+03, language =>   , id => 11, deleted => false }, { password => uid12, name => uid12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:47:26.670465+03, language =>   , id => 12, deleted => false }, { password => uid13, name => uid13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:51:08.341292+03, language =>   , id => 13, deleted => false }, { password => uid14, name => uid14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:53:34.360658+03, language =>   , id => 14, deleted => false }, { password => uid15, name => uid15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:55:14.160619+03, language =>   , id => 15, deleted => false }, { password => uid28, name => uid28, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269710,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:55:09.527211+03, language => en, id => 28, deleted => false }, { password => uid16, name => uid16, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:59:18.86185+03, language =>   , id => 16, deleted => false }, { password => test, name => test2, networkid => , params => {"attrs":{"_lastTime.24hr":1476808882,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:03.859813+03, language => en, id => 3, deleted => false }, { password => test, name => test11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:18:04.647106+03, language =>   , id => 39, deleted => false }, { password => uid29, name => uid29, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271397,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:23:17.10609+03, language => en, id => 29, deleted => false }, { password => uid17, name => uid17, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:07:15.262858+03, language =>   , id => 17, deleted => false }, { password => uid18, name => uid18, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:10:03.885555+03, language =>   , id => 18, deleted => false }, { password => uid19, name => uid19, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:11:41.868111+03, language =>   , id => 19, deleted => false }, { password => uid20, name => uid20, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:13:57.605493+03, language =>   , id => 20, deleted => false }, { password => uid21, name => uid21, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:16:21.670662+03, language =>   , id => 21, deleted => false }, { password => uid22, name => uid22, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:18:13.422519+03, language =>   , id => 22, deleted => false }, { password => uid23, name => uid23, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:33:08.78413+03, language =>   , id => 23, deleted => false }, { password => uid34, name => uid34, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476437991,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 12:39:51.725362+03, language => en, id => 34, deleted => false }, { password => uid30, name => uid30, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271613,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:26:51.842745+03, language => en, id => 30, deleted => false }, { password => test, name => test12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:21:55.316231+03, language =>   , id => 40, deleted => false }, { password => uid31, name => uid31, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271703,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:28:22.51548+03, language => en, id => 31, deleted => false }, { password => uid35, name => uid35, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476458014,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:13:33.360887+03, language => en, id => 35, deleted => false }, { password => uid33, name => uid33, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476272110,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:35:09.155569+03, language => en, id => 33, deleted => false }, { password => test, name => test13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:30:08.433611+03, language =>   , id => 41, deleted => false }, { password => uid38, name => uid38, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476782075,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:14:32.809+03, language => en, id => 38, deleted => false }, { password => test, name => test14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:31:52.285659+03, language =>   , id => 42, deleted => false }, { password => test, name => test15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:40:42.354135+03, language =>   , id => 43, deleted => false }, { password => test, name => test16, networkid => , params => {"info":{"city":"kazan"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:43:02.694689+03, language =>   , id => 44, deleted => false }, { password => uid36, name => uid36, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, id => 36, deleted => false }, { password => uid45, name => uid45, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793290,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:21:30.078736+03, language => en, id => 45, deleted => false }, { password => uid46, name => uid46, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793424,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:23:44.261533+03, language => en, id => 46, deleted => false }, { password => uid47, name => uid47, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793513,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:25:12.83212+03, language => en, id => 47, deleted => false }, { password => test, name => test4, networkid => , params => {"attrs":{"_lastTime.24hr":1476809210,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:11.728197+03, language => en, id => 5, deleted => false }, { password => test, name => test1, networkid => , params => {"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, id => 2, deleted => false }, { password => uid58, name => uid58, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809753,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:55:53.508049+03, language => en, id => 58, deleted => false }, { password => uid48, name => uid48, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807085,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:11:25.882545+03, language => en, id => 48, deleted => false }, { password => uid49, name => uid49, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807618,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:20:16.265259+03, language => en, id => 49, deleted => false }, { password => uid50, name => uid50, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807854,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:24:12.892256+03, language => en, id => 50, deleted => false }, { password => uid59, name => uid59, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809815,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:56:55.344336+03, language => en, id => 59, deleted => false }, { password => uid51, name => uid51, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808189,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:29:47.381194+03, language => en, id => 51, deleted => false }, { password => uid52, name => uid52, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808378,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:32:58.719756+03, language => en, id => 52, deleted => false }, { password => uid53, name => uid53, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808795,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:39:54.973899+03, language => en, id => 53, deleted => false }, { password => uid54, name => uid54, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808869,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:41:09.113701+03, language => en, id => 54, deleted => false }, { password => uid55, name => uid55, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809185,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:46:25.229927+03, language => en, id => 55, deleted => false }, { password => uid60, name => uid60, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809868,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:57:48.24719+03, language => en, id => 60, deleted => false }, { password => uid56, name => uid56, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809466,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:51:06.257024+03, language => en, id => 56, deleted => false }, { password => uid57, name => uid57, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809529,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:52:09.241918+03, language => en, id => 57, deleted => false }, { password => uid61, name => uid61, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810127,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 20:02:07.43066+03, language => en, id => 61, deleted => false }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:45 TIME: core/server.query : 7.73 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM Users WHERE Name = E'uid62', _type => core/server.query }
+18.10 20:02:45 DB: SELECT ID FROM Users WHERE Name = E'uid62'
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:45 TIME: core/server.query : 1.14 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/server.query { q => SELECT nextval('Users_id_seq') AS id, _type => core/server.query }
+18.10 20:02:45 DB: SELECT nextval('Users_id_seq') AS id
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/server.query { list => {{ id => 62 }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:45 TIME: core/server.query : 0.57 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/user.register { password => uid62, name => uid62, fullParams => { password => uid62, name => uid62, networkid => , networktype => , messageType => user.register, id => 62 }, networkid => , connectionID => 76746694, networktype => , email => , id => 62, _type => core/user.register }
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/user.register { errorCode => ok, _type => core/user.register }
+18.10 20:02:45 TIME: core/user.register : 0.06 ms
+18.10 20:02:45 ASYNCDB: INSERT INTO Users (ID, Name, NetworkID, NetworkType, Password, Email, RegDate) VALUES (62,E'uid62',E'',E'',E'uid62',E'', now())
+18.10 20:02:45 ASYNCDB: INSERT INTO UserRatings (UserID, Points) VALUES (62, 0)
+18.10 20:02:45 READDB: SELECT * FROM Users WHERE ID = 62
+18.10 20:02:45 READDB: SELECT * FROM Users WHERE ID = 1
+18.10 20:02:45 READDB: SELECT ID FROM UserQuests WHERE ID = 62
+18.10 20:02:45 READDB: INSERT INTO UserQuests (ID) VALUES (62)
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/user.registerResponse { password => uid62, name => uid62, _isNotify => true, fullParams => { password => uid62, name => uid62, networkid => , networktype => , messageType => user.register, id => 62 }, networkid => , connectionID => 76746694, networktype => , email => , id => 62, _type => core/user.registerResponse }
+18.10 20:02:45 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid62' AND Password = E'uid62', _type => core/server.query }
+18.10 20:02:45 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid62' AND Password = E'uid62'
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid62, networkid => , isbanned => false, id => 62 }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:45 TIME: core/server.query : 0.84 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/user.isOnlineID { id => 62, _type => core/user.isOnlineID }
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:02:45 TIME: core/user.isOnlineID : 0.09 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 62, _type => core/cache.get }
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid62, deleted => false, email => , networktype =>   , password => uid62, isbanned => false, regdate => 2016-10-18 20:02:45.274383+03, language =>   , networkid => , params => { info => { city => null, year => null, email => null }, inventory => { list => [] }, vars => {}, attrs => {}, effects => { list => [] } }}, version => 1, id => 62 } }
+18.10 20:02:45 TIME: core/cache.get : 0.61 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 62, _type => core/cache.get }
+18.10 20:02:45 READDB: SELECT * FROM UserQuests WHERE ID = 62
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => {}}, version => 0, id => 62 } }
+18.10 20:02:45 TIME: core/cache.get : 0.57 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 62, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:02:45 TIME: core/user.loginPost : 0.26 ms
+18.10 20:02:45 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 62 AND Date = 'today'::timestamp, _type => core/server.query }
+18.10 20:02:45 DB: SELECT ID FROM TempUserLogins WHERE UserID = 62 AND Date = 'today'::timestamp
+18.10 20:02:45 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:45 TIME: core/server.query : 0.73 ms
+18.10 20:02:45 PENDING: INSERT INTO TempUserLogins (UserID, Date) VALUES (62, 'today'::timestamp)
+18.10 20:02:46 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=62 OR secondid=62 AND finished <> true, _type => core/server.query }
+18.10 20:02:46 DB: SELECT id FROM battle WHERE firstid=62 OR secondid=62 AND finished <> true
+18.10 20:02:46 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:02:46 TIME: core/server.query : 0.65 ms
+18.10 20:02:46 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:46 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:02:46 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:02:46 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:02:46 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:02:46 NET: vdl.0 (thread) request core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1476810165, lastLoginDate => 292, lastLoadDate => 1019 } }}, type => user, unlock => true, id => 62, _type => core/cache.update }
+18.10 20:02:46 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:02:46 TIME: core/cache.update : 0.3 ms
+18.10 20:02:46 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 62, _type => core/cache.update }
+18.10 20:02:46 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:02:46 TIME: core/cache.update : 0.24 ms
+18.10 20:02:46 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 62, _type => core/user.logoutPost }
+18.10 20:02:46 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:02:46 TIME: core/user.logoutPost : 0.15 ms
+18.10 20:02:48 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+18.10 20:02:48 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+18.10 20:02:48 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+18.10 20:02:48 TIME: core/server.query : 1.1 ms
+18.10 20:02:48 NET: vdl.0 (thread) request core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+18.10 20:02:48 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:02:48 TIME: core/user.isOnlineID : 0.11 ms
+18.10 20:02:48 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+18.10 20:02:48 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1476799454, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 4, id => 2 } }
+18.10 20:02:48 TIME: core/cache.get : 0.31 ms
+18.10 20:02:48 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+18.10 20:02:48 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 2, id => 2 } }
+18.10 20:02:48 TIME: core/cache.get : 0.17 ms
+18.10 20:02:48 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:02:48 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:02:48 TIME: core/user.loginPost : 0.11 ms
+18.10 20:02:50 WRITEDB: UPDATE Users SET name = E'uid62', deleted = E'false', email = E'', networktype = E'  ', password = E'uid62', isbanned = E'false', regdate = E'2016-10-18 20:02:45.274383+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810165,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 62
+18.10 20:02:51 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 62
+18.10 20:02:56 BLOCKREMOVE: user 1 removed
+18.10 20:02:57 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 2, _type => core/cache.update }
+18.10 20:02:57 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 5, _type => core/cache.update }
+18.10 20:02:57 TIME: core/cache.update : 0.13 ms
+18.10 20:02:58 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:03:01 BLOCKREMOVE: user 62 removed
+18.10 20:03:01 BLOCKREMOVE: questdata 62 removed
+18.10 20:03:07 TIMER: Clans cache...
+18.10 20:03:07 TIMER: Clans cache: 0ms
+18.10 20:03:07 TIMER: Check tournament...
+18.10 20:03:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:03' AND status = 'starting'
+18.10 20:03:07 TIMER: Check tournament: 0ms
+18.10 20:03:07 TIMER: Clans cache...
+18.10 20:03:07 TIMER: Clans cache: 0ms
+18.10 20:03:07 TIMER: Check tournament...
+18.10 20:03:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:04' AND status = 'starting'
+18.10 20:03:07 TIMER: Check tournament: 1ms
+18.10 20:03:07 TIMER: Clans cache...
+18.10 20:03:07 TIMER: Clans cache: 0ms
+18.10 20:03:07 TIMER: Check tournament...
+18.10 20:03:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:05' AND status = 'starting'
+18.10 20:03:07 TIMER: Check tournament: 0ms
+18.10 20:06:06 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true, _type => core/server.query }
+18.10 20:06:06 DB: SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true
+18.10 20:06:06 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:06:06 TIME: core/server.query : 1.09 ms
+18.10 20:06:06 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:06:06 STATS: cache [battle], get [49 calls, 0 cache hits, 48 cache misses, 0 same version, 48 not found]
+18.10 20:06:06 STATS: cache [battle], segments [49 calls, 0 hits, 48 misses]
+18.10 20:06:06 STATS: cache [battle], database [6176 calls, 48 reads, 0 writes]
+18.10 20:06:06 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 20:06:06 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:06:06 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:06:06 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:06:06 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:06:06 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:06:06 STATS: cache [user], get [79 calls, 23 cache hits, 56 cache misses, 0 same version, 0 not found]
+18.10 20:06:06 STATS: cache [user], segments [308 calls, 210 hits, 97 misses]
+18.10 20:06:06 STATS: cache [user], database [6176 calls, 56 reads, 95 writes]
+18.10 20:06:06 STATS: cache [user], lock [64 calls, 64 attempts, 0 failures]
+18.10 20:06:06 STATS: cache manager [1], get [114 calls, total 0.09 sec spent, avg 0.77 ms]
+18.10 20:06:06 STATS: cache manager [1], update [150 calls, total 0.02 sec spent, avg 0.1 ms]
+18.10 20:06:06 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 6, _type => core/cache.update }
+18.10 20:06:06 TIME: core/cache.update : 0.42 ms
+18.10 20:06:06 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:06:06 STATS: cache [questdata], get [50 calls, 8 cache hits, 42 cache misses, 0 same version, 1 not found]
+18.10 20:06:06 STATS: cache [questdata], segments [198 calls, 112 hits, 85 misses]
+18.10 20:06:06 STATS: cache [questdata], database [6176 calls, 42 reads, 48 writes]
+18.10 20:06:06 STATS: cache [questdata], lock [50 calls, 50 attempts, 0 failures]
+18.10 20:06:06 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+18.10 20:06:06 TIME: core/cache.update : 0.31 ms
+18.10 20:06:06 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 2, _type => core/user.logoutPost }
+18.10 20:06:06 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:06:06 TIME: core/user.logoutPost : 0.08 ms
+18.10 20:06:07 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:06:07 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 2
+18.10 20:06:07 TIMER: Clans cache...
+18.10 20:06:07 TIMER: Clans cache: 0ms
+18.10 20:06:07 TIMER: Check tournament...
+18.10 20:06:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:06' AND status = 'starting'
+18.10 20:06:07 TIMER: Check tournament: 0ms
+18.10 20:06:17 BLOCKREMOVE: user 2 removed
+18.10 20:06:17 BLOCKREMOVE: questdata 2 removed
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:07' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 0ms
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:08' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 1ms
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:09' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 1ms
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:10' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 0ms
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:11' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 1ms
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:12' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 0ms
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:13' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 0ms
+18.10 20:07:07 TIMER: Clans cache...
+18.10 20:07:07 TIMER: Clans cache: 0ms
+18.10 20:07:07 TIMER: Check tournament...
+18.10 20:07:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:14' AND status = 'starting'
+18.10 20:07:07 TIMER: Check tournament: 0ms
+18.10 20:14:30 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+18.10 20:14:30 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+18.10 20:14:30 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+18.10 20:14:30 TIME: core/server.query : 1.35 ms
+18.10 20:14:30 NET: vdl.0 (thread) request core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+18.10 20:14:30 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:14:30 TIME: core/user.isOnlineID : 0.08 ms
+18.10 20:14:30 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+18.10 20:14:30 STATS: cache [user], get [79 calls, 23 cache hits, 56 cache misses, 0 same version, 0 not found]
+18.10 20:14:30 STATS: cache [user], segments [310 calls, 212 hits, 97 misses]
+18.10 20:14:30 STATS: cache [user], database [6680 calls, 56 reads, 96 writes]
+18.10 20:14:30 STATS: cache [user], lock [65 calls, 65 attempts, 0 failures]
+18.10 20:14:30 READDB: SELECT * FROM Users WHERE ID = 2
+18.10 20:14:30 STATS: cache manager [1], get [115 calls, total 0.09 sec spent, avg 0.78 ms]
+18.10 20:14:30 STATS: cache manager [1], update [151 calls, total 0.02 sec spent, avg 0.11 ms]
+18.10 20:14:30 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1476799454, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 2 } }
+18.10 20:14:30 TIME: core/cache.get : 2.21 ms
+18.10 20:14:30 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+18.10 20:14:30 STATS: cache [questdata], get [50 calls, 8 cache hits, 42 cache misses, 0 same version, 1 not found]
+18.10 20:14:30 STATS: cache [questdata], segments [200 calls, 114 hits, 85 misses]
+18.10 20:14:30 STATS: cache [questdata], database [6680 calls, 42 reads, 49 writes]
+18.10 20:14:30 STATS: cache [questdata], lock [51 calls, 51 attempts, 0 failures]
+18.10 20:14:30 READDB: SELECT * FROM UserQuests WHERE ID = 2
+18.10 20:14:30 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 2 } }
+18.10 20:14:30 TIME: core/cache.get : 1.52 ms
+18.10 20:14:30 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:14:30 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:14:30 TIME: core/user.loginPost : 0.12 ms
+18.10 20:14:37 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 2, _type => core/cache.update }
+18.10 20:14:37 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:14:37 TIME: core/cache.update : 0.17 ms
+18.10 20:14:37 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true, _type => core/server.query }
+18.10 20:14:37 DB: SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true
+18.10 20:14:37 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:14:37 TIME: core/server.query : 0.78 ms
+18.10 20:14:37 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:14:37 STATS: cache [battle], get [50 calls, 0 cache hits, 49 cache misses, 0 same version, 49 not found]
+18.10 20:14:37 STATS: cache [battle], segments [50 calls, 0 hits, 49 misses]
+18.10 20:14:37 STATS: cache [battle], database [6687 calls, 49 reads, 0 writes]
+18.10 20:14:37 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 20:14:37 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:14:37 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:14:37 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:14:37 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:14:37 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:14:37 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:14:37 TIME: core/cache.update : 0.12 ms
+18.10 20:14:37 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:14:37 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:14:37 TIME: core/cache.update : 0.13 ms
+18.10 20:14:37 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 2, _type => core/user.logoutPost }
+18.10 20:14:37 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:14:37 TIME: core/user.logoutPost : 0.13 ms
+18.10 20:14:38 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:14:38 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 2
+18.10 20:14:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM users, _type => core/server.query }
+18.10 20:14:39 DB: SELECT * FROM users
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/server.query { list => {{ password => , name => --- DEFAULT ATTRIBUTES ---, networkid => , params => {"attrs":{},"inventory":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:45:16.008574+03, language =>   , id => 1, deleted => false }, { password => test, name => test3, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:08.364133+03, language =>   , id => 4, deleted => false }, { password => test, name => test5, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:15.596579+03, language =>   , id => 6, deleted => false }, { password => test, name => test6, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:19.233499+03, language =>   , id => 7, deleted => false }, { password => uid24, name => uid24, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:36:42.292969+03, language =>   , id => 24, deleted => false }, { password => uid25, name => uid25, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:42:14.268266+03, language =>   , id => 25, deleted => false }, { password => test, name => test7, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-09-07 16:46:43.688817+03, language =>   , id => 8, deleted => false }, { password => uid26, name => uid26, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:52:51.409771+03, language =>   , id => 26, deleted => false }, { password => uid37, name => uid37, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476461351,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 19:09:11.07001+03, language => en, id => 37, deleted => false }, { password => uid9, name => uid9, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-11 20:36:09.090394+03, language =>   , id => 9, deleted => false }, { password => uid32, name => uid32, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271969,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:32:48.215636+03, language => en, id => 32, deleted => false }, { password => uid27, name => uid27, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269621,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:53:40.789776+03, language => en, id => 27, deleted => false }, { password => uid10, name => uid10, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 11:12:48.168059+03, language =>   , id => 10, deleted => false }, { password => uid11, name => uid11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:33:27.3109+03, language =>   , id => 11, deleted => false }, { password => uid12, name => uid12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:47:26.670465+03, language =>   , id => 12, deleted => false }, { password => uid13, name => uid13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:51:08.341292+03, language =>   , id => 13, deleted => false }, { password => uid14, name => uid14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:53:34.360658+03, language =>   , id => 14, deleted => false }, { password => uid15, name => uid15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:55:14.160619+03, language =>   , id => 15, deleted => false }, { password => uid28, name => uid28, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269710,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:55:09.527211+03, language => en, id => 28, deleted => false }, { password => uid16, name => uid16, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:59:18.86185+03, language =>   , id => 16, deleted => false }, { password => test, name => test2, networkid => , params => {"attrs":{"_lastTime.24hr":1476808882,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:03.859813+03, language => en, id => 3, deleted => false }, { password => test, name => test11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:18:04.647106+03, language =>   , id => 39, deleted => false }, { password => uid29, name => uid29, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271397,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:23:17.10609+03, language => en, id => 29, deleted => false }, { password => uid17, name => uid17, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:07:15.262858+03, language =>   , id => 17, deleted => false }, { password => uid18, name => uid18, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:10:03.885555+03, language =>   , id => 18, deleted => false }, { password => uid19, name => uid19, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:11:41.868111+03, language =>   , id => 19, deleted => false }, { password => uid20, name => uid20, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:13:57.605493+03, language =>   , id => 20, deleted => false }, { password => uid21, name => uid21, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:16:21.670662+03, language =>   , id => 21, deleted => false }, { password => uid22, name => uid22, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:18:13.422519+03, language =>   , id => 22, deleted => false }, { password => uid23, name => uid23, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:33:08.78413+03, language =>   , id => 23, deleted => false }, { password => uid34, name => uid34, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476437991,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 12:39:51.725362+03, language => en, id => 34, deleted => false }, { password => uid30, name => uid30, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271613,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:26:51.842745+03, language => en, id => 30, deleted => false }, { password => test, name => test12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:21:55.316231+03, language =>   , id => 40, deleted => false }, { password => uid31, name => uid31, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271703,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:28:22.51548+03, language => en, id => 31, deleted => false }, { password => uid35, name => uid35, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476458014,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:13:33.360887+03, language => en, id => 35, deleted => false }, { password => uid33, name => uid33, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476272110,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:35:09.155569+03, language => en, id => 33, deleted => false }, { password => test, name => test13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:30:08.433611+03, language =>   , id => 41, deleted => false }, { password => uid38, name => uid38, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476782075,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:14:32.809+03, language => en, id => 38, deleted => false }, { password => test, name => test14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:31:52.285659+03, language =>   , id => 42, deleted => false }, { password => test, name => test15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:40:42.354135+03, language =>   , id => 43, deleted => false }, { password => test, name => test16, networkid => , params => {"info":{"city":"kazan"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:43:02.694689+03, language =>   , id => 44, deleted => false }, { password => uid36, name => uid36, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, id => 36, deleted => false }, { password => uid45, name => uid45, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793290,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:21:30.078736+03, language => en, id => 45, deleted => false }, { password => uid46, name => uid46, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793424,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:23:44.261533+03, language => en, id => 46, deleted => false }, { password => uid47, name => uid47, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793513,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:25:12.83212+03, language => en, id => 47, deleted => false }, { password => test, name => test4, networkid => , params => {"attrs":{"_lastTime.24hr":1476809210,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:11.728197+03, language => en, id => 5, deleted => false }, { password => test, name => test1, networkid => , params => {"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, id => 2, deleted => false }, { password => uid58, name => uid58, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809753,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:55:53.508049+03, language => en, id => 58, deleted => false }, { password => uid48, name => uid48, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807085,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:11:25.882545+03, language => en, id => 48, deleted => false }, { password => uid49, name => uid49, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807618,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:20:16.265259+03, language => en, id => 49, deleted => false }, { password => uid50, name => uid50, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807854,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:24:12.892256+03, language => en, id => 50, deleted => false }, { password => uid59, name => uid59, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809815,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:56:55.344336+03, language => en, id => 59, deleted => false }, { password => uid51, name => uid51, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808189,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:29:47.381194+03, language => en, id => 51, deleted => false }, { password => uid52, name => uid52, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808378,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:32:58.719756+03, language => en, id => 52, deleted => false }, { password => uid53, name => uid53, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808795,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:39:54.973899+03, language => en, id => 53, deleted => false }, { password => uid54, name => uid54, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808869,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:41:09.113701+03, language => en, id => 54, deleted => false }, { password => uid55, name => uid55, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809185,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:46:25.229927+03, language => en, id => 55, deleted => false }, { password => uid60, name => uid60, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809868,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:57:48.24719+03, language => en, id => 60, deleted => false }, { password => uid56, name => uid56, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809466,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:51:06.257024+03, language => en, id => 56, deleted => false }, { password => uid57, name => uid57, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809529,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:52:09.241918+03, language => en, id => 57, deleted => false }, { password => uid61, name => uid61, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810127,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 20:02:07.43066+03, language => en, id => 61, deleted => false }, { password => uid62, name => uid62, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810165,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 20:02:45.274383+03, language => en, id => 62, deleted => false }}, errorCode => ok, _type => core/server.query }
+18.10 20:14:39 TIME: core/server.query : 3.34 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM Users WHERE Name = E'uid63', _type => core/server.query }
+18.10 20:14:39 DB: SELECT ID FROM Users WHERE Name = E'uid63'
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:14:39 TIME: core/server.query : 0.63 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/server.query { q => SELECT nextval('Users_id_seq') AS id, _type => core/server.query }
+18.10 20:14:39 DB: SELECT nextval('Users_id_seq') AS id
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/server.query { list => {{ id => 63 }}, errorCode => ok, _type => core/server.query }
+18.10 20:14:39 TIME: core/server.query : 5.07 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/user.register { password => uid63, name => uid63, fullParams => { password => uid63, name => uid63, networkid => , networktype => , messageType => user.register, id => 63 }, networkid => , connectionID => 60168442, networktype => , email => , id => 63, _type => core/user.register }
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/user.register { errorCode => ok, _type => core/user.register }
+18.10 20:14:39 TIME: core/user.register : 0.1 ms
+18.10 20:14:39 ASYNCDB: INSERT INTO Users (ID, Name, NetworkID, NetworkType, Password, Email, RegDate) VALUES (63,E'uid63',E'',E'',E'uid63',E'', now())
+18.10 20:14:39 ASYNCDB: INSERT INTO UserRatings (UserID, Points) VALUES (63, 0)
+18.10 20:14:39 READDB: SELECT * FROM Users WHERE ID = 63
+18.10 20:14:39 READDB: SELECT * FROM Users WHERE ID = 1
+18.10 20:14:39 READDB: SELECT ID FROM UserQuests WHERE ID = 63
+18.10 20:14:39 READDB: INSERT INTO UserQuests (ID) VALUES (63)
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/user.registerResponse { password => uid63, name => uid63, _isNotify => true, fullParams => { password => uid63, name => uid63, networkid => , networktype => , messageType => user.register, id => 63 }, networkid => , connectionID => 60168442, networktype => , email => , id => 63, _type => core/user.registerResponse }
+18.10 20:14:39 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid63' AND Password = E'uid63', _type => core/server.query }
+18.10 20:14:39 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid63' AND Password = E'uid63'
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid63, networkid => , isbanned => false, id => 63 }}, errorCode => ok, _type => core/server.query }
+18.10 20:14:39 TIME: core/server.query : 0.76 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/user.isOnlineID { id => 63, _type => core/user.isOnlineID }
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:14:39 TIME: core/user.isOnlineID : 0.08 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 63, _type => core/cache.get }
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid63, deleted => false, email => , networktype =>   , password => uid63, isbanned => false, regdate => 2016-10-18 20:14:39.877987+03, language =>   , networkid => , params => { info => { city => null, year => null, email => null }, inventory => { list => [] }, vars => {}, attrs => {}, effects => { list => [] } }}, version => 1, id => 63 } }
+18.10 20:14:39 TIME: core/cache.get : 0.27 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 63, _type => core/cache.get }
+18.10 20:14:39 READDB: SELECT * FROM UserQuests WHERE ID = 63
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => {}}, version => 0, id => 63 } }
+18.10 20:14:39 TIME: core/cache.get : 0.67 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 63, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:14:39 TIME: core/user.loginPost : 0.07 ms
+18.10 20:14:39 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 63 AND Date = 'today'::timestamp, _type => core/server.query }
+18.10 20:14:39 DB: SELECT ID FROM TempUserLogins WHERE UserID = 63 AND Date = 'today'::timestamp
+18.10 20:14:39 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:14:39 TIME: core/server.query : 0.47 ms
+18.10 20:14:40 PENDING: INSERT INTO TempUserLogins (UserID, Date) VALUES (63, 'today'::timestamp)
+18.10 20:14:45 WRITEDB: UPDATE Users SET name = E'uid63', deleted = E'false', email = E'', networktype = E'  ', password = E'uid63', isbanned = E'false', regdate = E'2016-10-18 20:14:39.877987+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810879,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 63
+18.10 20:14:47 NET: vdl.0 (thread) request core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1476810879, lastLoginDate => 292, lastLoadDate => 1019 } }}, type => user, unlock => false, id => 63, _type => core/cache.update }
+18.10 20:14:47 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:14:47 TIME: core/cache.update : 0.22 ms
+18.10 20:14:48 BLOCKREMOVE: user 2 removed
+18.10 20:14:48 BLOCKREMOVE: questdata 2 removed
+18.10 20:14:50 BLOCKREMOVE: user 1 removed
+18.10 20:14:50 WRITEDB: UPDATE Users SET name = E'uid63', deleted = E'false', email = E'', networktype = E'  ', password = E'uid63', isbanned = E'false', regdate = E'2016-10-18 20:14:39.877987+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810879,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 63
+18.10 20:14:58 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=63 OR secondid=63 AND finished <> true, _type => core/server.query }
+18.10 20:14:58 DB: SELECT id FROM battle WHERE firstid=63 OR secondid=63 AND finished <> true
+18.10 20:14:58 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:14:58 TIME: core/server.query : 0.87 ms
+18.10 20:14:58 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:14:58 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:14:58 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:14:58 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:14:58 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:14:58 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 63, _type => core/cache.update }
+18.10 20:14:58 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+18.10 20:14:58 TIME: core/cache.update : 0.09 ms
+18.10 20:14:58 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 63, _type => core/cache.update }
+18.10 20:14:58 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:14:58 TIME: core/cache.update : 0.08 ms
+18.10 20:14:58 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 63, _type => core/user.logoutPost }
+18.10 20:14:58 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:14:58 TIME: core/user.logoutPost : 0.06 ms
+18.10 20:14:59 WRITEDB: UPDATE Users SET name = E'uid63', deleted = E'false', email = E'', networktype = E'  ', password = E'uid63', isbanned = E'false', regdate = E'2016-10-18 20:14:39.877987+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810879,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 63
+18.10 20:14:59 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 63
+18.10 20:15:00 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test', _type => core/server.query }
+18.10 20:15:00 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'test1' AND Password = E'test'
+18.10 20:15:00 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => test1, networkid => , isbanned => false, id => 2 }}, errorCode => ok, _type => core/server.query }
+18.10 20:15:00 TIME: core/server.query : 0.99 ms
+18.10 20:15:00 NET: vdl.0 (thread) request core/user.isOnlineID { id => 2, _type => core/user.isOnlineID }
+18.10 20:15:00 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+18.10 20:15:00 TIME: core/user.isOnlineID : 0.11 ms
+18.10 20:15:00 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 2, _type => core/cache.get }
+18.10 20:15:00 READDB: SELECT * FROM Users WHERE ID = 2
+18.10 20:15:00 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => test1, deleted => false, email => , networktype =>   , password => test, isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1476799454, lastLoginDate => 292, lastLoadDate => 1019 }, effects => { list => [] } }}, version => 0, id => 2 } }
+18.10 20:15:00 TIME: core/cache.get : 1.71 ms
+18.10 20:15:00 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 2, _type => core/cache.get }
+18.10 20:15:00 READDB: SELECT * FROM UserQuests WHERE ID = 2
+18.10 20:15:00 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 2 } }
+18.10 20:15:00 TIME: core/cache.get : 1.18 ms
+18.10 20:15:00 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 2, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+18.10 20:15:00 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+18.10 20:15:00 TIME: core/user.loginPost : 0.1 ms
+18.10 20:15:07 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 2, _type => core/cache.update }
+18.10 20:15:07 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:15:07 TIME: core/cache.update : 0.14 ms
+18.10 20:15:07 TIMER: Clans cache...
+18.10 20:15:07 TIMER: Clans cache: 0ms
+18.10 20:15:07 TIMER: Check tournament...
+18.10 20:15:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:15' AND status = 'starting'
+18.10 20:15:07 TIMER: Check tournament: 0ms
+18.10 20:15:08 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:15:09 BLOCKREMOVE: user 63 removed
+18.10 20:15:09 BLOCKREMOVE: questdata 63 removed
+18.10 20:16:07 TIMER: Clans cache...
+18.10 20:16:07 TIMER: Clans cache: 0ms
+18.10 20:16:07 TIMER: Check tournament...
+18.10 20:16:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:16' AND status = 'starting'
+18.10 20:16:07 TIMER: Check tournament: 1ms
+18.10 20:16:32 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true, _type => core/server.query }
+18.10 20:16:32 DB: SELECT id FROM battle WHERE firstid=2 OR secondid=2 AND finished <> true
+18.10 20:16:32 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+18.10 20:16:32 TIME: core/server.query : 1.25 ms
+18.10 20:16:32 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+18.10 20:16:32 STATS: cache [battle], get [52 calls, 0 cache hits, 51 cache misses, 0 same version, 51 not found]
+18.10 20:16:32 STATS: cache [battle], segments [52 calls, 0 hits, 51 misses]
+18.10 20:16:32 STATS: cache [battle], database [6802 calls, 51 reads, 0 writes]
+18.10 20:16:32 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+18.10 20:16:32 READDB: SELECT * FROM Battle WHERE ID = 0
+18.10 20:16:32 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+18.10 20:16:32 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 125
+Called from modules/VDLCache.hx line 118
+Called from modules/VDLCache.hx line 79
+Called from snipe/cache/CacheServer.hx line 487
+18.10 20:16:32 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+18.10 20:16:32 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:16:32 STATS: cache [user], get [84 calls, 24 cache hits, 60 cache misses, 0 same version, 0 not found]
+18.10 20:16:32 STATS: cache [user], segments [328 calls, 223 hits, 104 misses]
+18.10 20:16:32 STATS: cache [user], database [6802 calls, 60 reads, 101 writes]
+18.10 20:16:32 STATS: cache [user], lock [68 calls, 68 attempts, 0 failures]
+18.10 20:16:32 STATS: cache manager [1], get [121 calls, total 0.09 sec spent, avg 0.78 ms]
+18.10 20:16:32 STATS: cache manager [1], update [160 calls, total 0.02 sec spent, avg 0.1 ms]
+18.10 20:16:32 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+18.10 20:16:32 TIME: core/cache.update : 0.43 ms
+18.10 20:16:32 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 2, _type => core/cache.update }
+18.10 20:16:32 STATS: cache [questdata], get [53 calls, 8 cache hits, 45 cache misses, 0 same version, 1 not found]
+18.10 20:16:32 STATS: cache [questdata], segments [210 calls, 118 hits, 91 misses]
+18.10 20:16:32 STATS: cache [questdata], database [6802 calls, 45 reads, 51 writes]
+18.10 20:16:32 STATS: cache [questdata], lock [53 calls, 53 attempts, 0 failures]
+18.10 20:16:32 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+18.10 20:16:32 TIME: core/cache.update : 0.2 ms
+18.10 20:16:32 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 2, _type => core/user.logoutPost }
+18.10 20:16:32 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+18.10 20:16:32 TIME: core/user.logoutPost : 0.09 ms
+18.10 20:16:33 WRITEDB: UPDATE Users SET name = E'test1', deleted = E'false', email = E'', networktype = E'  ', password = E'test', isbanned = E'false', regdate = E'2016-08-30 15:47:58.935408+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1476799454,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}' WHERE ID = 2
+18.10 20:16:33 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 2
+18.10 20:16:43 BLOCKREMOVE: user 2 removed
+18.10 20:16:43 BLOCKREMOVE: questdata 2 removed
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:17' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:18' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:19' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:20' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:21' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:22' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:23' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:24' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:25' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:26' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:27' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:28' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:29' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:30' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:31' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:32' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:33' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:34' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:35' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 1ms
+18.10 20:17:07 TIMER: Clans cache...
+18.10 20:17:07 TIMER: Clans cache: 0ms
+18.10 20:17:07 TIMER: Check tournament...
+18.10 20:17:07 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:36' AND status = 'starting'
+18.10 20:17:07 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:37' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:38' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:39' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:40' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:41' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:42' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:43' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:44' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:45' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:46' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:47' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:48' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:49' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:50' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:51' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:52' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:53' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:54' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:55' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:56' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:57' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:58' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 20:59' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 PENDING: INSERT INTO LogUserOnlineCount (Date, Min, Max, Avg) VALUES (now(), 0, 1, 0)
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:00' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:01' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:02' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:03' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:04' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:05' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:06' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:07' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:08' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:09' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:10' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:11' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:12' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:13' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:14' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:15' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:16' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:17' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:18' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:19' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:20' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:21' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:22' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:23' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:24' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:25' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:26' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:27' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:28' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:29' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:30' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:31' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:32' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:33' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:34' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:35' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:36' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:37' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:38' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:39' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:40' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:41' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:42' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:43' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:44' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:45' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:46' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:47' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:48' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:49' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:50' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:51' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:52' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:53' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:54' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:55' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:56' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:57' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:58' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 21:59' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 PENDING: INSERT INTO LogUserOnlineCount (Date, Min, Max, Avg) VALUES (now(), 0, 0, 0)
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:00' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:01' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:02' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:03' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:04' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:05' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:06' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:07' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:08' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:09' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:10' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:11' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:12' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:13' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:14' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:15' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:16' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:17' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:18' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:19' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:20' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 1ms
+18.10 20:37:08 TIMER: Clans cache...
+18.10 20:37:08 TIMER: Clans cache: 0ms
+18.10 20:37:08 TIMER: Check tournament...
+18.10 20:37:08 DB: SELECT * FROM tournament WHERE startdate = '2016-18-10 22:21' AND status = 'starting'
+18.10 20:37:08 TIMER: Check tournament: 0ms

@@ -218,7 +218,7 @@ public function Enemy(c: VDLClient,selfId: Int, enemId: Int): Dynamic {
       return ret;
     }
 
-    override function logoutPost(c: VDLClient ) {
+    override function logoutPost(c: VDLClient) {
       var ret = server.query('SELECT id FROM battle WHERE firstid=' + c.id + ' OR secondid=' + c.id + ' AND finished <> true');
       var roomId = 0;
       for( i in ret  ) {
