@@ -9,6 +9,7 @@ create table Tournament
   Round int DEFAULT 1 NOT NULL, -- round
   Status text DEFAULT '' NOT NULL, -- status
   Type text DEFAULT 'once' NOT NULL, -- type
+  RoundTime int DEFAULT 30 NOT NULL, -- round time
   RoundInterval int DEFAULT 1 NOT NULL, -- interval of round
   RepeatInterval int DEFAULT 0 NOT NULL, -- repeat interval tournament
   Winner int DEFAULT -1 NOT NUll, -- winner ID

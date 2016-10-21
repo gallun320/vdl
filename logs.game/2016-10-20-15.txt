@@ -1,0 +1,139 @@
+20.10 15:29:42 ->>-: core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+20.10 15:29:42 -<<-: server.login ok
+20.10 15:29:42 DB: SELECT * FROM LocalizationStrings
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 TIMER: Starting timer...
+20.10 15:29:42 TIMER: Timer running...
+20.10 15:29:42 DB: SELECT * FROM GameVars
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+20.10 15:29:42 -<<-: core/quest.getDaily ok
+20.10 15:29:42 DB: SELECT * FROM UserAttributeTypes
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM UserVariableTypes
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+20.10 15:29:42 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM ItemGroups
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM Bundles ORDER BY ID
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM BundleItems ORDER BY ID
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 SHOP: loading items...
+20.10 15:29:42 ->>-: core/shop.getList { _type => core/shop.getList }
+20.10 15:29:42 -<<-: core/shop.getList ok
+20.10 15:29:42 SHOP: 0 items loaded (0.002 sec)
+20.10 15:29:42 DB: SELECT * FROM EffectAttributeTypes
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM Effects
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+20.10 15:29:42 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+20.10 15:29:42 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 DB: SELECT * FROM Badges
+20.10 15:29:42 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+20.10 15:29:42 -<<-: core/server.query ok
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0
+20.10 15:29:42 TIMER: Check auto-disconnect...
+20.10 15:29:42 STATS: vdl.0 cache, locks:0

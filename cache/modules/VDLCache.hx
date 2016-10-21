@@ -61,18 +61,8 @@ using Lambda;
             var ret = server.cacheManager.getUnlocked(0,'tournament',el.id, -1);
             var tournament = ret.block;
 
+            startDate = convertDate(startDate, el.repeatinterval);
 
-            var str = new String(startDate);
-            var year = Std.parseInt(str.substr(0, 4));
-            var day = Std.parseInt(str.substr(5, 2));
-            var month = Std.parseInt(str.substr(8, 2)) - 1;
-            var hours = Std.parseInt(str.substr(11, 2));
-            var minute = Std.parseInt(str.substr(14, 2));
-            var dt = new Date(year, month, day, hours, minute, 0).getTime() / 1000;
-            var correctDt = dt + (el.repeatinterval * 60 * 60);
-            var formatDt = Date.fromTime(correctDt * 1000);
-
-            startDate = DateTools.format(formatDt, "%Y-%d-%m %H:%M");
             tournament.set('startdate', null, startDate);
             server.cacheManager.updated(0, 'tournament', el.id);
           }
@@ -185,6 +175,7 @@ using Lambda;
      /*var userList: Array<Int> = tournament.get('params', 'usersList');
      var res = GetAvailableTournamentUsers(tournamentId);*/
      var list: Array<Int> = tournament.get('params', 'usersList');
+     var roundDate = tournament.get(null,'rounddate');
      if(round > 1) {
        var buffer = list.length;
        var bufferInt: Int = Std.int(buffer);
@@ -192,7 +183,7 @@ using Lambda;
        while (bufferInt > 0) {
          var ret = createRoom(list[bufferInt - 1]);
          var res = joinRoom(list[bufferInt - 2], ret.room);
-         Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round);
+         Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
          battleActive.push(ret.room);
          bufferInt = bufferInt - 2;
        }
@@ -225,7 +216,7 @@ using Lambda;
      while (bufferInt > 0) {
        var ret = createRoom(list[bufferInt - 1]);
        var res = joinRoom(list[bufferInt - 2], ret.room);
-       Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round);
+       Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
        battleActive.push(ret.room);
        bufferInt = bufferInt - 2;
      }
@@ -244,17 +235,7 @@ using Lambda;
 
      var interval: Int = tournament.get('roundinterval', null);
 
-     var str = new String(roundDate);
-     var year = Std.parseInt(str.substr(0, 4));
-     var day = Std.parseInt(str.substr(5, 2));
-     var month = Std.parseInt(str.substr(8, 2)) - 1;
-     var hours = Std.parseInt(str.substr(11, 2));
-     var minute = Std.parseInt(str.substr(14, 2));
-     var dt = new Date(year, month, day, hours, minute, 0).getTime() / 1000;
-     var correctDt = dt + (interval * 60 * 60);
-     var formatDt = Date.fromTime(correctDt * 1000);
-
-     roundDate = DateTools.format(formatDt, "%Y-%d-%m %H:%M");
+     roundDate = convertDate(roundDate, interval);
 
      tournament.set('round', null, round);
      tournament.set('rounddate', null, roundDate);
@@ -321,6 +302,7 @@ using Lambda;
        var status: String = row.status;
        var round: Int = row.round;
        var winner: Int = row.winner;
+       var rounddate: Int = row.rounddate;
 
        var obj = {
          id: row.id,
@@ -331,7 +313,8 @@ using Lambda;
          winner: winner,
          userList: users,
          battleActive: active,
-         battleFinished: finished
+         battleFinished: finished,
+         rounddate: rounddate
        }
 
        arr.push(obj);
@@ -436,39 +419,61 @@ using Lambda;
 
     }
 
-    public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int): Void {
-      var client1 = server.getClient(player1);
-      var client2 = server.getClient(player2);
+    public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int, roundDate: String): Void {
+      var slaveId1 = server.coreUserModule.getServerID(player1);
+      var slaveId2 = server.coreUserModule.getServerID(player2);
+      var client1 = server.getClient(slaveId1);
+      var client2 = server.getClient(slaveId2);
       var playerOneName = server.query('SELECT name FROM users WHERE id=' + player1);
       var playerTwoName = server.query('SELECT name FROM users WHERE id=' + player2);
       var pOneName = playerOneName.results().first().name;
       var pTwoName = playerTwoName.results().first().name;
       var obj1 = {"enemy.num": 2,
-      "enemy.id": player1,
+      player: 1,
+      id: player1,
+      "enemy.id": player2,
       name: pOneName,
       "enemy.name": pTwoName,
       round: round,
       tournamentId: tournamentId,
-      battleId: battleId};
+      battleId: battleId,
+      roundDate: roundDate};
+
       var obj2 = {"enemy.num": 1,
-      "enemy.id": player2,
+      "enemy.id": player1,
+      player: 2,
+      id: player2,
       name: pTwoName,
       "enemy.name": pOneName,
       round: round,
       battleId: battleId,
-      tournamentId: tournamentId};
+      tournamentId: tournamentId,
+      roundDate: roundDate};
+      try {
+        client1.notify({
+          _type:"tournament.enemyEvent",
+           data: obj1,
+           id: player1
+          });
+      } catch(e:Dynamic) {
+        trace(e);
+        trace( '=======================================' );
+        trace( 'User 1 not login' );
+      }
 
-      client1.notify({
-        _type:"tournament.enemyEvent",
-         data: obj1,
-         id: player1
-        });
+      try {
 
-      client2.notify({
-        _type:"tournament.enemyEvent",
-         data: obj2,
-         id: player2
-        });
+              client2.notify({
+                _type:"tournament.enemyEvent",
+                 data: obj2,
+                 id: player2
+                });
+      } catch(e:Dynamic) {
+        trace(e);
+        trace( '=========================================' );
+        trace( 'User 2 not login' );
+      }
+
     }
 
     function GetBattlesTournaments(c: SlaveClient, params: Params): Array<Int> {
@@ -586,9 +591,9 @@ using Lambda;
 
    public function GetUserData(c: SlaveClient, params: Params): Dynamic {
      var userId = params.get('userId');
-     var ret = server.cacheManager.getUnlocked(0,'user', c.id, -1);
+     var ret = server.cacheManager.getUnlocked(0,'user', userId, -1);
      var user = ret.block;
-     var info = user.get('params', 'info');
+     var info = user.get( null, 'params').info;
      if(info == null) info = {city: null, email: null, year: null};
      return {errorCode: "ok", info: info};
    }
@@ -606,7 +611,7 @@ using Lambda;
 
        server.cacheManager.create(0, 'battle', id);
 
-      var ret = server.cacheManager.get(0, 'battle', id, -1);
+      var ret = server.cacheManager.getUnlocked(0, 'battle', id, -1);
 
 
       room = ret.block;
@@ -707,5 +712,19 @@ using Lambda;
      params.params.info = info;
      response.info = info;
    }*/
+
+   private function convertDate(strData: String, interval: Int): String {
+     var str: String = new String(strData);
+        var year: Int = Std.parseInt(str.substr(0, 4));
+        var day: Int = Std.parseInt(str.substr(5, 2));
+        var month: Int = Std.parseInt(str.substr(8, 2)) - 1;
+        var hours: Int = Std.parseInt(str.substr(11, 2));
+        var minute: Int = Std.parseInt(str.substr(14, 2));
+        var dt: Float = new Date(year, month, day, hours, minute, 0).getTime() / 1000;
+        var correctDt: Float = dt + (24 * 60 * 60);
+        var formatDt: Date = Date.fromTime(correctDt * 1000);
+       var endDate: String = DateTools.format(formatDt, "%Y-%d-%m %H:%M");
+     return endDate;
+   }
 
  }

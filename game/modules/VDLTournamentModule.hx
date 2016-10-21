@@ -523,6 +523,16 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
 
     /*override  function loginPost(c: VDLClient, params: Params, retParams: Dynamic,
     responseParams: Dynamic) {
-      c.response('user.data', retParams.info);
+      server.sendTo(c.id, {
+        _type: "tournament.enemy",
+        data: {"enemy.num": 2,
+        player: 1,
+        "enemy.id": 1,
+        name: "test",
+        "enemy.name": "test1",
+        round: 1,
+        tournamentId: 1,
+        battleId: 1}
+      });
     }*/
 }

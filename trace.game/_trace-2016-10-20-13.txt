@@ -1,0 +1,36 @@
+20.10 13:39:00 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+20.10 13:39:00 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+20.10 13:40:40 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+20.10 13:40:40 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+20.10 13:54:46 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+20.10 13:54:46 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+20.10 13:54:48 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+20.10 13:54:48 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+20.10 13:57:53 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+20.10 13:57:53 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994
+20.10 13:57:56 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+20.10 13:57:56 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 214
+Called from modules/VDLBattleModule.hx line 227
+Called from snipe/slave/Server.hx line 994

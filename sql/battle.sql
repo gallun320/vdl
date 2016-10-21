@@ -6,7 +6,7 @@ create table Battle
 
   FirstID int DEFAULT 0 NOT NULL, -- first ID
   SecondID int DEFAULT 0 NOT NULL, -- second ID
-
+  BattleTime int DEFAULT 30 NON NULL, -- battle time
   TurnID int DEFAULT 0 NOT NULL, -- Turn Player ID
   Avaliable boolean DEFAULT true NOT NULL,
   Finished boolean DEFAULT false NOT NULL,
