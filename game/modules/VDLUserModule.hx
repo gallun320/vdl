@@ -20,6 +20,9 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
             response = UserLogout(c, params);
           case "user.data":
             response = UserData(c, params);
+          case "user.ping":
+            response = UserPing(c, params);
+
 
         }
 
@@ -39,5 +42,11 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
            userId: userId
           });
         return ret;
+      }
+
+      public function UserPing(c: VDLClient, params: Params): Dynamic {
+        var msg: String = params.get("msg");
+        trace( msg );
+        return {errorCode: "ok"};
       }
 }

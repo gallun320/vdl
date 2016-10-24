@@ -65,6 +65,8 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
             response = DeleteUsersCall(c, params);
           case "tournament.end":
             response = FinishCall(c, params);
+          case "tournament.lose":
+            response = LoseCall(c, params);
           case "tournament.grid":
             response = GetTournamentGrid(c, params);
         /*  case "tournament.checkPrepare":
@@ -131,16 +133,25 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         var tournamentId: Int = params.get('tournamentId');
         var player1: Int = params.get("player1");
         var player2: Int = params.get("player2");
-        var winner: Int = params.get('winnerId');
-        var lose: Int = params.get('loseId');
+        var winner: Int = params.get('winner');
+        var lose: Int = params.get('lose');
         var battleId: Int = params.get('battleId');
         var round: Int = params.get('round');
-        var dateRound: String = params.get('roundDate');
+        var dateRound: String = params.get('dateRound');
         var battles: Array<Int> = GetBattlesTournaments(tournamentId);
         var res = GetAvailableTournamentUsers(tournamentId);
         var users: Array<Int> = res.users;
         var ret = Finish(tournamentId, dateRound, player1, player2, winner, lose, battleId, round, battles, users);
         return ret;
+      }
+
+      public function LoseCall(c: VDLClient, params: Params): Dynamic {
+        var winner: Int = params.get("winner");
+
+        server.sendTo(winner, {
+          _type: "battle.leave"
+          });
+        return {errorCode: "ok"};
       }
 
       public function GetTournamentGrid(c: VDLClient, params: Params): Dynamic {
@@ -350,7 +361,6 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
               users.remove(el);
             }
           }*/
-
       var arr: Array<Int> = [battleId];
       FinishRoom(battleId);
       DeleteRoom(battleId);
@@ -362,10 +372,12 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
          return {errorCode: "wait"};
        } else {
          if(users.length > 1) {
-           AddRound(++round, tournamentId, dateRound);
+           round++;
+           AddRound(round, tournamentId, dateRound);
            //StartCall(tournamentId, round);
          } else {
-           DeleteTournament(tournamentId);
+           //DeleteTournament(tournamentId);
+           FinishTournament(tournamentId);
            return {errorCode: "TournamentEnd"};
          }
        }
@@ -387,6 +399,14 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
           userId: userId
         });
     }
+
+    public function FinishTournament(tournamentId: Int): Void {
+      var ret = server.cacheRequest({
+          _type: "vdl/cache.tournament.finish",
+          tournamentId: tournamentId
+        });
+    }
+
 
     public function AddRound(round: Int, tournamentId: Int, dateRound: String) {
       var ret = server.cacheRequest({

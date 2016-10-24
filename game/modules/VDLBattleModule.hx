@@ -44,7 +44,8 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       }
 
       public function TaskCall(c: VDLClient, params: Params): Dynamic {
-        var ret = Task(c, c.id, params);
+        var roomId = params.get("roomId");
+        var ret = Task(c, c.id, roomId, params);
         return ret;
       }
 
@@ -115,8 +116,7 @@ public function Enemy(c: VDLClient,selfId: Int, enemId: Int): Dynamic {
         return {errorCode: 'ok'};
     }
 
-    public function Task(c: VDLClient, cid: Int, params: Params) {
-      var roomId = params.get('roomId');
+    public function Task(c: VDLClient, cid: Int, roomId: Int, params: Params) {
       var user = RoomInfo(roomId);
       var enemId = 0;
       if(cid == user.firstId) {
@@ -138,8 +138,9 @@ public function Enemy(c: VDLClient,selfId: Int, enemId: Int): Dynamic {
       }*/
       params.params.type = "battle.task";
       params.params._type = "battle.task";
+      var obj: Dynamic = params.params;
       //c.listStatistic.push(params);
-      server.sendTo(enemId, params);
+      server.sendTo(enemId, obj);
 
       return {errorCode: 'ok'}
     }

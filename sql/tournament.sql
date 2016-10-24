@@ -7,7 +7,7 @@ create table Tournament
   StartDate text DEFAULT '' NOT NULL, -- startDate
   RoundDate text DEFAULT '' NOT NULL, -- roundDate
   Round int DEFAULT 1 NOT NULL, -- round
-  Status text DEFAULT '' NOT NULL, -- status
+  Status text DEFAULT 'starting' NOT NULL, -- status
   Type text DEFAULT 'once' NOT NULL, -- type
   RoundTime int DEFAULT 30 NOT NULL, -- round time
   RoundInterval int DEFAULT 1 NOT NULL, -- interval of round

@@ -47,7 +47,7 @@ using Lambda;
    public function checkTournament() {
 
      var currentTime: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
-     var res = server.query("SELECT * FROM tournament WHERE startdate = '" + currentTime + "' OR rounddate = '" + currentTime + "'");
+     var res = server.query("SELECT * FROM tournament WHERE startdate = '" + currentTime + "' OR rounddate = '" + currentTime + "' AND status <> 'finished'");
      if(res.length > 0) {
        for( el in res ) {
          /*server.broadcast('game', {
@@ -114,6 +114,9 @@ using Lambda;
           response = CheckPrepare(c, params);*/
         case "vdl/cache.user.getData":
           response = GetUserData(c, params);
+        case "vdl/cache.tournament.finish":
+          response = FinishTournament(c, params);
+
 
 
 
@@ -178,7 +181,9 @@ using Lambda;
      var roundDate = tournament.get(null,'rounddate');
      if(round > 1) {
        var buffer = list.length;
+
        var bufferInt: Int = Std.int(buffer);
+       if(bufferInt == 0) return -1;
        var battles: Array<Int> = new Array<Int>();
        while (bufferInt > 0) {
          var ret = createRoom(list[bufferInt - 1]);
@@ -188,6 +193,7 @@ using Lambda;
          bufferInt = bufferInt - 2;
        }
        tournament.set("params", "battleActive", battleActive);
+
        server.cacheManager.updated(0, 'tournament', tournamentId);
        return 0;
      }
@@ -221,6 +227,7 @@ using Lambda;
        bufferInt = bufferInt - 2;
      }
      tournament.set("params", "battleActive", battleActive);
+     tournament.set(null, "status", "active");
      server.cacheManager.updated(0, 'tournament', tournamentId);
      return 0;
    }
@@ -237,8 +244,8 @@ using Lambda;
 
      roundDate = convertDate(roundDate, interval);
 
-     tournament.set('round', null, round);
-     tournament.set('rounddate', null, roundDate);
+     tournament.set(null, 'round',round);
+     tournament.set(null, 'rounddate', roundDate);
 
      server.cacheManager.updated(0, 'tournament', tournamentId);
 
@@ -336,6 +343,7 @@ using Lambda;
         case "finished":
           var active = tournament.get('params','battleActive');
           var arr = tournament.get('params','battleFinished');
+          if(arr == null) arr = [];
 
           for( i in battles) {
             arr.push(i);
@@ -485,6 +493,18 @@ using Lambda;
 
 
       return arr;
+    }
+
+    function FinishTournament(c: SlaveClient, params: Params): Dynamic {
+      var tournamentId = params.get('tournamentId');
+
+      var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
+      var tournament = ret.block;
+      tournament.set(null, 'status', 'finished');
+      server.cacheManager.updated(0, 'tournament', tournamentId);
+
+
+      return {};
     }
 
     function SetUsersTournament(c: SlaveClient, params: Params): Dynamic {
