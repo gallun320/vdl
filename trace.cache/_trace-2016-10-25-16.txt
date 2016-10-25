@@ -1,0 +1,44 @@
+25.10 16:08:55 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+25.10 16:08:55 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 144
+Called from modules/VDLCache.hx line 137
+Called from modules/VDLCache.hx line 92
+Called from snipe/cache/CacheServer.hx line 487
+25.10 16:09:42 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+25.10 16:09:42 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 144
+Called from modules/VDLCache.hx line 137
+Called from modules/VDLCache.hx line 92
+Called from snipe/cache/CacheServer.hx line 487
+25.10 16:16:03 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+25.10 16:16:03 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 144
+Called from modules/VDLCache.hx line 137
+Called from modules/VDLCache.hx line 92
+Called from snipe/cache/CacheServer.hx line 487
+25.10 16:16:33 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+25.10 16:16:33 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 144
+Called from modules/VDLCache.hx line 137
+Called from modules/VDLCache.hx line 92
+Called from snipe/cache/CacheServer.hx line 487
+25.10 16:40:03 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+25.10 16:40:03 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 142
+Called from modules/VDLCache.hx line 97
+Called from snipe/cache/CacheServer.hx line 487
+25.10 16:40:13 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+25.10 16:40:13 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 142
+Called from modules/VDLCache.hx line 97
+Called from snipe/cache/CacheServer.hx line 487
+25.10 16:46:37 TRACE: Check tournament timer exception:
+25.10 16:46:37 TRACE: C Stack Overflow
+25.10 16:59:35 TRACE: vdl/cache.battle.finishRoom : Invalid field access : set
+25.10 16:59:35 TRACE: vdl/cache.battle.finishRoom : 
+Called from modules/VDLCache.hx line 651
+Called from modules/VDLCache.hx line 136
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487

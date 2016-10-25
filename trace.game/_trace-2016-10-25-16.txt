@@ -1,0 +1,72 @@
+25.10 16:08:27 TRACE: User already logon.
+25.10 16:08:27 TRACE: 
+Called from snipe/slave/Server.hx line 870
+Called from snipe/slave/Server.hx line 1124
+25.10 16:08:27 TRACE: Could not login.
+25.10 16:08:27 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+25.10 16:08:55 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 16:08:55 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 16:09:42 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 16:09:42 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 16:16:03 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 16:16:03 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 16:16:33 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 16:16:33 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 16:32:28 TRACE: User already logon.
+25.10 16:32:28 TRACE: 
+Called from snipe/slave/Server.hx line 870
+Called from snipe/slave/Server.hx line 1124
+25.10 16:32:28 TRACE: Could not login.
+25.10 16:32:28 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+25.10 16:40:03 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 16:40:03 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 16:40:13 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 16:40:13 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 16:40:35 TRACE: User already logon.
+25.10 16:40:35 TRACE: 
+Called from snipe/slave/Server.hx line 870
+Called from snipe/slave/Server.hx line 1124
+25.10 16:40:35 TRACE: Could not login.
+25.10 16:40:35 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+25.10 16:59:35 TRACE: tournament.end : cacheRequest exception { roomId => 76, _type => vdl/cache.battle.finishRoom }
+25.10 16:59:35 TRACE: tournament.end : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLTournamentModule.hx line 498
+Called from modules/VDLTournamentModule.hx line 383
+Called from a C function
+Called from modules/VDLTournamentModule.hx line 150
+Called from modules/VDLTournamentModule.hx line 67
+Called from snipe/slave/Server.hx line 1176

@@ -1,0 +1,112 @@
+25.10 18:08:18 TRACE: User not logon yet.
+25.10 18:08:26 TRACE: User not logon yet.
+25.10 18:08:35 TRACE: User not logon yet.
+25.10 18:08:44 TRACE: User not logon yet.
+25.10 18:08:53 TRACE: User not logon yet.
+25.10 18:09:02 TRACE: User not logon yet.
+25.10 18:09:10 TRACE: User not logon yet.
+25.10 18:09:19 TRACE: User not logon yet.
+25.10 18:09:28 TRACE: User not logon yet.
+25.10 18:09:36 TRACE: User not logon yet.
+25.10 18:09:45 TRACE: User not logon yet.
+25.10 18:09:54 TRACE: User not logon yet.
+25.10 18:10:03 TRACE: User not logon yet.
+25.10 18:10:11 TRACE: User not logon yet.
+25.10 18:10:20 TRACE: User not logon yet.
+25.10 18:10:29 TRACE: User not logon yet.
+25.10 18:10:38 TRACE: User not logon yet.
+25.10 18:10:46 TRACE: User not logon yet.
+25.10 18:10:55 TRACE: User not logon yet.
+25.10 18:11:04 TRACE: User not logon yet.
+25.10 18:11:12 TRACE: User not logon yet.
+25.10 18:11:21 TRACE: User not logon yet.
+25.10 18:11:30 TRACE: User not logon yet.
+25.10 18:11:39 TRACE: User not logon yet.
+25.10 18:11:47 TRACE: User not logon yet.
+25.10 18:11:56 TRACE: User not logon yet.
+25.10 18:12:05 TRACE: User not logon yet.
+25.10 18:12:14 TRACE: User not logon yet.
+25.10 18:12:22 TRACE: User not logon yet.
+25.10 18:12:31 TRACE: User not logon yet.
+25.10 18:12:40 TRACE: User not logon yet.
+25.10 18:12:49 TRACE: User not logon yet.
+25.10 18:12:57 TRACE: User not logon yet.
+25.10 18:13:06 TRACE: User not logon yet.
+25.10 18:13:15 TRACE: User not logon yet.
+25.10 18:13:24 TRACE: User not logon yet.
+25.10 18:13:32 TRACE: User not logon yet.
+25.10 18:13:41 TRACE: User not logon yet.
+25.10 18:13:50 TRACE: User not logon yet.
+25.10 18:13:59 TRACE: User not logon yet.
+25.10 18:14:07 TRACE: User not logon yet.
+25.10 18:14:16 TRACE: User not logon yet.
+25.10 18:14:25 TRACE: User not logon yet.
+25.10 18:14:34 TRACE: User not logon yet.
+25.10 18:14:42 TRACE: User not logon yet.
+25.10 18:14:51 TRACE: User not logon yet.
+25.10 18:15:00 TRACE: User not logon yet.
+25.10 18:15:09 TRACE: User not logon yet.
+25.10 18:15:17 TRACE: User not logon yet.
+25.10 18:15:26 TRACE: User not logon yet.
+25.10 18:15:35 TRACE: User not logon yet.
+25.10 18:15:44 TRACE: User not logon yet.
+25.10 18:15:52 TRACE: User not logon yet.
+25.10 18:16:01 TRACE: User not logon yet.
+25.10 18:16:10 TRACE: User not logon yet.
+25.10 18:16:18 TRACE: User not logon yet.
+25.10 18:16:27 TRACE: User not logon yet.
+25.10 18:16:36 TRACE: User not logon yet.
+25.10 18:16:45 TRACE: User not logon yet.
+25.10 18:16:53 TRACE: User not logon yet.
+25.10 18:17:02 TRACE: User not logon yet.
+25.10 18:17:11 TRACE: User not logon yet.
+25.10 18:17:20 TRACE: User not logon yet.
+25.10 18:17:28 TRACE: User not logon yet.
+25.10 18:17:37 TRACE: User not logon yet.
+25.10 18:17:46 TRACE: User not logon yet.
+25.10 18:17:54 TRACE: User not logon yet.
+25.10 18:18:03 TRACE: User not logon yet.
+25.10 18:18:12 TRACE: User not logon yet.
+25.10 18:18:21 TRACE: User not logon yet.
+25.10 18:18:29 TRACE: User not logon yet.
+25.10 18:18:38 TRACE: User not logon yet.
+25.10 18:18:47 TRACE: User not logon yet.
+25.10 18:18:56 TRACE: User not logon yet.
+25.10 18:19:04 TRACE: User not logon yet.
+25.10 18:19:13 TRACE: User not logon yet.
+25.10 18:19:22 TRACE: User not logon yet.
+25.10 18:19:31 TRACE: User not logon yet.
+25.10 18:19:39 TRACE: User not logon yet.
+25.10 18:19:48 TRACE: User not logon yet.
+25.10 18:19:57 TRACE: User not logon yet.
+25.10 18:20:05 TRACE: User not logon yet.
+25.10 18:20:14 TRACE: User not logon yet.
+25.10 18:20:23 TRACE: User not logon yet.
+25.10 18:20:32 TRACE: User not logon yet.
+25.10 18:20:40 TRACE: User not logon yet.
+25.10 18:20:49 TRACE: User not logon yet.
+25.10 18:20:58 TRACE: User not logon yet.
+25.10 18:32:55 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 18:32:55 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 18:49:26 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 18:49:26 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 18:49:26 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 18:49:26 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994
+25.10 18:54:06 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+25.10 18:54:06 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 215
+Called from modules/VDLBattleModule.hx line 228
+Called from snipe/slave/Server.hx line 994

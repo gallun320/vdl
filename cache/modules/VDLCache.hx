@@ -14,7 +14,8 @@ using Lambda;
    public var nameTournament: String;
    public var startDate: Date;
    public var usersList: Array<Int>;
-   public var usersActive: Map<Int,Array<Int>>;
+   public var usersAll: Array<Int>;
+   public var usersLocal: Map<Int, Array<Dynamic>>;
    public var battleActive: Array<Int>;
    public var battleFinished: Array<Int>;
    public var tournament: Block;
@@ -32,7 +33,7 @@ using Lambda;
      super(c);
      name = "vdl/cache";
      tournamentGrid = new Map<Int,Dynamic>();
-     usersActive = new Map<Int,Array<Int>>();
+     usersLocal = new Map<Int,Array<Dynamic>>();
         var timeTimers = 60;
         server.timer.add({
            name: 'Check tournament',
@@ -45,8 +46,13 @@ using Lambda;
    }
 
    public function checkTournament() {
+     /*===============================================================*/
+     // Fixed for production server
+    /* var curDate: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
+     var currentTime: String = convertDate(curDate, 3);*/
 
      var currentTime: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
+
      var res = server.query("SELECT * FROM tournament WHERE startdate = '" + currentTime + "' OR rounddate = '" + currentTime + "' AND status <> 'finished'");
      if(res.length > 0) {
        for( el in res ) {
@@ -116,6 +122,8 @@ using Lambda;
           response = GetUserData(c, params);
         case "vdl/cache.tournament.finish":
           response = FinishTournament(c, params);
+        case 'vdl/cache.tournament.getStatus':
+          response = GetTournamentStatus(c, params);
 
 
 
@@ -175,22 +183,34 @@ using Lambda;
      var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
      var tournament = ret.block;
      battleActive = [];
+     if(tournamentGrid[tournamentId] == null) {
+       tournamentGrid.set(tournamentId, {
+          battles: [],
+          round: round,
+          status: 'starting'
+         });
+     }
+
      /*var userList: Array<Int> = tournament.get('params', 'usersList');
      var res = GetAvailableTournamentUsers(tournamentId);*/
      var list: Array<Int> = tournament.get('params', 'usersList');
      var roundDate = tournament.get(null,'rounddate');
      if(round > 1) {
-       var buffer = list.length;
-
-       var bufferInt: Int = Std.int(buffer);
-       if(bufferInt == 0) return -1;
-       var battles: Array<Int> = new Array<Int>();
-       while (bufferInt > 0) {
-         var ret = createRoom(list[bufferInt - 1]);
-         var res = joinRoom(list[bufferInt - 2], ret.room);
-         Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
-         battleActive.push(ret.room);
-         bufferInt = bufferInt - 2;
+       var grid = tournamentGrid.get(tournamentId);
+       var cacheBattles: Array<Dynamic> = grid.battles;
+       for( el in cacheBattles  ) {
+         if(el.winner == -1) {
+           var ret: Dynamic = {};
+           var res: Dynamic = {};
+           if( el.player1 != null ) {
+              ret = createRoom(el.player1);
+           }
+           if(el.player2 != null) {
+             res = joinRoom(el.player2, ret.room);
+           }
+           var suc = Enemy(el.player1, el.player2, ret.room, tournamentId, round, roundDate);
+           battleActive.push(ret.room);
+         }
        }
        tournament.set("params", "battleActive", battleActive);
 
@@ -219,13 +239,22 @@ using Lambda;
      buffer = list.length;
      var bufferInt: Int = Std.int(buffer);
      var battles: Array<Int> = new Array<Int>();
+     var battlesGrid: Array<Dynamic> = [];
+     if(bufferInt == 0) return -1;
      while (bufferInt > 0) {
        var ret = createRoom(list[bufferInt - 1]);
        var res = joinRoom(list[bufferInt - 2], ret.room);
-       Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
+       var suc = Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
+       var battles: Array<Dynamic> = [];
+       battlesGrid.push({ player1: list[bufferInt - 1], player2: list[bufferInt - 2], winner: -1, round: round });
        battleActive.push(ret.room);
        bufferInt = bufferInt - 2;
      }
+     tournamentGrid.set(tournamentId, {
+        battles: battlesGrid,
+        round: round,
+        status: 'starting'
+       });
      tournament.set("params", "battleActive", battleActive);
      tournament.set(null, "status", "active");
      server.cacheManager.updated(0, 'tournament', tournamentId);
@@ -233,19 +262,22 @@ using Lambda;
    }
 
    function AddRound(c: SlaveClient, params: Params): Dynamic {
-     var tournamentId = params.get('tournamentId');
-     var round = params.get('round');
+     var tournamentId:Int = params.get('tournamentId');
+     var round: Int = params.get('round');
      var roundDate: String = params.get('dateRound');
+     var status: String = params.get('status');
 
      var ret = server.cacheManager.getUnlocked(0,'tournament',tournamentId, -1);
      var tournament = ret.block;
 
-     var interval: Int = tournament.get('roundinterval', null);
+     if(status != 'finished') {
+       var interval: Int = tournament.get( null, 'roundinterval');
+       roundDate = convertDate(roundDate, interval);
+       tournament.set(null, 'rounddate', roundDate);
+     }
 
-     roundDate = convertDate(roundDate, interval);
 
      tournament.set(null, 'round',round);
-     tournament.set(null, 'rounddate', roundDate);
 
      server.cacheManager.updated(0, 'tournament', tournamentId);
 
@@ -284,20 +316,21 @@ using Lambda;
 
 
        var tournament = ret.block;
-       var userList: Array<Int> = tournament.get('params', 'usersList');
+       var userAll: Array<Int> = tournament.get('params', 'usersAll');
 
-       var users = [];
+       var users: Array<Dynamic> = [];
        try {
-         for( i in userList ) {
-           var res  = server.query("SELECT name FROM users WHERE id = " + i);
-           for( el in res  ) {
-             users.push({id: i, name: el.name});
+           for( i in userAll ) {
+             var res  = server.query("SELECT name FROM users WHERE id = " + i);
+             for( el in res  ) {
+               users.push({id: i, name: el.name});
+             }
            }
 
-         }
+
        } catch(e:Dynamic) {
          trace(e);
-         users = null;
+         users = [];
        }
 
 
@@ -363,43 +396,49 @@ using Lambda;
       var battles:Array<Dynamic> = params.get('battles');
       var round = params.get('round');
       var tournament = params.get('tournamentId');
+      var status = params.get('status');
       if(tournamentGrid[tournament] == null) {
         tournamentGrid.set(tournament, {
           round: round,
+          status: status,
           battles: battles
         });
         return {errorCode: 'ok', list: battles, tournamentId: tournament};
       }
         var data = tournamentGrid.get(tournament);
-        if(round == 1) {
+        if(status == 'starting') {
           tournamentGrid.set(tournament, {
             round: round,
+            status: status,
             battles: battles
           });
           return {errorCode: 'ok', list: battles, tournamentId: tournament};
         }
         var cacheBattles: Array<Dynamic> = data.battles;
 
-        if(round > 1) {
+        if(status == 'active' || status == 'finished') {
 
           if(battles.length == 0) {
             return {errorCode: 'ok', list: cacheBattles, tournamentId: tournament};
           }
 
-          for( el in cacheBattles  ) {
-            if(el.player1 == battles[0].player1 && el.player2 == battles[0].player2 && el.winner == -1) {
-              el.winner = battles[0].winner;
+          for( i in 0 ... cacheBattles.length  ) {
+
+            if(cacheBattles[i].player1 == battles[0].player1 && cacheBattles[i].player2 == battles[0].player2 && cacheBattles[i].winner == -1) {
+              cacheBattles[i].winner = battles[0].winner;
             }
-            if(el.player2 == null) {
-              el.player2 = battles[0].winner;
+            if(cacheBattles[i].player2 == null) {
+              cacheBattles[i].player2 = battles[0].winner;
               return {errorCode: 'ok', list: cacheBattles, tournamentId: tournament};
             }
 
           }
+          var round = round + 1;
           cacheBattles.push({player1: battles[0].winner, player2: null, winner: -1, round: round});
           tournamentGrid.set(tournament, {
             round: round,
-            battles: cacheBattles
+            battles: cacheBattles,
+            status: status
           });
           return {errorCode: 'ok', list: cacheBattles, tournamentId: tournament};
 
@@ -427,15 +466,32 @@ using Lambda;
 
     }
 
-    public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int, roundDate: String): Void {
+    public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int, roundDate: String): Int {
+
+      if(player1 == null && player2 == null) {
+        return -1;
+      }
+
+      if(player1 == null) player1 = 0;
+
+      if(player2 == null) player2 = 0;
+
       var slaveId1 = server.coreUserModule.getServerID(player1);
-      var slaveId2 = server.coreUserModule.getServerID(player2);
+
       var client1 = server.getClient(slaveId1);
+
+      var slaveId2 = server.coreUserModule.getServerID(player2);
+
       var client2 = server.getClient(slaveId2);
+
       var playerOneName = server.query('SELECT name FROM users WHERE id=' + player1);
-      var playerTwoName = server.query('SELECT name FROM users WHERE id=' + player2);
+
       var pOneName = playerOneName.results().first().name;
+
+      var playerTwoName = server.query('SELECT name FROM users WHERE id=' + player2);
+
       var pTwoName = playerTwoName.results().first().name;
+
       var obj1 = {"enemy.num": 2,
       player: 1,
       id: player1,
@@ -457,6 +513,7 @@ using Lambda;
       battleId: battleId,
       tournamentId: tournamentId,
       roundDate: roundDate};
+
       try {
         client1.notify({
           _type:"tournament.enemyEvent",
@@ -467,6 +524,10 @@ using Lambda;
         trace(e);
         trace( '=======================================' );
         trace( 'User 1 not login' );
+        client2.notify({
+          _type:"tournament.leaveEvent",
+           id: player2
+          });
       }
 
       try {
@@ -480,8 +541,12 @@ using Lambda;
         trace(e);
         trace( '=========================================' );
         trace( 'User 2 not login' );
+        client1.notify({
+          _type:"tournament.leaveEvent",
+           id: player1
+          });
       }
-
+      return 0;
     }
 
     function GetBattlesTournaments(c: SlaveClient, params: Params): Array<Int> {
@@ -497,10 +562,12 @@ using Lambda;
 
     function FinishTournament(c: SlaveClient, params: Params): Dynamic {
       var tournamentId = params.get('tournamentId');
+      var winner = params.get("winner");
 
       var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
       var tournament = ret.block;
       tournament.set(null, 'status', 'finished');
+      tournament.set(null, 'winner', winner);
       server.cacheManager.updated(0, 'tournament', tournamentId);
 
 
@@ -517,6 +584,16 @@ using Lambda;
       server.cacheManager.updated(0, 'tournament', tournamentId);
 
       return {errorCode: 'ok'};
+    }
+
+    function GetTournamentStatus(c: SlaveClient, params: Params): Dynamic {
+      var tournamentId: Int = params.get('tournamentId');
+
+      var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
+      var tournament = ret.block;
+      var status: String = tournament.get(null, 'status');
+
+      return {errorCode: "ok", status: status};
     }
 
     /*function CheckPrepare(c: SlaveClient, params: Params): Dynamic {
@@ -572,7 +649,9 @@ using Lambda;
      var tournament = ret.block;
      //var res = server.query('SELECT name FROM users WHERE id = ' + userId);
      var userList: Array<Int> = tournament.get('params', 'usersList');
+     var usersAll: Array<Int> = tournament.get('params', 'usersAll');
      if(userList == null) userList = [];
+     if(usersAll == null) usersAll = [];
      /*var name = '';
      for( el in res ) {
        name = el.name;
@@ -588,7 +667,9 @@ using Lambda;
 
 
      userList.push(userId);
+     usersAll.push(userId);
      tournament.set('params', 'usersList', userList);
+     tournament.set('params', 'usersAll', usersAll);
      server.cacheManager.updated(0, 'tournament', tournamentId);
 
 
@@ -741,10 +822,11 @@ using Lambda;
         var hours: Int = Std.parseInt(str.substr(11, 2));
         var minute: Int = Std.parseInt(str.substr(14, 2));
         var dt: Float = new Date(year, month, day, hours, minute, 0).getTime() / 1000;
-        var correctDt: Float = dt + (24 * 60 * 60);
+        var correctDt: Float = dt + (interval * 60 * 60);
         var formatDt: Date = Date.fromTime(correctDt * 1000);
        var endDate: String = DateTools.format(formatDt, "%Y-%d-%m %H:%M");
      return endDate;
    }
+
 
  }

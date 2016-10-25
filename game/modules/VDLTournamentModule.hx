@@ -89,6 +89,12 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         });
       }
 
+      public function leaveEvent(msg: { id: Int }) {
+        server.sendTo(msg.id, {
+          _type: "battle.leave"
+        });
+      }
+
       /*public function StartCall(tournamentId: Int, round: Int): Void {
         var res = GetAvailableTournamentUsers(tournamentId);
         var list: Array<Int> = res.users;
@@ -137,11 +143,12 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         var lose: Int = params.get('lose');
         var battleId: Int = params.get('battleId');
         var round: Int = params.get('round');
+        var status: String = GetStatus(tournamentId);
         var dateRound: String = params.get('dateRound');
         var battles: Array<Int> = GetBattlesTournaments(tournamentId);
         var res = GetAvailableTournamentUsers(tournamentId);
         var users: Array<Int> = res.users;
-        var ret = Finish(tournamentId, dateRound, player1, player2, winner, lose, battleId, round, battles, users);
+        var ret = Finish(tournamentId, dateRound, player1, player2, winner, lose, battleId, round, status, battles, users);
         return ret;
       }
 
@@ -157,8 +164,9 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       public function GetTournamentGrid(c: VDLClient, params: Params): Dynamic {
         var tournamentId = params.get('tournamentId');
         var round = params.get('round');
-        if(round > 1) {
-          var ret = SetGrid([], round, tournamentId);
+        var status: String = GetStatus(tournamentId);
+        if(status == 'active' || status == 'finished') {
+          var ret = SetGrid([], round, tournamentId, status);
           return ret;
         }
         var res = GetAvailableTournamentUsers(tournamentId);
@@ -189,7 +197,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
           battles.push({player1: list[bufferInt - 2], player2: list[bufferInt - 1], round: round, winner: -1});
           bufferInt = bufferInt - 2;
         }
-        var ret = SetGrid(battles, round, tournamentId);
+        var ret = SetGrid(battles, round, tournamentId, status);
         return ret;
       }
       /*public function CubeCall(c: VDLClient, params: Params): Dynamic {
@@ -230,14 +238,25 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
 
 
-      public function SetGrid(battleData: Array<Dynamic>, round: Int, tournament: Int): Dynamic {
+      public function SetGrid(battleData: Array<Dynamic>, round: Int, tournament: Int, status: String): Dynamic {
         var ret = server.cacheRequest({
             _type: 'vdl/cache.tournament.setGrid',
             battles: battleData,
             round: round,
-            tournamentId: tournament
+            tournamentId: tournament,
+            status: status
           });
         return ret;
+      }
+
+      public function GetStatus(tournamentId: Int): String {
+
+        var ret = server.cacheRequest({
+            _type: 'vdl/cache.tournament.getStatus',
+            tournamentId: tournamentId
+          });
+        return ret.status;
+
       }
 
     /*public function FindBattle(c: VDLClient, cid: Int, params: Params): Dynamic {
@@ -351,11 +370,13 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
                             lose: Int,
                             battleId: Int,
                             round: Int,
+                            status: String,
                              battles: Array<Int>,
                              users: Array<Int>): Dynamic
     {
       battles.remove(battleId);
       users.remove(lose);
+      server.sendTo(lose, {_type: "battle.end"});
       /*for(el in users) {
           if(el.id == lose) {
               users.remove(el);
@@ -366,18 +387,24 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       DeleteRoom(battleId);
       SetBattlesTournament(arr, tournamentId, "finished");
       SetUsersTournament(users, tournamentId);
-      var ret = SetGrid([{player1: player1, player2: player2, winner: winner, round: round}], round, tournamentId);
+
       //server.sendTo(secondId, {_type: "battle.end"});
       if(battles.length > 0) {
          return {errorCode: "wait"};
        } else {
          if(users.length > 1) {
-           round++;
-           AddRound(round, tournamentId, dateRound);
+           var ret = SetGrid([{player1: player1, player2: player2, winner: winner, round: round}], round, tournamentId, status);
+           round = round + 1;
+           AddRound(round, tournamentId, dateRound, status);
+
            //StartCall(tournamentId, round);
          } else {
            //DeleteTournament(tournamentId);
-           FinishTournament(tournamentId);
+           var ret = SetGrid([{player1: player1, player2: player2, winner: winner, round: round}], round, tournamentId, 'finished');
+           round = round + 1;
+           AddRound(round, tournamentId, dateRound, 'finished');
+
+           FinishTournament(tournamentId, winner);
            return {errorCode: "TournamentEnd"};
          }
        }
@@ -400,20 +427,22 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         });
     }
 
-    public function FinishTournament(tournamentId: Int): Void {
+    public function FinishTournament(tournamentId: Int, winner: Int): Void {
       var ret = server.cacheRequest({
           _type: "vdl/cache.tournament.finish",
-          tournamentId: tournamentId
+          tournamentId: tournamentId,
+          winner: winner
         });
     }
 
 
-    public function AddRound(round: Int, tournamentId: Int, dateRound: String) {
+    public function AddRound(round: Int, tournamentId: Int, dateRound: String, status: String) {
       var ret = server.cacheRequest({
           _type: 'vdl/cache.tournament.addRound',
           round: round,
           tournamentId: tournamentId,
-          dateRound: dateRound
+          dateRound: dateRound,
+          status: status
         });
     }
     public function SetBattlesTournament(battles: Array<Int>, tournamentId: Int, typeBattle: String): Void {
