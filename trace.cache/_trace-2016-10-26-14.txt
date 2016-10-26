@@ -1,0 +1,8 @@
+26.10 14:43:28 TRACE: Check tournament timer exception:
+26.10 14:43:28 TRACE: Invalid field access : response
+26.10 14:58:39 TRACE: vdl/cache.battle.finishRoom : Invalid field access : set
+26.10 14:58:39 TRACE: vdl/cache.battle.finishRoom : 
+Called from modules/VDLCache.hx line 712
+Called from modules/VDLCache.hx line 137
+Called from modules/VDLCache.hx line 100
+Called from snipe/cache/CacheServer.hx line 487

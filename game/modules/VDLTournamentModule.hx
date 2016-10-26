@@ -14,7 +14,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
   public var usersList: Array<Int>;
   public var battleActive: Array<Int>;
   public var battleFinished: Array<Int>;
-
+  //public var BattleModule: VDLBattleModule;
 
   public var firstID: Int;
   public var secondID: Int;
@@ -34,6 +34,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
          isServerThread: true,
          method: checkTournament
          });*/
+         //BattleModule = server.getModule('battle');
       server.subscribeModule("core/user.logoutPost", this);
       server.subscribeModule("core/user.registerPre", this);
       server.subscribeModule("core/user.loginPre", this);
@@ -65,8 +66,8 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
             response = DeleteUsersCall(c, params);
           case "tournament.end":
             response = FinishCall(c, params);
-          case "tournament.lose":
-            response = LoseCall(c, params);
+          /*case "tournament.lose":
+            response = LoseCall(c, params);*/
           case "tournament.grid":
             response = GetTournamentGrid(c, params);
         /*  case "tournament.checkPrepare":
@@ -137,29 +138,35 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
 
       public function FinishCall(c: VDLClient, params: Params): Dynamic {
         var tournamentId: Int = params.get('tournamentId');
-        var player1: Int = params.get("player1");
-        var player2: Int = params.get("player2");
         var winner: Int = params.get('winner');
-        var lose: Int = params.get('lose');
         var battleId: Int = params.get('battleId');
-        var round: Int = params.get('round');
-        var status: String = GetStatus(tournamentId);
-        var dateRound: String = params.get('dateRound');
+
+        var tournament: Dynamic = GetTournament(tournamentId);
+        var players: Dynamic = RoomInfo(battleId);
+
+        var player1: Int = players.firstId;
+        var player2: Int = players.secondId;
+
+        var lose: Int = (winner == player1) ? player2 : player1;
+
+        var round: Int = tournament.round;
+        var status: String = tournament.status;
+        var dateRound: String = tournament.rounddate;
         var battles: Array<Int> = GetBattlesTournaments(tournamentId);
         var res = GetAvailableTournamentUsers(tournamentId);
         var users: Array<Int> = res.users;
-        var ret = Finish(tournamentId, dateRound, player1, player2, winner, lose, battleId, round, status, battles, users);
+        var ret = Finish(c, tournamentId, dateRound, player1, player2, winner, lose, battleId, round, status, battles, users);
         return ret;
       }
 
-      public function LoseCall(c: VDLClient, params: Params): Dynamic {
+      /*public function LoseCall(c: VDLClient, params: Params): Dynamic {
         var winner: Int = params.get("winner");
 
         server.sendTo(winner, {
           _type: "battle.leave"
           });
         return {errorCode: "ok"};
-      }
+      }*/
 
       public function GetTournamentGrid(c: VDLClient, params: Params): Dynamic {
         var tournamentId = params.get('tournamentId');
@@ -222,6 +229,14 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         return { errorCode: 'ok' };
       }
 
+      public function GetTournament(tournamentId: Int): Dynamic {
+        var ret = server.cacheRequest({
+            _type: "vdl/cache.tournament.getTournament",
+            tournamentId: tournamentId
+          });
+          return ret;
+      }
+
       public function GetAvailableTournamentUsers(tournament: Int): Dynamic {
         var ret = server.cacheRequest({
           _type: 'vdl/cache.tournament.getAvailableTournamentUsers',
@@ -259,110 +274,8 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
 
       }
 
-    /*public function FindBattle(c: VDLClient, cid: Int, params: Params): Dynamic {
-
-      var count = 0;
-      if(res.errorCode == 'not') {
-        var ret = CreateRoom(cid);
-
-        return ret;
-      } else {
-
-				var r = Std.random(count);
-				var i = 0;
-        for(el in list)
-						{
-
-							if(i == r)
-							{
-								var res = JoinRoom(cid, el.id);
-                if(res.errorCode == 'ok') {
-
-                  var data = Enemy(c, cid, el.first);
-                  if( data.errorCode == 'ok' ) {
-                    return res;
-                  }
-                }
-
-							}
-							i++;
-						}
-
-
-      }
-      return { errorCode: "Not battle" };
-    }*/
-  /*public function CheckPrepare(c: VDLClient, params: Params): Dynamic {
-    var tournamentId = params.get('tournamentId');
-    var userId = c.id;
-
-    AddActive(tournamentId, userId);
-
-    return  {errorCode: "ok"};
-  }*/
-
-/*public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int): Void {
-        var playerOneName = server.query('SELECT name FROM users WHERE id=' + player1);
-        var playerTwoName = server.query('SELECT name FROM users WHERE id=' + player2);
-        var pOneName = playerOneName.first().name;
-        var pTwoName = playerTwoName.first().name;
-        var pOneName = '';
-        var pTwoName = '';
-        for(i in playerOneName) {
-          pOneName = i.name;
-        }
-        for(i in playerTwoName) {
-          pTwoName = i.name;
-        }
-        server.sendTo(player1, {"enemy.num": 2,
-        "enemy.id": player1,
-        name: pOneName,
-        "enemy.name": pTwoName,
-        round: round,
-        tournamentId: tournamentId,
-        battleId: battleId,
-        type: "tournament.enemy",
-        _type: "tournament.enemy"});
-
-        server.sendTo(player2, {"enemy.num": 1,
-        "enemy.id": player2,
-        name: pTwoName,
-        "enemy.name": pOneName,
-        round: round,
-        battleId: battleId,
-        tournamentId: tournamentId,
-        type: "tournament.enemy",
-        _type: "tournament.enemy"});
-    }*/
-
-    /*public function Task(c: VDLClient, cid: Int, params: Params) {
-      var roomId = params.get('roomId');
-      var user = RoomInfo(roomId);
-      var enemId = 0;
-      if(cid == user.firstId) {
-        enemId = user.secondId;
-      } else if(cid == user.secondId){
-        enemId = user.firstId;
-      }
-      var obj = {
-        type: "battle.task",
-        _type: "battle.task",
-        roomId: params.get('roomId'),
-        name: params.get('name'),
-        side: params.get('side'),
-        diceID: params.get('diceID'),
-        dice: params.get('dice'),
-        dices: params.get('dices'),
-        from: params.get('from'),
-        to: params.get('to')
-      }
-      c.listStatistic.push(obj);
-      server.sendTo(enemId, obj);
-
-      return {errorCode: 'ok'}
-    }*/
-
-    public function Finish(tournamentId: Int,
+    public function Finish( c: VDLClient,
+                            tournamentId: Int,
                             dateRound: String,
                             player1: Int,
                             player2: Int,
@@ -377,23 +290,19 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       battles.remove(battleId);
       users.remove(lose);
       server.sendTo(lose, {_type: "battle.end"});
-      /*for(el in users) {
-          if(el.id == lose) {
-              users.remove(el);
-            }
-          }*/
+
       var arr: Array<Int> = [battleId];
-      FinishRoom(battleId);
-      DeleteRoom(battleId);
+      var paramsData: Params = new Params({battleId: battleId, winner: winner});
+      var ret = server.BattleModule.FinishCall(c, paramsData);
       SetBattlesTournament(arr, tournamentId, "finished");
       SetUsersTournament(users, tournamentId);
 
       //server.sendTo(secondId, {_type: "battle.end"});
       if(battles.length > 0) {
+        var ret = SetGrid([{player1: player1, player2: player2, winner: winner, round: round}], round, tournamentId, status);
          return {errorCode: "wait"};
        } else {
          if(users.length > 1) {
-           var ret = SetGrid([{player1: player1, player2: player2, winner: winner, round: round}], round, tournamentId, status);
            round = round + 1;
            AddRound(round, tournamentId, dateRound, status);
 
@@ -411,13 +320,6 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       return {errorCode: 'ok'}
     }
 
-    /*public function Cube(): Dynamic {
-      var arr: Array<Int> = new Array<Int>();
-      for (i in 0 ... 6) {
-        arr.push(Std.random(6));
-      }
-      return { errorCode: 'ok', cube: arr};
-    }*/
 
     public function AddActive(tournamentId: Int, userId: Int): Void {
       var ret = server.cacheRequest({
@@ -519,14 +421,6 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         tournamentId: tournamentId
         });
     }
-    /*public function MakeTurn(userId: Int, roomId: Int) {
-      var ret = server.cacheRequest({
-         _type: 'vdl/cache.battle.makeTurn',
-         userId: userId,
-         roomId: roomId
-        });
-      return ret;
-    }*/
 
     public function DeleteRoom(roomId: Int) {
       var ret = server.cacheRequest({
@@ -570,18 +464,11 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       return true;
     }
 
-    /*override  function loginPost(c: VDLClient, params: Params, retParams: Dynamic,
-    responseParams: Dynamic) {
-      server.sendTo(c.id, {
-        _type: "tournament.enemy",
-        data: {"enemy.num": 2,
-        player: 1,
-        "enemy.id": 1,
-        name: "test",
-        "enemy.name": "test1",
-        round: 1,
-        tournamentId: 1,
-        battleId: 1}
-      });
+    /*override function loginPost(c:VDLClient, params:Params, retParams:Dynamic, responseParams:Dynamic): Void {
+      var paramsData: Params = new Params({battleId: 87});
+      var ret = server.BattleModule.GetAvaliableRooms();
+      trace( '======================================' );
+      trace( ret );
     }*/
+
 }

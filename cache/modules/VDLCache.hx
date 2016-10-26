@@ -25,6 +25,7 @@ using Lambda;
    public var id(get, null): Int;
    public var firstPlayerID(get, null): Int;
    public var secondPlayerID(get, null): Int;
+   public var usersRandomList: Array<Int>;
    public var turnID(get, null): Int;
    public var _list: Dynamic;
    public var room: Block;
@@ -116,14 +117,17 @@ using Lambda;
           response = DeleteTournament(c, params);
         case 'vdl/cache.tournament.addRound':
           response = AddRound(c, params);
-      /*  case "vdl/cache.tournament.addActive":
-          response = CheckPrepare(c, params);*/
+      case "vdl/cache.tournament.getTournament":
+          response = GetTournament(c, params);
         case "vdl/cache.user.getData":
           response = GetUserData(c, params);
         case "vdl/cache.tournament.finish":
           response = FinishTournament(c, params);
         case 'vdl/cache.tournament.getStatus':
           response = GetTournamentStatus(c, params);
+        case 'vdl/cache.battle.findRandom':
+          response = FindRandomBattle(c, params);
+
 
 
 
@@ -178,6 +182,26 @@ using Lambda;
      return ret;
    }
 
+  public function FindRandomBattle(c, params): Dynamic {
+    var userId: Int = params.get('userId');
+
+    if(usersRandomList == null) usersRandomList = [];
+
+    usersRandomList.push(userId);
+
+
+    while( usersRandomList.length > 1 ) {
+        var ret = createRoom(usersRandomList[0]);
+        var res = joinRoom(usersRandomList[1], ret.room);
+        var suc = EnemyRandom(usersRandomList[0], usersRandomList[1], ret.room);
+        usersRandomList = usersRandomList.slice(2);
+    }
+
+
+
+    return { errorCode: 'ok' };
+  }
+
 
   public function StartCall(tournamentId: Int, round: Int): Int {
      var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
@@ -208,7 +232,7 @@ using Lambda;
            if(el.player2 != null) {
              res = joinRoom(el.player2, ret.room);
            }
-           var suc = Enemy(el.player1, el.player2, ret.room, tournamentId, round, roundDate);
+           var suc = EnemyTournament(el.player1, el.player2, ret.room, tournamentId, round, roundDate);
            battleActive.push(ret.room);
          }
        }
@@ -244,7 +268,7 @@ using Lambda;
      while (bufferInt > 0) {
        var ret = createRoom(list[bufferInt - 1]);
        var res = joinRoom(list[bufferInt - 2], ret.room);
-       var suc = Enemy(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
+       var suc = EnemyTournament(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
        var battles: Array<Dynamic> = [];
        battlesGrid.push({ player1: list[bufferInt - 1], player2: list[bufferInt - 2], winner: -1, round: round });
        battleActive.push(ret.room);
@@ -444,29 +468,69 @@ using Lambda;
 
         }
         return {errorCode: 'ok', list: battles, tournamentId: tournament};
-        /*if(data.round == round) {
-          if(round == 1 && data.round == 1) {
-            tournamentGrid.set(tournament, {
-              round: round,
-              battles: battles
-            });
-            return {errorCode: 'ok', list: battles, tournamentId: tournament};
-          }
-          return {errorCode: 'ok', list: data.battles, tournamentId: tournament};
-        } else {
-          data.round = round;
-          data.battles = data.battles.concat(battles);
-          tournamentGrid.set(tournament, {
-            round: data.round,
-            battles: data.battles
-          });
-          return {errorCode: 'ok', list: data.battles, tournamentId: tournament};
-        }*/
-
-
     }
 
-    public function Enemy(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int, roundDate: String): Int {
+
+    public function EnemyRandom(player1: Int, player2: Int, battleId: Int): Int {
+
+      var slaveId1 = server.coreUserModule.getServerID(player1);
+
+      var client1 = server.getClient(slaveId1);
+
+      var slaveId2 = server.coreUserModule.getServerID(player2);
+
+      var client2 = server.getClient(slaveId2);
+
+      var playerOneName = server.query('SELECT name FROM users WHERE id=' + player1);
+
+      var pOneName = playerOneName.results().first().name;
+
+      var playerTwoName = server.query('SELECT name FROM users WHERE id=' + player2);
+
+      var pTwoName = playerTwoName.results().first().name;
+
+      var obj1 = {"enemy.num": 2,
+                  "enemy.id": player2,
+                  id: player1,
+                  name: pOneName,
+                  "enemy.name": pTwoName,
+                  battleId: battleId};
+
+      var obj2 = {"enemy.num": 1,
+                  "enemy.id": player1,
+                  id: player2,
+                  name: pTwoName,
+                  "enemy.name": pOneName,
+                  battleId: battleId};
+
+      try {
+        client1.notify({
+          _type:"battle.enemyEvent",
+           data: obj1,
+           id: player1
+          });
+      } catch(e:Dynamic) {
+        trace(e);
+        trace( '=======================================' );
+        trace( 'User 1 not login' );
+      }
+
+      try {
+
+              client2.notify({
+                _type:"battle.enemyEvent",
+                 data: obj2,
+                 id: player2
+                });
+      } catch(e:Dynamic) {
+        trace(e);
+        trace( '=========================================' );
+        trace( 'User 2 not login' );
+      }
+      return 0;
+    }
+
+    public function EnemyTournament(player1: Int, player2: Int, battleId: Int, tournamentId: Int, round: Int, roundDate: String): Int {
 
       if(player1 == null && player2 == null) {
         return -1;
@@ -568,6 +632,12 @@ using Lambda;
       var tournament = ret.block;
       tournament.set(null, 'status', 'finished');
       tournament.set(null, 'winner', winner);
+      tournamentGrid.set(tournamentId, {
+          round: tournament.get(null, 'round'),
+          status: 'finished',
+          battles: []
+        });
+
       server.cacheManager.updated(0, 'tournament', tournamentId);
 
 
@@ -596,6 +666,13 @@ using Lambda;
       return {errorCode: "ok", status: status};
     }
 
+
+    function GetTournament(c: SlaveClient, params: Params): Dynamic {
+      var tournamentId: Int = params.get('tournamentId');
+      var ret = server.query("SELECT * FROM tournament WHERE id = " + tournamentId);
+      var tournament: Dynamic = ret.results().first();
+      return tournament;
+    }
     /*function CheckPrepare(c: SlaveClient, params: Params): Dynamic {
       var tournamentId: Int = params.get('tournamentId');
       var userId: Int = params.get('userId');

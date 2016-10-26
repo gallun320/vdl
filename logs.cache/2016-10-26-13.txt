@@ -1,0 +1,549 @@
+26.10 13:17:40 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94', _type => core/server.query }
+26.10 13:17:40 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94'
+26.10 13:17:40 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:17:40 TIME: core/server.query : 26.52 ms
+26.10 13:17:40 NET: vdl.0 (thread) request core/user.isOnlineID { id => 94, _type => core/user.isOnlineID }
+26.10 13:17:40 QUEUE: vdl.0 (thread) response core/user.isOnlineID
+26.10 13:17:40 TIME: core/user.isOnlineID : 0.06 ms
+26.10 13:17:40 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 94, _type => core/cache.get }
+26.10 13:17:40 STATS: cache [user], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+26.10 13:17:40 STATS: cache [user], segments [1 calls, 0 hits, 0 misses]
+26.10 13:17:40 STATS: cache [user], database [1954 calls, 0 reads, 0 writes]
+26.10 13:17:40 STATS: cache [user], lock [1 calls, 1 attempts, 0 failures]
+26.10 13:17:40 READDB: SELECT * FROM Users WHERE ID = 94
+26.10 13:17:40 STATS: cache manager [1], get [1 calls, total 0.04 sec spent, avg 40.1 ms]
+26.10 13:17:40 STATS: cache manager [1], update [0 calls, total 0 sec spent, avg -21474836.48 ms]
+26.10 13:17:40 QUEUE: vdl.0 (thread) response core/cache.get
+26.10 13:17:40 TIME: core/cache.get : 40.31 ms
+26.10 13:17:40 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 94, _type => core/cache.get }
+26.10 13:17:40 STATS: cache [questdata], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+26.10 13:17:40 STATS: cache [questdata], segments [1 calls, 0 hits, 0 misses]
+26.10 13:17:40 STATS: cache [questdata], database [1954 calls, 0 reads, 0 writes]
+26.10 13:17:40 STATS: cache [questdata], lock [1 calls, 1 attempts, 0 failures]
+26.10 13:17:40 READDB: SELECT * FROM UserQuests WHERE ID = 94
+26.10 13:17:40 QUEUE: vdl.0 (thread) response core/cache.get
+26.10 13:17:40 TIME: core/cache.get : 1.24 ms
+26.10 13:17:40 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 94, _type => core/user.loginPost, ipAddr => 172.16.20.203 }
+26.10 13:17:40 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+26.10 13:17:40 TIME: core/user.loginPost : 0.06 ms
+26.10 13:17:40 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 94 AND Date = 'today'::timestamp, _type => core/server.query }
+26.10 13:17:40 DB: SELECT ID FROM TempUserLogins WHERE UserID = 94 AND Date = 'today'::timestamp
+26.10 13:17:40 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+26.10 13:17:40 TIME: core/server.query : 12.19 ms
+26.10 13:17:40 PENDING: INSERT INTO TempUserLogins (UserID, Date) VALUES (94, 'today'::timestamp)
+26.10 13:17:47 NET: vdl.0 (thread) request core/cache.update { diff => {language => en, params => { attrs => { lastLoginDate => 300, lastLoadDate => 1027 } }}, type => user, unlock => false, id => 94, _type => core/cache.update }
+26.10 13:17:47 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+26.10 13:17:47 TIME: core/cache.update : 0.16 ms
+26.10 13:17:48 WRITEDB: UPDATE Users SET name = E'uid94', deleted = E'false', email = E'', networktype = E'  ', password = E'uid94', isbanned = E'false', regdate = E'2016-10-25 16:32:22.177493+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477402348,"lastLoginDate":300,"lastLoadDate":1027},"effects":{"list":[]}}' WHERE ID = 94
+26.10 13:18:07 TIMER: Clans cache...
+26.10 13:18:07 TIMER: Clans cache: 0ms
+26.10 13:18:07 TIMER: Check tournament...
+26.10 13:18:07 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:18' OR rounddate = '2016-26-10 13:18' AND status <> 'finished'
+26.10 13:18:07 TIMER: Check tournament: 0ms
+26.10 13:18:48 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:18:48 DB: SELECT * FROM tournament
+26.10 13:18:48 STATS: cache [tournament], get [1 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+26.10 13:18:48 STATS: cache [tournament], segments [1 calls, 0 hits, 0 misses]
+26.10 13:18:48 STATS: cache [tournament], database [2022 calls, 0 reads, 0 writes]
+26.10 13:18:48 STATS: cache [tournament], lock [0 calls, 0 attempts, 0 failures]
+26.10 13:18:48 READDB: SELECT * FROM Tournament WHERE ID = 1
+26.10 13:18:48 DB: SELECT name FROM users WHERE id = 95
+26.10 13:18:48 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:18:48 TIME: vdl/cache.tournament.getAvailableTournament : 4.43 ms
+26.10 13:19:28 TIMER: Starting timer...
+26.10 13:19:28 TIMER: Timer running...
+26.10 13:19:28 DB: SELECT * FROM GameVars
+26.10 13:19:28 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+26.10 13:19:28 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+26.10 13:19:28 DB: SELECT * FROM Shops WHERE ID = 1
+26.10 13:19:28 TEMP: load ./tmp/quest_daily_ids
+26.10 13:19:28 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+26.10 13:19:28 TEMP: save ./tmp/quest_daily_ids
+26.10 13:19:28 NET: ??? request core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+26.10 13:19:28 QUEUE: vdl.0 (thread) response server.login
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM LocalizationStrings
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 10.23 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM GameVars
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.73 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.82 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.63 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.63 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 1.32 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/quest.getDaily
+26.10 13:19:28 TIME: core/quest.getDaily : 0.02 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM UserAttributeTypes
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.73 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM UserVariableTypes
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 1.61 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+26.10 13:19:28 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 1.38 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM ItemGroups
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.56 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM Bundles ORDER BY ID
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.67 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM BundleItems ORDER BY ID
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.87 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/shop.getList { _type => core/shop.getList }
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/shop.getList
+26.10 13:19:28 TIME: core/shop.getList : 0.05 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM EffectAttributeTypes
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.78 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM Effects
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.57 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 1.24 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+26.10 13:19:28 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 1.1 ms
+26.10 13:19:28 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+26.10 13:19:28 DB: SELECT * FROM Badges
+26.10 13:19:28 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:19:28 TIME: core/server.query : 0.61 ms
+26.10 13:19:28 TIMER: Clans cache...
+26.10 13:19:28 TIMER: Clans cache: 0ms
+26.10 13:19:28 TIMER: Check tournament...
+26.10 13:19:28 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:20' OR rounddate = '2016-26-10 13:20' AND status <> 'finished'
+26.10 13:19:28 TIMER: Check tournament: 1ms
+26.10 13:19:28 TIMER: Clans cache...
+26.10 13:19:28 TIMER: Clans cache: 0ms
+26.10 13:19:28 TIMER: Check tournament...
+26.10 13:19:28 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:21' OR rounddate = '2016-26-10 13:21' AND status <> 'finished'
+26.10 13:19:28 TIMER: Check tournament: 1ms
+26.10 13:19:28 TIMER: Clans cache...
+26.10 13:19:28 TIMER: Clans cache: 0ms
+26.10 13:19:28 TIMER: Check tournament...
+26.10 13:19:28 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:22' OR rounddate = '2016-26-10 13:22' AND status <> 'finished'
+26.10 13:19:28 TIMER: Check tournament: 2ms
+26.10 13:19:28 TIMER: Clans cache...
+26.10 13:19:28 TIMER: Clans cache: 0ms
+26.10 13:19:28 TIMER: Check tournament...
+26.10 13:19:28 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:23' OR rounddate = '2016-26-10 13:23' AND status <> 'finished'
+26.10 13:19:28 TIMER: Check tournament: 1ms
+26.10 13:19:28 TIMER: Clans cache...
+26.10 13:19:28 TIMER: Clans cache: 0ms
+26.10 13:19:28 TIMER: Check tournament...
+26.10 13:19:28 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:24' OR rounddate = '2016-26-10 13:24' AND status <> 'finished'
+26.10 13:19:28 TIMER: Check tournament: 1ms
+26.10 13:19:28 TIMER: Clans cache...
+26.10 13:19:28 TIMER: Clans cache: 0ms
+26.10 13:19:28 TIMER: Check tournament...
+26.10 13:19:28 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:25' OR rounddate = '2016-26-10 13:25' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:26' OR rounddate = '2016-26-10 13:26' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:27' OR rounddate = '2016-26-10 13:27' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:28' OR rounddate = '2016-26-10 13:28' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:29' OR rounddate = '2016-26-10 13:29' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:30' OR rounddate = '2016-26-10 13:30' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:31' OR rounddate = '2016-26-10 13:31' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:32' OR rounddate = '2016-26-10 13:32' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:33' OR rounddate = '2016-26-10 13:33' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:34' OR rounddate = '2016-26-10 13:34' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:35' OR rounddate = '2016-26-10 13:35' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:36' OR rounddate = '2016-26-10 13:36' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:37' OR rounddate = '2016-26-10 13:37' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:38' OR rounddate = '2016-26-10 13:38' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:39' OR rounddate = '2016-26-10 13:39' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:40' OR rounddate = '2016-26-10 13:40' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:41' OR rounddate = '2016-26-10 13:41' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:42' OR rounddate = '2016-26-10 13:42' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:43' OR rounddate = '2016-26-10 13:43' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:44' OR rounddate = '2016-26-10 13:44' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:45' OR rounddate = '2016-26-10 13:45' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:46' OR rounddate = '2016-26-10 13:46' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:47' OR rounddate = '2016-26-10 13:47' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:48' OR rounddate = '2016-26-10 13:48' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:49' OR rounddate = '2016-26-10 13:49' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:50' OR rounddate = '2016-26-10 13:50' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:51' OR rounddate = '2016-26-10 13:51' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:52' OR rounddate = '2016-26-10 13:52' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:53' OR rounddate = '2016-26-10 13:53' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:54' OR rounddate = '2016-26-10 13:54' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:55' OR rounddate = '2016-26-10 13:55' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:56' OR rounddate = '2016-26-10 13:56' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 1ms
+26.10 13:25:29 TIMER: Clans cache...
+26.10 13:25:29 TIMER: Clans cache: 0ms
+26.10 13:25:29 TIMER: Check tournament...
+26.10 13:25:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:57' OR rounddate = '2016-26-10 13:57' AND status <> 'finished'
+26.10 13:25:29 TIMER: Check tournament: 0ms
+26.10 13:57:56 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94', _type => core/server.query }
+26.10 13:57:56 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94'
+26.10 13:57:56 QUEUE: vdl.0 (thread) response core/server.query
+26.10 13:57:56 TIME: core/server.query : 2.35 ms
+26.10 13:57:56 NET: vdl.0 (thread) request core/user.isOnlineID { id => 94, _type => core/user.isOnlineID }
+26.10 13:57:56 QUEUE: vdl.0 (thread) response core/user.isOnlineID
+26.10 13:57:56 TIME: core/user.isOnlineID : 0.12 ms
+26.10 13:57:56 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 94, _type => core/cache.get }
+26.10 13:57:56 STATS: cache [user], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+26.10 13:57:56 STATS: cache [user], segments [1 calls, 0 hits, 0 misses]
+26.10 13:57:56 STATS: cache [user], database [2308 calls, 0 reads, 0 writes]
+26.10 13:57:56 STATS: cache [user], lock [1 calls, 1 attempts, 0 failures]
+26.10 13:57:56 READDB: SELECT * FROM Users WHERE ID = 94
+26.10 13:57:56 STATS: cache manager [1], get [1 calls, total 0 sec spent, avg 4.04 ms]
+26.10 13:57:56 STATS: cache manager [1], update [0 calls, total 0 sec spent, avg -21474836.48 ms]
+26.10 13:57:56 QUEUE: vdl.0 (thread) response core/cache.get
+26.10 13:57:56 TIME: core/cache.get : 4.27 ms
+26.10 13:57:56 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 94, _type => core/cache.get }
+26.10 13:57:56 STATS: cache [questdata], get [0 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+26.10 13:57:56 STATS: cache [questdata], segments [1 calls, 0 hits, 0 misses]
+26.10 13:57:56 STATS: cache [questdata], database [2308 calls, 0 reads, 0 writes]
+26.10 13:57:56 STATS: cache [questdata], lock [1 calls, 1 attempts, 0 failures]
+26.10 13:57:56 READDB: SELECT * FROM UserQuests WHERE ID = 94
+26.10 13:57:56 QUEUE: vdl.0 (thread) response core/cache.get
+26.10 13:57:56 TIME: core/cache.get : 1.99 ms
+26.10 13:57:56 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 94, _type => core/user.loginPost, ipAddr => 172.16.20.203 }
+26.10 13:57:56 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+26.10 13:57:56 TIME: core/user.loginPost : 0.14 ms
+26.10 13:58:04 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 94, _type => core/cache.update }
+26.10 13:58:04 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+26.10 13:58:04 TIME: core/cache.update : 0.14 ms
+26.10 13:58:05 WRITEDB: UPDATE Users SET name = E'uid94', deleted = E'false', email = E'', networktype = E'  ', password = E'uid94', isbanned = E'false', regdate = E'2016-10-25 16:32:22.177493+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477402348,"lastLoginDate":300,"lastLoadDate":1027},"effects":{"list":[]}}' WHERE ID = 94
+26.10 13:58:29 TIMER: Clans cache...
+26.10 13:58:29 TIMER: Clans cache: 0ms
+26.10 13:58:29 TIMER: Check tournament...
+26.10 13:58:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:58' OR rounddate = '2016-26-10 13:58' AND status <> 'finished'
+26.10 13:58:29 TIMER: Check tournament: 1ms
+26.10 13:58:32 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:32 DB: SELECT * FROM tournament
+26.10 13:58:32 STATS: cache [tournament], get [1 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+26.10 13:58:32 STATS: cache [tournament], segments [1 calls, 0 hits, 0 misses]
+26.10 13:58:32 STATS: cache [tournament], database [2344 calls, 0 reads, 0 writes]
+26.10 13:58:32 STATS: cache [tournament], lock [0 calls, 0 attempts, 0 failures]
+26.10 13:58:32 READDB: SELECT * FROM Tournament WHERE ID = 1
+26.10 13:58:32 DB: SELECT name FROM users WHERE id = 95
+26.10 13:58:32 DB: SELECT name FROM users WHERE id = 94
+26.10 13:58:32 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:32 TIME: vdl/cache.tournament.getAvailableTournament : 5.96 ms
+26.10 13:58:43 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:43 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95,94] }
+26.10 13:58:43 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.22 ms
+26.10 13:58:43 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:43 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:43 TIME: vdl/cache.tournament.setUsersTournament : 0.24 ms
+26.10 13:58:43 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:43 DB: SELECT * FROM tournament
+26.10 13:58:43 DB: SELECT name FROM users WHERE id = 95
+26.10 13:58:43 DB: SELECT name FROM users WHERE id = 94
+26.10 13:58:43 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:43 TIME: vdl/cache.tournament.getAvailableTournament : 2.47 ms
+26.10 13:58:43 WRITEDB: UPDATE Tournament SET name = E'test', winner = E'-1', status = E'starting', type = E'once', repeatinterval = E'0', round = E'1', startdate = E'2016-26-10 19:44', roundinterval = E'60', params = E'{"params":{"battleFinished":[],"usersList":[95],"battleActive":[84],"usersAll":[95,94]}}', rounddate = E'2016-26-10 19:44' WHERE ID = 1
+26.10 13:58:45 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:45 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:58:45 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.2 ms
+26.10 13:58:45 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:45 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:45 TIME: vdl/cache.tournament.setUsersTournament : 0.21 ms
+26.10 13:58:45 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:45 DB: SELECT * FROM tournament
+26.10 13:58:45 DB: SELECT name FROM users WHERE id = 95
+26.10 13:58:45 DB: SELECT name FROM users WHERE id = 94
+26.10 13:58:45 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:45 TIME: vdl/cache.tournament.getAvailableTournament : 2.01 ms
+26.10 13:58:48 WRITEDB: UPDATE Tournament SET name = E'test', winner = E'-1', status = E'starting', type = E'once', repeatinterval = E'0', round = E'1', startdate = E'2016-26-10 19:44', roundinterval = E'60', params = E'{"params":{"battleFinished":[],"usersList":[95],"battleActive":[84],"usersAll":[95,94]}}', rounddate = E'2016-26-10 19:44' WHERE ID = 1
+26.10 13:58:49 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:49 DB: SELECT * FROM tournament
+26.10 13:58:49 DB: SELECT name FROM users WHERE id = 95
+26.10 13:58:49 DB: SELECT name FROM users WHERE id = 94
+26.10 13:58:49 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:49 TIME: vdl/cache.tournament.getAvailableTournament : 1.68 ms
+26.10 13:58:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:58:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.15 ms
+26.10 13:58:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:52 TIME: vdl/cache.tournament.setUsersTournament : 0.18 ms
+26.10 13:58:53 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:53 DB: SELECT * FROM tournament
+26.10 13:58:53 DB: SELECT name FROM users WHERE id = 95
+26.10 13:58:53 DB: SELECT name FROM users WHERE id = 94
+26.10 13:58:53 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:53 TIME: vdl/cache.tournament.getAvailableTournament : 1.3 ms
+26.10 13:58:53 WRITEDB: UPDATE Tournament SET name = E'test', winner = E'-1', status = E'starting', type = E'once', repeatinterval = E'0', round = E'1', startdate = E'2016-26-10 19:44', roundinterval = E'60', params = E'{"params":{"battleFinished":[],"usersList":[95],"battleActive":[84],"usersAll":[95,94]}}', rounddate = E'2016-26-10 19:44' WHERE ID = 1
+26.10 13:58:54 NET: vdl.0 (thread) request vdl/cache.tournament.getStatus { tournamentId => 1, _type => vdl/cache.tournament.getStatus }
+26.10 13:58:54 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getStatus { errorCode => ok, _type => vdl/cache.tournament.getStatus, status => starting }
+26.10 13:58:54 TIME: vdl/cache.tournament.getStatus : 0.1 ms
+26.10 13:58:54 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:54 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:58:54 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.1 ms
+26.10 13:58:54 NET: vdl.0 (thread) request vdl/cache.tournament.setGrid { battles => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid, status => starting }
+26.10 13:58:54 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setGrid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:58:54 TIME: vdl/cache.tournament.setGrid : 0.08 ms
+26.10 13:58:57 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:57 DB: SELECT * FROM tournament
+26.10 13:58:57 DB: SELECT name FROM users WHERE id = 95
+26.10 13:58:57 DB: SELECT name FROM users WHERE id = 94
+26.10 13:58:57 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:57 TIME: vdl/cache.tournament.getAvailableTournament : 3.11 ms
+26.10 13:59:08 BLOCKREMOVE: tournament 1 removed
+26.10 13:59:29 TIMER: Clans cache...
+26.10 13:59:29 TIMER: Clans cache: 0ms
+26.10 13:59:29 TIMER: Check tournament...
+26.10 13:59:29 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 13:59' OR rounddate = '2016-26-10 13:59' AND status <> 'finished'
+26.10 13:59:29 TIMER: Check tournament: 0ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 STATS: cache [tournament], get [15 calls, 13 cache hits, 1 cache misses, 0 same version, 0 not found]
+26.10 13:59:52 STATS: cache [tournament], segments [22 calls, 20 hits, 1 misses]
+26.10 13:59:52 STATS: cache [tournament], database [2423 calls, 1 reads, 3 writes]
+26.10 13:59:52 STATS: cache [tournament], lock [0 calls, 0 attempts, 0 failures]
+26.10 13:59:52 READDB: SELECT * FROM Tournament WHERE ID = 1
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.94 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.setUsersTournament : 0.11 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.1 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.setUsersTournament : 0.1 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.09 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.setUsersTournament : 0.1 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.1 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.setUsersTournament : 0.1 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.09 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.setUsersTournament : 0.06 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.08 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.setUsersTournament : 0.08 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.06 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.setUsersTournament : 0.06 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getStatus { tournamentId => 1, _type => vdl/cache.tournament.getStatus }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getStatus { errorCode => ok, _type => vdl/cache.tournament.getStatus, status => starting }
+26.10 13:59:52 TIME: vdl/cache.tournament.getStatus : 0.05 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.06 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setGrid { battles => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid, status => starting }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setGrid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:59:52 TIME: vdl/cache.tournament.setGrid : 0.05 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getStatus { tournamentId => 1, _type => vdl/cache.tournament.getStatus }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getStatus { errorCode => ok, _type => vdl/cache.tournament.getStatus, status => starting }
+26.10 13:59:52 TIME: vdl/cache.tournament.getStatus : 0.08 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.08 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.setGrid { battles => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid, status => starting }
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setGrid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:59:52 TIME: vdl/cache.tournament.setGrid : 0.05 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 DB: SELECT * FROM tournament
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 95
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 94
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournament : 1.45 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 DB: SELECT * FROM tournament
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 95
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 94
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournament : 1.67 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 DB: SELECT * FROM tournament
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 95
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 94
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournament : 1.39 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 DB: SELECT * FROM tournament
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 95
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 94
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournament : 1.12 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 DB: SELECT * FROM tournament
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 95
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 94
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournament : 1.12 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 DB: SELECT * FROM tournament
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 95
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 94
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournament : 0.83 ms
+26.10 13:59:52 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 DB: SELECT * FROM tournament
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 95
+26.10 13:59:52 DB: SELECT name FROM users WHERE id = 94
+26.10 13:59:52 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: vdl/cache.tournament.getAvailableTournament : 2.31 ms
+26.10 13:59:57 WRITEDB: UPDATE Tournament SET name = E'test', winner = E'-1', status = E'starting', type = E'once', repeatinterval = E'0', round = E'1', startdate = E'2016-26-10 19:44', roundinterval = E'60', params = E'{"params":{"battleFinished":[],"usersList":[95],"battleActive":[84],"usersAll":[95,94]}}', rounddate = E'2016-26-10 19:44' WHERE ID = 1

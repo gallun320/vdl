@@ -1,0 +1,490 @@
+26.10 13:17:35 NET: Client (conid:49200672) connected to vdl.0 (clients:1)
+26.10 13:17:40 ++ NET: null req: user.login { messageType => user.login, token => dWlkOTQ= }
+26.10 13:17:40 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94'
+26.10 13:17:40 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94', _type => core/server.query }
+26.10 13:17:40 -<<-: core/server.query ok
+26.10 13:17:40 STATS: vdl.0 cache connection, 21 calls, total 0.0725908279418945 sec spent, avg 3.46 ms
+26.10 13:17:40 ->>-: core/user.isOnlineID { id => 94, _type => core/user.isOnlineID }
+26.10 13:17:40 -<<-: core/user.isOnlineID ok
+26.10 13:17:40 ->>-: core/cache.get { type => user, v => -1, id => 94, _type => core/cache.get }
+26.10 13:17:40 -<<-: core/cache.get ok
+26.10 13:17:40 ->>-: core/cache.get { type => questdata, v => -1, id => 94, _type => core/cache.get }
+26.10 13:17:40 -<<-: core/cache.get ok
+26.10 13:17:40 NET: Client login (conid:49200672, id:94, name:uid94)
+26.10 13:17:40 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 94, _type => core/user.loginPost, ipAddr => 172.16.20.203 }
+26.10 13:17:40 -<<-: core/user.loginPost null
+26.10 13:17:40 DB: SELECT ID FROM TempUserLogins WHERE UserID = 94 AND Date = 'today'::timestamp
+26.10 13:17:40 ->>-: core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 94 AND Date = 'today'::timestamp, _type => core/server.query }
+26.10 13:17:40 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+26.10 13:17:40 PENDING: INSERT INTO TempUserLogins (UserID, Date) VALUES (94, 'today'::timestamp)
+26.10 13:17:40 == NET: uid94 ret: user.login { name => uid94, type => user.login, errorCode => ok, id => 94 }
+26.10 13:17:40 == NET: uid94 ret: user.join { name => uid94, type => user.join }
+26.10 13:17:40 ->>-: core/server.ping { _type => core/server.ping, _notify => {{ q => INSERT INTO TempUserLogins (UserID, Date) VALUES (94, 'today'::timestamp), _type => core/server.pending }} }
+26.10 13:17:40 -<<-: core/server.ping { errorCode => ok, _type => core/server.ping }
+26.10 13:17:47 ->>-: core/cache.update { diff => {language => en, params => { attrs => { lastLoginDate => 300, lastLoadDate => 1027 } }}, type => user, unlock => false, id => 94, _type => core/cache.update }
+26.10 13:17:47 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+26.10 13:17:54 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:17:54 TIME: user.ping 0.17 ms
+26.10 13:17:54 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:18:07 TIMER: Check auto-disconnect...
+26.10 13:18:07 STATS: vdl.0 cache, locks:2
+26.10 13:18:14 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:18:14 TIME: user.ping 0.12 ms
+26.10 13:18:14 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:18:35 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:18:35 TIME: user.ping 0.19 ms
+26.10 13:18:35 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:18:48 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:18:48 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:18:48 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:18:48 STATS: vdl.0 cache connection, 29 calls, total 0.132698059082031 sec spent, avg 4.58 ms
+26.10 13:18:48 TIME: tournament.getAvailableTournament 5.07 ms
+26.10 13:18:48 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:18:56 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:18:56 TIME: user.ping 0.16 ms
+26.10 13:18:56 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:19:28 ->>-: core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+26.10 13:19:28 -<<-: server.login ok
+26.10 13:19:28 DB: SELECT * FROM LocalizationStrings
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 TIMER: Starting timer...
+26.10 13:19:28 TIMER: Timer running...
+26.10 13:19:28 DB: SELECT * FROM GameVars
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+26.10 13:19:28 -<<-: core/quest.getDaily ok
+26.10 13:19:28 DB: SELECT * FROM UserAttributeTypes
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM UserVariableTypes
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+26.10 13:19:28 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM ItemGroups
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM Bundles ORDER BY ID
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM BundleItems ORDER BY ID
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 SHOP: loading items...
+26.10 13:19:28 ->>-: core/shop.getList { _type => core/shop.getList }
+26.10 13:19:28 -<<-: core/shop.getList ok
+26.10 13:19:28 SHOP: 0 items loaded (0 sec)
+26.10 13:19:28 DB: SELECT * FROM EffectAttributeTypes
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM Effects
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+26.10 13:19:28 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+26.10 13:19:28 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 DB: SELECT * FROM Badges
+26.10 13:19:28 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+26.10 13:19:28 -<<-: core/server.query ok
+26.10 13:19:28 TIMER: Check auto-disconnect...
+26.10 13:20:29 STATS: vdl.0 cache, locks:0
+26.10 13:21:28 TIMER: Check auto-disconnect...
+26.10 13:21:29 STATS: vdl.0 cache, locks:0
+26.10 13:22:28 TIMER: Check auto-disconnect...
+26.10 13:22:29 STATS: vdl.0 cache, locks:0
+26.10 13:23:28 TIMER: Check auto-disconnect...
+26.10 13:23:29 STATS: vdl.0 cache, locks:0
+26.10 13:24:28 TIMER: Check auto-disconnect...
+26.10 13:24:29 STATS: vdl.0 cache, locks:0
+26.10 13:25:28 TIMER: Check auto-disconnect...
+26.10 13:25:29 STATS: vdl.0 cache, locks:0
+26.10 13:26:28 TIMER: Check auto-disconnect...
+26.10 13:26:29 STATS: vdl.0 cache, locks:0
+26.10 13:27:28 TIMER: Check auto-disconnect...
+26.10 13:27:29 STATS: vdl.0 cache, locks:0
+26.10 13:28:28 TIMER: Check auto-disconnect...
+26.10 13:28:29 STATS: vdl.0 cache, locks:0
+26.10 13:28:49 NET: Client (conid:89398182) connected to vdl.0 (clients:1)
+26.10 13:28:54 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:28:54 TRACE: User not logon yet.
+26.10 13:29:16 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:29:16 TRACE: User not logon yet.
+26.10 13:29:28 TIMER: Check auto-disconnect...
+26.10 13:29:29 STATS: vdl.0 cache, locks:0
+26.10 13:29:38 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:29:38 TRACE: User not logon yet.
+26.10 13:29:59 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:29:59 TRACE: User not logon yet.
+26.10 13:30:19 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:30:19 TRACE: User not logon yet.
+26.10 13:30:28 TIMER: Check auto-disconnect...
+26.10 13:30:29 STATS: vdl.0 cache, locks:0
+26.10 13:30:41 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:30:41 TRACE: User not logon yet.
+26.10 13:31:01 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:31:01 TRACE: User not logon yet.
+26.10 13:31:28 TIMER: Check auto-disconnect...
+26.10 13:31:29 STATS: vdl.0 cache, locks:0
+26.10 13:31:49 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:31:49 TRACE: User not logon yet.
+26.10 13:32:09 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:32:09 TRACE: User not logon yet.
+26.10 13:32:28 TIMER: Check auto-disconnect...
+26.10 13:32:29 STATS: vdl.0 cache, locks:0
+26.10 13:32:29 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:32:29 TRACE: User not logon yet.
+26.10 13:32:50 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:32:50 TRACE: User not logon yet.
+26.10 13:33:10 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:33:10 TRACE: User not logon yet.
+26.10 13:33:28 TIMER: Check auto-disconnect...
+26.10 13:33:29 STATS: vdl.0 cache, locks:0
+26.10 13:33:30 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:33:30 TRACE: User not logon yet.
+26.10 13:33:52 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:33:52 TRACE: User not logon yet.
+26.10 13:34:12 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:34:12 TRACE: User not logon yet.
+26.10 13:34:28 TIMER: Check auto-disconnect...
+26.10 13:34:29 STATS: vdl.0 cache, locks:0
+26.10 13:34:32 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:34:32 TRACE: User not logon yet.
+26.10 13:34:52 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:34:52 TRACE: User not logon yet.
+26.10 13:35:14 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:35:14 TRACE: User not logon yet.
+26.10 13:35:28 TIMER: Check auto-disconnect...
+26.10 13:35:29 STATS: vdl.0 cache, locks:0
+26.10 13:35:38 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:35:38 TRACE: User not logon yet.
+26.10 13:35:58 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:35:58 TRACE: User not logon yet.
+26.10 13:36:19 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:36:19 TRACE: User not logon yet.
+26.10 13:36:28 TIMER: Check auto-disconnect...
+26.10 13:36:29 STATS: vdl.0 cache, locks:0
+26.10 13:36:39 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:36:39 TRACE: User not logon yet.
+26.10 13:36:59 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:36:59 TRACE: User not logon yet.
+26.10 13:37:19 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:37:19 TRACE: User not logon yet.
+26.10 13:37:28 TIMER: Check auto-disconnect...
+26.10 13:37:29 STATS: vdl.0 cache, locks:0
+26.10 13:37:39 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:37:39 TRACE: User not logon yet.
+26.10 13:37:59 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:37:59 TRACE: User not logon yet.
+26.10 13:38:19 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:38:19 TRACE: User not logon yet.
+26.10 13:38:28 TIMER: Check auto-disconnect...
+26.10 13:38:29 STATS: vdl.0 cache, locks:0
+26.10 13:38:39 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:38:39 TRACE: User not logon yet.
+26.10 13:39:00 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:39:00 TRACE: User not logon yet.
+26.10 13:39:20 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:39:20 TRACE: User not logon yet.
+26.10 13:39:28 TIMER: Check auto-disconnect...
+26.10 13:39:29 STATS: vdl.0 cache, locks:0
+26.10 13:39:41 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:39:41 TRACE: User not logon yet.
+26.10 13:40:06 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:40:06 TRACE: User not logon yet.
+26.10 13:40:27 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:40:27 TRACE: User not logon yet.
+26.10 13:40:28 TIMER: Check auto-disconnect...
+26.10 13:40:29 STATS: vdl.0 cache, locks:0
+26.10 13:40:47 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:40:47 TRACE: User not logon yet.
+26.10 13:41:07 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:41:07 TRACE: User not logon yet.
+26.10 13:41:27 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:41:27 TRACE: User not logon yet.
+26.10 13:41:28 TIMER: Check auto-disconnect...
+26.10 13:41:29 STATS: vdl.0 cache, locks:0
+26.10 13:41:49 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:41:49 TRACE: User not logon yet.
+26.10 13:42:10 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:42:10 TRACE: User not logon yet.
+26.10 13:42:28 TIMER: Check auto-disconnect...
+26.10 13:42:29 STATS: vdl.0 cache, locks:0
+26.10 13:42:30 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:42:30 TRACE: User not logon yet.
+26.10 13:42:51 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:42:51 TRACE: User not logon yet.
+26.10 13:43:11 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:43:11 TRACE: User not logon yet.
+26.10 13:43:28 TIMER: Check auto-disconnect...
+26.10 13:43:29 STATS: vdl.0 cache, locks:0
+26.10 13:43:32 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:43:32 TRACE: User not logon yet.
+26.10 13:43:52 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:43:52 TRACE: User not logon yet.
+26.10 13:44:13 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:44:13 TRACE: User not logon yet.
+26.10 13:44:28 TIMER: Check auto-disconnect...
+26.10 13:44:29 STATS: vdl.0 cache, locks:0
+26.10 13:44:35 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:44:35 TRACE: User not logon yet.
+26.10 13:44:55 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:44:55 TRACE: User not logon yet.
+26.10 13:45:16 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:45:16 TRACE: User not logon yet.
+26.10 13:45:28 TIMER: Check auto-disconnect...
+26.10 13:45:29 STATS: vdl.0 cache, locks:0
+26.10 13:45:36 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:45:36 TRACE: User not logon yet.
+26.10 13:45:56 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:45:56 TRACE: User not logon yet.
+26.10 13:46:17 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:46:17 TRACE: User not logon yet.
+26.10 13:46:28 TIMER: Check auto-disconnect...
+26.10 13:46:29 STATS: vdl.0 cache, locks:0
+26.10 13:46:38 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:46:38 TRACE: User not logon yet.
+26.10 13:46:58 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:46:58 TRACE: User not logon yet.
+26.10 13:47:28 TIMER: Check auto-disconnect...
+26.10 13:47:29 STATS: vdl.0 cache, locks:0
+26.10 13:48:28 TIMER: Check auto-disconnect...
+26.10 13:48:29 STATS: vdl.0 cache, locks:0
+26.10 13:49:28 TIMER: Check auto-disconnect...
+26.10 13:49:29 STATS: vdl.0 cache, locks:0
+26.10 13:50:28 TIMER: Check auto-disconnect...
+26.10 13:50:28 NET: Client (name:null conid:89398182 TCP) disconnected from vdl.0 (clients:0)
+26.10 13:50:29 STATS: vdl.0 cache, locks:0
+26.10 13:51:28 TIMER: Check auto-disconnect...
+26.10 13:51:29 STATS: vdl.0 cache, locks:0
+26.10 13:52:28 TIMER: Check auto-disconnect...
+26.10 13:52:29 STATS: vdl.0 cache, locks:0
+26.10 13:53:28 TIMER: Check auto-disconnect...
+26.10 13:53:29 STATS: vdl.0 cache, locks:0
+26.10 13:54:28 TIMER: Check auto-disconnect...
+26.10 13:54:29 STATS: vdl.0 cache, locks:0
+26.10 13:55:28 TIMER: Check auto-disconnect...
+26.10 13:55:29 STATS: vdl.0 cache, locks:0
+26.10 13:56:28 TIMER: Check auto-disconnect...
+26.10 13:56:29 STATS: vdl.0 cache, locks:0
+26.10 13:56:56 NET: Client (conid:57718263) connected to vdl.0 (clients:1)
+26.10 13:57:01 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:57:01 TRACE: User not logon yet.
+26.10 13:57:19 NET: Client (name:null conid:57718263 TCP) disconnected from vdl.0 (clients:0)
+26.10 13:57:28 TIMER: Check auto-disconnect...
+26.10 13:57:29 STATS: vdl.0 cache, locks:0
+26.10 13:57:51 NET: Client (conid:80226892) connected to vdl.0 (clients:1)
+26.10 13:57:56 ++ NET: null req: user.login { messageType => user.login, token => dWlkOTQ= }
+26.10 13:57:56 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94'
+26.10 13:57:56 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid94' AND Password = E'uid94', _type => core/server.query }
+26.10 13:57:56 -<<-: core/server.query ok
+26.10 13:57:56 STATS: vdl.0 cache connection, 21 calls, total 0.0340931415557861 sec spent, avg 1.62 ms
+26.10 13:57:56 ->>-: core/user.isOnlineID { id => 94, _type => core/user.isOnlineID }
+26.10 13:57:56 -<<-: core/user.isOnlineID ok
+26.10 13:57:56 ->>-: core/cache.get { type => user, v => -1, id => 94, _type => core/cache.get }
+26.10 13:57:56 -<<-: core/cache.get ok
+26.10 13:57:56 ->>-: core/cache.get { type => questdata, v => -1, id => 94, _type => core/cache.get }
+26.10 13:57:56 -<<-: core/cache.get ok
+26.10 13:57:56 NET: Client login (conid:80226892, id:94, name:uid94)
+26.10 13:57:56 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 94, _type => core/user.loginPost, ipAddr => 172.16.20.203 }
+26.10 13:57:56 -<<-: core/user.loginPost null
+26.10 13:57:56 == NET: uid94 ret: user.login { name => uid94, type => user.login, errorCode => ok, id => 94 }
+26.10 13:57:56 == NET: uid94 ret: user.join { name => uid94, type => user.join }
+26.10 13:58:04 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 94, _type => core/cache.update }
+26.10 13:58:04 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+26.10 13:58:08 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:58:08 TIME: user.ping 0.14 ms
+26.10 13:58:08 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:58:28 TIMER: Check auto-disconnect...
+26.10 13:58:29 STATS: vdl.0 cache, locks:2
+26.10 13:58:29 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:58:29 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:58:29 TIME: user.ping 0.21 ms
+26.10 13:58:32 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:58:32 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:32 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:32 TIME: tournament.getAvailableTournament 6.55 ms
+26.10 13:58:32 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:43 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:58:43 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:43 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95,94] }
+26.10 13:58:43 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:43 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:43 TIME: tournament.deleteUsers 1.41 ms
+26.10 13:58:43 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:58:43 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:58:43 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:43 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:43 TIME: tournament.getAvailableTournament 2.78 ms
+26.10 13:58:43 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:45 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:58:45 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:45 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:58:45 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:45 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:45 TIME: tournament.deleteUsers 1.47 ms
+26.10 13:58:45 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:58:45 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:58:45 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:45 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:45 TIME: tournament.getAvailableTournament 2.28 ms
+26.10 13:58:45 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:49 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:58:49 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:49 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:49 TIME: tournament.getAvailableTournament 1.99 ms
+26.10 13:58:49 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:58:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:58:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:58:52 TIME: tournament.deleteUsers 0.98 ms
+26.10 13:58:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:58:53 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:58:53 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:53 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:53 TIME: tournament.getAvailableTournament 2.97 ms
+26.10 13:58:53 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:54 ++ NET: uid94 req: tournament.grid { tournamentId => 1, round => 1, messageType => tournament.grid }
+26.10 13:58:54 ->>-: vdl/cache.tournament.getStatus { tournamentId => 1, _type => vdl/cache.tournament.getStatus }
+26.10 13:58:54 -<<-: vdl/cache.tournament.getStatus { errorCode => ok, _type => vdl/cache.tournament.getStatus, status => starting }
+26.10 13:58:54 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:58:54 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:58:54 ->>-: vdl/cache.tournament.setGrid { battles => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid, status => starting }
+26.10 13:58:54 -<<-: vdl/cache.tournament.setGrid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:58:54 TIME: tournament.grid 0.97 ms
+26.10 13:58:54 == NET: uid94 ret: tournament.grid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], type => tournament.grid, tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:58:54 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:58:54 TIME: user.ping 0.08 ms
+26.10 13:58:54 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:58:57 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:58:57 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:57 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:58:57 STATS: vdl.0 cache connection, 41 calls, total 0.0686714649200439 sec spent, avg 1.67 ms
+26.10 13:58:57 TIME: tournament.getAvailableTournament 3.91 ms
+26.10 13:58:57 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:15 ++ NET: uid94 req: user.ping { messageType => user.ping, msg => ok }
+26.10 13:59:15 TIME: user.ping 0.17 ms
+26.10 13:59:15 == NET: uid94 ret: user.ping { type => user.ping, errorCode => ok }
+26.10 13:59:28 TIMER: Check auto-disconnect...
+26.10 13:59:29 STATS: vdl.0 cache, locks:2
+26.10 13:59:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: tournament.deleteUsers 1.5 ms
+26.10 13:59:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:59:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: tournament.deleteUsers 0.68 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:59:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: tournament.deleteUsers 0.96 ms
+26.10 13:59:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: tournament.deleteUsers 0.64 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:59:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: tournament.deleteUsers 0.58 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:59:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: tournament.deleteUsers 0.5 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:59:52 ++ NET: uid94 req: tournament.deleteUsers { tournamentId => 1, messageType => tournament.deleteUsers }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [95], _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+26.10 13:59:52 TIME: tournament.deleteUsers 0.35 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.deleteUsers { type => tournament.deleteUsers, errorCode => ok }
+26.10 13:59:52 ++ NET: uid94 req: tournament.grid { tournamentId => 1, round => 1, messageType => tournament.grid }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getStatus { tournamentId => 1, _type => vdl/cache.tournament.getStatus }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getStatus { errorCode => ok, _type => vdl/cache.tournament.getStatus, status => starting }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setGrid { battles => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid, status => starting }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setGrid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:59:52 TIME: tournament.grid 0.52 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.grid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], type => tournament.grid, tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:59:52 ++ NET: uid94 req: tournament.grid { tournamentId => 1, round => 1, messageType => tournament.grid }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getStatus { tournamentId => 1, _type => vdl/cache.tournament.getStatus }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getStatus { errorCode => ok, _type => vdl/cache.tournament.getStatus, status => starting }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [95] }
+26.10 13:59:52 ->>-: vdl/cache.tournament.setGrid { battles => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid, status => starting }
+26.10 13:59:52 -<<-: vdl/cache.tournament.setGrid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:59:52 TIME: tournament.grid 0.86 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.grid { list => [{ winner => -1, round => 1, player1 => null, player2 => 95 }], type => tournament.grid, tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+26.10 13:59:52 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: tournament.getAvailableTournament 1.68 ms
+26.10 13:59:52 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:59:52 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: tournament.getAvailableTournament 4.29 ms
+26.10 13:59:52 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: tournament.getAvailableTournament 1.63 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: tournament.getAvailableTournament 1.38 ms
+26.10 13:59:52 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: tournament.getAvailableTournament 1.29 ms
+26.10 13:59:52 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:59:52 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: tournament.getAvailableTournament 1 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 ++ NET: uid94 req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+26.10 13:59:52 ->>-: vdl/cache.tournament.getAvailableTournament { _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 -<<-: vdl/cache.tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }
+26.10 13:59:52 TIME: tournament.getAvailableTournament 2.76 ms
+26.10 13:59:52 == NET: uid94 ret: tournament.getAvailableTournament { list => [{ name => test, winner => -1, battleFinished => [], round => 1, id => 1, status => starting, userList => [{ name => uid95, id => 95 },{ name => uid94, id => 94 }], battleActive => [84], rounddate => 2016-26-10 19:44, startdate => 2016-26-10 19:44 }], count => 1, type => tournament.getAvailableTournament, errorCode => ok, _type => vdl/cache.tournament.getAvailableTournament }

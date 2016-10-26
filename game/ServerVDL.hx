@@ -3,6 +3,10 @@ import snipe.slave.ServerGame;
 
 class ServerVDL extends ServerGame
 {
+
+  public var BattleModule(default, null): modules.VDLBattleModule;
+  public var TournamentModule(default, null): modules.VDLTournamentModule;
+
   function new(metav: MetaServer, idv: Int)
     {
       super(metav, idv);
@@ -11,8 +15,11 @@ class ServerVDL extends ServerGame
 
   override function initModulesGame()
     {
-      loadModules([ modules.VDLBattleModule, modules.VDLTournamentModule, modules.VDLUserModule ]);
+      loadModules([ modules.VDLTournamentModule, modules.VDLBattleModule, modules.VDLUserModule ]);
       //addNoLoginRequests([ 'user.ping' ]);
+
+      BattleModule = getModule('battle');
+      TournamentModule = getModule('tournament');
 
     }
 

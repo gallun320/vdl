@@ -1,0 +1,115 @@
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:00' OR rounddate = '2016-26-10 17:00' AND status <> 'finished'
+26.10 17:00:09 PENDING: INSERT INTO LogUserOnlineCount (Date, Min, Max, Avg) VALUES (now(), 0, 2, 1)
+26.10 17:00:09 TIMER: Check tournament: 2ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:01' OR rounddate = '2016-26-10 17:01' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:02' OR rounddate = '2016-26-10 17:02' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:03' OR rounddate = '2016-26-10 17:03' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:04' OR rounddate = '2016-26-10 17:04' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:05' OR rounddate = '2016-26-10 17:05' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:06' OR rounddate = '2016-26-10 17:06' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:07' OR rounddate = '2016-26-10 17:07' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 0ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:08' OR rounddate = '2016-26-10 17:08' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 0ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:09' OR rounddate = '2016-26-10 17:09' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:10' OR rounddate = '2016-26-10 17:10' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:11' OR rounddate = '2016-26-10 17:11' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 0ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cache: 0ms
+26.10 17:00:09 TIMER: Check tournament...
+26.10 17:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-26-10 17:12' OR rounddate = '2016-26-10 17:12' AND status <> 'finished'
+26.10 17:00:09 TIMER: Check tournament: 1ms
+26.10 17:00:09 TIMER: Clans cache...
+26.10 17:00:09 TIMER: Clans cach26.10 17:25:44 TIMER: Starting timer...
+26.10 17:25:44 DB: SELECT * FROM GameVars
+26.10 17:25:44 TIMER: Timer running...
+26.10 17:25:44 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+26.10 17:25:44 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+26.10 17:25:44 DB: SELECT * FROM Shops WHERE ID = 1
+26.10 17:25:44 TEMP: load ./tmp/quest_daily_ids
+26.10 17:25:44 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+26.10 17:25:44 TEMP: save ./tmp/quest_daily_ids
+26.10 17:25:44 NET: ??? request core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+26.10 17:25:44 QUEUE: vdl.0 (thread) response server.login
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM LocalizationStrings
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 14.66 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM GameVars
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 0.92 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 2.26 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 1.61 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 1.35 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 2.55 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/quest.getDaily
+26.10 17:25:44 TIME: core/quest.getDaily : 0.05 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM UserAttributeTypes
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 0.92 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+26.10 17:25:44 DB: SELECT * FROM UserVariableTypes
+26.10 17:25:44 QUEUE: vdl.0 (thread) response core/server.query
+26.10 17:25:44 TIME: core/server.query : 0.85 ms
+26.10 17:25:44 NET: vdl.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+26.10 17:25:44 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, 
