@@ -221,12 +221,16 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
 
       public function DeleteUsersCall(c: VDLClient, params: Params): Dynamic {
-        var tournamentId : Int = params.get("tournamentId");
-        var res = GetAvailableTournamentUsers(tournamentId);
-        var list: Array<Int> = res.users;
-        list.remove(c.id);
-        SetUsersTournament(list, tournamentId);
-        return { errorCode: 'ok' };
+        var userId: Int = c.id;
+        var tournamentId: Int = params.get('tournamentId');
+
+        var ret = server.cacheRequest({
+           _type: 'vdl/cache.tournament.deleteUsers',
+           userId: userId,
+           tournamentId: tournamentId
+          });
+          
+        return ret;
       }
 
       public function GetTournament(tournamentId: Int): Dynamic {

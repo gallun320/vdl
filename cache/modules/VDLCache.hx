@@ -101,6 +101,8 @@ using Lambda;
           response = FinishRoomCall(c, params);
         case 'vdl/cache.tournament.addUsers':
           response = AddUsersCall(c, params);
+          case 'vdl/cache.tournament.deleteUsers':
+            response = DeleteTournamentUsers(c, params);
         case 'vdl/cache.tournament.getAvailableTournament':
           response = GetAvailableTournamentCall(c, params);
         case 'vdl/cache.tournament.getAvailableTournamentUsers':
@@ -752,6 +754,22 @@ using Lambda;
 
      return {errorCode: "ok"};
 
+   }
+
+   public function DeleteTournamentUsers(c: SlaveClient, params: Params): Dynamic {
+     var userId: Int = params.get('userId');
+     var tournamentId: Int = params.get('tournamentId');
+
+     var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
+     var tournament = ret.block;
+
+     var userList: Array<Int> = tournament.get('params', 'usersList');
+     var usersAll: Array<Int> = tournament.get('params', 'usersAll');
+
+     userList.remove(userId);
+     usersAll.remove(userId);
+
+     return { errorCode: 'ok' };
    }
 
    public function GetTournamentUsers(c: SlaveClient, params: Params): Dynamic {
