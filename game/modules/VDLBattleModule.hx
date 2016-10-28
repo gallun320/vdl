@@ -44,6 +44,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       }
 
       public function FindRoomCall(c: VDLClient, params: Params): Dynamic {
+        var suc = server.UserModule.UserCheckLogin(c);
         var ret = FindBattle(c, c.id, params);
   		  return ret;
       }

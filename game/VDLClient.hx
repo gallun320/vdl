@@ -8,7 +8,6 @@ import snipe.slave.ClientGame;
 
 class VDLClient extends ClientGame
 {
-  public var listStatistic: Array<Dynamic>;
 
   public function new(s: Socket, srv: ServerGame)
     {

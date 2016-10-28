@@ -64,8 +64,8 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
             response = AddUsersCall(c, params);
           case "tournament.deleteUsers":
             response = DeleteUsersCall(c, params);
-          case "tournament.end":
-            response = FinishCall(c, params);
+          /*case "tournament.end":
+            response = FinishCall(c, params);*/
           /*case "tournament.lose":
             response = LoseCall(c, params);*/
           case "tournament.grid":
@@ -169,6 +169,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }*/
 
       public function GetTournamentGrid(c: VDLClient, params: Params): Dynamic {
+        var suc = server.UserModule.UserCheckLogin(c);
         var tournamentId = params.get('tournamentId');
         var round = params.get('round');
         var status: String = GetStatus(tournamentId);
@@ -179,7 +180,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         var res = GetAvailableTournamentUsers(tournamentId);
         var list: Array<Int> = res.users;
         var buffer: Float = list.length;
-        var counter: Int = 0;
+        /*var counter: Int = 0;
         while (buffer >= 2)
         {
           buffer = buffer / 2;
@@ -195,7 +196,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         {
           list.remove(list[list.length - 1]);
           buffer--;
-        }
+        }*/
         buffer = list.length;
         var bufferInt : Int = Std.int(buffer);
         //var bufferLenght: Int = Std.int(buffer);
@@ -214,6 +215,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }*/
 
       public function AddUsersCall(c: VDLClient, params: Params): Dynamic {
+        var suc = server.UserModule.UserCheckLogin(c);
         var tournamentId : Int = params.get("tournamentId");
         var ret = AddUsers(c.id, tournamentId);
 
@@ -229,7 +231,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
            userId: userId,
            tournamentId: tournamentId
           });
-          
+
         return ret;
       }
 
@@ -250,6 +252,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
 
       public function GetAvailableTournamentCall(c: VDLClient, params: Params): Dynamic {
+        var suc = server.UserModule.UserCheckLogin(c);
         var ret = server.cacheRequest({
           _type: 'vdl/cache.tournament.getAvailableTournament'
         });
@@ -293,7 +296,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
     {
       battles.remove(battleId);
       users.remove(lose);
-      server.sendTo(lose, {_type: "battle.end"});
+      //server.sendTo(lose, {_type: "battle.end"});
 
       var arr: Array<Int> = [battleId];
       var paramsData: Params = new Params({battleId: battleId, winner: winner});

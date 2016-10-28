@@ -1,0 +1,35 @@
+28.10 17:00:13 STATS: vdl.0 cache, locks:4
+28.10 17:00:56 STATS: vdl.0 cache connection, 46 calls, total 0.093794584274292 sec spent, avg 2.04 ms
+28.10 17:01:13 STATS: vdl.0 cache, locks:4
+28.10 17:02:13 STATS: vdl.0 cache, locks:4
+28.10 17:02:22 STATS: vdl.0 cache connection, 54 calls, total 0.108381509780884 sec spent, avg 2.01 ms
+28.10 17:03:13 STATS: vdl.0 cache, locks:4
+28.10 17:04:13 STATS: vdl.0 cache, locks:4
+28.10 17:05:13 STATS: vdl.0 cache, locks:4
+28.10 17:05:30 STATS: vdl.0 cache connection, 79 calls, total 0.124873638153076 sec spent, avg 1.58 ms
+28.10 17:06:13 STATS: vdl.0 cache, locks:6
+28.10 17:07:30 STATS: vdl.0 cache, locks:4
+28.10 17:07:30 STATS: vdl.0 cache connection, 36 calls, total 0.0760691165924072 sec spent, avg 2.11 ms
+28.10 17:08:30 STATS: vdl.0 cache, locks:4
+28.10 17:09:30 STATS: vdl.0 cache, locks:4
+28.10 17:09:39 STATS: vdl.0 cache connection, 45 calls, total 0.101716756820679 sec spent, avg 2.26 ms
+28.10 17:10:30 STATS: vdl.0 cache, locks:4
+28.10 17:10:30 STATS: vdl.0 cache, locks:4
+28.10 17:10:30 STATS: vdl.0 cache, locks:4
+28.10 17:10:30 STATS: vdl.0 cache connection, 70 calls, total 0.122021913528442 sec spent, avg 1.74 ms
+28.10 17:10:30 STATS: vdl.0 cache, locks:0
+28.10 17:10:30 STATS: vdl.0 cache, locks:0
+28.10 17:10:30 STATS: vdl.0 cache, locks:0
+28.10 17:16:13 STATS: vdl.0 cache, locks:0
+28.10 17:17:38 STATS: vdl.0 cache connection, 21 calls, total 0.0579156875610352 sec spent, avg 2.76 ms
+28.10 17:18:13 STATS: vdl.0 cache, locks:4
+28.10 17:19:13 STATS: vdl.0 cache, locks:4
+28.10 17:19:46 STATS: vdl.0 cache connection, 43 calls, total 0.0997767448425293 sec spent, avg 2.32 ms
+28.10 17:20:13 STATS: vdl.0 cache, locks:2
+28.10 17:21:31 STATS: vdl.0 cache, locks:4
+28.10 17:21:31 STATS: vdl.0 cache connection, 35 calls, total 0.0905876159667969 sec spent, avg 2.59 ms
+28.10 17:22:31 STATS: vdl.0 cache, locks:4
+28.10 17:22:41 STATS: vdl.0 cache connection, 41 calls, total 0.101371765136719 sec spent, avg 2.47 ms
+28.10 17:23:31 STATS: vdl.0 cache, locks:4
+28.10 17:24:31 STATS: vdl.0 cache, locks:4
+28.10 17:24:31 STATS: vdl.0 cache, locks:4

@@ -1,0 +1,162 @@
+28.10 16:02:15 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:02:15 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:02:55 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:02:55 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:03:47 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:03:47 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:07:42 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:07:42 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:09:11 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:09:11 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:12:35 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:12:35 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:14:27 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:14:27 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:16:42 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:16:42 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:19:14 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:19:14 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:21:42 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:21:42 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:24:22 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:24:22 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:24:27 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:24:27 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:25:20 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:25:20 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:26:27 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:26:27 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:26:29 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:26:29 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:28:49 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:28:49 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:31:10 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:31:10 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:31:42 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:31:42 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:33:17 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:33:17 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:34:58 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:34:58 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:37:57 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:37:57 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:38:37 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:38:37 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:38:53 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:38:53 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:39:37 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:39:37 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:42:13 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:42:13 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:42:44 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:42:44 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+28.10 16:51:13 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+28.10 16:51:13 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487

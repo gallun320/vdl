@@ -455,12 +455,17 @@ using Lambda;
             }
             if(cacheBattles[i].player2 == null) {
               cacheBattles[i].player2 = battles[0].winner;
+              cacheBattles[i].player2 = (cacheBattles[i].player1 == cacheBattles[i].player2) ? null : battles[0].winner;
+              trace( '================================================' );
+              trace( cacheBattles );
               return {errorCode: 'ok', list: cacheBattles, tournamentId: tournament};
             }
 
           }
           var round = round + 1;
           cacheBattles.push({player1: battles[0].winner, player2: null, winner: -1, round: round});
+          trace( '================================================' );
+          trace( cacheBattles );
           tournamentGrid.set(tournament, {
             round: round,
             battles: cacheBattles,
@@ -634,11 +639,11 @@ using Lambda;
       var tournament = ret.block;
       tournament.set(null, 'status', 'finished');
       tournament.set(null, 'winner', winner);
-      tournamentGrid.set(tournamentId, {
+      /*tournamentGrid.set(tournamentId, {
           round: tournament.get(null, 'round'),
           status: 'finished',
           battles: []
-        });
+        });*/
 
       server.cacheManager.updated(0, 'tournament', tournamentId);
 

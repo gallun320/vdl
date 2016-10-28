@@ -6,6 +6,7 @@ class ServerVDL extends ServerGame
 
   public var BattleModule(default, null): modules.VDLBattleModule;
   public var TournamentModule(default, null): modules.VDLTournamentModule;
+  public var UserModule(default, null): modules.VDLUserModule;
 
   function new(metav: MetaServer, idv: Int)
     {
@@ -16,10 +17,11 @@ class ServerVDL extends ServerGame
   override function initModulesGame()
     {
       loadModules([ modules.VDLTournamentModule, modules.VDLBattleModule, modules.VDLUserModule ]);
-      //addNoLoginRequests([ 'user.ping' ]);
+      addNoLoginRequests([ 'user.ping', 'user.check' ]);
 
       BattleModule = getModule('battle');
       TournamentModule = getModule('tournament');
+      UserModule = getModule('user');
 
     }
 
