@@ -26,6 +26,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
 
 
     public override function call(c: VDLClient, type: String, params: Params): Dynamic {
+      var suc = server.UserModule.UserCheckLogin(c, type);
        var response = null;
         switch (type) {
           case "battle.find":
@@ -44,7 +45,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       }
 
       public function FindRoomCall(c: VDLClient, params: Params): Dynamic {
-        var suc = server.UserModule.UserCheckLogin(c);
+
         var ret = FindBattle(c, c.id, params);
   		  return ret;
       }
@@ -75,6 +76,10 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         var idSend: Int = (c.id == battle.firstId) ? battle.secondId : battle.firstId;
         var winner: Int = (type == "winGame") ? c.id : idSend;
         var typeNotify: String = (type == "winGame") ? "battle.end" : "battle.leave";
+        
+        server.sendTo(idSend, {
+            _type: typeNotify
+          });
 
         switch (typeBattle) {
           case "tournament":
@@ -86,9 +91,6 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
             FinishCall(c, paramsData);
         }
 
-        server.sendTo(idSend, {
-            _type: typeNotify
-          });
 
         return { errorCode: 'ok' };
       }

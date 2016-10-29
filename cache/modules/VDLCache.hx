@@ -455,17 +455,17 @@ using Lambda;
             }
             if(cacheBattles[i].player2 == null) {
               cacheBattles[i].player2 = battles[0].winner;
-              cacheBattles[i].player2 = (cacheBattles[i].player1 == cacheBattles[i].player2) ? null : battles[0].winner;
+              /*cacheBattles[i].player2 = (cacheBattles[i].player1 == cacheBattles[i].player2) ? null : battles[0].winner;
               trace( '================================================' );
-              trace( cacheBattles );
+              trace( cacheBattles );*/
               return {errorCode: 'ok', list: cacheBattles, tournamentId: tournament};
             }
 
           }
           var round = round + 1;
           cacheBattles.push({player1: battles[0].winner, player2: null, winner: -1, round: round});
-          trace( '================================================' );
-          trace( cacheBattles );
+        /*  trace( '================================================' );
+          trace( cacheBattles );*/
           tournamentGrid.set(tournament, {
             round: round,
             battles: cacheBattles,
@@ -542,7 +542,8 @@ using Lambda;
       if(player1 == null && player2 == null) {
         return -1;
       }
-
+      var connectedClient1: Bool = true;
+      var connectedClient2: Bool = true;
       if(player1 == null) player1 = 0;
 
       if(player2 == null) player2 = 0;
@@ -592,13 +593,10 @@ using Lambda;
            id: player1
           });
       } catch(e:Dynamic) {
-        trace(e);
+        //trace(e);
         trace( '=======================================' );
         trace( 'User 1 not login' );
-        client2.notify({
-          _type:"tournament.leaveEvent",
-           id: player2
-          });
+        connectedClient1 = false;
       }
 
       try {
@@ -609,14 +607,35 @@ using Lambda;
                  id: player2
                 });
       } catch(e:Dynamic) {
-        trace(e);
+        //trace(e);
         trace( '=========================================' );
         trace( 'User 2 not login' );
+        connectedClient2 = false;
+
+      }
+
+      if(!connectedClient1) {
+        client2.notify({
+          _type:"tournament.leaveEvent",
+          battleId: battleId,
+          tournamentId: tournamentId,
+          typeBattle: 'tournament',
+          type: 'winGame',
+           id: player2
+          });
+      }
+
+      if(!connectedClient2) {
         client1.notify({
           _type:"tournament.leaveEvent",
+          battleId: battleId,
+          tournamentId: tournamentId,
+          typeBattle: 'tournament',
+          type: 'winGame',
            id: player1
           });
       }
+
       return 0;
     }
 

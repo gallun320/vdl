@@ -1,0 +1,38 @@
+29.10 17:05:22 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+29.10 17:05:22 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+29.10 17:23:22 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+29.10 17:23:22 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+29.10 17:27:22 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+29.10 17:27:22 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+29.10 17:36:27 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+29.10 17:36:27 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+29.10 17:36:44 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+29.10 17:36:44 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 156
+Called from modules/VDLCache.hx line 149
+Called from modules/VDLCache.hx line 99
+Called from snipe/cache/CacheServer.hx line 487
+29.10 17:37:52 TRACE: Check tournament timer exception:
+29.10 17:37:52 TRACE: C Stack Overflow
+29.10 17:41:28 TRACE: Check tournament timer exception:
+29.10 17:41:28 TRACE: C Stack Overflow
+29.10 17:51:21 TRACE: Check tournament timer exception:
+29.10 17:51:21 TRACE: C Stack Overflow
+29.10 17:59:13 TRACE: Check tournament timer exception:
+29.10 17:59:13 TRACE: C Stack Overflow

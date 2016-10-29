@@ -1,0 +1,222 @@
+29.10 19:00:09 PENDING: INSERT INTO LogUserOnlineCount (Date, Min, Max, Avg) VALUES (now(), 0, 2, 1)
+29.10 19:00:09 TIMER: Clans cache...
+29.10 19:00:09 TIMER: Clans cache: 0ms
+29.10 19:00:09 TIMER: Check tournament...
+29.10 19:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-29-10 19:00' OR rounddate = '2016-29-10 19:00' AND status <> 'finished'
+29.10 19:00:09 TIMER: Check tournament: 0ms
+29.10 19:00:09 BLOCKREMOVE: tournament 1 removed
+29.10 19:00:09 TIMER: Clans cache...
+29.10 19:00:09 TIMER: Clans cache: 0ms
+29.10 19:00:09 TIMER: Check tournament...
+29.10 19:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-29-10 19:01' OR rounddate = '2016-29-10 19:01' AND status <> 'finished'
+29.10 19:00:09 TIMER: Check tournament: 0ms
+29.10 19:00:09 TIMER: Clans cache...
+29.10 19:00:09 TIMER: Clans cache: 0ms
+29.10 19:00:09 TIMER: Check tournament...
+29.10 19:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-29-10 19:02' OR rounddate = '2016-29-10 19:02' AND status <> 'finished'
+29.10 19:00:09 TIMER: Check tournament: 0ms
+29.10 19:00:09 TIMER: Clans cache...
+29.10 19:00:09 TIMER: Clans cache: 0ms
+29.10 19:00:09 TIMER: Check tournament...
+29.10 19:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-29-10 19:03' OR rounddate = '2016-29-10 19:03' AND status <> 'finished'
+29.10 19:00:09 TIMER: Check tournament: 0ms
+29.10 19:00:09 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=113 OR secondid=113 AND finished <> true, _type => core/server.query }
+29.10 19:00:09 DB: SELECT id FROM battle WHERE firstid=113 OR secondid=113 AND finished <> true
+29.10 19:00:09 QUEUE: vdl.0 (thread) response core/server.query { list => {{ id => 101 }, { id => 102 }, { id => 103 }, { id => 104 }}, errorCode => ok, _type => core/server.query }
+29.10 19:00:09 TIME: core/server.query : 1.21 ms
+29.10 19:00:09 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 104, _type => vdl/cache.battle.infoRoom }
+29.10 19:00:09 STATS: cache [battle], get [1 calls, 0 cache hits, 0 cache misses, 0 same version, 0 not found]
+29.10 19:00:09 STATS: cache [battle], segments [1 calls, 0 hits, 0 misses]
+29.10 19:00:09 STATS: cache [battle], database [420 calls, 0 reads, 0 writes]
+29.10 19:00:09 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+29.10 19:00:09 READDB: SELECT * FROM Battle WHERE ID = 104
+29.10 19:00:09 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { secondId => 107, firstId => 113, _type => vdl/cache.battle.infoRoom, turnId => 113 }
+29.10 19:00:09 TIME: vdl/cache.battle.infoRoom : 1.17 ms
+29.10 19:00:09 NET: vdl.0 (thread) request vdl/cache.battle.deleteRoom { roomId => 104, _type => vdl/cache.battle.deleteRoom }
+29.10 19:00:09 ROOM: deleted room 104
+29.10 19:00:09 DB: DELETE FROM Battle WHERE ID = 104
+29.10 19:00:09 QUEUE: vdl.0 (thread) response vdl/cache.battle.deleteRoom { errorCode => ok, _type => vdl/cache.battle.deleteRoom }
+29.10 19:00:09 TIME: vdl/cache.battle.deleteRoom : 25.36 ms
+29.10 19:00:09 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 113, _type => core/cache.update }
+29.10 19:00:09 STATS: cache [user], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+29.10 19:00:09 STATS: cache [user], segments [7 calls, 2 hits, 4 misses]
+29.10 19:00:09 STATS: cache [user], database [420 calls, 2 reads, 2 writes]
+29.10 19:00:09 STATS: cache [user], lock [2 calls, 2 attempts, 0 failures]
+29.10 19:00:09 STATS: cache manager [1], get [4 calls, total 0.01 sec spent, avg 1.55 ms]
+29.10 19:00:09 STATS: cache manager [1], update [3 calls, total 0 sec spent, avg 0.06 ms]
+29.10 19:00:09 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+29.10 19:00:09 TIME: core/cache.update : 0.19 ms
+29.10 19:00:09 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 113, _type => core/cache.update }
+29.10 19:00:09 STATS: cache [questdata], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+29.10 19:00:09 STATS: cache [questdata], segments [5 calls, 0 hits, 4 misses]
+29.10 19:00:09 STATS: cache [questdata], database [420 calls, 2 reads, 0 writes]
+29.10 19:00:09 STATS: cache [questdata], lock [2 calls, 2 attempts, 0 failures]
+29.10 19:00:09 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+29.10 19:00:09 TIME: core/cache.update : 0.16 ms
+29.10 19:00:09 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 113, _type => core/user.logoutPost }
+29.10 19:00:09 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+29.10 19:00:09 TIME: core/user.logoutPost : 0.08 ms
+29.10 19:00:09 TIMER: Clans cache...
+29.10 19:00:09 TIMER: Clans cache: 0ms
+29.10 19:00:09 TIMER: Check tournament...
+29.10 19:00:09 DB: SELECT * FROM tournament WHERE startdate = '2016-29-10 19:04' OR rounddate = '2016-29-10 19:04' AND status <> 'finished'
+29.10 19:00:09 TIMER: Check tournament: 0ms
+29.10 19:00:09 WRITEDB: UPDATE Users SET name = E'uid113', deleted = E'false', email = E'', networktype = E'  ', password = E'uid113', isbanned = E'false', regdate = E'2016-10-29 17:12:53.911759+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477750380,"lastLoginDate":303,"lastLoadDate":1030},"effects":{"list":[]}}' WHERE ID = 113
+29.10 19:00:09 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 113
+29.10 19:04:19 BLOCKREMOVE: user 113 removed
+29.10 19:04:19 BLOCKREMOVE: questdata 113 removed
+29.10 19:04:19 BLOCKREMOVE: battle 104 removed
+29.10 19:05:09 TIMER: Clans cache...
+29.10 19:05:09 TIMER: Clans cache: 0ms
+29.10 19:05:09 TIMER: Check tournament...
+29.10 19:05:09 DB: SELECT * FROM tournament WHERE startdate = '2016-29-10 19:05' OR rounddate = '2016-29-10 19:05' AND status <> 'finished'
+29.10 19:05:09 STATS: cache [tournament], get [20 calls, 16 cache hits, 3 cache misses, 0 same version, 0 not found]
+29.10 19:05:09 STATS: cache [tournament], segments [25 calls, 21 hits, 3 misses]
+29.10 19:05:09 STATS: cache [tournament], database [480 calls, 3 reads, 2 writes]
+29.10 19:05:09 STATS: cache [tournament], lock [0 calls, 0 attempts, 0 failures]
+29.10 19:05:09 READDB: SELECT * FROM Tournament WHERE ID = 1
+29.10 19:05:09 DB: SELECT nextval('Battle_id_seq') AS id
+29.10 19:05:09 READDB: SELECT ID FROM Battle WHERE ID = 110
+29.10 19:05:09 READDB: INSERT INTO Battle (ID) VALUES (110)
+29.10 19:05:09 STATS: cache [battle], get [2 calls, 0 cache hits, 1 cache misses, 0 same version, 0 not found]
+29.10 19:05:09 STATS: cache [battle], segments [3 calls, 1 hits, 1 misses]
+29.10 19:05:09 STATS: cache [battle], database [480 calls, 1 reads, 0 writes]
+29.10 19:05:09 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+29.10 19:05:09 READDB: SELECT * FROM Battle WHERE ID = 110
+29.10 19:05:09 DB: SELECT name FROM users WHERE id=113
+29.10 19:05:09 DB: SELECT name FROM users WHERE id=107
+29.10 19:05:09 QUEUE: vdl.0 (thread) response tournament.enemyEvent { data => { name => uid107, tournamentId => 1, enemy.id => 113, enemy.name => uid113, round => 1, roundDate => 2016-29-10 19:05, id => 107, enemy.num => 1, battleId => 110, player => 2 }, _isNotify => true, id => 107, _type => tournament.enemyEvent }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response tournament.leaveEvent { type => winGame, typeBattle => tournament, _isNotify => true, tournamentId => 1, id => 107, _type => tournament.leaveEvent, battleId => 110 }
+29.10 19:05:09 TIMER: Check tournament: 56ms
+29.10 19:05:09 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 1, _type => core/cache.get }
+29.10 19:05:09 STATS: cache [user], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+29.10 19:05:09 STATS: cache [user], segments [9 calls, 4 hits, 4 misses]
+29.10 19:05:09 STATS: cache [user], database [480 calls, 2 reads, 3 writes]
+29.10 19:05:09 STATS: cache [user], lock [3 calls, 3 attempts, 0 failures]
+29.10 19:05:09 READDB: SELECT * FROM Users WHERE ID = 1
+29.10 19:05:09 STATS: cache manager [1], get [5 calls, total 0.01 sec spent, avg 1.38 ms]
+29.10 19:05:09 STATS: cache manager [1], update [4 calls, total 0 sec spent, avg 0.07 ms]
+29.10 19:05:09 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => --- DEFAULT ATTRIBUTES ---, deleted => false, email => , networktype =>   , password => , isbanned => false, regdate => 2016-08-30 15:45:16.008574+03, language =>   , networkid => , params => { inventory => { list => [] }, attrs => {}, effects => { list => [] } }}, version => 0, id => 1 } }
+29.10 19:05:09 TIME: core/cache.get : 0.9 ms
+29.10 19:05:09 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 1, _type => core/cache.get }
+29.10 19:05:09 STATS: cache [questdata], get [2 calls, 0 cache hits, 2 cache misses, 0 same version, 0 not found]
+29.10 19:05:09 STATS: cache [questdata], segments [7 calls, 2 hits, 4 misses]
+29.10 19:05:09 STATS: cache [questdata], database [480 calls, 2 reads, 1 writes]
+29.10 19:05:09 STATS: cache [questdata], lock [3 calls, 3 attempts, 0 failures]
+29.10 19:05:09 READDB: SELECT * FROM UserQuests WHERE ID = 1
+29.10 19:05:09 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => {}}, version => 0, id => 1 } }
+29.10 19:05:09 TIME: core/cache.get : 0.5 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 110, _type => vdl/cache.battle.infoRoom }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { secondId => 107, firstId => 113, _type => vdl/cache.battle.infoRoom, turnId => 113 }
+29.10 19:05:09 TIME: vdl/cache.battle.infoRoom : 0.06 ms
+29.10 19:05:09 NET: vdl.0 (thread) request core/user.sendTo { id => 113, _type => core/user.sendTo, msg => { _type => battle.end } }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response core/user.sendTo { errorCode => userNotOnline, _type => core/user.sendTo }
+29.10 19:05:09 TIME: core/user.sendTo : 0.05 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.getTournament { tournamentId => 1, _type => vdl/cache.tournament.getTournament }
+29.10 19:05:09 DB: SELECT * FROM tournament WHERE id = 1
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getTournament { name => test, type => once, winner => -1, repeatinterval => 0, round => 1, params => {"params":{"usersList":[107,113],"usersAll":[107,113]}}, id => 1, _type => vdl/cache.tournament.getTournament, status => starting, rounddate => 2016-29-10 19:05, startdate => 2016-29-10 19:05, roundinterval => 1 }
+29.10 19:05:09 TIME: vdl/cache.tournament.getTournament : 0.53 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 110, _type => vdl/cache.battle.infoRoom }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { secondId => 107, firstId => 113, _type => vdl/cache.battle.infoRoom, turnId => 113 }
+29.10 19:05:09 TIME: vdl/cache.battle.infoRoom : 0.05 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.getBattlesTournaments { tournament => 1, _type => vdl/cache.tournament.getBattlesTournaments }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getBattlesTournaments [110]
+29.10 19:05:09 TIME: vdl/cache.tournament.getBattlesTournaments : 0.06 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [107,113] }
+29.10 19:05:09 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.06 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.battle.finishRoom { roomId => 110, _type => vdl/cache.battle.finishRoom }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.battle.finishRoom { errorCode => ok, _type => vdl/cache.battle.finishRoom }
+29.10 19:05:09 TIME: vdl/cache.battle.finishRoom : 0.05 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.setBattlesTournaments { typeBattle => finished, tournament => 1, _type => vdl/cache.tournament.setBattlesTournaments, battlesData => [110] }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setBattlesTournaments { errorCode => ok, _type => vdl/cache.tournament.setBattlesTournaments }
+29.10 19:05:09 TIME: vdl/cache.tournament.setBattlesTournaments : 0.09 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [107], _type => vdl/cache.tournament.setUsersTournament }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+29.10 19:05:09 TIME: vdl/cache.tournament.setUsersTournament : 0.06 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.setGrid { battles => [{ winner => 107, round => 1, player1 => 113, player2 => 107 }], tournamentId => 1, round => 1, _type => vdl/cache.tournament.setGrid, status => finished }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setGrid { list => [{ winner => 107, round => 1, player1 => 113, player2 => 107 },{ winner => -1, round => 2, player1 => 107, player2 => null }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+29.10 19:05:09 TIME: vdl/cache.tournament.setGrid : 0.06 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.addRound { dateRound => 2016-29-10 19:05, tournamentId => 1, round => 2, _type => vdl/cache.tournament.addRound, status => finished }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.addRound { errorCode => ok, _type => vdl/cache.tournament.addRound }
+29.10 19:05:09 TIME: vdl/cache.tournament.addRound : 0.1 ms
+29.10 19:05:09 NET: vdl.0 (thread) request vdl/cache.tournament.finish { winner => 107, tournamentId => 1, _type => vdl/cache.tournament.finish }
+29.10 19:05:09 QUEUE: vdl.0 (thread) response vdl/cache.tournament.finish { _type => vdl/cache.tournament.finish }
+29.10 19:05:09 TIME: vdl/cache.tournament.finish : 0.09 ms
+29.10 19:05:14 WRITEDB: UPDATE Battle SET secondid = E'107', turnid = E'113', finished = E'true', firstid = E'113', params = E'{}', avaliable = E'false' WHERE ID = 110
+29.10 19:05:14 WRITEDB: UPDATE Tournament SET name = E'test', winner = E'107', status = E'finished', type = E'once', repeatinterval = E'0', round = E'2', startdate = E'2016-29-10 19:05', roundinterval = E'1', params = E'{"params":{"battleFinished":[110],"usersList":[107],"battleActive":[],"usersAll":[107,113]}}', rounddate = E'2016-29-10 19:05' WHERE ID = 1
+29.10 19:05:24 BLOCKREMOVE: battle 110 removed
+29.10 19:05:24 BLOCKREMOVE: tournament 1 removed
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 110, _type => vdl/cache.battle.infoRoom }
+29.10 19:05:50 READDB: SELECT * FROM Battle WHERE ID = 110
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { secondId => 107, firstId => 113, _type => vdl/cache.battle.infoRoom, turnId => 113 }
+29.10 19:05:50 TIME: vdl/cache.battle.infoRoom : 1.26 ms
+29.10 19:05:50 NET: vdl.0 (thread) request core/user.sendTo { id => 113, _type => core/user.sendTo, msg => { _type => battle.leave } }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response core/user.sendTo { errorCode => userNotOnline, _type => core/user.sendTo }
+29.10 19:05:50 TIME: core/user.sendTo : 0.13 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.getTournament { tournamentId => 1, _type => vdl/cache.tournament.getTournament }
+29.10 19:05:50 DB: SELECT * FROM tournament WHERE id = 1
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getTournament { name => test, type => once, winner => 107, repeatinterval => 0, round => 2, params => {"params":{"battleFinished":[110],"usersList":[107],"battleActive":[],"usersAll":[107,113]}}, id => 1, _type => vdl/cache.tournament.getTournament, status => finished, rounddate => 2016-29-10 19:05, startdate => 2016-29-10 19:05, roundinterval => 1 }
+29.10 19:05:50 TIME: vdl/cache.tournament.getTournament : 1.13 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 110, _type => vdl/cache.battle.infoRoom }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { secondId => 107, firstId => 113, _type => vdl/cache.battle.infoRoom, turnId => 113 }
+29.10 19:05:50 TIME: vdl/cache.battle.infoRoom : 0.12 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.getBattlesTournaments { tournament => 1, _type => vdl/cache.tournament.getBattlesTournaments }
+29.10 19:05:50 READDB: SELECT * FROM Tournament WHERE ID = 1
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getBattlesTournaments []
+29.10 19:05:50 TIME: vdl/cache.tournament.getBattlesTournaments : 1.25 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.getAvailableTournamentUsers { tournamentId => 1, _type => vdl/cache.tournament.getAvailableTournamentUsers }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.getAvailableTournamentUsers { errorCode => ok, _type => vdl/cache.tournament.getAvailableTournamentUsers, users => [107] }
+29.10 19:05:50 TIME: vdl/cache.tournament.getAvailableTournamentUsers : 0.19 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.battle.finishRoom { roomId => 110, _type => vdl/cache.battle.finishRoom }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.battle.finishRoom { errorCode => ok, _type => vdl/cache.battle.finishRoom }
+29.10 19:05:50 TIME: vdl/cache.battle.finishRoom : 0.14 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.setBattlesTournaments { typeBattle => finished, tournament => 1, _type => vdl/cache.tournament.setBattlesTournaments, battlesData => [110] }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setBattlesTournaments { errorCode => ok, _type => vdl/cache.tournament.setBattlesTournaments }
+29.10 19:05:50 TIME: vdl/cache.tournament.setBattlesTournaments : 0.19 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.setUsersTournament { tournament => 1, usersData => [], _type => vdl/cache.tournament.setUsersTournament }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setUsersTournament { errorCode => ok, _type => vdl/cache.tournament.setUsersTournament }
+29.10 19:05:50 TIME: vdl/cache.tournament.setUsersTournament : 0.13 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.setGrid { battles => [{ winner => 113, round => 2, player1 => 113, player2 => 107 }], tournamentId => 1, round => 2, _type => vdl/cache.tournament.setGrid, status => finished }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.setGrid { list => [{ winner => 107, round => 1, player1 => 113, player2 => 107 },{ winner => -1, round => 2, player1 => 107, player2 => 113 }], tournamentId => 1, errorCode => ok, _type => vdl/cache.tournament.setGrid }
+29.10 19:05:50 TIME: vdl/cache.tournament.setGrid : 0.15 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.addRound { dateRound => 2016-29-10 19:05, tournamentId => 1, round => 3, _type => vdl/cache.tournament.addRound, status => finished }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.addRound { errorCode => ok, _type => vdl/cache.tournament.addRound }
+29.10 19:05:50 TIME: vdl/cache.tournament.addRound : 0.16 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.tournament.finish { winner => 113, tournamentId => 1, _type => vdl/cache.tournament.finish }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.tournament.finish { _type => vdl/cache.tournament.finish }
+29.10 19:05:50 TIME: vdl/cache.tournament.finish : 0.43 ms
+29.10 19:05:50 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=107 OR secondid=107 AND finished <> true, _type => core/server.query }
+29.10 19:05:50 DB: SELECT id FROM battle WHERE firstid=107 OR secondid=107 AND finished <> true
+29.10 19:05:50 QUEUE: vdl.0 (thread) response core/server.query { list => {{ id => 101 }, { id => 102 }, { id => 103 }}, errorCode => ok, _type => core/server.query }
+29.10 19:05:50 TIME: core/server.query : 1.7 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 103, _type => vdl/cache.battle.infoRoom }
+29.10 19:05:50 READDB: SELECT * FROM Battle WHERE ID = 103
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { secondId => 107, firstId => 113, _type => vdl/cache.battle.infoRoom, turnId => 113 }
+29.10 19:05:50 TIME: vdl/cache.battle.infoRoom : 0.66 ms
+29.10 19:05:50 NET: vdl.0 (thread) request vdl/cache.battle.deleteRoom { roomId => 103, _type => vdl/cache.battle.deleteRoom }
+29.10 19:05:50 ROOM: deleted room 103
+29.10 19:05:50 DB: DELETE FROM Battle WHERE ID = 103
+29.10 19:05:50 QUEUE: vdl.0 (thread) response vdl/cache.battle.deleteRoom { errorCode => ok, _type => vdl/cache.battle.deleteRoom }
+29.10 19:05:50 TIME: vdl/cache.battle.deleteRoom : 10.13 ms
+29.10 19:05:50 NET: vdl.0 (thread) request core/user.sendTo { id => 113, _type => core/user.sendTo, msg => { _type => battle.end } }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response core/user.sendTo { errorCode => userNotOnline, _type => core/user.sendTo }
+29.10 19:05:50 TIME: core/user.sendTo : 0.09 ms
+29.10 19:05:50 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 107, _type => core/cache.update }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+29.10 19:05:50 TIME: core/cache.update : 0.13 ms
+29.10 19:05:50 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 107, _type => core/cache.update }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+29.10 19:05:50 TIME: core/cache.update : 0.11 ms
+29.10 19:05:50 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 107, _type => core/user.logoutPost }
+29.10 19:05:50 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+29.10 19:05:50 TIME: core/user.logoutPost : 0.09 ms
+29.10 19:05:50 WRITEDB: UPDATE Users SET name = E'uid107', deleted = E'false', email = E'', networktype = E'  ', password = E'uid107', isbanned = E'false', regdate = E'2016-10-28 16:37:18.693533+03', language = E'en', networkid = E'', params = E'{"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477748429,"lastLoginDate":303,"lastLoadDate":1030},"effects":{"list":[]}}' WHERE ID = 107
+29.10 19:05:50 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 107
+29.10 19:05:55 WRITEDB: UPDATE Battle SET secondid = E'107', turnid = E'113', finished = E'true', firstid = E'113', params = E'{}', avaliable = E'false' WHERE ID = 110
+29.10 19:05:55 WRITEDB: UPDATE Tournament SET name = E'test', winner = E'113', status = E'finished', type = E'once', repeatinterval = E'0', round = E'3', startdate = E'2016-29-10 19:05', roundinterval = E'1', params = E'{"params":{"battleFinished":[110,110],"usersList":[],"battleActive":[],"usersAll":[107,113]}}', rounddate = E'2016-29-10 19:05' WHERE ID = 1
+29.10 19:06:00 BLOCKREMOVE: user 107 removed
+29.10 19:06:00 BLOCKREMOVE: questdata 107 removed
+29.10 19:06:00 BLOCKREMOVE: battle 103 removed
+29.10 19:06:05 BLOCKREMOVE: battle 110 removed
+29.10 19:06:05 BLOCKREMOVE: tournament 1 removed

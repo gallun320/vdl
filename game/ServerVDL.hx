@@ -17,7 +17,7 @@ class ServerVDL extends ServerGame
   override function initModulesGame()
     {
       loadModules([ modules.VDLTournamentModule, modules.VDLBattleModule, modules.VDLUserModule ]);
-      addNoLoginRequests([ 'user.ping', 'user.check' ]);
+      addNoLoginRequests([ 'user.check' ]);
 
       BattleModule = getModule('battle');
       TournamentModule = getModule('tournament');

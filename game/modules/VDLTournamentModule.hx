@@ -56,6 +56,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
     }*/
 
     public override function call(c: VDLClient, type: String, params: Params): Dynamic {
+      var suc = server.UserModule.UserCheckLogin(c, type);
        var response = null;
         switch (type) {
           case "tournament.getAvailableTournament":
@@ -90,10 +91,16 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         });
       }
 
-      public function leaveEvent(msg: { id: Int }) {
+      public function leaveEvent(msg: { id: Int, typeBattle: String, type: String, tournamentId: Int, battleId: Int  }) {
         server.sendTo(msg.id, {
           _type: "battle.leave"
         });
+        //var slaveId = server.coreUserModule.getServerID(msg.id);
+
+        var c: VDLClient = getClient(server.slaveID);
+        c.id = msg.id;
+        var params: Params = new Params({ typeBattle: msg.typeBattle, type: msg.type, tournamentId: msg.tournamentId, battleId: msg.battleId });
+        var ret = server.BattleModule.EndCall(c, params);
       }
 
       /*public function StartCall(tournamentId: Int, round: Int): Void {
@@ -169,7 +176,6 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }*/
 
       public function GetTournamentGrid(c: VDLClient, params: Params): Dynamic {
-        var suc = server.UserModule.UserCheckLogin(c);
         var tournamentId = params.get('tournamentId');
         var round = params.get('round');
         var status: String = GetStatus(tournamentId);
@@ -215,7 +221,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }*/
 
       public function AddUsersCall(c: VDLClient, params: Params): Dynamic {
-        var suc = server.UserModule.UserCheckLogin(c);
+        //var suc = server.UserModule.UserCheckLogin(c);
         var tournamentId : Int = params.get("tournamentId");
         var ret = AddUsers(c.id, tournamentId);
 
@@ -252,7 +258,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       }
 
       public function GetAvailableTournamentCall(c: VDLClient, params: Params): Dynamic {
-        var suc = server.UserModule.UserCheckLogin(c);
+        //var suc = server.UserModule.UserCheckLogin(c);
         var ret = server.cacheRequest({
           _type: 'vdl/cache.tournament.getAvailableTournament'
         });
@@ -477,5 +483,9 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       trace( '======================================' );
       trace( ret );
     }*/
+
+    public inline function getClient(id: Int, ?onlineOnly: Bool): VDLClient {
+      return untyped server.getClientInternal(id, onlineOnly);
+    }
 
 }

@@ -15,6 +15,8 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
     }
 
     public override function call(c: VDLClient, type: String, params: Params): Dynamic {
+      var suc = UserCheckLogin(c, type);
+
        var response = null;
         switch (type) {
           case "user.logout":
@@ -46,16 +48,21 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
       }
 
       public function UserPing(c: VDLClient, params: Params): Dynamic {
-        var suc = server.UserModule.UserCheckLogin(c);
+
         var msg: String = params.get("msg");
         trace( msg );
 
         return {errorCode: "ok"};
       }
 
-      public function UserCheckLogin(c: VDLClient): Int {
-        var sendObj: Dynamic = (c.isLogin == true) ? { errorCode: "ok" } : { errorCode: 'notLogin' };
-        c.response('user.check', sendObj);
-        return 0;
+      public function UserCheckLogin(c: VDLClient, type: String): Int {
+
+        //var sendObj: Dynamic = (c.isLogin == true) ? { errorCode: "ok" } : { errorCode: 'notLogin' };
+        var ret: Int = (c.isLogin == true) ? 0 : -1;
+        if(c.isLogin == false) {
+          c.response(type, { errorCode: 'notLogin' });
+        }
+
+        return ret;
       }
 }
