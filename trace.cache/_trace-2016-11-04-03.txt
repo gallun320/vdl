@@ -1,0 +1,18 @@
+04.11 03:17:41 TRACE: vdl/cache.battle.makeTurn : Invalid field access : get
+04.11 03:17:41 TRACE: vdl/cache.battle.makeTurn : 
+Called from modules/VDLCache.hx line 1010
+Called from modules/VDLCache.hx line 868
+Called from modules/VDLCache.hx line 113
+Called from snipe/cache/CacheServer.hx line 487
+04.11 03:23:49 TRACE: vdl/cache.battle.makeTurn : Invalid field access : get
+04.11 03:23:49 TRACE: vdl/cache.battle.makeTurn : 
+Called from modules/VDLCache.hx line 1010
+Called from modules/VDLCache.hx line 868
+Called from modules/VDLCache.hx line 113
+Called from snipe/cache/CacheServer.hx line 487
+04.11 03:37:08 TRACE: vdl/cache.battle.makeTurn : Invalid field access : get
+04.11 03:37:08 TRACE: vdl/cache.battle.makeTurn : 
+Called from modules/VDLCache.hx line 1010
+Called from modules/VDLCache.hx line 868
+Called from modules/VDLCache.hx line 113
+Called from snipe/cache/CacheServer.hx line 487

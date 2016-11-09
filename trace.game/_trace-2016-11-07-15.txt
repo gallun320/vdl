@@ -1,0 +1,10 @@
+07.11 15:47:03 TRACE: registerResponse(): c == null! 24310035
+07.11 15:47:08 TRACE: User not logon yet.
+07.11 15:47:28 TRACE: User not logon yet.
+07.11 15:47:48 TRACE: User not logon yet.
+07.11 15:48:08 TRACE: User not logon yet.
+07.11 15:48:29 TRACE: User not logon yet.
+07.11 15:48:50 TRACE: User not logon yet.
+07.11 15:49:10 TRACE: User not logon yet.
+07.11 15:58:52 TRACE: User not logon yet.
+07.11 15:58:56 TRACE: User not logon yet.

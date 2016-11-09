@@ -1,5 +1,6 @@
 package modules;
 
+
 import snipe.slave.Server;
 import snipe.slave.Module;
 import snipe.lib.Params;
@@ -25,6 +26,10 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
             response = UserData(c, params);
           case "user.ping":
             response = UserPing(c, params);
+          case "user.takeAll":
+            response = UserAll(c, params);
+          
+
 
 
         }
@@ -65,4 +70,18 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
 
         return ret;
       }
+
+      public function UserAll(c: VDLClient, params: Params): Dynamic {
+        var name = params.get('name');
+        var ret = server.query("SELECT id, name FROM users WHERE name LIKE '%" + name + "%'");
+        var users: Array<Dynamic> = [];
+
+        for( el in ret ) {
+          users.push({id: el.id, name: el.name});
+        }
+
+        return {errorCode: "ok", list: users };
+
+      }
+
 }

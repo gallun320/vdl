@@ -1,0 +1,97 @@
+07.11 15:35:59 STATS: vdl.0 cache, locks:0
+07.11 15:36:58 TIMER: Check auto-disconnect...
+07.11 15:36:59 STATS: vdl.0 cache, locks:0
+07.11 15:37:58 TIMER: Check auto-disconnect...
+07.11 15:37:59 STATS: vdl.0 cache, locks:0
+07.11 15:38:58 TIMER: Check auto-disconnect...
+07.11 15:38:59 STATS: vdl.0 cache, locks:0
+07.11 15:39:58 TIMER: Check auto-disconnect...
+07.11 15:39:59 STATS: vdl.0 cache, locks:0
+07.11 15:40:58 TIMER: Check auto-disconnect...
+07.11 15:40:59 STATS: vdl.0 cache, locks:0
+07.11 15:41:58 TIMER: Check auto-disconnect...
+07.11 15:41:59 STATS: vdl.0 cache, locks:0
+07.11 15:42:58 TIMER: Check auto-disconnect...
+07.11 15:42:59 STATS: vdl.0 cache, locks:0
+07.11 15:43:58 TIMER: Check auto-disconnect...
+07.11 15:43:59 STATS: vdl.0 cache, locks:0
+07.11 15:44:58 TIMER: Check auto-disconnect...
+07.11 15:44:59 STATS: vdl.0 cache, locks:0
+07.11 15:45:58 TIMER: Check auto-disconnect...
+07.11 15:45:59 STATS: vdl.0 cache, locks:0
+07.11 15:46:58 TIMER: Check auto-disconnect...
+07.11 15:46:58 NET: Client (conid:24310035) connected to vdl.0 (clients:1)
+07.11 15:46:58 NET: Client (conid:24310035) switched protocol to WS
+07.11 15:46:59 STATS: vdl.0 cache, locks:0
+07.11 15:47:02 ++ NET: null req: user.register { messageType => user.register }
+07.11 15:47:02 DB: SELECT * FROM users
+07.11 15:47:02 ->>-: core/server.query { q => SELECT * FROM users, _type => core/server.query }
+07.11 15:47:02 -<<-: core/server.query ok
+07.11 15:47:02 STATS: vdl.0 cache connection, 21 calls, total 0.307905197143555 sec spent, avg 14.66 ms
+07.11 15:47:02 == NET: null ret: user.auth { type => user.auth, token => dWlkMTE5 }
+07.11 15:47:02 DB: SELECT ID FROM Users WHERE Name = E'uid119'
+07.11 15:47:02 ->>-: core/server.query { q => SELECT ID FROM Users WHERE Name = E'uid119', _type => core/server.query }
+07.11 15:47:02 -<<-: core/server.query ok
+07.11 15:47:02 DB: SELECT nextval('Users_id_seq') AS id
+07.11 15:47:02 ->>-: core/server.query { q => SELECT nextval('Users_id_seq') AS id, _type => core/server.query }
+07.11 15:47:02 -<<-: core/server.query ok
+07.11 15:47:02 ->>-: core/user.register { password => uid119, name => uid119, fullParams => { password => uid119, name => uid119, networkid => , networktype => , messageType => user.register, id => 119 }, networkid => , connectionID => 24310035, networktype => , email => , id => 119, _type => core/user.register }
+07.11 15:47:02 -<<-: core/user.register ok
+07.11 15:47:02 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE5 }
+07.11 15:47:02 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid119' AND Password = E'uid119'
+07.11 15:47:02 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid119' AND Password = E'uid119', _type => core/server.query }
+07.11 15:47:02 -<<-: core/server.query ok
+07.11 15:47:02 == NET: null ret: user.login { type => user.login, errorCode => userNotFound }
+07.11 15:47:02 NET: Client (name:null conid:24310035 WS) disconnected from vdl.0 (clients:0)
+07.11 15:47:02 NET: Client (conid:55959362) connected to vdl.0 (clients:1)
+07.11 15:47:02 NET: Client (conid:55959362) switched protocol to WS
+07.11 15:47:03 -<<-: core/user.registerResponse { password => uid119, name => uid119, _isNotify => true, fullParams => { password => uid119, name => uid119, networkid => , networktype => , messageType => user.register, id => 119 }, networkid => , connectionID => 24310035, networktype => , email => , id => 119, _type => core/user.registerResponse }
+07.11 15:47:03 TRACE: registerResponse(): c == null! 24310035
+07.11 15:47:08 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:47:08 TRACE: User not logon yet.
+07.11 15:47:28 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:47:28 TRACE: User not logon yet.
+07.11 15:47:48 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:47:48 TRACE: User not logon yet.
+07.11 15:47:58 TIMER: Check auto-disconnect...
+07.11 15:47:59 STATS: vdl.0 cache, locks:0
+07.11 15:48:08 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:48:08 TRACE: User not logon yet.
+07.11 15:48:29 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:48:29 TRACE: User not logon yet.
+07.11 15:48:50 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:48:50 TRACE: User not logon yet.
+07.11 15:48:58 TIMER: Check auto-disconnect...
+07.11 15:48:59 STATS: vdl.0 cache, locks:0
+07.11 15:49:10 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:49:10 TRACE: User not logon yet.
+07.11 15:49:58 TIMER: Check auto-disconnect...
+07.11 15:49:59 STATS: vdl.0 cache, locks:0
+07.11 15:50:58 TIMER: Check auto-disconnect...
+07.11 15:50:59 STATS: vdl.0 cache, locks:0
+07.11 15:51:58 TIMER: Check auto-disconnect...
+07.11 15:51:59 STATS: vdl.0 cache, locks:0
+07.11 15:52:58 TIMER: Check auto-disconnect...
+07.11 15:52:58 NET: Client (name:null conid:55959362 WS) disconnected from vdl.0 (clients:0)
+07.11 15:52:59 STATS: vdl.0 cache, locks:0
+07.11 15:53:58 TIMER: Check auto-disconnect...
+07.11 15:53:59 STATS: vdl.0 cache, locks:0
+07.11 15:54:58 TIMER: Check auto-disconnect...
+07.11 15:54:59 STATS: vdl.0 cache, locks:0
+07.11 15:55:58 TIMER: Check auto-disconnect...
+07.11 15:55:59 STATS: vdl.0 cache, locks:0
+07.11 15:56:58 TIMER: Check auto-disconnect...
+07.11 15:56:59 STATS: vdl.0 cache, locks:0
+07.11 15:57:58 TIMER: Check auto-disconnect...
+07.11 15:57:59 STATS: vdl.0 cache, locks:0
+07.11 15:58:50 NET: Client (conid:53581305) connected to vdl.0 (clients:1)
+07.11 15:58:50 NET: Client (conid:53581305) switched protocol to WS
+07.11 15:58:52 ++ NET: null req: tournament.getAvailableTournament { messageType => tournament.getAvailableTournament }
+07.11 15:58:52 TRACE: User not logon yet.
+07.11 15:58:56 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+07.11 15:58:56 TRACE: User not logon yet.
+07.11 15:58:58 TIMER: Check auto-disconnect...
+07.11 15:58:59 STATS: vdl.0 cache, locks:0
+07.11 15:58:59 NET: Client (name:null conid:53581305 WS) disconnected from vdl.0 (clients:0)
+07.11 15:59:58 TIMER: Check auto-disconnect...
+07.11 15:59:59 STATS: vdl.0 cache, locks:0

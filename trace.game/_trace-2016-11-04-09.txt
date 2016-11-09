@@ -1,0 +1,42 @@
+04.11 09:03:29 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:03:29 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 472
+Called from modules/VDLBattleModule.hx line 485
+Called from snipe/slave/Server.hx line 994
+04.11 09:12:58 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:12:58 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 472
+Called from modules/VDLBattleModule.hx line 485
+Called from snipe/slave/Server.hx line 994
+04.11 09:16:24 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:16:24 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 472
+Called from modules/VDLBattleModule.hx line 485
+Called from snipe/slave/Server.hx line 994
+04.11 09:19:03 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:19:03 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 472
+Called from modules/VDLBattleModule.hx line 485
+Called from snipe/slave/Server.hx line 994
+04.11 09:19:47 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:19:47 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 472
+Called from modules/VDLBattleModule.hx line 485
+Called from snipe/slave/Server.hx line 994
+04.11 09:21:43 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:21:43 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 472
+Called from modules/VDLBattleModule.hx line 485
+Called from snipe/slave/Server.hx line 994
+04.11 09:23:42 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:23:42 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 472
+Called from modules/VDLBattleModule.hx line 485
+Called from snipe/slave/Server.hx line 994

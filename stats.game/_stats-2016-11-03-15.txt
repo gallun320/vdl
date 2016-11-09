@@ -1,0 +1,11 @@
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0
+03.11 15:53:19 STATS: vdl.0 cache, locks:0

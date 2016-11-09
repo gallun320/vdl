@@ -8,6 +8,7 @@ import snipe.lib.Params;
 import snipe.cache.Block;
 using Lambda;
 
+
  class VDLCache extends ModuleCache<CacheServer>  {
 
    public var tournamentId: Int;
@@ -16,6 +17,7 @@ using Lambda;
    public var usersList: Array<Int>;
    public var usersAll: Array<Int>;
    public var usersLocal: Map<Int, Array<Dynamic>>;
+   public var scoresMap: Map<Int,Dynamic>;
    public var battleActive: Array<Int>;
    public var battleFinished: Array<Int>;
    public var tournament: Block;
@@ -25,36 +27,52 @@ using Lambda;
    public var id(get, null): Int;
    public var firstPlayerID(get, null): Int;
    public var secondPlayerID(get, null): Int;
-   public var usersRandomList: Array<Int>;
+   public var usersRandomList: Array<Dynamic>;
    public var turnID(get, null): Int;
    public var _list: Dynamic;
    public var room: Block;
+   public var Field: Array<Array<Int>>;
+
+
 
    public function new(c: CacheServer) {
      super(c);
      name = "vdl/cache";
      tournamentGrid = new Map<Int,Dynamic>();
      usersLocal = new Map<Int,Array<Dynamic>>();
+     scoresMap = new Map<Int,Dynamic>();
         var timeTimers = 60;
+        var stepCheck = 5;
         server.timer.add({
-           name: 'Check tournament',
+           name: 'Check step',
+           time: stepCheck,
+           method: checkStep,
+           log: true
+          });
+
+
+        server.timer.add({
+           name: 'Check round',
            time: timeTimers,
-           method: checkTournament,
+           method: checkRound,
            log: true
           });
           server.subscribeModule("core/user.registerModify", this);
           server.subscribeModule("core/user.loginPost", this);
    }
 
-   public function checkTournament() {
+   public function checkRound() {
      /*===============================================================*/
      // Fixed for production server
-    /* var curDate: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
-     var currentTime: String = convertDate(curDate, 3);*/
+     var curDate: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
+     var currentTime: String = convertDate(curDate, 3);
 
-     var currentTime: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
+     //var currentTime: String = DateTools.format(Date.now(), '%Y-%d-%m %H:%M');
 
      var res = server.query("SELECT * FROM tournament WHERE startdate = '" + currentTime + "' OR rounddate = '" + currentTime + "' AND status <> 'finished'");
+     var time: Float = Sys.time() / 1000;
+     var battles = server.query("SELECT * FROM battle WHERE endtime >= '" + time + "' AND avaliable = true AND finished <> true");
+
      if(res.length > 0) {
        for( el in res ) {
          /*server.broadcast('game', {
@@ -79,6 +97,29 @@ using Lambda;
 
      }
 
+     if( battles.length > 0 ) {
+       for( el in battles ) {
+         var tournamentId = null;
+         if(el.tournamentid != -1) tournamentId = el.tournamentid;
+         EndBattle(el.firstid, el.secondid, el.id, null, tournamentId);
+       }
+
+     }
+
+   }
+
+   public function checkStep() {
+     var ret = server.query('SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1');
+     var t = Sys.time() / 1000;
+
+     if(ret.length > 0) {
+       for( el in ret ) {
+         if(el.steptime < t) {
+           SkipTurn(el);
+         }
+       }
+
+     }
    }
 
    public override function call(c: SlaveClient, type: String, params: Params): Dynamic {
@@ -91,8 +132,8 @@ using Lambda;
          response = CreateRoomCall(c, params);
         case 'vdl/cache.battle.join':
           response = JoinRoomCall(c, params);
-        /*case 'vdl/cache.battle.makeTurn':
-            response = MakeTurnCall(c, params);*/
+        case 'vdl/cache.battle.makeTurn':
+            response = MakeTurnCall(c, params);
         case 'vdl/cache.battle.deleteRoom':
           response = DeleteRoomCall(c, params);
         case 'vdl/cache.battle.infoRoom':
@@ -129,6 +170,11 @@ using Lambda;
           response = GetTournamentStatus(c, params);
         case 'vdl/cache.battle.findRandom':
           response = FindRandomBattle(c, params);
+        case 'vdl/cache.battle.setScores':
+          response = SetScores(c, params);
+
+        /*case 'vdl/cache.battle.findCheck':
+          response = FindCheckBattle(c, params);*/
 
 
 
@@ -178,28 +224,31 @@ using Lambda;
    public function AddUsersCall(c: SlaveClient, params: Params): Dynamic {
      var userId : Int = params.get('userId');
      var tournamentId : Int = params.get('tournament');
-
-     var ret = AddUsers(userId, tournamentId);
+     var passTournament: String = params.get('passTournament');
+     var ret = AddUsers(userId, tournamentId, passTournament);
 
      return ret;
    }
 
   public function FindRandomBattle(c, params): Dynamic {
-    var userId: Int = params.get('userId');
+    var user: Dynamic = params.get('user');
+
 
     if(usersRandomList == null) usersRandomList = [];
 
-    usersRandomList.push(userId);
 
 
-    while( usersRandomList.length > 1 ) {
-        var ret = createRoom(usersRandomList[0]);
-        var res = joinRoom(usersRandomList[1], ret.room);
-        var suc = EnemyRandom(usersRandomList[0], usersRandomList[1], ret.room);
-        usersRandomList = usersRandomList.slice(2);
+    for( el in usersRandomList ) {
+      if(el.time == user.time  && el.player != user.player) {
+        var ret = createRoom(user.player, user.time);
+        var res = joinRoom(el.player, ret.room);
+        var suc = EnemyRandom(user.player, el.player, ret.room);
+        usersRandomList.remove(el);
+        return { errorCode: 'ok' };
+      }
     }
 
-
+    usersRandomList.push(user);
 
     return { errorCode: 'ok' };
   }
@@ -208,6 +257,7 @@ using Lambda;
   public function StartCall(tournamentId: Int, round: Int): Int {
      var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
      var tournament = ret.block;
+     var roundTime: Int = tournament.get(null, 'roundtime');
      battleActive = [];
      if(tournamentGrid[tournamentId] == null) {
        tournamentGrid.set(tournamentId, {
@@ -229,7 +279,7 @@ using Lambda;
            var ret: Dynamic = {};
            var res: Dynamic = {};
            if( el.player1 != null ) {
-              ret = createRoom(el.player1);
+              ret = createRoom(el.player1, roundTime, tournamentId);
            }
            if(el.player2 != null) {
              res = joinRoom(el.player2, ret.room);
@@ -268,7 +318,7 @@ using Lambda;
      var battlesGrid: Array<Dynamic> = [];
      if(bufferInt == 0) return -1;
      while (bufferInt > 0) {
-       var ret = createRoom(list[bufferInt - 1]);
+       var ret = createRoom(list[bufferInt - 1], roundTime, tournamentId);
        var res = joinRoom(list[bufferInt - 2], ret.room);
        var suc = EnemyTournament(list[bufferInt - 1], list[bufferInt - 2], ret.room, tournamentId, round, roundDate);
        var battles: Array<Dynamic> = [];
@@ -285,6 +335,37 @@ using Lambda;
      tournament.set(null, "status", "active");
      server.cacheManager.updated(0, 'tournament', tournamentId);
      return 0;
+   }
+
+   function SkipTurn(data: Dynamic): Void {
+     var turn: Dynamic = MakeTurn(data.turnid, data.id);
+     var enemId: Int = 0;
+
+     if(turn.turnId == data.firstid) {
+       enemId = data.secondid;
+     } else {
+       enemId = data.firstid;
+     }
+
+     var slaveId1 = server.coreUserModule.getServerID(turn.turnId);
+
+     var client1 = server.getClient(slaveId1);
+
+     var slaveId2 = server.coreUserModule.getServerID(enemId);
+
+     var client2 = server.getClient(slaveId2);
+
+     client1.notify({
+       _type:"battle.skipEvent",
+        id: turn.turnId,
+        type: "skip"
+       });
+
+       client2.notify({
+         _type:"battle.skipEvent",
+          id: turn.turnId,
+          type: "endStep"
+         });
    }
 
    function AddRound(c: SlaveClient, params: Params): Dynamic {
@@ -333,7 +414,6 @@ using Lambda;
      return {errorCode: 'not', list: {}, count: 0};
    }
 
-
    function GetAvailableTournamentCall(c: SlaveClient, params: Params): Dynamic {
      var res  = server.query("SELECT * FROM tournament");
      var arr = [];
@@ -380,7 +460,8 @@ using Lambda;
          userList: users,
          battleActive: active,
          battleFinished: finished,
-         rounddate: rounddate
+         rounddate: rounddate,
+         type: row.type
        }
 
        arr.push(obj);
@@ -480,6 +561,9 @@ using Lambda;
 
     public function EnemyRandom(player1: Int, player2: Int, battleId: Int): Int {
 
+      var connectedClient1: Bool = true;
+      var connectedClient2: Bool = true;
+
       var slaveId1 = server.coreUserModule.getServerID(player1);
 
       var client1 = server.getClient(slaveId1);
@@ -487,6 +571,7 @@ using Lambda;
       var slaveId2 = server.coreUserModule.getServerID(player2);
 
       var client2 = server.getClient(slaveId2);
+
 
       var playerOneName = server.query('SELECT name FROM users WHERE id=' + player1);
 
@@ -496,7 +581,18 @@ using Lambda;
 
       var pTwoName = playerTwoName.results().first().name;
 
+
+      //Field = MakeField();
+      var ret = server.cacheManager.getUnlocked(0,'battle', battleId, -1);
+      var battle = ret.block;
+      var time: Float = (Sys.time() / 1000) + (2 * 60);
+
+      battle.set(null, 'steptime', time);
+
+      server.cacheManager.updated(0, 'battle', battleId);
+
       var obj1 = {"enemy.num": 2,
+                  player: 1,
                   "enemy.id": player2,
                   id: player1,
                   name: pOneName,
@@ -505,6 +601,7 @@ using Lambda;
 
       var obj2 = {"enemy.num": 1,
                   "enemy.id": player1,
+                  player: 2,
                   id: player2,
                   name: pTwoName,
                   "enemy.name": pOneName,
@@ -520,6 +617,7 @@ using Lambda;
         trace(e);
         trace( '=======================================' );
         trace( 'User 1 not login' );
+        connectedClient1 = false;
       }
 
       try {
@@ -533,6 +631,27 @@ using Lambda;
         trace(e);
         trace( '=========================================' );
         trace( 'User 2 not login' );
+        connectedClient2 = false;
+      }
+
+      if(!connectedClient1) {
+        client2.notify({
+          _type:"tournament.leaveEvent",
+          battleId: battleId,
+          typeBattle: 'battle',
+          type: 'winGame',
+           id: player2
+          });
+      }
+
+      if(!connectedClient2) {
+        client1.notify({
+          _type:"tournament.leaveEvent",
+          battleId: battleId,
+          typeBattle: 'battle',
+          type: 'winGame',
+           id: player1
+          });
       }
       return 0;
     }
@@ -563,6 +682,14 @@ using Lambda;
       var playerTwoName = server.query('SELECT name FROM users WHERE id=' + player2);
 
       var pTwoName = playerTwoName.results().first().name;
+
+      var ret = server.cacheManager.getUnlocked(0,'battle', battleId, -1);
+      var battle = ret.block;
+      var time: Float = (Sys.time() / 1000) + (2 * 60);
+
+      battle.set(null, 'steptime', time);
+
+      server.cacheManager.updated(0, 'battle', battleId);
 
       var obj1 = {"enemy.num": 2,
       player: 1,
@@ -637,6 +764,64 @@ using Lambda;
       }
 
       return 0;
+    }
+
+    public function EndBattle(player1: Int, player2: Int, battleId: Int, ?win: Int, ?tournamentId: Int): Void {
+      var typeBattle: String = '';
+      var type: String = 'winGame';
+      if(win == null) {
+        var scores = scoresMap.get(battleId);
+        if(scores.player1 > scores.player2) {
+          win = player1;
+        } else {
+          win = player2;
+        }
+      }
+
+      if(tournamentId == null) {
+        typeBattle = "battle";
+      } else {
+        typeBattle = "tournament";
+      }
+
+      var slaveId = server.coreUserModule.getServerID(win);
+
+      var client = server.getClient(slaveId);
+
+      client.notify({
+         _type: "battle.endEvent",
+         type: type,
+         typeBattle: typeBattle,
+         win: win,
+         battleId: battleId
+        });
+
+    }
+
+
+    public function SetScores(c: SlaveClient, params: Params): Dynamic {
+      var player1: Int = params.get('player1');
+      var player2: Int = params.get('player2');
+      var scores: Array<Int> = params.get('scores');
+      var battleId: Int = params.get('battleId');
+      if(scoresMap[battleId] == null) {
+        scoresMap.set(battleId, { player1: scores[0], player2: scores[1] });
+      }
+
+      if(scores[0] == 12) {
+        EndBattle(player1, player2, battleId, player1);
+        return { errorCode: "ok" };
+      }
+
+      if(scores[1] == 12) {
+        EndBattle(player1, player2, battleId, player2);
+        return { errorCode: "ok" };
+      }
+
+      scoresMap.set(battleId, { player1: scores[0], player2: scores[1] });
+
+      return { errorCode: "ok" };
+
     }
 
     function GetBattlesTournaments(c: SlaveClient, params: Params): Array<Int> {
@@ -733,12 +918,12 @@ using Lambda;
         return {errorCode: "ok"};
     }*/
 
-   /*public function MakeTurnCall(c: SlaveClient, params: Params): Dynamic {
+   public function MakeTurnCall(c: SlaveClient, params: Params): Dynamic {
      var userId = params.get('userId');
      var roomId = params.get('roomId');
      var data = MakeTurn(userId, roomId);
      return data;
-   }*/
+   }
 
    public function DeleteRoomCall(c: SlaveClient, params: Params): Dynamic {
      var roomId = params.get('roomId');
@@ -747,9 +932,14 @@ using Lambda;
      return ret;
    }
 
-   public function AddUsers(userId: Int, tournamentId: Int): Dynamic {
+   public function AddUsers(userId: Int, tournamentId: Int, ?passTournament: String): Dynamic {
      var ret = server.cacheManager.getUnlocked(0,'tournament', tournamentId, -1);
      var tournament = ret.block;
+
+     if(passTournament != null) {
+       var pass: String = tournament.get(null, 'passwordtournament');
+       if(passTournament != pass) return { errorCode: 'passwordIncorrect' };
+     }
      //var res = server.query('SELECT name FROM users WHERE id = ' + userId);
      var userList: Array<Int> = tournament.get('params', 'usersList');
      var usersAll: Array<Int> = tournament.get('params', 'usersAll');
@@ -826,7 +1016,7 @@ using Lambda;
 
      return {errorCode: 'ok'};
    }
-  public function createRoom(userId: Int): Dynamic {
+  public function createRoom(userId: Int, ?roundTime: Int, ?tournamentId: Int): Dynamic {
       var id = server.nextID('Battle');
 
        server.cacheManager.create(0, 'battle', id);
@@ -835,8 +1025,10 @@ using Lambda;
 
 
       room = ret.block;
+      if(roundTime != null) room.set(null, 'roundtime', roundTime);
+      var round: Int = room.get(null, 'roundtime');
 
-      var retFirst = setFirst(userId, room.id);
+      var retFirst = setFirst(userId, room.id, round, tournamentId);
 
       if(retFirst.errorCode == 'ok')
         return { errorCode: 'ok', player: 1, room: room.id }
@@ -858,16 +1050,19 @@ using Lambda;
    }
 
 
-   public function setFirst(userId: Int, roomId: Int): Dynamic {
+   public function setFirst(userId: Int, roomId: Int, roundTime: Int, ?tournamentId: Int): Dynamic {
+     var time: Float = (Sys.time() / 1000) + (roundTime * 60);
+     room.set(null, 'endtime', time);
      room.set(null, 'firstid', userId);
+     if(tournamentId != null) room.set(null, 'tournamentid', tournamentId);
      room.set(null, 'turnid', userId);
      room.set(null, 'avaliable', true);
      server.cacheManager.updated(0, 'battle', roomId);
      return { errorCode: 'ok' };
    }
 
-   /*public function MakeTurn(userId: Int, roomId: Int): Dynamic {
-     var room = server.cacheManager.get(0, 'battle', roomId, -1);
+   public function MakeTurn(userId: Int, roomId: Int): Dynamic {
+     var room = server.cacheManager.getUnlocked(0, 'battle', roomId, -1);
      var first = room.block.get(null, 'firstid');
      var second = room.block.get(null, 'secondid');
      if (first == userId)
@@ -875,8 +1070,8 @@ using Lambda;
      else if(second == userId)
        room.block.set(null, 'turnid', first);
     server.cacheManager.updated(0, 'battle', roomId);
-     return {errorCode: true, turnId: turnID};
-   }*/
+     return {errorCode: "ok", turnId: turnID};
+   }
 
 
    public function deleteRoom(roomID: Int): Dynamic {
@@ -918,9 +1113,21 @@ using Lambda;
    }
 
    override function registerModify(params: Params, diffParams: Dynamic) {
-     var city = params.get('city');
+     var id = params.get('id');
+     var city = (params.get('city') == null ) ? '' : params.get('city');
      var year = params.get('year');
      var email = params.get('email');
+
+     var ret = server.cacheManager.getUnlocked(0, 'user', id, -1);
+
+     var user = ret.block;
+
+     user.set(null, 'city', city);
+     user.set(null, 'year', year);
+     user.set(null, 'email', email);
+
+     server.cacheManager.updated(0, 'user', id);
+
      diffParams.info = {city: city, year: year, email: email};
    }
 
@@ -946,6 +1153,5 @@ using Lambda;
        var endDate: String = DateTools.format(formatDt, "%Y-%d-%m %H:%M");
      return endDate;
    }
-
 
  }

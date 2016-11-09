@@ -1,0 +1,51 @@
+04.11 03:17:41 TRACE: battle.sendtask : cacheRequest exception { userId => 116, roomId => 46, _type => vdl/cache.battle.makeTurn }
+04.11 03:17:41 TRACE: battle.sendtask : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 429
+Called from modules/VDLBattleModule.hx line 263
+Called from modules/VDLBattleModule.hx line 61
+Called from modules/VDLBattleModule.hx line 40
+Called from snipe/slave/Server.hx line 1176
+04.11 03:23:49 TRACE: battle.sendtask : cacheRequest exception { userId => 116, roomId => 47, _type => vdl/cache.battle.makeTurn }
+04.11 03:23:49 TRACE: battle.sendtask : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 429
+Called from modules/VDLBattleModule.hx line 263
+Called from modules/VDLBattleModule.hx line 61
+Called from modules/VDLBattleModule.hx line 40
+Called from snipe/slave/Server.hx line 1176
+04.11 03:27:25 TRACE: User not logon yet.
+04.11 03:27:41 TRACE: User not logon yet.
+04.11 03:28:13 TRACE: User not logon yet.
+04.11 03:28:39 TRACE: User not logon yet.
+04.11 03:29:04 TRACE: User not logon yet.
+04.11 03:30:30 TRACE: User not logon yet.
+04.11 03:30:56 TRACE: User not logon yet.
+04.11 03:31:21 TRACE: User not logon yet.
+04.11 03:31:47 TRACE: User not logon yet.
+04.11 03:32:13 TRACE: User not logon yet.
+04.11 03:32:39 TRACE: User not logon yet.
+04.11 03:33:05 TRACE: User not logon yet.
+04.11 03:33:31 TRACE: User not logon yet.
+04.11 03:37:08 TRACE: battle.sendtask : cacheRequest exception { userId => 116, roomId => 48, _type => vdl/cache.battle.makeTurn }
+04.11 03:37:08 TRACE: battle.sendtask : 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 431
+Called from modules/VDLBattleModule.hx line 265
+Called from modules/VDLBattleModule.hx line 63
+Called from modules/VDLBattleModule.hx line 42
+Called from snipe/slave/Server.hx line 1176
+04.11 03:40:10 TRACE: User not logon yet.
+04.11 03:40:26 TRACE: User not logon yet.
+04.11 03:40:42 TRACE: User not logon yet.
+04.11 03:40:57 TRACE: User not logon yet.
+04.11 03:40:59 TRACE: User not logon yet.
+04.11 03:41:32 TRACE: User not logon yet.
+04.11 03:41:48 TRACE: User not logon yet.
+04.11 03:50:25 TRACE: User not logon yet.
+04.11 03:50:41 TRACE: User not logon yet.
+04.11 03:50:57 TRACE: User not logon yet.
+04.11 03:51:13 TRACE: User not logon yet.
+04.11 03:51:13 TRACE: User not logon yet.
+04.11 03:51:28 TRACE: User not logon yet.
+04.11 03:51:37 TRACE: User not logon yet.

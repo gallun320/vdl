@@ -1,0 +1,286 @@
+03.11 22:01:55 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:01:55 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:06:58 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:06:58 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:07:26 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:07:26 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:09:21 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:09:21 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:12:11 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:12:11 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:13:14 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:13:14 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:16:19 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:16:19 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:17:28 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:17:28 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:18:27 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:18:27 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:19:46 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:19:46 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:20:15 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:20:15 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:20:56 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 22:20:56 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 408
+Called from modules/VDLBattleModule.hx line 421
+Called from snipe/slave/Server.hx line 994
+03.11 22:34:25 TRACE: User not logon yet.
+03.11 22:34:33 TRACE: User not logon yet.
+03.11 22:34:39 TRACE: User not logon yet.
+03.11 22:34:40 TRACE: User not logon yet.
+03.11 22:34:48 TRACE: User not logon yet.
+03.11 22:34:56 TRACE: User not logon yet.
+03.11 22:35:03 TRACE: User not logon yet.
+03.11 22:35:03 TRACE: User not logon yet.
+03.11 22:35:04 TRACE: User not logon yet.
+03.11 22:35:11 TRACE: User not logon yet.
+03.11 22:35:15 TRACE: User not logon yet.
+03.11 22:35:18 TRACE: User not logon yet.
+03.11 22:35:26 TRACE: User not logon yet.
+03.11 22:35:33 TRACE: User not logon yet.
+03.11 22:35:34 TRACE: User not logon yet.
+03.11 22:35:40 TRACE: User not logon yet.
+03.11 22:35:48 TRACE: User not logon yet.
+03.11 22:35:55 TRACE: User not logon yet.
+03.11 22:36:03 TRACE: User not logon yet.
+03.11 22:36:10 TRACE: User not logon yet.
+03.11 22:36:16 TRACE: User not logon yet.
+03.11 22:36:18 TRACE: User not logon yet.
+03.11 22:36:25 TRACE: User not logon yet.
+03.11 22:36:33 TRACE: User not logon yet.
+03.11 22:36:40 TRACE: User not logon yet.
+03.11 22:36:48 TRACE: User not logon yet.
+03.11 22:36:55 TRACE: User not logon yet.
+03.11 22:36:59 TRACE: User not logon yet.
+03.11 22:37:03 TRACE: User not logon yet.
+03.11 22:37:10 TRACE: User not logon yet.
+03.11 22:37:18 TRACE: User not logon yet.
+03.11 22:37:25 TRACE: User not logon yet.
+03.11 22:37:33 TRACE: User not logon yet.
+03.11 22:37:41 TRACE: User not logon yet.
+03.11 22:37:48 TRACE: User not logon yet.
+03.11 22:37:56 TRACE: User not logon yet.
+03.11 22:38:04 TRACE: User not logon yet.
+03.11 22:38:11 TRACE: User not logon yet.
+03.11 22:38:18 TRACE: User not logon yet.
+03.11 22:38:26 TRACE: User not logon yet.
+03.11 22:38:33 TRACE: User not logon yet.
+03.11 22:38:41 TRACE: User not logon yet.
+03.11 22:38:48 TRACE: User not logon yet.
+03.11 22:38:56 TRACE: User not logon yet.
+03.11 22:39:03 TRACE: User not logon yet.
+03.11 22:39:11 TRACE: User not logon yet.
+03.11 22:39:18 TRACE: User not logon yet.
+03.11 22:39:26 TRACE: User not logon yet.
+03.11 22:39:34 TRACE: User not logon yet.
+03.11 22:39:41 TRACE: User not logon yet.
+03.11 22:39:49 TRACE: User not logon yet.
+03.11 22:39:56 TRACE: User not logon yet.
+03.11 22:40:04 TRACE: User not logon yet.
+03.11 22:40:11 TRACE: User not logon yet.
+03.11 22:40:18 TRACE: User not logon yet.
+03.11 22:40:26 TRACE: User not logon yet.
+03.11 22:40:34 TRACE: User not logon yet.
+03.11 22:40:41 TRACE: User not logon yet.
+03.11 22:40:49 TRACE: User not logon yet.
+03.11 22:40:56 TRACE: User not logon yet.
+03.11 22:41:04 TRACE: User not logon yet.
+03.11 22:41:11 TRACE: User not logon yet.
+03.11 22:41:19 TRACE: User not logon yet.
+03.11 22:41:27 TRACE: User not logon yet.
+03.11 22:41:34 TRACE: User not logon yet.
+03.11 22:41:41 TRACE: User not logon yet.
+03.11 22:41:49 TRACE: User not logon yet.
+03.11 22:41:56 TRACE: User not logon yet.
+03.11 22:42:03 TRACE: User not logon yet.
+03.11 22:42:11 TRACE: User not logon yet.
+03.11 22:42:18 TRACE: User not logon yet.
+03.11 22:42:26 TRACE: User not logon yet.
+03.11 22:42:33 TRACE: User not logon yet.
+03.11 22:42:40 TRACE: User not logon yet.
+03.11 22:42:48 TRACE: User not logon yet.
+03.11 22:42:55 TRACE: User not logon yet.
+03.11 22:43:02 TRACE: User not logon yet.
+03.11 22:43:10 TRACE: User not logon yet.
+03.11 22:43:17 TRACE: User not logon yet.
+03.11 22:43:25 TRACE: User not logon yet.
+03.11 22:43:32 TRACE: User not logon yet.
+03.11 22:43:40 TRACE: User not logon yet.
+03.11 22:43:47 TRACE: User not logon yet.
+03.11 22:43:55 TRACE: User not logon yet.
+03.11 22:44:02 TRACE: User not logon yet.
+03.11 22:44:09 TRACE: User not logon yet.
+03.11 22:44:17 TRACE: User not logon yet.
+03.11 22:44:24 TRACE: User not logon yet.
+03.11 22:44:32 TRACE: User not logon yet.
+03.11 22:44:39 TRACE: User not logon yet.
+03.11 22:44:46 TRACE: User not logon yet.
+03.11 22:44:54 TRACE: User not logon yet.
+03.11 22:45:01 TRACE: User not logon yet.
+03.11 22:45:09 TRACE: User not logon yet.
+03.11 22:45:16 TRACE: User not logon yet.
+03.11 22:45:24 TRACE: User not logon yet.
+03.11 22:45:31 TRACE: User not logon yet.
+03.11 22:45:39 TRACE: User not logon yet.
+03.11 22:45:46 TRACE: User not logon yet.
+03.11 22:45:54 TRACE: User not logon yet.
+03.11 22:46:01 TRACE: User not logon yet.
+03.11 22:46:09 TRACE: User not logon yet.
+03.11 22:46:16 TRACE: User not logon yet.
+03.11 22:46:24 TRACE: User not logon yet.
+03.11 22:46:31 TRACE: User not logon yet.
+03.11 22:46:39 TRACE: User not logon yet.
+03.11 22:46:46 TRACE: User not logon yet.
+03.11 22:46:53 TRACE: User not logon yet.
+03.11 22:47:01 TRACE: User not logon yet.
+03.11 22:47:08 TRACE: User not logon yet.
+03.11 22:47:16 TRACE: User not logon yet.
+03.11 22:47:23 TRACE: User not logon yet.
+03.11 22:47:31 TRACE: User not logon yet.
+03.11 22:47:38 TRACE: User not logon yet.
+03.11 22:47:45 TRACE: User not logon yet.
+03.11 22:47:53 TRACE: User not logon yet.
+03.11 22:48:00 TRACE: User not logon yet.
+03.11 22:48:08 TRACE: User not logon yet.
+03.11 22:48:15 TRACE: User not logon yet.
+03.11 22:48:22 TRACE: User not logon yet.
+03.11 22:48:30 TRACE: User not logon yet.
+03.11 22:48:37 TRACE: User not logon yet.
+03.11 22:48:45 TRACE: User not logon yet.
+03.11 22:48:52 TRACE: User not logon yet.
+03.11 22:48:59 TRACE: User not logon yet.
+03.11 22:49:07 TRACE: User not logon yet.
+03.11 22:49:14 TRACE: User not logon yet.
+03.11 22:49:22 TRACE: User not logon yet.
+03.11 22:49:29 TRACE: User not logon yet.
+03.11 22:49:36 TRACE: User not logon yet.
+03.11 22:49:44 TRACE: User not logon yet.
+03.11 22:49:51 TRACE: User not logon yet.
+03.11 22:49:58 TRACE: User not logon yet.
+03.11 22:50:06 TRACE: User not logon yet.
+03.11 22:50:13 TRACE: User not logon yet.
+03.11 22:50:21 TRACE: User not logon yet.
+03.11 22:50:28 TRACE: User not logon yet.
+03.11 22:50:36 TRACE: User not logon yet.
+03.11 22:50:43 TRACE: User not logon yet.
+03.11 22:50:51 TRACE: User not logon yet.
+03.11 22:50:58 TRACE: User not logon yet.
+03.11 22:51:06 TRACE: User not logon yet.
+03.11 22:51:13 TRACE: User not logon yet.
+03.11 22:51:21 TRACE: User not logon yet.
+03.11 22:51:28 TRACE: User not logon yet.
+03.11 22:51:35 TRACE: User not logon yet.
+03.11 22:51:43 TRACE: User not logon yet.
+03.11 22:51:50 TRACE: User not logon yet.
+03.11 22:51:58 TRACE: User not logon yet.
+03.11 22:52:05 TRACE: User not logon yet.
+03.11 22:52:13 TRACE: User not logon yet.
+03.11 22:52:20 TRACE: User not logon yet.
+03.11 22:52:27 TRACE: User not logon yet.
+03.11 22:52:35 TRACE: User not logon yet.
+03.11 22:52:42 TRACE: User not logon yet.
+03.11 22:52:50 TRACE: User not logon yet.
+03.11 22:52:57 TRACE: User not logon yet.
+03.11 22:53:04 TRACE: User not logon yet.
+03.11 22:53:12 TRACE: User not logon yet.
+03.11 22:53:19 TRACE: User not logon yet.
+03.11 22:53:27 TRACE: User not logon yet.
+03.11 22:53:34 TRACE: User not logon yet.
+03.11 22:53:41 TRACE: User not logon yet.
+03.11 22:53:49 TRACE: User not logon yet.
+03.11 22:53:56 TRACE: User not logon yet.
+03.11 22:54:03 TRACE: User not logon yet.
+03.11 22:54:11 TRACE: User not logon yet.
+03.11 22:54:18 TRACE: User not logon yet.
+03.11 22:54:26 TRACE: User not logon yet.
+03.11 22:54:33 TRACE: User not logon yet.
+03.11 22:54:41 TRACE: User not logon yet.
+03.11 22:54:48 TRACE: User not logon yet.
+03.11 22:54:56 TRACE: User not logon yet.
+03.11 22:55:03 TRACE: User not logon yet.
+03.11 22:55:10 TRACE: User not logon yet.
+03.11 22:55:18 TRACE: User not logon yet.
+03.11 22:55:25 TRACE: User not logon yet.
+03.11 22:55:33 TRACE: User not logon yet.
+03.11 22:55:40 TRACE: User not logon yet.
+03.11 22:55:48 TRACE: User not logon yet.
+03.11 22:55:55 TRACE: User not logon yet.
+03.11 22:56:02 TRACE: User not logon yet.
+03.11 22:56:10 TRACE: User not logon yet.
+03.11 22:56:17 TRACE: User not logon yet.
+03.11 22:56:25 TRACE: User not logon yet.
+03.11 22:56:32 TRACE: User not logon yet.
+03.11 22:56:39 TRACE: User not logon yet.
+03.11 22:56:47 TRACE: User not logon yet.
+03.11 22:56:54 TRACE: User not logon yet.
+03.11 22:57:02 TRACE: User not logon yet.
+03.11 22:57:09 TRACE: User not logon yet.
+03.11 22:57:16 TRACE: User not logon yet.
+03.11 22:57:24 TRACE: User not logon yet.
+03.11 22:57:31 TRACE: User not logon yet.
+03.11 22:57:38 TRACE: User not logon yet.
+03.11 22:57:46 TRACE: User not logon yet.
+03.11 22:57:53 TRACE: User not logon yet.
+03.11 22:58:01 TRACE: User not logon yet.
+03.11 22:58:08 TRACE: User not logon yet.
+03.11 22:58:15 TRACE: User not logon yet.
+03.11 22:58:23 TRACE: User not logon yet.
+03.11 22:58:30 TRACE: User not logon yet.
+03.11 22:58:38 TRACE: User not logon yet.
+03.11 22:58:45 TRACE: User not logon yet.
+03.11 22:58:52 TRACE: User not logon yet.
+03.11 22:59:00 TRACE: User not logon yet.
+03.11 22:59:07 TRACE: User not logon yet.
+03.11 22:59:15 TRACE: User not logon yet.
+03.11 22:59:22 TRACE: User not logon yet.
+03.11 22:59:29 TRACE: User not logon yet.
+03.11 22:59:37 TRACE: User not logon yet.
+03.11 22:59:44 TRACE: User not logon yet.
+03.11 22:59:51 TRACE: User not logon yet.
+03.11 22:59:59 TRACE: User not logon yet.

@@ -91,7 +91,7 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
         });
       }
 
-      public function leaveEvent(msg: { id: Int, typeBattle: String, type: String, tournamentId: Int, battleId: Int  }) {
+      public function leaveEvent(msg: { id: Int, typeBattle: String, type: String, ?tournamentId: Int, battleId: Int  }) {
         server.sendTo(msg.id, {
           _type: "battle.leave"
         });
@@ -99,49 +99,15 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
 
         var c: VDLClient = getClient(server.slaveID);
         c.id = msg.id;
-        var params: Params = new Params({ typeBattle: msg.typeBattle, type: msg.type, tournamentId: msg.tournamentId, battleId: msg.battleId });
+        var params: Params;
+        if(msg.typeBattle == "battle") {
+           params = new Params({ typeBattle: msg.typeBattle, type: msg.type, battleId: msg.battleId });
+        } else {
+           params = new Params({ typeBattle: msg.typeBattle, type: msg.type, tournamentId: msg.tournamentId, battleId: msg.battleId });
+        }
+
         var ret = server.BattleModule.EndCall(c, params);
       }
-
-      /*public function StartCall(tournamentId: Int, round: Int): Void {
-        var res = GetAvailableTournamentUsers(tournamentId);
-        var list: Array<Int> = res.users;
-        var buffer: Float = list.length;
-        var counter: Int = 0;
-        while (buffer >= 2)
-        {
-          buffer = buffer / 2;
-          counter++;
-        }
-        var players: Int = 1;
-        while(counter > 0) {
-          players = players * 2;
-          counter--;
-        }
-        buffer = list.length - players;
-        while(buffer > 0)
-        {
-          list.remove(list[list.length - 1]);
-          buffer--;
-        }
-        buffer = list.length;
-        var bufferInt: Int = Std.int(buffer);
-        var battles: Array<Int> = new Array<Int>();
-        while (bufferInt > 0) {
-          battles.push(CreateBattle(list[bufferInt - 2], list[bufferInt - 1], tournamentId, round));
-          bufferInt = bufferInt - 2;
-        }
-        if(battles.length > 0) {
-            SetBattlesTournament(battles, tournamentId, "active");
-        }
-
-      }
-      private function CreateBattle(player1: Int, player2: Int, tournamentId: Int, round: Int): Int {
-        var retCreate = CreateRoom(player1);
-        var retJoin = JoinRoom(player2, retCreate.room);
-        Enemy(player1, player2, retCreate.room, tournamentId, round);
-        return retCreate.room;
-      }*/
 
       public function FinishCall(c: VDLClient, params: Params): Dynamic {
         var tournamentId: Int = params.get('tournamentId');
@@ -223,7 +189,8 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       public function AddUsersCall(c: VDLClient, params: Params): Dynamic {
         //var suc = server.UserModule.UserCheckLogin(c);
         var tournamentId : Int = params.get("tournamentId");
-        var ret = AddUsers(c.id, tournamentId);
+        var passTournament: String = params.get("passTournament");
+        var ret = AddUsers(c.id, tournamentId, passTournament);
 
         return ret;
       }
@@ -385,11 +352,12 @@ class VDLTournamentModule extends Module<VDLClient, ServerVDL>
       return ret;
     }
 
-    public function AddUsers(cid: Int, tournamentId: Int): Dynamic {
+    public function AddUsers(cid: Int, tournamentId: Int, ?passTournament: String): Dynamic {
       var ret = server.cacheRequest({
         _type: 'vdl/cache.tournament.addUsers',
         userId: cid,
-        tournament: tournamentId
+        tournament: tournamentId,
+        passTournament: passTournament
       });
       return ret;
     }

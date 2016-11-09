@@ -1,0 +1,1453 @@
+03.11 18:00:02 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:02 TIME: user.ping 0.15 ms
+03.11 18:00:02 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:08 TIME: user.ping 0.13 ms
+03.11 18:00:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:11 TIMER: Check auto-disconnect...
+03.11 18:00:12 STATS: vdl.0 cache, locks:2
+03.11 18:00:16 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:16 TIME: user.ping 0.15 ms
+03.11 18:00:16 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:23 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:23 TIME: user.ping 0.17 ms
+03.11 18:00:23 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:30 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:30 TIME: user.ping 0.19 ms
+03.11 18:00:30 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:37 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:37 TIME: user.ping 0.17 ms
+03.11 18:00:37 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:44 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:44 TIME: user.ping 0.18 ms
+03.11 18:00:44 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:51 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:51 TIME: user.ping 0.16 ms
+03.11 18:00:51 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:00:58 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:00:58 TIME: user.ping 0.18 ms
+03.11 18:00:58 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:05 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:05 TIME: user.ping 0.13 ms
+03.11 18:01:05 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:11 TIMER: Check auto-disconnect...
+03.11 18:01:12 STATS: vdl.0 cache, locks:2
+03.11 18:01:12 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:12 TIME: user.ping 0.16 ms
+03.11 18:01:12 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:19 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:19 TIME: user.ping 0.16 ms
+03.11 18:01:19 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:26 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:26 TIME: user.ping 0.14 ms
+03.11 18:01:26 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:33 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:33 TIME: user.ping 0.14 ms
+03.11 18:01:33 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:40 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:40 TIME: user.ping 0.18 ms
+03.11 18:01:40 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:47 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:47 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:01:47 TIME: user.ping 0.64 ms
+03.11 18:01:54 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:01:54 TIME: user.ping 0.16 ms
+03.11 18:01:54 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:01 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:01 TIME: user.ping 0.12 ms
+03.11 18:02:01 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:08 TIME: user.ping 0.17 ms
+03.11 18:02:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:11 TIMER: Check auto-disconnect...
+03.11 18:02:12 STATS: vdl.0 cache, locks:2
+03.11 18:02:15 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:15 TIME: user.ping 0.17 ms
+03.11 18:02:15 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:22 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:22 TIME: user.ping 0.18 ms
+03.11 18:02:22 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:29 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:29 TIME: user.ping 0.11 ms
+03.11 18:02:29 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:36 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:36 TIME: user.ping 0.17 ms
+03.11 18:02:36 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:43 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:43 TIME: user.ping 0.14 ms
+03.11 18:02:43 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:50 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:50 TIME: user.ping 0.18 ms
+03.11 18:02:50 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:02:57 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:02:57 TIME: user.ping 0.14 ms
+03.11 18:02:57 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:04 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:04 TIME: user.ping 0.17 ms
+03.11 18:03:04 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:11 TIMER: Check auto-disconnect...
+03.11 18:03:12 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:12 TIME: user.ping 0.16 ms
+03.11 18:03:12 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:12 STATS: vdl.0 cache, locks:2
+03.11 18:03:18 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:18 TIME: user.ping 0.15 ms
+03.11 18:03:18 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:26 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:26 TIME: user.ping 0.13 ms
+03.11 18:03:26 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:33 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:33 TIME: user.ping 0.18 ms
+03.11 18:03:33 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:40 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:40 TIME: user.ping 0.13 ms
+03.11 18:03:40 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:47 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:47 TIME: user.ping 0.16 ms
+03.11 18:03:47 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:03:53 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:03:53 TIME: user.ping 0.17 ms
+03.11 18:03:53 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:00 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:00 TIME: user.ping 0.16 ms
+03.11 18:04:00 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:07 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:07 TIME: user.ping 0.13 ms
+03.11 18:04:07 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:11 TIMER: Check auto-disconnect...
+03.11 18:04:12 STATS: vdl.0 cache, locks:2
+03.11 18:04:14 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:14 TIME: user.ping 3.56 ms
+03.11 18:04:14 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:21 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:21 TIME: user.ping 0.14 ms
+03.11 18:04:21 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:29 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:29 TIME: user.ping 0.15 ms
+03.11 18:04:29 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:36 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:36 TIME: user.ping 0.15 ms
+03.11 18:04:36 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:43 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:43 TIME: user.ping 0.16 ms
+03.11 18:04:43 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:50 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:50 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:04:50 TIME: user.ping 0.16 ms
+03.11 18:04:57 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:04:57 TIME: user.ping 0.18 ms
+03.11 18:04:57 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:04 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:04 TIME: user.ping 0.13 ms
+03.11 18:05:04 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:11 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:11 TIME: user.ping 0.19 ms
+03.11 18:05:11 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:11 TIMER: Check auto-disconnect...
+03.11 18:05:12 STATS: vdl.0 cache, locks:2
+03.11 18:05:18 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:18 TIME: user.ping 0.13 ms
+03.11 18:05:18 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:25 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:25 TIME: user.ping 0.18 ms
+03.11 18:05:25 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:32 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:32 TIME: user.ping 0.14 ms
+03.11 18:05:32 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:39 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:39 TIME: user.ping 0.19 ms
+03.11 18:05:39 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:46 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:46 TIME: user.ping 0.15 ms
+03.11 18:05:46 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:05:54 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:05:54 TIME: user.ping 0.16 ms
+03.11 18:05:54 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:01 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:01 TIME: user.ping 0.14 ms
+03.11 18:06:01 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:08 TIME: user.ping 0.22 ms
+03.11 18:06:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:11 TIMER: Check auto-disconnect...
+03.11 18:06:12 STATS: vdl.0 cache, locks:2
+03.11 18:06:15 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:15 TIME: user.ping 0.18 ms
+03.11 18:06:15 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:22 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:22 TIME: user.ping 0.13 ms
+03.11 18:06:22 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:29 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:29 TIME: user.ping 0.17 ms
+03.11 18:06:29 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:36 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:36 TIME: user.ping 0.13 ms
+03.11 18:06:36 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:44 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:44 TIME: user.ping 0.13 ms
+03.11 18:06:44 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:51 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:51 TIME: user.ping 0.25 ms
+03.11 18:06:51 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:06:58 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:06:58 TIME: user.ping 0.14 ms
+03.11 18:06:58 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:05 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:05 TIME: user.ping 0.15 ms
+03.11 18:07:05 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:11 TIMER: Check auto-disconnect...
+03.11 18:07:12 STATS: vdl.0 cache, locks:2
+03.11 18:07:13 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:13 TIME: user.ping 0.18 ms
+03.11 18:07:13 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:20 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:20 TIME: user.ping 0.14 ms
+03.11 18:07:20 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:27 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:27 TIME: user.ping 0.17 ms
+03.11 18:07:27 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:34 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:34 TIME: user.ping 0.14 ms
+03.11 18:07:34 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:41 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:41 TIME: user.ping 0.17 ms
+03.11 18:07:41 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:48 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:48 TIME: user.ping 0.17 ms
+03.11 18:07:48 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:07:55 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:07:55 TIME: user.ping 0.12 ms
+03.11 18:07:55 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:02 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:02 TIME: user.ping 0.15 ms
+03.11 18:08:02 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:09 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:09 TIME: user.ping 0.13 ms
+03.11 18:08:09 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:11 TIMER: Check auto-disconnect...
+03.11 18:08:12 STATS: vdl.0 cache, locks:2
+03.11 18:08:16 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:16 TIME: user.ping 0.17 ms
+03.11 18:08:16 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:23 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:23 TIME: user.ping 0.14 ms
+03.11 18:08:23 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:30 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:30 TIME: user.ping 0.15 ms
+03.11 18:08:30 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:37 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:37 TIME: user.ping 0.15 ms
+03.11 18:08:37 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:44 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:44 TIME: user.ping 0.21 ms
+03.11 18:08:44 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:51 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:51 TIME: user.ping 0.15 ms
+03.11 18:08:51 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:08:58 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:08:58 TIME: user.ping 0.15 ms
+03.11 18:08:58 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:05 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:05 TIME: user.ping 0.13 ms
+03.11 18:09:05 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:11 TIMER: Check auto-disconnect...
+03.11 18:09:12 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:12 TIME: user.ping 0.15 ms
+03.11 18:09:12 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:12 STATS: vdl.0 cache, locks:2
+03.11 18:09:19 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:19 TIME: user.ping 0.15 ms
+03.11 18:09:19 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:26 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:26 TIME: user.ping 0.23 ms
+03.11 18:09:26 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:33 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:33 TIME: user.ping 0.13 ms
+03.11 18:09:33 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:40 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:40 TIME: user.ping 0.15 ms
+03.11 18:09:40 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:47 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:47 TIME: user.ping 0.16 ms
+03.11 18:09:47 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:09:54 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:09:54 TIME: user.ping 0.14 ms
+03.11 18:09:54 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:01 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:01 TIME: user.ping 0.17 ms
+03.11 18:10:01 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:08 TIME: user.ping 0.15 ms
+03.11 18:10:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:11 TIMER: Check auto-disconnect...
+03.11 18:10:12 STATS: vdl.0 cache, locks:2
+03.11 18:10:15 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:15 TIME: user.ping 0.14 ms
+03.11 18:10:15 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:22 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:22 TIME: user.ping 0.13 ms
+03.11 18:10:22 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:29 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:29 TIME: user.ping 0.13 ms
+03.11 18:10:29 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:36 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:36 TIME: user.ping 0.15 ms
+03.11 18:10:36 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:43 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:43 TIME: user.ping 0.15 ms
+03.11 18:10:43 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:50 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:50 TIME: user.ping 0.07 ms
+03.11 18:10:50 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:10:57 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:10:57 TIME: user.ping 0.09 ms
+03.11 18:10:57 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:04 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:04 TIME: user.ping 0.16 ms
+03.11 18:11:04 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:11 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:11 TIME: user.ping 0.11 ms
+03.11 18:11:11 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:11 TIMER: Check auto-disconnect...
+03.11 18:11:12 STATS: vdl.0 cache, locks:2
+03.11 18:11:18 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:18 TIME: user.ping 0.17 ms
+03.11 18:11:18 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:26 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:26 TIME: user.ping 0.17 ms
+03.11 18:11:26 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:33 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:33 TIME: user.ping 0.12 ms
+03.11 18:11:33 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:40 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:40 TIME: user.ping 0.09 ms
+03.11 18:11:40 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:47 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:47 TIME: user.ping 0.22 ms
+03.11 18:11:47 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:54 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:11:54 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:11:54 TIME: user.ping 0.07 ms
+03.11 18:12:01 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:01 TIME: user.ping 0.08 ms
+03.11 18:12:01 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:08 TIME: user.ping 0.09 ms
+03.11 18:12:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:11 TIMER: Check auto-disconnect...
+03.11 18:12:12 STATS: vdl.0 cache, locks:2
+03.11 18:12:15 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:15 TIME: user.ping 0.12 ms
+03.11 18:12:15 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:22 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:22 TIME: user.ping 0.09 ms
+03.11 18:12:22 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:29 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:29 TIME: user.ping 0.16 ms
+03.11 18:12:29 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:36 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:36 TIME: user.ping 0.16 ms
+03.11 18:12:36 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:43 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:43 TIME: user.ping 0.07 ms
+03.11 18:12:43 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:50 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:50 TIME: user.ping 0.19 ms
+03.11 18:12:50 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:12:57 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:12:57 TIME: user.ping 0.15 ms
+03.11 18:12:57 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:04 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:04 TIME: user.ping 0.07 ms
+03.11 18:13:04 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:11 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:11 TIME: user.ping 0.14 ms
+03.11 18:13:11 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:11 TIMER: Check auto-disconnect...
+03.11 18:13:12 STATS: vdl.0 cache, locks:2
+03.11 18:13:18 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:18 TIME: user.ping 0.08 ms
+03.11 18:13:18 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:25 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:25 TIME: user.ping 0.1 ms
+03.11 18:13:25 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:32 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:32 TIME: user.ping 0.09 ms
+03.11 18:13:32 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:39 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:39 TIME: user.ping 0.19 ms
+03.11 18:13:39 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:47 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:47 TIME: user.ping 0.21 ms
+03.11 18:13:47 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:13:54 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:13:54 TIME: user.ping 0.11 ms
+03.11 18:13:54 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:01 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:01 TIME: user.ping 0.13 ms
+03.11 18:14:01 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:08 TIME: user.ping 0.13 ms
+03.11 18:14:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:11 TIMER: Check auto-disconnect...
+03.11 18:14:12 STATS: vdl.0 cache, locks:2
+03.11 18:14:15 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:15 TIME: user.ping 0.1 ms
+03.11 18:14:15 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:22 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:22 TIME: user.ping 0.2 ms
+03.11 18:14:22 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:30 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:30 TIME: user.ping 0.07 ms
+03.11 18:14:30 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:37 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:37 TIME: user.ping 0.09 ms
+03.11 18:14:37 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:44 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:44 TIME: user.ping 0.08 ms
+03.11 18:14:44 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:51 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:51 TIME: user.ping 0.13 ms
+03.11 18:14:51 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:14:58 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:14:58 TIME: user.ping 0.19 ms
+03.11 18:14:58 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:05 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:05 TIME: user.ping 0.1 ms
+03.11 18:15:05 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:11 TIMER: Check auto-disconnect...
+03.11 18:15:12 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:12 TIME: user.ping 0.22 ms
+03.11 18:15:12 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:12 STATS: vdl.0 cache, locks:2
+03.11 18:15:20 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:20 TIME: user.ping 0.25 ms
+03.11 18:15:20 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:27 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:27 TIME: user.ping 0.1 ms
+03.11 18:15:27 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:34 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:34 TIME: user.ping 0.19 ms
+03.11 18:15:34 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:41 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:41 TIME: user.ping 0.15 ms
+03.11 18:15:41 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:48 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:48 TIME: user.ping 0.22 ms
+03.11 18:15:48 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:15:55 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:15:55 TIME: user.ping 0.13 ms
+03.11 18:15:55 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:03 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:03 TIME: user.ping 0.16 ms
+03.11 18:16:03 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:10 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:10 TIME: user.ping 0.12 ms
+03.11 18:16:10 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:11 TIMER: Check auto-disconnect...
+03.11 18:16:12 STATS: vdl.0 cache, locks:2
+03.11 18:16:17 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:17 TIME: user.ping 0.18 ms
+03.11 18:16:17 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:24 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:24 TIME: user.ping 0.15 ms
+03.11 18:16:24 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:31 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:31 TIME: user.ping 0.13 ms
+03.11 18:16:31 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:39 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:39 TIME: user.ping 0.08 ms
+03.11 18:16:39 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:45 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:45 TIME: user.ping 0.16 ms
+03.11 18:16:45 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:16:53 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:16:53 TIME: user.ping 0.17 ms
+03.11 18:16:53 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:00 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:00 TIME: user.ping 0.08 ms
+03.11 18:17:00 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:07 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:07 TIME: user.ping 0.09 ms
+03.11 18:17:07 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:11 TIMER: Check auto-disconnect...
+03.11 18:17:12 STATS: vdl.0 cache, locks:2
+03.11 18:17:14 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:14 TIME: user.ping 0.09 ms
+03.11 18:17:14 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:21 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:21 TIME: user.ping 0.08 ms
+03.11 18:17:21 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:28 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:28 TIME: user.ping 0.08 ms
+03.11 18:17:28 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:35 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:35 TIME: user.ping 0.09 ms
+03.11 18:17:35 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:42 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:42 TIME: user.ping 0.11 ms
+03.11 18:17:42 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:49 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:49 TIME: user.ping 0.12 ms
+03.11 18:17:49 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:17:57 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:17:57 TIME: user.ping 0.12 ms
+03.11 18:17:57 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:18:11 TIMER: Check auto-disconnect...
+03.11 18:18:12 STATS: vdl.0 cache, locks:2
+03.11 18:19:11 TIMER: Check auto-disconnect...
+03.11 18:19:12 STATS: vdl.0 cache, locks:2
+03.11 18:20:11 TIMER: Check auto-disconnect...
+03.11 18:20:12 STATS: vdl.0 cache, locks:2
+03.11 18:21:11 TIMER: Check auto-disconnect...
+03.11 18:21:11 NET: Client (name:uid114 conid:47982786 TCP) disconnected from vdl.0 (clients:0)
+03.11 18:21:11 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+03.11 18:21:11 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+03.11 18:21:11 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:21:11 STATS: vdl.0 cache connection, 112 calls, total 0.188973903656006 sec spent, avg 1.69 ms
+03.11 18:21:11 ->>-: vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:21:11 -<<-: vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+03.11 18:21:11 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:21:11 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 392
+Called from modules/VDLBattleModule.hx line 405
+Called from snipe/slave/Server.hx line 994
+03.11 18:21:11 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:21:11 -<<-: core/cache.update { errorCode => ok, version => 6, _type => core/cache.update }
+03.11 18:21:11 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:21:11 -<<-: core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+03.11 18:21:11 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+03.11 18:21:11 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:21:12 STATS: vdl.0 cache, locks:0
+03.11 18:22:11 TIMER: Check auto-disconnect...
+03.11 18:22:12 STATS: vdl.0 cache, locks:0
+03.11 18:22:16 NET: Client (conid:72355733) connected to vdl.0 (clients:1)
+03.11 18:22:16 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE0 }
+03.11 18:22:16 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+03.11 18:22:16 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+03.11 18:22:16 -<<-: core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+03.11 18:22:16 STATS: vdl.0 cache connection, 117 calls, total 0.191579818725586 sec spent, avg 1.64 ms
+03.11 18:22:16 ->>-: core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+03.11 18:22:16 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:22:16 ->>-: core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+03.11 18:22:16 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 0, id => 114 } }
+03.11 18:22:16 ->>-: core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+03.11 18:22:16 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+03.11 18:22:16 NET: Client login (conid:72355733, id:114, name:uid114)
+03.11 18:22:16 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+03.11 18:22:16 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:22:16 == NET: uid114 ret: user.login { name => uid114, type => user.login, errorCode => ok, id => 114 }
+03.11 18:22:16 == NET: uid114 ret: user.join { name => uid114, type => user.join }
+03.11 18:22:20 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:22:20 TIME: user.ping 0.1 ms
+03.11 18:22:20 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:22:22 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+03.11 18:22:22 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:22:27 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:22:27 TIME: user.ping 0.12 ms
+03.11 18:22:27 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:22:34 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:22:34 TIME: user.ping 0.12 ms
+03.11 18:22:34 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:22:41 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:22:41 TIME: user.ping 0.12 ms
+03.11 18:22:41 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:22:49 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:22:49 TIME: user.ping 0.15 ms
+03.11 18:22:49 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:22:56 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:22:56 TIME: user.ping 0.09 ms
+03.11 18:22:56 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:23:03 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:23:03 TIME: user.ping 0.12 ms
+03.11 18:23:03 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:23:11 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:23:11 TIME: user.ping 0.13 ms
+03.11 18:23:11 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:23:11 TIMER: Check auto-disconnect...
+03.11 18:23:12 STATS: vdl.0 cache, locks:2
+03.11 18:23:18 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:23:18 TIME: user.ping 0.12 ms
+03.11 18:23:18 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:23:23 NET: Client (name:uid114 conid:72355733 TCP) disconnected from vdl.0 (clients:0)
+03.11 18:23:23 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+03.11 18:23:23 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+03.11 18:23:23 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:23:23 STATS: vdl.0 cache connection, 123 calls, total 0.196609258651733 sec spent, avg 1.6 ms
+03.11 18:23:23 ->>-: vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:23:23 -<<-: vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+03.11 18:23:23 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:23:23 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 392
+Called from modules/VDLBattleModule.hx line 405
+Called from snipe/slave/Server.hx line 994
+03.11 18:23:23 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:23:23 -<<-: core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+03.11 18:23:23 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:23:23 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:23:23 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+03.11 18:23:23 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:23:41 NET: Client (conid:22084437) connected to vdl.0 (clients:1)
+03.11 18:23:42 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE0 }
+03.11 18:23:42 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+03.11 18:23:42 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+03.11 18:23:42 -<<-: core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+03.11 18:23:42 ->>-: core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+03.11 18:23:42 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:23:42 ->>-: core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+03.11 18:23:42 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 0, id => 114 } }
+03.11 18:23:42 ->>-: core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+03.11 18:23:42 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+03.11 18:23:42 NET: Client login (conid:22084437, id:114, name:uid114)
+03.11 18:23:42 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+03.11 18:23:42 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:23:42 == NET: uid114 ret: user.login { name => uid114, type => user.login, errorCode => ok, id => 114 }
+03.11 18:23:42 == NET: uid114 ret: user.join { name => uid114, type => user.join }
+03.11 18:23:45 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:23:45 TIME: user.ping 0.13 ms
+03.11 18:23:45 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:23:47 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+03.11 18:23:47 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:23:52 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:23:52 TIME: user.ping 0.1 ms
+03.11 18:23:52 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:00 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:24:00 TIME: user.ping 0.16 ms
+03.11 18:24:00 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:07 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:24:07 TIME: user.ping 0.1 ms
+03.11 18:24:07 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:11 TIMER: Check auto-disconnect...
+03.11 18:24:12 STATS: vdl.0 cache, locks:2
+03.11 18:24:14 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:24:14 TIME: user.ping 0.16 ms
+03.11 18:24:14 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:22 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:24:22 TIME: user.ping 0.09 ms
+03.11 18:24:22 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:29 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:24:29 TIME: user.ping 0.11 ms
+03.11 18:24:29 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:37 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:24:37 TIME: user.ping 0.1 ms
+03.11 18:24:37 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:45 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:24:45 TIME: user.ping 0.12 ms
+03.11 18:24:45 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:24:51 NET: Client (name:uid114 conid:22084437 TCP) disconnected from vdl.0 (clients:0)
+03.11 18:24:51 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+03.11 18:24:51 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+03.11 18:24:51 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:24:51 STATS: vdl.0 cache connection, 134 calls, total 0.206271171569824 sec spent, avg 1.54 ms
+03.11 18:24:51 ->>-: vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:24:51 -<<-: vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+03.11 18:24:51 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:24:51 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 392
+Called from modules/VDLBattleModule.hx line 405
+Called from snipe/slave/Server.hx line 994
+03.11 18:24:51 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:24:51 -<<-: core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+03.11 18:24:51 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:24:51 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:24:51 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+03.11 18:24:51 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:25:07 NET: Client (conid:73913835) connected to vdl.0 (clients:1)
+03.11 18:25:08 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE0 }
+03.11 18:25:08 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+03.11 18:25:08 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+03.11 18:25:08 -<<-: core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+03.11 18:25:08 ->>-: core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+03.11 18:25:08 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:25:08 ->>-: core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+03.11 18:25:08 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 0, id => 114 } }
+03.11 18:25:08 ->>-: core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+03.11 18:25:08 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+03.11 18:25:08 NET: Client login (conid:73913835, id:114, name:uid114)
+03.11 18:25:08 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+03.11 18:25:08 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:25:08 == NET: uid114 ret: user.login { name => uid114, type => user.login, errorCode => ok, id => 114 }
+03.11 18:25:08 == NET: uid114 ret: user.join { name => uid114, type => user.join }
+03.11 18:25:11 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:25:11 TIME: user.ping 0.14 ms
+03.11 18:25:11 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:25:11 TIMER: Check auto-disconnect...
+03.11 18:25:12 STATS: vdl.0 cache, locks:2
+03.11 18:25:17 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+03.11 18:25:17 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:25:18 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:25:18 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:25:18 TIME: user.ping 0.12 ms
+03.11 18:25:26 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:25:26 TIME: user.ping 0.1 ms
+03.11 18:25:26 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:25:33 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:25:33 TIME: user.ping 0.11 ms
+03.11 18:25:33 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:25:40 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:25:40 TIME: user.ping 0.1 ms
+03.11 18:25:40 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:25:47 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:25:47 TIME: user.ping 0.1 ms
+03.11 18:25:47 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:25:55 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:25:55 TIME: user.ping 0.12 ms
+03.11 18:25:55 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:02 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:02 TIME: user.ping 0.11 ms
+03.11 18:26:02 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:09 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:09 TIME: user.ping 0.13 ms
+03.11 18:26:09 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:11 TIMER: Check auto-disconnect...
+03.11 18:26:12 STATS: vdl.0 cache, locks:2
+03.11 18:26:16 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:16 TIME: user.ping 0.13 ms
+03.11 18:26:16 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:21 NET: Client (name:uid114 conid:73913835 TCP) disconnected from vdl.0 (clients:0)
+03.11 18:26:21 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+03.11 18:26:21 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+03.11 18:26:21 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:26:21 STATS: vdl.0 cache connection, 145 calls, total 0.218411684036255 sec spent, avg 1.51 ms
+03.11 18:26:21 ->>-: vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:26:21 -<<-: vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+03.11 18:26:21 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:26:21 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 392
+Called from modules/VDLBattleModule.hx line 405
+Called from snipe/slave/Server.hx line 994
+03.11 18:26:21 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:26:21 -<<-: core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+03.11 18:26:21 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:26:21 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:26:21 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+03.11 18:26:21 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:26:25 NET: Client (conid:86426872) connected to vdl.0 (clients:1)
+03.11 18:26:25 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE0 }
+03.11 18:26:25 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+03.11 18:26:25 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+03.11 18:26:25 -<<-: core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+03.11 18:26:25 ->>-: core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+03.11 18:26:25 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:26:25 ->>-: core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+03.11 18:26:25 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 2, id => 114 } }
+03.11 18:26:25 ->>-: core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+03.11 18:26:25 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 1, id => 114 } }
+03.11 18:26:25 NET: Client login (conid:86426872, id:114, name:uid114)
+03.11 18:26:25 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+03.11 18:26:25 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:26:25 == NET: uid114 ret: user.login { name => uid114, type => user.login, errorCode => ok, id => 114 }
+03.11 18:26:25 == NET: uid114 ret: user.join { name => uid114, type => user.join }
+03.11 18:26:29 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:29 TIME: user.ping 0.22 ms
+03.11 18:26:29 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:32 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+03.11 18:26:32 -<<-: core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+03.11 18:26:36 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:36 TIME: user.ping 0.13 ms
+03.11 18:26:36 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:44 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:44 TIME: user.ping 0.19 ms
+03.11 18:26:44 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:51 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:51 TIME: user.ping 0.1 ms
+03.11 18:26:51 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:26:58 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:26:58 TIME: user.ping 0.19 ms
+03.11 18:26:58 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:06 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:06 TIME: user.ping 0.1 ms
+03.11 18:27:06 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:11 TIMER: Check auto-disconnect...
+03.11 18:27:12 STATS: vdl.0 cache, locks:2
+03.11 18:27:13 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:13 TIME: user.ping 0.18 ms
+03.11 18:27:13 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:21 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:21 TIME: user.ping 0.11 ms
+03.11 18:27:21 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:28 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:28 TIME: user.ping 0.14 ms
+03.11 18:27:28 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:36 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:36 TIME: user.ping 0.11 ms
+03.11 18:27:36 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:43 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:43 TIME: user.ping 0.1 ms
+03.11 18:27:43 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:50 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:50 TIME: user.ping 0.13 ms
+03.11 18:27:50 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:27:57 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:27:57 TIME: user.ping 0.11 ms
+03.11 18:27:57 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:04 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:04 TIME: user.ping 0.17 ms
+03.11 18:28:04 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:11 TIMER: Check auto-disconnect...
+03.11 18:28:12 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:12 TIME: user.ping 0.13 ms
+03.11 18:28:12 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:12 STATS: vdl.0 cache, locks:2
+03.11 18:28:19 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:19 TIME: user.ping 0.12 ms
+03.11 18:28:19 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:26 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:26 TIME: user.ping 0.18 ms
+03.11 18:28:26 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:33 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:33 TIME: user.ping 0.16 ms
+03.11 18:28:33 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:40 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:40 TIME: user.ping 0.12 ms
+03.11 18:28:40 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:48 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:48 TIME: user.ping 0.17 ms
+03.11 18:28:48 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:28:55 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:28:55 TIME: user.ping 0.11 ms
+03.11 18:28:55 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:02 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:02 TIME: user.ping 0.16 ms
+03.11 18:29:02 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:09 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:09 TIME: user.ping 0.15 ms
+03.11 18:29:09 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:11 TIMER: Check auto-disconnect...
+03.11 18:29:13 STATS: vdl.0 cache, locks:2
+03.11 18:29:16 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:16 TIME: user.ping 0.15 ms
+03.11 18:29:16 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:24 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:24 TIME: user.ping 0.12 ms
+03.11 18:29:24 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:31 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:31 TIME: user.ping 0.14 ms
+03.11 18:29:31 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:39 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:39 TIME: user.ping 0.12 ms
+03.11 18:29:39 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:46 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:46 TIME: user.ping 0.2 ms
+03.11 18:29:46 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:29:53 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:29:53 TIME: user.ping 0.15 ms
+03.11 18:29:53 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:30:01 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:30:01 TIME: user.ping 0.07 ms
+03.11 18:30:01 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:30:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:30:08 TIME: user.ping 0.14 ms
+03.11 18:30:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:30:10 NET: Client (name:uid114 conid:86426872 TCP) disconnected from vdl.0 (clients:0)
+03.11 18:30:10 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+03.11 18:30:10 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+03.11 18:30:10 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:30:10 STATS: vdl.0 cache connection, 156 calls, total 0.228726148605347 sec spent, avg 1.47 ms
+03.11 18:30:10 ->>-: vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:30:10 -<<-: vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+03.11 18:30:10 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:30:10 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 392
+Called from modules/VDLBattleModule.hx line 405
+Called from snipe/slave/Server.hx line 994
+03.11 18:30:10 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:30:10 -<<-: core/cache.update { errorCode => ok, version => 4, _type => core/cache.update }
+03.11 18:30:10 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:30:10 -<<-: core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+03.11 18:30:10 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+03.11 18:30:10 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:30:11 TIMER: Check auto-disconnect...
+03.11 18:30:13 STATS: vdl.0 cache, locks:0
+03.11 18:30:18 NET: Client (conid:70284977) connected to vdl.0 (clients:1)
+03.11 18:30:19 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE0 }
+03.11 18:30:19 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+03.11 18:30:19 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+03.11 18:30:19 -<<-: core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+03.11 18:30:19 ->>-: core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+03.11 18:30:19 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:30:19 ->>-: core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+03.11 18:30:19 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 4, id => 114 } }
+03.11 18:30:19 ->>-: core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+03.11 18:30:19 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 2, id => 114 } }
+03.11 18:30:19 NET: Client login (conid:70284977, id:114, name:uid114)
+03.11 18:30:19 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+03.11 18:30:19 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:30:19 == NET: uid114 ret: user.login { name => uid114, type => user.login, errorCode => ok, id => 114 }
+03.11 18:30:19 == NET: uid114 ret: user.join { name => uid114, type => user.join }
+03.11 18:30:23 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:30:23 TIME: user.ping 0.11 ms
+03.11 18:30:23 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:30:28 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+03.11 18:30:28 -<<-: core/cache.update { errorCode => ok, version => 5, _type => core/cache.update }
+03.11 18:30:30 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:30:30 TIME: user.ping 0.22 ms
+03.11 18:30:30 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:30:38 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:30:38 TIME: user.ping 0.18 ms
+03.11 18:30:38 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:30:45 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:30:45 TIME: user.ping 0.16 ms
+03.11 18:30:45 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:30:53 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:30:53 TIME: user.ping 0.12 ms
+03.11 18:30:53 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:01 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:01 TIME: user.ping 0.1 ms
+03.11 18:31:01 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:08 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:08 TIME: user.ping 0.13 ms
+03.11 18:31:08 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:11 TIMER: Check auto-disconnect...
+03.11 18:31:13 STATS: vdl.0 cache, locks:2
+03.11 18:31:16 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:16 TIME: user.ping 0.18 ms
+03.11 18:31:16 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:23 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:23 TIME: user.ping 0.15 ms
+03.11 18:31:23 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:31 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:31 TIME: user.ping 0.15 ms
+03.11 18:31:31 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:38 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:38 TIME: user.ping 0.16 ms
+03.11 18:31:38 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:45 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:45 TIME: user.ping 0.1 ms
+03.11 18:31:45 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:31:52 ++ NET: uid114 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:31:52 TIME: user.ping 0.11 ms
+03.11 18:31:52 == NET: uid114 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:32:11 TIMER: Check auto-disconnect...
+03.11 18:32:13 STATS: vdl.0 cache, locks:2
+03.11 18:33:11 TIMER: Check auto-disconnect...
+03.11 18:33:13 STATS: vdl.0 cache, locks:2
+03.11 18:34:01 NET: Client (conid:6038722) connected to vdl.0 (clients:2)
+03.11 18:34:02 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTA3 }
+03.11 18:34:02 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid107' AND Password = E'uid107'
+03.11 18:34:02 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid107' AND Password = E'uid107', _type => core/server.query }
+03.11 18:34:02 -<<-: core/server.query { list => {{ name => uid107, networkid => , isbanned => false, id => 107 }}, errorCode => ok, _type => core/server.query }
+03.11 18:34:02 STATS: vdl.0 cache connection, 167 calls, total 0.235808849334717 sec spent, avg 1.41 ms
+03.11 18:34:02 ->>-: core/user.isOnlineID { id => 107, _type => core/user.isOnlineID }
+03.11 18:34:02 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:34:02 ->>-: core/cache.get { type => user, v => -1, id => 107, _type => core/cache.get }
+03.11 18:34:02 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid107, deleted => false, email => , networktype =>   , password => uid107, isbanned => false, regdate => 2016-10-28 16:37:18.693533+03, language => en, networkid => , params => { info => { city => null, year => null, email => null }, inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1478178267, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 0, id => 107 } }
+03.11 18:34:02 ->>-: core/cache.get { type => questdata, v => -1, id => 107, _type => core/cache.get }
+03.11 18:34:02 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 107 } }
+03.11 18:34:02 NET: Client login (conid:6038722, id:107, name:uid107)
+03.11 18:34:02 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 107, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+03.11 18:34:02 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:34:02 == NET: uid107 ret: user.login { name => uid107, type => user.login, errorCode => ok, id => 107 }
+03.11 18:34:02 == NET: uid107 ret: user.join { name => uid114, type => user.join }
+03.11 18:34:02 == NET: uid107 ret: user.join { name => uid107, type => user.join }
+03.11 18:34:02 == NET: uid114 ret: user.join { name => uid107, type => user.join }
+03.11 18:34:06 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:34:06 TIME: user.ping 0.08 ms
+03.11 18:34:06 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:34:08 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 107, _type => core/cache.update }
+03.11 18:34:08 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:34:11 TIMER: Check auto-disconnect...
+03.11 18:34:13 STATS: vdl.0 cache, locks:4
+03.11 18:34:14 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:34:14 TIME: user.ping 0.07 ms
+03.11 18:34:14 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:34:21 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:34:21 TIME: user.ping 0.14 ms
+03.11 18:34:21 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:34:25 NET: Client (name:uid107 conid:6038722 TCP) disconnected from vdl.0 (clients:1)
+03.11 18:34:25 DB: SELECT id FROM battle WHERE firstid=107 OR secondid=107 AND finished <> true
+03.11 18:34:25 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=107 OR secondid=107 AND finished <> true, _type => core/server.query }
+03.11 18:34:25 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:34:25 ->>-: vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:34:25 -<<-: vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+03.11 18:34:25 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:34:25 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 392
+Called from modules/VDLBattleModule.hx line 405
+Called from snipe/slave/Server.hx line 994
+03.11 18:34:25 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 107, _type => core/cache.update }
+03.11 18:34:25 -<<-: core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+03.11 18:34:25 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 107, _type => core/cache.update }
+03.11 18:34:25 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:34:25 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 107, _type => core/user.logoutPost }
+03.11 18:34:25 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:35:11 TIMER: Check auto-disconnect...
+03.11 18:35:11 NET: Client (name:uid114 conid:70284977 TCP) disconnected from vdl.0 (clients:0)
+03.11 18:35:11 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+03.11 18:35:11 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+03.11 18:35:11 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:35:11 STATS: vdl.0 cache connection, 178 calls, total 0.243749141693115 sec spent, avg 1.37 ms
+03.11 18:35:11 ->>-: vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:35:11 -<<-: vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+03.11 18:35:11 TRACE: logoutPost battle exception: cacheRequest exception { roomId => 0, _type => vdl/cache.battle.infoRoom }
+03.11 18:35:11 TRACE: 
+Called from snipe/slave/CacheConnection.hx line 199
+Called from modules/VDLBattleModule.hx line 392
+Called from modules/VDLBattleModule.hx line 405
+Called from snipe/slave/Server.hx line 994
+03.11 18:35:11 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:35:11 -<<-: core/cache.update { errorCode => ok, version => 6, _type => core/cache.update }
+03.11 18:35:11 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+03.11 18:35:11 -<<-: core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+03.11 18:35:11 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+03.11 18:35:11 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:35:13 STATS: vdl.0 cache, locks:0
+03.11 18:36:11 TIMER: Check auto-disconnect...
+03.11 18:36:13 STATS: vdl.0 cache, locks:0
+03.11 18:37:11 TIMER: Check auto-disconnect...
+03.11 18:37:12 NET: Client (conid:27245510) connected to vdl.0 (clients:1)
+03.11 18:37:13 STATS: vdl.0 cache, locks:0
+03.11 18:37:16 ++ NET: null req: user.register { messageType => user.register }
+03.11 18:37:16 DB: SELECT * FROM users
+03.11 18:37:16 ->>-: core/server.query { q => SELECT * FROM users, _type => core/server.query }
+03.11 18:37:16 -<<-: core/server.query { list => {{ password => test, name => test3, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:08.364133+03, language =>   , id => 4, deleted => false }, { password => test, name => test5, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:15.596579+03, language =>   , id => 6, deleted => false }, { password => test, name => test6, networkid => , params => , networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:19.233499+03, language =>   , id => 7, deleted => false }, { password => uid24, name => uid24, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:36:42.292969+03, language =>   , id => 24, deleted => false }, { password => uid25, name => uid25, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:42:14.268266+03, language =>   , id => 25, deleted => false }, { password => test, name => test7, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-09-07 16:46:43.688817+03, language =>   , id => 8, deleted => false }, { password => uid26, name => uid26, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:52:51.409771+03, language =>   , id => 26, deleted => false }, { password => uid37, name => uid37, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476461351,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 19:09:11.07001+03, language => en, id => 37, deleted => false }, { password => uid9, name => uid9, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-11 20:36:09.090394+03, language =>   , id => 9, deleted => false }, { password => uid32, name => uid32, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271969,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:32:48.215636+03, language => en, id => 32, deleted => false }, { password => uid27, name => uid27, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269621,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:53:40.789776+03, language => en, id => 27, deleted => false }, { password => uid10, name => uid10, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 11:12:48.168059+03, language =>   , id => 10, deleted => false }, { password => uid11, name => uid11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:33:27.3109+03, language =>   , id => 11, deleted => false }, { password => uid12, name => uid12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:47:26.670465+03, language =>   , id => 12, deleted => false }, { password => uid13, name => uid13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:51:08.341292+03, language =>   , id => 13, deleted => false }, { password => uid14, name => uid14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:53:34.360658+03, language =>   , id => 14, deleted => false }, { password => uid15, name => uid15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:55:14.160619+03, language =>   , id => 15, deleted => false }, { password => uid28, name => uid28, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476269710,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:55:09.527211+03, language => en, id => 28, deleted => false }, { password => uid16, name => uid16, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 12:59:18.86185+03, language =>   , id => 16, deleted => false }, { password => test, name => test2, networkid => , params => {"attrs":{"_lastTime.24hr":1476808882,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:03.859813+03, language => en, id => 3, deleted => false }, { password => test, name => test11, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:18:04.647106+03, language =>   , id => 39, deleted => false }, { password => uid29, name => uid29, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271397,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:23:17.10609+03, language => en, id => 29, deleted => false }, { password => uid17, name => uid17, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:07:15.262858+03, language =>   , id => 17, deleted => false }, { password => uid18, name => uid18, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:10:03.885555+03, language =>   , id => 18, deleted => false }, { password => uid19, name => uid19, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:11:41.868111+03, language =>   , id => 19, deleted => false }, { password => uid20, name => uid20, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:13:57.605493+03, language =>   , id => 20, deleted => false }, { password => uid21, name => uid21, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:16:21.670662+03, language =>   , id => 21, deleted => false }, { password => uid22, name => uid22, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:18:13.422519+03, language =>   , id => 22, deleted => false }, { password => uid23, name => uid23, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 13:33:08.78413+03, language =>   , id => 23, deleted => false }, { password => uid34, name => uid34, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476437991,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 12:39:51.725362+03, language => en, id => 34, deleted => false }, { password => uid30, name => uid30, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271613,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:26:51.842745+03, language => en, id => 30, deleted => false }, { password => test, name => test12, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:21:55.316231+03, language =>   , id => 40, deleted => false }, { password => uid31, name => uid31, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476271703,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:28:22.51548+03, language => en, id => 31, deleted => false }, { password => uid35, name => uid35, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476458014,"lastLoginDate":288,"lastLoadDate":1015},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:13:33.360887+03, language => en, id => 35, deleted => false }, { password => uid33, name => uid33, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476272110,"lastLoginDate":286,"lastLoadDate":1013},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-12 14:35:09.155569+03, language => en, id => 33, deleted => false }, { password => test, name => test13, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:30:08.433611+03, language =>   , id => 41, deleted => false }, { password => uid38, name => uid38, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476782075,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:14:32.809+03, language => en, id => 38, deleted => false }, { password => test, name => test14, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:31:52.285659+03, language =>   , id => 42, deleted => false }, { password => test, name => test15, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:40:42.354135+03, language =>   , id => 43, deleted => false }, { password => , name => --- DEFAULT ATTRIBUTES ---, networkid => , params => {"inventory":{"list":[]},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:45:16.008574+03, language =>   , id => 1, deleted => false }, { password => uid36, name => uid36, networkid => , params => {"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476789639,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-14 18:14:45.120358+03, language => en, id => 36, deleted => false }, { password => uid45, name => uid45, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793290,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:21:30.078736+03, language => en, id => 45, deleted => false }, { password => uid46, name => uid46, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793424,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:23:44.261533+03, language => en, id => 46, deleted => false }, { password => uid47, name => uid47, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476793513,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 15:25:12.83212+03, language => en, id => 47, deleted => false }, { password => test, name => test4, networkid => , params => {"attrs":{"_lastTime.24hr":1476809210,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:48:11.728197+03, language => en, id => 5, deleted => false }, { password => test, name => test1, networkid => , params => {"attrs":{"_lastTime.24hr":1477308461,"lastLoginDate":298,"lastLoadDate":1025},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-08-30 15:47:58.935408+03, language => en, id => 2, deleted => false }, { password => uid64, name => uid64, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476877181,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 14:39:41.700061+03, language => en, id => 64, deleted => false }, { password => uid58, name => uid58, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809753,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:55:53.508049+03, language => en, id => 58, deleted => false }, { password => uid48, name => uid48, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807085,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:11:25.882545+03, language => en, id => 48, deleted => false }, { password => uid49, name => uid49, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807618,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:20:16.265259+03, language => en, id => 49, deleted => false }, { password => uid50, name => uid50, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476807854,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:24:12.892256+03, language => en, id => 50, deleted => false }, { password => uid59, name => uid59, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809815,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:56:55.344336+03, language => en, id => 59, deleted => false }, { password => uid51, name => uid51, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808189,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:29:47.381194+03, language => en, id => 51, deleted => false }, { password => uid52, name => uid52, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808378,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:32:58.719756+03, language => en, id => 52, deleted => false }, { password => uid53, name => uid53, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808795,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:39:54.973899+03, language => en, id => 53, deleted => false }, { password => uid54, name => uid54, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476808869,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:41:09.113701+03, language => en, id => 54, deleted => false }, { password => uid67, name => uid67, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476886636,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:17:16.853975+03, language => en, id => 67, deleted => false }, { password => uid55, name => uid55, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809185,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:46:25.229927+03, language => en, id => 55, deleted => false }, { password => uid65, name => uid65, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476879545,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 15:19:05.058893+03, language => en, id => 65, deleted => false }, { password => uid60, name => uid60, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809868,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:57:48.24719+03, language => en, id => 60, deleted => false }, { password => uid56, name => uid56, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809466,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:51:06.257024+03, language => en, id => 56, deleted => false }, { password => uid57, name => uid57, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476809529,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 19:52:09.241918+03, language => en, id => 57, deleted => false }, { password => uid61, name => uid61, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810127,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 20:02:07.43066+03, language => en, id => 61, deleted => false }, { password => uid62, name => uid62, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810165,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 20:02:45.274383+03, language => en, id => 62, deleted => false }, { password => qweqwe, name => asdasd, networkid => , params => {"info":{"city":"Dsadasd","year":"1231","email":"asdasdas"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:53:08.822508+03, language =>   , id => 69, deleted => false }, { password => uid66, name => uid66, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476882998,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 16:16:38.334095+03, language => en, id => 66, deleted => false }, { password => uid63, name => uid63, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476810879,"lastLoginDate":292,"lastLoadDate":1019},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 20:14:39.877987+03, language => en, id => 63, deleted => false }, { password => uid73, name => uid73, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476889025,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:57:04.529542+03, language => en, id => 73, deleted => false }, { password => uid71, name => uid71, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476888930,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:55:29.621522+03, language => en, id => 71, deleted => false }, { password => uid68, name => uid68, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476888788,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:53:08.78775+03, language => en, id => 68, deleted => false }, { password => 123123, name => 123123, networkid => , params => {"info":{"city":"Weqwe","year":"1231","email":"123123"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:54:22.233721+03, language =>   , id => 70, deleted => false }, { password => qweqwe, name => 1qweqwe, networkid => , params => {"info":{"city":"Qweqwe","year":"1231","email":"qweqwe"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:56:17.221331+03, language =>   , id => 72, deleted => false }, { password => 123123, name => 123qwe, networkid => , params => {"info":{"city":"Wqe","year":"1233","email":"123qwe"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 17:59:29.773441+03, language =>   , id => 74, deleted => false }, { password => uid75, name => uid75, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476889477,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 18:04:35.916538+03, language => en, id => 75, deleted => false }, { password => test, name => test16, networkid => , params => {"info":{"city":"kazan"},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476890115,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-18 12:43:02.694689+03, language => en, id => 44, deleted => false }, { password => uid77, name => uid77, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476889607,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 18:06:46.41184+03, language => en, id => 77, deleted => false }, { password => 123456, name => test20, networkid => , params => {"info":{"city":"Weqwe","year":"1231","email":"123"},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477646178,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 12:16:18.03489+03, language => en, id => 96, deleted => false }, { password => uid78, name => uid78, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476890199,"lastLoginDate":293,"lastLoadDate":1020},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 18:16:37.399803+03, language => en, id => 78, deleted => false }, { password => uid83, name => uid83, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476961590,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 14:06:28.765885+03, language => en, id => 83, deleted => false }, { password => uid79, name => uid79, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476959779,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 13:36:18.869521+03, language => en, id => 79, deleted => false }, { password => uid89, name => uid89, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477308423,"lastLoginDate":298,"lastLoadDate":1025},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-24 14:26:57.401644+03, language => en, id => 89, deleted => false }, { password => uid84, name => uid84, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476961768,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 14:09:27.02443+03, language => en, id => 84, deleted => false }, { password => uid102, name => uid102, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477660100,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:08:15.479957+03, language => en, id => 102, deleted => false }, { password => uid80, name => uid80, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476960874,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 13:54:32.93048+03, language => en, id => 80, deleted => false }, { password => uid81, name => uid81, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476961061,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 13:57:40.114003+03, language => en, id => 81, deleted => false }, { password => uid85, name => uid85, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476962319,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 14:18:38.418977+03, language => en, id => 85, deleted => false }, { password => 123123, name => Tester, networkid => , params => {"info":{"city":"Dsda","year":"1231","email":"123123"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 14:58:49.229528+03, language =>   , id => 86, deleted => false }, { password => qweqwe, name => Acterix, networkid => , params => {"info":{"city":"Weqwe","year":"2312","email":"eqwe123"},"inventory":{"list":[]},"vars":{},"attrs":{},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-25 15:39:29.554557+03, language =>   , id => 90, deleted => false }, { password => uid91, name => uid91, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477399413,"lastLoginDate":299,"lastLoadDate":1026},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-25 15:43:32.477232+03, language => en, id => 91, deleted => false }, { password => uid82, name => uid82, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476961257,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 14:00:56.513148+03, language => en, id => 82, deleted => false }, { password => uid87, name => uid87, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1476968972,"lastLoginDate":294,"lastLoadDate":1021},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-20 16:09:31.194602+03, language => en, id => 87, deleted => false }, { password => uid88, name => uid88, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477049264,"lastLoginDate":295,"lastLoadDate":1022},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-21 14:27:43.099186+03, language => en, id => 88, deleted => false }, { password => 123456, name => test17, networkid => , params => {"info":{"city":"","year":"","email":"asda"},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477399457,"lastLoginDate":299,"lastLoadDate":1026},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-25 15:44:17.274208+03, language => en, id => 92, deleted => false }, { password => uid95, name => uid95, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477489312,"lastLoginDate":300,"lastLoadDate":1027},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-25 16:40:34.208622+03, language => en, id => 95, deleted => false }, { password => uid93, name => uid93, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477400907,"lastLoginDate":299,"lastLoadDate":1026},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-25 16:08:27.066262+03, language => en, id => 93, deleted => false }, { password => uid94, name => uid94, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477655031,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-25 16:32:22.177493+03, language => en, id => 94, deleted => false }, { password => kO2YJdf, name => Aimer, networkid => , params => {"info":{"city":"Kazan","year":"1993","email":"rabpoll1@ya.ru"},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477646117,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-19 18:05:38.946809+03, language => en, id => 76, deleted => false }, { password => uid98, name => uid98, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477659590,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 15:59:47.355767+03, language => en, id => 98, deleted => false }, { password => uid97, name => uid97, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477647307,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 12:35:05.771011+03, language => en, id => 97, deleted => false }, { password => uid99, name => uid99, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477659641,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:00:39.9083+03, language => en, id => 99, deleted => false }, { password => uid103, name => uid103, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477660355,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:12:35.388519+03, language => en, id => 103, deleted => false }, { password => qwerty, name => nelli8, networkid => , params => {"info":{"city":"Kazan","year":"","email":"nlqbunskaha@mail.ru"},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477750390,"lastLoginDate":303,"lastLoadDate":1030},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:03:03.386319+03, language => en, id => 101, deleted => false }, { password => uid105, name => uid105, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477661095,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:24:51.972524+03, language => en, id => 105, deleted => false }, { password => test, name => test67, networkid => , params => {"info":{"city":"","year":"","email":""},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477750490,"lastLoginDate":303,"lastLoadDate":1030},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:02:55.698999+03, language => en, id => 100, deleted => false }, { password => uid106, name => uid106, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477661732,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:35:25.243155+03, language => en, id => 106, deleted => false }, { password => qwerty, name => qwerty, networkid => , params => {"info":{"city":"Qwety","year":"123","email":"qwrtty"},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477748645,"lastLoginDate":303,"lastLoadDate":1030},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:12:35.945256+03, language => en, id => 104, deleted => false }, { password => uid108, name => uid108, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477661911,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:38:24.62117+03, language => en, id => 108, deleted => false }, { password => uid109, name => uid109, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477661920,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:38:37.423978+03, language => en, id => 109, deleted => false }, { password => uid111, name => uid111, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477662049,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:40:47.262501+03, language => en, id => 111, deleted => false }, { password => ass12, name => ass12, networkid => , params => {"info":{"city":"","year":"","email":""},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477661977,"lastLoginDate":302,"lastLoadDate":1029},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:39:37.381394+03, language => en, id => 110, deleted => false }, { password => uid112, name => uid112, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477747925,"lastLoginDate":303,"lastLoadDate":1030},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-29 16:31:59.278542+03, language => en, id => 112, deleted => false }, { password => uid113, name => uid113, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1477750380,"lastLoginDate":303,"lastLoadDate":1030},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-29 17:12:53.911759+03, language => en, id => 113, deleted => false }, { password => uid107, name => uid107, networkid => , params => {"info":{"city":null,"year":null,"email":null},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1478178267,"lastLoginDate":308,"lastLoadDate":1104},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-10-28 16:37:18.693533+03, language => en, id => 107, deleted => false }, { password => uid114, name => uid114, networkid => , params => {"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":308,"lastLoadDate":1104},"effects":{"list":[]}}, networktype =>   , email => , isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, id => 114, deleted => false }}, errorCode => ok, _type => core/server.query }
+03.11 18:37:16 STATS: vdl.0 cache connection, 183 calls, total 0.260850429534912 sec spent, avg 1.43 ms
+03.11 18:37:16 == NET: null ret: user.auth { type => user.auth, token => dWlkMTE1 }
+03.11 18:37:16 DB: SELECT ID FROM Users WHERE Name = E'uid115'
+03.11 18:37:16 ->>-: core/server.query { q => SELECT ID FROM Users WHERE Name = E'uid115', _type => core/server.query }
+03.11 18:37:16 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:37:16 DB: SELECT nextval('Users_id_seq') AS id
+03.11 18:37:16 ->>-: core/server.query { q => SELECT nextval('Users_id_seq') AS id, _type => core/server.query }
+03.11 18:37:16 -<<-: core/server.query { list => {{ id => 115 }}, errorCode => ok, _type => core/server.query }
+03.11 18:37:16 ->>-: core/user.register { password => uid115, name => uid115, fullParams => { password => uid115, name => uid115, networkid => , networktype => , messageType => user.register, id => 115 }, networkid => , connectionID => 27245510, networktype => , email => , id => 115, _type => core/user.register }
+03.11 18:37:16 -<<-: core/user.register { errorCode => ok, _type => core/user.register }
+03.11 18:37:16 -<<-: core/user.registerResponse { password => uid115, name => uid115, _isNotify => true, fullParams => { password => uid115, name => uid115, networkid => , networktype => , messageType => user.register, id => 115 }, networkid => , connectionID => 27245510, networktype => , email => , id => 115, _type => core/user.registerResponse }
+03.11 18:37:16 == NET: null ret: user.register { type => user.register, errorCode => ok }
+03.11 18:37:23 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE1 }
+03.11 18:37:23 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid115' AND Password = E'uid115'
+03.11 18:37:23 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid115' AND Password = E'uid115', _type => core/server.query }
+03.11 18:37:23 -<<-: core/server.query { list => {{ name => uid115, networkid => , isbanned => false, id => 115 }}, errorCode => ok, _type => core/server.query }
+03.11 18:37:23 ->>-: core/user.isOnlineID { id => 115, _type => core/user.isOnlineID }
+03.11 18:37:23 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:37:23 ->>-: core/cache.get { type => user, v => -1, id => 115, _type => core/cache.get }
+03.11 18:37:23 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid115, deleted => false, email => null, year => null, networktype =>   , password => uid115, isbanned => false, regdate => 2016-11-03 18:37:16.527174+03, language =>   , city => , networkid => , params => { info => { city => , year => null, email => null }, inventory => { list => [] }, vars => {}, attrs => {}, effects => { list => [] } }}, version => 4, id => 115 } }
+03.11 18:37:23 ->>-: core/cache.get { type => questdata, v => -1, id => 115, _type => core/cache.get }
+03.11 18:37:23 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => {}}, version => 0, id => 115 } }
+03.11 18:37:23 NET: Client login (conid:27245510, id:115, name:uid115)
+03.11 18:37:23 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 115, _type => core/user.loginPost, ipAddr => 172.16.20.203 }
+03.11 18:37:23 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:37:23 DB: SELECT ID FROM TempUserLogins WHERE UserID = 115 AND Date = 'today'::timestamp
+03.11 18:37:23 ->>-: core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 115 AND Date = 'today'::timestamp, _type => core/server.query }
+03.11 18:37:23 -<<-: core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+03.11 18:37:23 PENDING: INSERT INTO TempUserLogins (UserID, Date) VALUES (115, 'today'::timestamp)
+03.11 18:37:23 ++ NET: uid115 req: user.login { messageType => user.login, token => dWlkMTE1 }
+03.11 18:37:23 == NET: uid115 ret: user.login { name => uid115, type => user.login, errorCode => ok, id => 115 }
+03.11 18:37:23 TRACE: User already logon.
+03.11 18:37:23 TRACE: 
+Called from snipe/slave/Server.hx line 870
+Called from snipe/slave/Server.hx line 1124
+03.11 18:37:23 ->>-: core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1478187443, lastLoginDate => 308, lastLoadDate => 1104 } }}, type => user, unlock => true, id => 115, _type => core/cache.update, _notify => {{ q => INSERT INTO TempUserLogins (UserID, Date) VALUES (115, 'today'::timestamp), _type => core/server.pending }} }
+03.11 18:37:23 == NET: uid115 ret: user.join { name => uid115, type => user.join }
+03.11 18:37:23 -<<-: core/cache.update { errorCode => ok, version => 5, _type => core/cache.update }
+03.11 18:37:23 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 115, _type => core/cache.update }
+03.11 18:37:23 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:37:23 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 115, _type => core/user.logoutPost }
+03.11 18:37:23 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:37:23 TRACE: Could not login.
+03.11 18:37:23 TRACE: 
+Called from snipe/slave/Server.hx line 1151
+Called from snipe/slave/MetaServer.hx line 530
+Called from snipe/slave/ThreadServerModified.hx line 202
+03.11 18:37:28 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:37:28 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:37:28 TIME: user.ping 0.18 ms
+03.11 18:37:48 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:37:48 TIME: user.ping 0.17 ms
+03.11 18:37:48 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:38:08 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:38:08 TIME: user.ping 0.09 ms
+03.11 18:38:08 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:38:11 TIMER: Check auto-disconnect...
+03.11 18:38:13 STATS: vdl.0 cache, locks:0
+03.11 18:38:27 NET: Client (conid:45026779) connected to vdl.0 (clients:2)
+03.11 18:38:28 ++ NET: uid115 req: battle.find { type => random, messageType => battle.find, roundTime => 60 }
+03.11 18:38:28 ->>-: vdl/cache.battle.findRandom { user => { time => null, player => 115 }, _type => vdl/cache.battle.findRandom }
+03.11 18:38:28 -<<-: vdl/cache.battle.findRandom { errorCode => ok, _type => vdl/cache.battle.findRandom }
+03.11 18:38:28 STATS: vdl.0 cache connection, 196 calls, total 0.345604658126831 sec spent, avg 1.76 ms
+03.11 18:38:28 TIME: battle.find 0.3 ms
+03.11 18:38:28 == NET: uid115 ret: battle.find { type => battle.find, errorCode => ok }
+03.11 18:38:29 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTA3 }
+03.11 18:38:29 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid107' AND Password = E'uid107'
+03.11 18:38:29 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid107' AND Password = E'uid107', _type => core/server.query }
+03.11 18:38:29 -<<-: core/server.query { list => {{ name => uid107, networkid => , isbanned => false, id => 107 }}, errorCode => ok, _type => core/server.query }
+03.11 18:38:29 ->>-: core/user.isOnlineID { id => 107, _type => core/user.isOnlineID }
+03.11 18:38:29 -<<-: core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+03.11 18:38:29 ->>-: core/cache.get { type => user, v => -1, id => 107, _type => core/cache.get }
+03.11 18:38:29 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid107, deleted => false, email => , networktype =>   , password => uid107, isbanned => false, regdate => 2016-10-28 16:37:18.693533+03, language => en, networkid => , params => { info => { city => null, year => null, email => null }, inventory => { list => [] }, vars => {}, attrs => { _lastTime.24hr => 1478178267, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 0, id => 107 } }
+03.11 18:38:29 ->>-: core/cache.get { type => questdata, v => -1, id => 107, _type => core/cache.get }
+03.11 18:38:29 -<<-: core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 107 } }
+03.11 18:38:29 NET: Client login (conid:45026779, id:107, name:uid107)
+03.11 18:38:29 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 107, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+03.11 18:38:29 -<<-: core/user.loginPost { _type => core/user.loginPost }
+03.11 18:38:29 == NET: uid107 ret: user.login { name => uid107, type => user.login, errorCode => ok, id => 107 }
+03.11 18:38:29 == NET: uid107 ret: user.join { name => uid115, type => user.join }
+03.11 18:38:29 == NET: uid107 ret: user.join { name => uid107, type => user.join }
+03.11 18:38:29 == NET: uid115 ret: user.join { name => uid107, type => user.join }
+03.11 18:38:30 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:38:30 TIME: user.ping 0.21 ms
+03.11 18:38:30 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:38:32 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:38:32 TIME: user.ping 0.16 ms
+03.11 18:38:32 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:38:38 ->>-: core/cache.update { diff => {language => en}, type => user, unlock => false, id => 107, _type => core/cache.update }
+03.11 18:38:38 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:38:40 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:38:40 TIME: user.ping 0.2 ms
+03.11 18:38:40 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:38:45 ++ NET: uid107 req: battle.find { type => random, messageType => battle.find, roundTime => 60 }
+03.11 18:38:45 ->>-: vdl/cache.battle.findRandom { user => { time => null, player => 107 }, _type => vdl/cache.battle.findRandom }
+03.11 18:38:45 -<<-: battle.enemyEvent { data => { name => uid107, enemy.id => 115, enemy.name => uid115, id => 107, enemy.num => 2, battleId => 2, player => 1 }, _isNotify => true, id => 107, _type => battle.enemyEvent }
+03.11 18:38:45 -<<-: vdl/cache.battle.findRandom { errorCode => ok, _type => vdl/cache.battle.findRandom }
+03.11 18:38:45 TIME: battle.find 36.61 ms
+03.11 18:38:45 == NET: uid107 ret: battle.find { type => battle.find, errorCode => ok }
+03.11 18:38:45 == NET: uid107 ret: battle.enemy { data => { name => uid107, enemy.id => 115, enemy.name => uid115, id => 107, enemy.num => 2, battleId => 2, player => 1 }, type => battle.enemy }
+03.11 18:38:49 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:38:49 TIME: user.ping 0.2 ms
+03.11 18:38:49 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:38:54 ++ NET: uid107 req: battle.sendtask { dice => 0, from => (0.0, 0.0), name => throw, side => 2, dices => 213010, messageType => battle.sendtask, to => (0.0, 0.0), battleId => 0, diceID => 0 }
+03.11 18:38:54 TRACE: battle.sendtask : Unsupported operation
+03.11 18:38:54 TRACE: battle.sendtask : 
+Called from modules/VDLBattleModule.hx line 242
+Called from modules/VDLBattleModule.hx line 63
+Called from modules/VDLBattleModule.hx line 40
+Called from snipe/slave/Server.hx line 1176
+03.11 18:38:58 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:38:58 TIME: user.ping 0.12 ms
+03.11 18:38:58 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:01 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:01 TIME: user.ping 0.13 ms
+03.11 18:39:01 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:11 TIMER: Check auto-disconnect...
+03.11 18:39:12 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:12 TIME: user.ping 0.09 ms
+03.11 18:39:12 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:13 STATS: vdl.0 cache, locks:2
+03.11 18:39:23 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:23 TIME: user.ping 0.1 ms
+03.11 18:39:23 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:27 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:27 TIME: user.ping 0.09 ms
+03.11 18:39:27 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:35 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:35 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:35 TIME: user.ping 0.07 ms
+03.11 18:39:45 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:45 TIME: user.ping 0.14 ms
+03.11 18:39:45 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:55 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:55 TIME: user.ping 0.15 ms
+03.11 18:39:55 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:39:56 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:39:56 TIME: user.ping 0.21 ms
+03.11 18:39:56 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:40:07 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:40:07 TIME: user.ping 0.1 ms
+03.11 18:40:07 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:40:11 TIMER: Check auto-disconnect...
+03.11 18:40:13 STATS: vdl.0 cache, locks:2
+03.11 18:40:18 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:40:18 TIME: user.ping 0.09 ms
+03.11 18:40:18 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:40:23 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:40:23 TIME: user.ping 0.07 ms
+03.11 18:40:23 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:40:29 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:40:29 TIME: user.ping 0.09 ms
+03.11 18:40:29 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:40:40 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:40:40 TIME: user.ping 0.09 ms
+03.11 18:40:40 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:40:51 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:40:51 TIME: user.ping 0.08 ms
+03.11 18:40:51 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:40:51 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:40:51 TIME: user.ping 0.1 ms
+03.11 18:40:51 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:02 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:02 TIME: user.ping 0.07 ms
+03.11 18:41:02 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:11 TIMER: Check auto-disconnect...
+03.11 18:41:13 STATS: vdl.0 cache, locks:2
+03.11 18:41:13 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:13 TIME: user.ping 0.08 ms
+03.11 18:41:13 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:19 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:19 TIME: user.ping 0.1 ms
+03.11 18:41:19 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:24 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:24 TIME: user.ping 0.1 ms
+03.11 18:41:24 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:35 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:35 TIME: user.ping 0.07 ms
+03.11 18:41:35 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:46 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:46 TIME: user.ping 0.1 ms
+03.11 18:41:46 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:47 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:47 TIME: user.ping 0.11 ms
+03.11 18:41:47 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:41:57 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:41:57 TIME: user.ping 0.11 ms
+03.11 18:41:57 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:42:07 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:42:07 TIME: user.ping 0.14 ms
+03.11 18:42:07 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:42:11 TIMER: Check auto-disconnect...
+03.11 18:42:13 STATS: vdl.0 cache, locks:2
+03.11 18:42:16 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:42:16 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:42:16 TIME: user.ping 0.1 ms
+03.11 18:42:18 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:42:18 TIME: user.ping 0.13 ms
+03.11 18:42:18 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:42:29 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:42:29 TIME: user.ping 0.1 ms
+03.11 18:42:29 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:42:40 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:42:40 TIME: user.ping 0.13 ms
+03.11 18:42:40 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:42:44 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:42:44 TIME: user.ping 0.12 ms
+03.11 18:42:44 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:42:51 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:42:51 TIME: user.ping 0.12 ms
+03.11 18:42:51 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:43:02 ++ NET: uid107 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:43:02 TIME: user.ping 0.12 ms
+03.11 18:43:02 == NET: uid107 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:43:11 TIMER: Check auto-disconnect...
+03.11 18:43:12 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:43:12 TIME: user.ping 0.12 ms
+03.11 18:43:12 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:43:13 STATS: vdl.0 cache, locks:2
+03.11 18:43:40 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:43:40 TIME: user.ping 0.1 ms
+03.11 18:43:40 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:44:05 NET: Client (conid:10449255) connected to vdl.0 (clients:3)
+03.11 18:44:07 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:44:07 TRACE: User not logon yet.
+03.11 18:44:08 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:44:08 TIME: user.ping 0.17 ms
+03.11 18:44:08 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:44:11 TIMER: Check auto-disconnect...
+03.11 18:44:13 STATS: vdl.0 cache, locks:2
+03.11 18:44:14 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:44:14 TRACE: User not logon yet.
+03.11 18:44:36 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:44:36 TIME: user.ping 0.11 ms
+03.11 18:44:36 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:44:36 NET: Client (name:null conid:10449255 TCP) disconnected from vdl.0 (clients:2)
+03.11 18:45:04 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:45:04 TIME: user.ping 0.14 ms
+03.11 18:45:04 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:45:11 TIMER: Check auto-disconnect...
+03.11 18:45:13 STATS: vdl.0 cache, locks:2
+03.11 18:45:32 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:45:32 TIME: user.ping 0.12 ms
+03.11 18:45:32 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:46:00 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:46:00 TIME: user.ping 0.13 ms
+03.11 18:46:00 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:46:11 TIMER: Check auto-disconnect...
+03.11 18:46:11 NET: Client (name:uid107 conid:45026779 TCP) disconnected from vdl.0 (clients:1)
+03.11 18:46:11 DB: SELECT id FROM battle WHERE firstid=107 OR secondid=107 AND finished <> true
+03.11 18:46:11 ->>-: core/server.query { q => SELECT id FROM battle WHERE firstid=107 OR secondid=107 AND finished <> true, _type => core/server.query }
+03.11 18:46:11 -<<-: core/server.query { list => {{ id => 2 }}, errorCode => ok, _type => core/server.query }
+03.11 18:46:11 STATS: vdl.0 cache connection, 204 calls, total 0.387262582778931 sec spent, avg 1.9 ms
+03.11 18:46:11 ->>-: vdl/cache.battle.infoRoom { roomId => 2, _type => vdl/cache.battle.infoRoom }
+03.11 18:46:11 -<<-: vdl/cache.battle.infoRoom { secondId => 115, firstId => 107, _type => vdl/cache.battle.infoRoom, turnId => 107 }
+03.11 18:46:11 ->>-: vdl/cache.battle.deleteRoom { roomId => 2, _type => vdl/cache.battle.deleteRoom }
+03.11 18:46:11 -<<-: vdl/cache.battle.deleteRoom { errorCode => ok, _type => vdl/cache.battle.deleteRoom }
+03.11 18:46:11 ->>-: core/cache.update { diff => {}, type => user, unlock => true, id => 107, _type => core/cache.update }
+03.11 18:46:11 -<<-: core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+03.11 18:46:11 ->>-: core/cache.update { diff => {}, type => questdata, unlock => true, id => 107, _type => core/cache.update }
+03.11 18:46:11 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:46:11 ->>-: core/user.logoutPost { networkid => , networktype =>   , id => 107, _type => core/user.logoutPost }
+03.11 18:46:11 -<<-: core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+03.11 18:46:11 == NET: uid115 ret: battle.end { type => battle.end }
+03.11 18:46:13 STATS: vdl.0 cache, locks:0
+03.11 18:46:28 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:46:28 TIME: user.ping 0.11 ms
+03.11 18:46:28 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:46:57 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:46:57 TIME: user.ping 0.17 ms
+03.11 18:46:57 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:47:11 TIMER: Check auto-disconnect...
+03.11 18:47:13 STATS: vdl.0 cache, locks:0
+03.11 18:47:25 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:47:25 TIME: user.ping 0.12 ms
+03.11 18:47:25 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:47:53 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:47:53 TIME: user.ping 0.13 ms
+03.11 18:47:53 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:48:11 TIMER: Check auto-disconnect...
+03.11 18:48:13 STATS: vdl.0 cache, locks:0
+03.11 18:48:21 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:48:21 TIME: user.ping 0.12 ms
+03.11 18:48:21 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:48:49 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:48:49 TIME: user.ping 0.19 ms
+03.11 18:48:49 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:49:11 TIMER: Check auto-disconnect...
+03.11 18:49:13 STATS: vdl.0 cache, locks:0
+03.11 18:49:18 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:49:18 TIME: user.ping 0.12 ms
+03.11 18:49:18 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:49:46 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:49:46 TIME: user.ping 0.11 ms
+03.11 18:49:46 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:50:11 TIMER: Check auto-disconnect...
+03.11 18:50:13 STATS: vdl.0 cache, locks:0
+03.11 18:51:09 ->>-: core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+03.11 18:51:09 -<<-: server.login ok
+03.11 18:51:09 DB: SELECT * FROM LocalizationStrings
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 TIMER: Starting timer...
+03.11 18:51:09 TIMER: Timer running...
+03.11 18:51:09 DB: SELECT * FROM GameVars
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 ->>-: core/quest.getDaily { _type => core/quest.getDaily }
+03.11 18:51:09 -<<-: core/quest.getDaily ok
+03.11 18:51:09 DB: SELECT * FROM UserAttributeTypes
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM UserVariableTypes
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+03.11 18:51:09 ->>-: core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM ItemGroups
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM Bundles ORDER BY ID
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM BundleItems ORDER BY ID
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 SHOP: loading items...
+03.11 18:51:09 ->>-: core/shop.getList { _type => core/shop.getList }
+03.11 18:51:09 -<<-: core/shop.getList ok
+03.11 18:51:09 SHOP: 0 items loaded (0 sec)
+03.11 18:51:09 DB: SELECT * FROM EffectAttributeTypes
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM Effects
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+03.11 18:51:09 ->>-: core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+03.11 18:51:09 ->>-: core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:09 DB: SELECT * FROM Badges
+03.11 18:51:09 ->>-: core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+03.11 18:51:09 -<<-: core/server.query ok
+03.11 18:51:39 NET: Client (conid:38950694) connected to vdl.0 (clients:1)
+03.11 18:51:46 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:51:46 TRACE: User not logon yet.
+03.11 18:52:09 TIMER: Check auto-disconnect...
+03.11 18:52:09 STATS: vdl.0 cache, locks:0
+03.11 18:52:15 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:52:15 TRACE: User not logon yet.
+03.11 18:52:43 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:52:43 TRACE: User not logon yet.
+03.11 18:53:09 TIMER: Check auto-disconnect...
+03.11 18:53:09 STATS: vdl.0 cache, locks:0
+03.11 18:53:11 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:53:11 TRACE: User not logon yet.
+03.11 18:53:39 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:53:39 TRACE: User not logon yet.
+03.11 18:54:07 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:54:07 TRACE: User not logon yet.
+03.11 18:54:09 TIMER: Check auto-disconnect...
+03.11 18:54:09 STATS: vdl.0 cache, locks:0
+03.11 18:54:36 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:54:36 TRACE: User not logon yet.
+03.11 18:55:05 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:55:05 TRACE: User not logon yet.
+03.11 18:55:09 TIMER: Check auto-disconnect...
+03.11 18:55:09 STATS: vdl.0 cache, locks:0
+03.11 18:55:34 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:55:34 TRACE: User not logon yet.
+03.11 18:55:59 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:55:59 TRACE: User not logon yet.
+03.11 18:56:09 TIMER: Check auto-disconnect...
+03.11 18:56:09 STATS: vdl.0 cache, locks:0
+03.11 18:56:24 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:56:24 TRACE: User not logon yet.
+03.11 18:56:48 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:56:48 TRACE: User not logon yet.
+03.11 18:57:09 TIMER: Check auto-disconnect...
+03.11 18:57:09 STATS: vdl.0 cache, locks:0
+03.11 18:57:13 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:57:13 TRACE: User not logon yet.
+03.11 18:57:37 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:57:37 TRACE: User not logon yet.
+03.11 18:58:02 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:58:02 TRACE: User not logon yet.
+03.11 18:58:09 TIMER: Check auto-disconnect...
+03.11 18:58:09 STATS: vdl.0 cache, locks:0
+03.11 18:58:27 ++ NET: null req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:58:27 TRACE: User not logon yet.
+03.11 18:58:29 NET: Client (name:null conid:38950694 TCP) disconnected from vdl.0 (clients:0)
+03.11 18:58:51 NET: Client (conid:94982775) connected to vdl.0 (clients:1)
+03.11 18:58:55 ++ NET: null req: user.login { messageType => user.login, token => dWlkMTE1 }
+03.11 18:58:55 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid115' AND Password = E'uid115'
+03.11 18:58:55 ->>-: core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid115' AND Password = E'uid115', _type => core/server.query }
+03.11 18:58:55 -<<-: core/server.query ok
+03.11 18:58:55 STATS: vdl.0 cache connection, 21 calls, total 0.0414426326751709 sec spent, avg 1.97 ms
+03.11 18:58:55 ->>-: core/user.isOnlineID { id => 115, _type => core/user.isOnlineID }
+03.11 18:58:55 -<<-: core/user.isOnlineID ok
+03.11 18:58:55 ->>-: core/cache.get { type => user, v => -1, id => 115, _type => core/cache.get }
+03.11 18:58:55 -<<-: core/cache.get ok
+03.11 18:58:55 ->>-: core/cache.get { type => questdata, v => -1, id => 115, _type => core/cache.get }
+03.11 18:58:55 -<<-: core/cache.get ok
+03.11 18:58:55 NET: Client login (conid:94982775, id:115, name:uid115)
+03.11 18:58:55 ->>-: core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 115, _type => core/user.loginPost, ipAddr => 172.16.20.203 }
+03.11 18:58:55 -<<-: core/user.loginPost null
+03.11 18:58:55 DB: SELECT ID FROM TempUserLogins WHERE UserID = 115 AND Date = 'today'::timestamp
+03.11 18:58:55 ->>-: core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 115 AND Date = 'today'::timestamp, _type => core/server.query }
+03.11 18:58:55 -<<-: core/server.query { list => {{ id => 110 }}, errorCode => ok, _type => core/server.query }
+03.11 18:58:55 == NET: uid115 ret: user.login { name => uid115, type => user.login, errorCode => ok, id => 115 }
+03.11 18:58:55 == NET: uid115 ret: user.join { name => uid115, type => user.join }
+03.11 18:59:04 ->>-: core/cache.update { diff => {language => en, params => { attrs => { _lastTime.24hr => 1478188735, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, type => user, unlock => false, id => 115, _type => core/cache.update }
+03.11 18:59:04 -<<-: core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+03.11 18:59:08 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:59:08 TIME: user.ping 0.13 ms
+03.11 18:59:08 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:59:09 TIMER: Check auto-disconnect...
+03.11 18:59:09 STATS: vdl.0 cache, locks:2
+03.11 18:59:27 ++ NET: uid115 req: battle.find { type => random, messageType => battle.find, roundTime => 60 }
+03.11 18:59:27 ->>-: vdl/cache.battle.findRandom { user => { time => 60, player => 115 }, _type => vdl/cache.battle.findRandom }
+03.11 18:59:27 -<<-: vdl/cache.battle.findRandom { errorCode => ok, _type => vdl/cache.battle.findRandom }
+03.11 18:59:27 TIME: battle.find 0.35 ms
+03.11 18:59:27 == NET: uid115 ret: battle.find { type => battle.find, errorCode => ok }
+03.11 18:59:30 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:59:30 TIME: user.ping 0.11 ms
+03.11 18:59:30 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }
+03.11 18:59:58 ++ NET: uid115 req: user.ping { messageType => user.ping, msg => ok }
+03.11 18:59:58 TIME: user.ping 0.11 ms
+03.11 18:59:58 == NET: uid115 ret: user.ping { type => user.ping, errorCode => ok }

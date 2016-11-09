@@ -1,0 +1,1247 @@
+04.11 09:03:29 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=76 OR secondid=76 AND finished <> true, _type => core/server.query }
+04.11 09:03:29 DB: SELECT id FROM battle WHERE firstid=76 OR secondid=76 AND finished <> true
+04.11 09:03:29 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:03:29 TIME: core/server.query : 0.97 ms
+04.11 09:03:29 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:03:29 STATS: cache [battle], get [19 calls, 5 cache hits, 13 cache misses, 0 same version, 5 not found]
+04.11 09:03:29 STATS: cache [battle], segments [30 calls, 16 hits, 13 misses]
+04.11 09:03:29 STATS: cache [battle], database [5459 calls, 13 reads, 6 writes]
+04.11 09:03:29 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+04.11 09:03:29 READDB: SELECT * FROM Battle WHERE ID = 0
+04.11 09:03:29 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+04.11 09:03:29 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+04.11 09:03:29 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+04.11 09:03:29 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 76, _type => core/cache.update }
+04.11 09:03:29 STATS: cache [user], get [14 calls, 4 cache hits, 10 cache misses, 0 same version, 0 not found]
+04.11 09:03:29 STATS: cache [user], segments [51 calls, 26 hits, 20 misses]
+04.11 09:03:29 STATS: cache [user], database [5459 calls, 10 reads, 17 writes]
+04.11 09:03:29 STATS: cache [user], lock [10 calls, 10 attempts, 0 failures]
+04.11 09:03:29 STATS: cache manager [1], get [20 calls, total 0.04 sec spent, avg 1.78 ms]
+04.11 09:03:29 STATS: cache manager [1], update [27 calls, total 0 sec spent, avg 0.15 ms]
+04.11 09:03:29 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+04.11 09:03:29 TIME: core/cache.update : 0.54 ms
+04.11 09:03:29 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 76, _type => core/cache.update }
+04.11 09:03:29 STATS: cache [questdata], get [10 calls, 0 cache hits, 10 cache misses, 0 same version, 0 not found]
+04.11 09:03:29 STATS: cache [questdata], segments [39 calls, 18 hits, 20 misses]
+04.11 09:03:29 STATS: cache [questdata], database [5459 calls, 10 reads, 9 writes]
+04.11 09:03:29 STATS: cache [questdata], lock [10 calls, 10 attempts, 0 failures]
+04.11 09:03:29 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:03:29 TIME: core/cache.update : 0.4 ms
+04.11 09:03:29 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 76, _type => core/user.logoutPost }
+04.11 09:03:29 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+04.11 09:03:29 TIME: core/user.logoutPost : 0.13 ms
+04.11 09:03:29 WRITEDB: UPDATE Users SET name = E'Aimer', deleted = E'false', email = E'', networktype = E'  ', password = E'kO2YJdf', isbanned = E'false', regdate = E'2016-10-19 18:05:38.946809+03', language = E'en', networkid = E'', params = E'{"info":{"city":"Kazan","year":"1993","email":"rabpoll1@ya.ru"},"inventory":{"list":[]},"vars":{},"attrs":{"_lastTime.24hr":1478235945,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 76
+04.11 09:03:30 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 76
+04.11 09:03:30 TIMER: Clans cache...
+04.11 09:03:30 TIMER: Clans cache: 0ms
+04.11 09:03:30 TIMER: Check tournament...
+04.11 09:03:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:03' OR rounddate = '2016-04-11 09:03' AND status <> 'finished'
+04.11 09:03:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.4104121' AND avaliable = true AND finished <> true
+04.11 09:03:30 TIMER: Check tournament: 1ms
+04.11 09:03:40 BLOCKREMOVE: user 76 removed
+04.11 09:03:40 BLOCKREMOVE: questdata 76 removed
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:04' OR rounddate = '2016-04-11 09:04' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.47042293' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 1ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:05' OR rounddate = '2016-04-11 09:05' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.53043437' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 1ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:06' OR rounddate = '2016-04-11 09:06' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.59044569' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 1ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:07' OR rounddate = '2016-04-11 09:07' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.65045589' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 1ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:08' OR rounddate = '2016-04-11 09:08' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.71046981' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 2ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:09' OR rounddate = '2016-04-11 09:09' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.77048075' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 1ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:10' OR rounddate = '2016-04-11 09:10' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.83049135' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 1ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:11' OR rounddate = '2016-04-11 09:11' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.89050243' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 1ms
+04.11 09:04:30 TIMER: Clans cache...
+04.11 09:04:30 TIMER: Clans cache: 0ms
+04.11 09:04:30 TIMER: Check tournament...
+04.11 09:04:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:12' OR rounddate = '2016-04-11 09:12' AND status <> 'finished'
+04.11 09:04:30 DB: SELECT * FROM battle WHERE endtime >= '1478239.9505137' AND avaliable = true AND finished <> true
+04.11 09:04:30 TIMER: Check tournament: 2ms
+04.11 09:12:31 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+04.11 09:12:31 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+04.11 09:12:31 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+04.11 09:12:31 TIME: core/server.query : 1.35 ms
+04.11 09:12:31 NET: vdl.0 (thread) request core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+04.11 09:12:31 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+04.11 09:12:31 TIME: core/user.isOnlineID : 0.1 ms
+04.11 09:12:31 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+04.11 09:12:31 STATS: cache [user], get [14 calls, 4 cache hits, 10 cache misses, 0 same version, 0 not found]
+04.11 09:12:31 STATS: cache [user], segments [53 calls, 28 hits, 20 misses]
+04.11 09:12:31 STATS: cache [user], database [6001 calls, 10 reads, 18 writes]
+04.11 09:12:31 STATS: cache [user], lock [11 calls, 11 attempts, 0 failures]
+04.11 09:12:31 READDB: SELECT * FROM Users WHERE ID = 114
+04.11 09:12:31 STATS: cache manager [1], get [21 calls, total 0.04 sec spent, avg 1.77 ms]
+04.11 09:12:31 STATS: cache manager [1], update [28 calls, total 0 sec spent, avg 0.16 ms]
+04.11 09:12:31 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 308, lastLoadDate => 1104 }, effects => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:12:31 TIME: core/cache.get : 1.97 ms
+04.11 09:12:31 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+04.11 09:12:31 STATS: cache [questdata], get [10 calls, 0 cache hits, 10 cache misses, 0 same version, 0 not found]
+04.11 09:12:31 STATS: cache [questdata], segments [41 calls, 20 hits, 20 misses]
+04.11 09:12:31 STATS: cache [questdata], database [6001 calls, 10 reads, 10 writes]
+04.11 09:12:31 STATS: cache [questdata], lock [11 calls, 11 attempts, 0 failures]
+04.11 09:12:31 READDB: SELECT * FROM UserQuests WHERE ID = 114
+04.11 09:12:31 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:12:31 TIME: core/cache.get : 1.31 ms
+04.11 09:12:31 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+04.11 09:12:31 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+04.11 09:12:31 TIME: core/user.loginPost : 0.1 ms
+04.11 09:12:31 NET: vdl.0 (thread) request core/server.query { q => SELECT ID FROM TempUserLogins WHERE UserID = 114 AND Date = 'today'::timestamp, _type => core/server.query }
+04.11 09:12:31 DB: SELECT ID FROM TempUserLogins WHERE UserID = 114 AND Date = 'today'::timestamp
+04.11 09:12:31 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:12:31 TIME: core/server.query : 1.76 ms
+04.11 09:12:31 PENDING: INSERT INTO TempUserLogins (UserID, Date) VALUES (114, 'today'::timestamp)
+04.11 09:12:40 NET: vdl.0 (thread) request core/cache.update { diff => {language => en, params => { attrs => { lastLoginDate => 309, lastLoadDate => 1105 } }}, type => user, unlock => false, id => 114, _type => core/cache.update }
+04.11 09:12:40 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:12:40 TIME: core/cache.update : 0.15 ms
+04.11 09:12:41 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:12:58 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+04.11 09:12:58 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+04.11 09:12:58 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:12:58 TIME: core/server.query : 0.87 ms
+04.11 09:12:58 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:12:58 STATS: cache [battle], get [20 calls, 5 cache hits, 14 cache misses, 0 same version, 6 not found]
+04.11 09:12:58 STATS: cache [battle], segments [31 calls, 16 hits, 14 misses]
+04.11 09:12:58 STATS: cache [battle], database [6028 calls, 14 reads, 6 writes]
+04.11 09:12:58 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+04.11 09:12:58 READDB: SELECT * FROM Battle WHERE ID = 0
+04.11 09:12:58 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+04.11 09:12:58 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+04.11 09:12:58 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+04.11 09:12:58 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:12:58 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+04.11 09:12:58 TIME: core/cache.update : 0.16 ms
+04.11 09:12:58 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:12:58 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:12:58 TIME: core/cache.update : 0.13 ms
+04.11 09:12:58 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+04.11 09:12:58 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+04.11 09:12:58 TIME: core/user.logoutPost : 0.12 ms
+04.11 09:12:59 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:12:59 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 114
+04.11 09:13:09 BLOCKREMOVE: user 114 removed
+04.11 09:13:09 BLOCKREMOVE: questdata 114 removed
+04.11 09:13:19 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+04.11 09:13:19 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+04.11 09:13:19 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+04.11 09:13:19 TIME: core/server.query : 2.28 ms
+04.11 09:13:19 NET: vdl.0 (thread) request core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+04.11 09:13:19 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+04.11 09:13:19 TIME: core/user.isOnlineID : 0.11 ms
+04.11 09:13:19 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+04.11 09:13:19 READDB: SELECT * FROM Users WHERE ID = 114
+04.11 09:13:19 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 309, lastLoadDate => 1105 }, effects => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:13:19 TIME: core/cache.get : 1.65 ms
+04.11 09:13:19 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+04.11 09:13:19 READDB: SELECT * FROM UserQuests WHERE ID = 114
+04.11 09:13:19 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:13:19 TIME: core/cache.get : 1.11 ms
+04.11 09:13:19 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+04.11 09:13:19 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+04.11 09:13:19 TIME: core/user.loginPost : 0.12 ms
+04.11 09:13:25 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+04.11 09:13:25 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:13:25 TIME: core/cache.update : 0.14 ms
+04.11 09:13:26 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:13:30 TIMER: Clans cache...
+04.11 09:13:30 TIMER: Clans cache: 0ms
+04.11 09:13:30 TIMER: Check tournament...
+04.11 09:13:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:13' OR rounddate = '2016-04-11 09:13' AND status <> 'finished'
+04.11 09:13:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.01052807' AND avaliable = true AND finished <> true
+04.11 09:13:30 TIMER: Check tournament: 2ms
+04.11 09:13:30 TIMER: Clans cache...
+04.11 09:13:30 TIMER: Clans cache: 0ms
+04.11 09:13:30 TIMER: Check tournament...
+04.11 09:13:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:14' OR rounddate = '2016-04-11 09:14' AND status <> 'finished'
+04.11 09:13:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.07053911' AND avaliable = true AND finished <> true
+04.11 09:13:30 TIMER: Check tournament: 1ms
+04.11 09:13:30 TIMER: Clans cache...
+04.11 09:13:30 TIMER: Clans cache: 0ms
+04.11 09:13:30 TIMER: Check tournament...
+04.11 09:13:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:15' OR rounddate = '2016-04-11 09:15' AND status <> 'finished'
+04.11 09:13:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.13055208' AND avaliable = true AND finished <> true
+04.11 09:13:30 TIMER: Check tournament: 1ms
+04.11 09:16:24 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+04.11 09:16:24 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+04.11 09:16:24 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:16:24 TIME: core/server.query : 1.03 ms
+04.11 09:16:24 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:16:24 STATS: cache [battle], get [21 calls, 5 cache hits, 15 cache misses, 0 same version, 7 not found]
+04.11 09:16:24 STATS: cache [battle], segments [32 calls, 16 hits, 15 misses]
+04.11 09:16:24 STATS: cache [battle], database [6234 calls, 15 reads, 6 writes]
+04.11 09:16:24 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+04.11 09:16:24 READDB: SELECT * FROM Battle WHERE ID = 0
+04.11 09:16:24 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+04.11 09:16:24 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+04.11 09:16:24 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+04.11 09:16:24 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:16:24 STATS: cache [user], get [16 calls, 4 cache hits, 12 cache misses, 0 same version, 0 not found]
+04.11 09:16:24 STATS: cache [user], segments [61 calls, 32 hits, 24 misses]
+04.11 09:16:24 STATS: cache [user], database [6234 calls, 12 reads, 21 writes]
+04.11 09:16:24 STATS: cache [user], lock [12 calls, 12 attempts, 0 failures]
+04.11 09:16:24 STATS: cache manager [1], get [24 calls, total 0.04 sec spent, avg 1.69 ms]
+04.11 09:16:24 STATS: cache manager [1], update [33 calls, total 0 sec spent, avg 0.15 ms]
+04.11 09:16:24 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+04.11 09:16:24 TIME: core/cache.update : 0.56 ms
+04.11 09:16:24 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:16:24 STATS: cache [questdata], get [12 calls, 0 cache hits, 12 cache misses, 0 same version, 0 not found]
+04.11 09:16:24 STATS: cache [questdata], segments [47 calls, 22 hits, 24 misses]
+04.11 09:16:24 STATS: cache [questdata], database [6234 calls, 12 reads, 11 writes]
+04.11 09:16:24 STATS: cache [questdata], lock [12 calls, 12 attempts, 0 failures]
+04.11 09:16:24 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:16:24 TIME: core/cache.update : 0.98 ms
+04.11 09:16:24 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+04.11 09:16:24 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+04.11 09:16:24 TIME: core/user.logoutPost : 0.1 ms
+04.11 09:16:25 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:16:25 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 114
+04.11 09:16:30 TIMER: Clans cache...
+04.11 09:16:30 TIMER: Clans cache: 0ms
+04.11 09:16:30 TIMER: Check tournament...
+04.11 09:16:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:16' OR rounddate = '2016-04-11 09:16' AND status <> 'finished'
+04.11 09:16:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.19056274' AND avaliable = true AND finished <> true
+04.11 09:16:30 TIMER: Check tournament: 1ms
+04.11 09:16:35 BLOCKREMOVE: user 114 removed
+04.11 09:16:35 BLOCKREMOVE: questdata 114 removed
+04.11 09:17:11 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+04.11 09:17:11 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+04.11 09:17:11 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+04.11 09:17:11 TIME: core/server.query : 2.38 ms
+04.11 09:17:11 NET: vdl.0 (thread) request core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+04.11 09:17:11 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+04.11 09:17:11 TIME: core/user.isOnlineID : 0.11 ms
+04.11 09:17:11 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+04.11 09:17:11 READDB: SELECT * FROM Users WHERE ID = 114
+04.11 09:17:11 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 309, lastLoadDate => 1105 }, effects => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:17:11 TIME: core/cache.get : 2.69 ms
+04.11 09:17:11 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+04.11 09:17:11 READDB: SELECT * FROM UserQuests WHERE ID = 114
+04.11 09:17:11 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:17:11 TIME: core/cache.get : 1.15 ms
+04.11 09:17:11 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+04.11 09:17:11 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+04.11 09:17:11 TIME: core/user.loginPost : 0.12 ms
+04.11 09:17:20 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+04.11 09:17:20 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:17:20 TIME: core/cache.update : 0.17 ms
+04.11 09:17:20 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:17:30 TIMER: Clans cache...
+04.11 09:17:30 TIMER: Clans cache: 0ms
+04.11 09:17:30 TIMER: Check tournament...
+04.11 09:17:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:17' OR rounddate = '2016-04-11 09:17' AND status <> 'finished'
+04.11 09:17:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.25057644' AND avaliable = true AND finished <> true
+04.11 09:17:30 TIMER: Check tournament: 2ms
+04.11 09:17:30 TIMER: Clans cache...
+04.11 09:17:30 TIMER: Clans cache: 0ms
+04.11 09:17:30 TIMER: Check tournament...
+04.11 09:17:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:18' OR rounddate = '2016-04-11 09:18' AND status <> 'finished'
+04.11 09:17:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.310587' AND avaliable = true AND finished <> true
+04.11 09:17:30 TIMER: Check tournament: 1ms
+04.11 09:19:03 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+04.11 09:19:03 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+04.11 09:19:03 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:19:03 TIME: core/server.query : 1.01 ms
+04.11 09:19:03 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:19:03 STATS: cache [battle], get [22 calls, 5 cache hits, 16 cache misses, 0 same version, 8 not found]
+04.11 09:19:03 STATS: cache [battle], segments [33 calls, 16 hits, 16 misses]
+04.11 09:19:03 STATS: cache [battle], database [6393 calls, 16 reads, 6 writes]
+04.11 09:19:03 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+04.11 09:19:03 READDB: SELECT * FROM Battle WHERE ID = 0
+04.11 09:19:03 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+04.11 09:19:03 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+04.11 09:19:03 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+04.11 09:19:03 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:19:03 STATS: cache [user], get [17 calls, 4 cache hits, 13 cache misses, 0 same version, 0 not found]
+04.11 09:19:03 STATS: cache [user], segments [66 calls, 35 hits, 26 misses]
+04.11 09:19:03 STATS: cache [user], database [6393 calls, 13 reads, 23 writes]
+04.11 09:19:03 STATS: cache [user], lock [13 calls, 13 attempts, 0 failures]
+04.11 09:19:03 STATS: cache manager [1], get [26 calls, total 0.04 sec spent, avg 1.69 ms]
+04.11 09:19:03 STATS: cache manager [1], update [36 calls, total 0.01 sec spent, avg 0.16 ms]
+04.11 09:19:03 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+04.11 09:19:03 TIME: core/cache.update : 0.36 ms
+04.11 09:19:03 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:19:03 STATS: cache [questdata], get [13 calls, 0 cache hits, 13 cache misses, 0 same version, 0 not found]
+04.11 09:19:03 STATS: cache [questdata], segments [51 calls, 24 hits, 26 misses]
+04.11 09:19:03 STATS: cache [questdata], database [6393 calls, 13 reads, 12 writes]
+04.11 09:19:03 STATS: cache [questdata], lock [13 calls, 13 attempts, 0 failures]
+04.11 09:19:03 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:19:03 TIME: core/cache.update : 0.42 ms
+04.11 09:19:03 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+04.11 09:19:03 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+04.11 09:19:03 TIME: core/user.logoutPost : 0.11 ms
+04.11 09:19:04 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:19:04 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 114
+04.11 09:19:09 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+04.11 09:19:09 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+04.11 09:19:09 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+04.11 09:19:09 TIME: core/server.query : 1.1 ms
+04.11 09:19:09 NET: vdl.0 (thread) request core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+04.11 09:19:09 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+04.11 09:19:09 TIME: core/user.isOnlineID : 0.11 ms
+04.11 09:19:09 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+04.11 09:19:09 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 309, lastLoadDate => 1105 }, effects => { list => [] } }}, version => 2, id => 114 } }
+04.11 09:19:09 TIME: core/cache.get : 0.35 ms
+04.11 09:19:09 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+04.11 09:19:09 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 1, id => 114 } }
+04.11 09:19:09 TIME: core/cache.get : 0.19 ms
+04.11 09:19:09 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+04.11 09:19:09 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+04.11 09:19:09 TIME: core/user.loginPost : 0.12 ms
+04.11 09:19:15 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+04.11 09:19:15 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 3, _type => core/cache.update }
+04.11 09:19:15 TIME: core/cache.update : 0.18 ms
+04.11 09:19:15 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:19:30 TIMER: Clans cache...
+04.11 09:19:30 TIMER: Clans cache: 0ms
+04.11 09:19:30 TIMER: Check tournament...
+04.11 09:19:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:19' OR rounddate = '2016-04-11 09:19' AND status <> 'finished'
+04.11 09:19:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.37059761' AND avaliable = true AND finished <> true
+04.11 09:19:30 TIMER: Check tournament: 1ms
+04.11 09:19:47 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+04.11 09:19:47 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+04.11 09:19:47 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:19:47 TIME: core/server.query : 0.81 ms
+04.11 09:19:47 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:19:47 READDB: SELECT * FROM Battle WHERE ID = 0
+04.11 09:19:47 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+04.11 09:19:47 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+04.11 09:19:47 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+04.11 09:19:47 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:19:47 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 4, _type => core/cache.update }
+04.11 09:19:47 TIME: core/cache.update : 0.12 ms
+04.11 09:19:47 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:19:47 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+04.11 09:19:47 TIME: core/cache.update : 0.15 ms
+04.11 09:19:47 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+04.11 09:19:47 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+04.11 09:19:47 TIME: core/user.logoutPost : 0.13 ms
+04.11 09:19:48 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:19:48 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 114
+04.11 09:19:58 BLOCKREMOVE: user 114 removed
+04.11 09:19:58 BLOCKREMOVE: questdata 114 removed
+04.11 09:20:30 TIMER: Clans cache...
+04.11 09:20:30 TIMER: Clans cache: 0ms
+04.11 09:20:30 TIMER: Check tournament...
+04.11 09:20:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:20' OR rounddate = '2016-04-11 09:20' AND status <> 'finished'
+04.11 09:20:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.4306116' AND avaliable = true AND finished <> true
+04.11 09:20:30 TIMER: Check tournament: 1ms
+04.11 09:20:30 TIMER: Clans cache...
+04.11 09:20:30 TIMER: Clans cache: 0ms
+04.11 09:20:30 TIMER: Check tournament...
+04.11 09:20:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:21' OR rounddate = '2016-04-11 09:21' AND status <> 'finished'
+04.11 09:20:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.49062257' AND avaliable = true AND finished <> true
+04.11 09:20:30 TIMER: Check tournament: 1ms
+04.11 09:20:30 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+04.11 09:20:30 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+04.11 09:20:30 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+04.11 09:20:30 TIME: core/server.query : 1.38 ms
+04.11 09:20:30 NET: vdl.0 (thread) request core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+04.11 09:20:30 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+04.11 09:20:30 TIME: core/user.isOnlineID : 0.11 ms
+04.11 09:20:30 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+04.11 09:20:30 STATS: cache [user], get [18 calls, 5 cache hits, 13 cache misses, 0 same version, 0 not found]
+04.11 09:20:30 STATS: cache [user], segments [73 calls, 42 hits, 26 misses]
+04.11 09:20:30 STATS: cache [user], database [6540 calls, 13 reads, 26 writes]
+04.11 09:20:30 STATS: cache [user], lock [15 calls, 15 attempts, 0 failures]
+04.11 09:20:30 READDB: SELECT * FROM Users WHERE ID = 114
+04.11 09:20:30 STATS: cache manager [1], get [29 calls, total 0.05 sec spent, avg 1.57 ms]
+04.11 09:20:30 STATS: cache manager [1], update [40 calls, total 0.01 sec spent, avg 0.15 ms]
+04.11 09:20:30 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 309, lastLoadDate => 1105 }, effects => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:20:30 TIME: core/cache.get : 2.12 ms
+04.11 09:20:30 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+04.11 09:20:30 STATS: cache [questdata], get [14 calls, 1 cache hits, 13 cache misses, 0 same version, 0 not found]
+04.11 09:20:30 STATS: cache [questdata], segments [57 calls, 30 hits, 26 misses]
+04.11 09:20:30 STATS: cache [questdata], database [6540 calls, 13 reads, 14 writes]
+04.11 09:20:30 STATS: cache [questdata], lock [15 calls, 15 attempts, 0 failures]
+04.11 09:20:30 READDB: SELECT * FROM UserQuests WHERE ID = 114
+04.11 09:20:30 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:20:30 TIME: core/cache.get : 1.36 ms
+04.11 09:20:30 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+04.11 09:20:30 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+04.11 09:20:30 TIME: core/user.loginPost : 0.11 ms
+04.11 09:21:40 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+04.11 09:21:40 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:21:40 TIME: core/cache.update : 0.18 ms
+04.11 09:21:40 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:21:43 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+04.11 09:21:43 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+04.11 09:21:43 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:21:43 TIME: core/server.query : 0.84 ms
+04.11 09:21:43 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:21:43 STATS: cache [battle], get [24 calls, 5 cache hits, 18 cache misses, 0 same version, 10 not found]
+04.11 09:21:43 STATS: cache [battle], segments [35 calls, 16 hits, 18 misses]
+04.11 09:21:43 STATS: cache [battle], database [6552 calls, 18 reads, 6 writes]
+04.11 09:21:43 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+04.11 09:21:43 READDB: SELECT * FROM Battle WHERE ID = 0
+04.11 09:21:43 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+04.11 09:21:43 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+04.11 09:21:43 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+04.11 09:21:43 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:21:43 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+04.11 09:21:43 TIME: core/cache.update : 0.17 ms
+04.11 09:21:43 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:21:43 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:21:43 TIME: core/cache.update : 0.15 ms
+04.11 09:21:43 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+04.11 09:21:43 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+04.11 09:21:43 TIME: core/user.logoutPost : 0.11 ms
+04.11 09:21:43 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 114
+04.11 09:21:45 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:21:53 BLOCKREMOVE: questdata 114 removed
+04.11 09:21:55 BLOCKREMOVE: user 114 removed
+04.11 09:22:12 NET: vdl.0 (thread) request core/server.query { q => SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114', _type => core/server.query }
+04.11 09:22:12 DB: SELECT ID, Name, NetworkID, IsBanned FROM Users WHERE Name = E'uid114' AND Password = E'uid114'
+04.11 09:22:12 QUEUE: vdl.0 (thread) response core/server.query { list => {{ name => uid114, networkid => , isbanned => false, id => 114 }}, errorCode => ok, _type => core/server.query }
+04.11 09:22:12 TIME: core/server.query : 1.14 ms
+04.11 09:22:12 NET: vdl.0 (thread) request core/user.isOnlineID { id => 114, _type => core/user.isOnlineID }
+04.11 09:22:12 QUEUE: vdl.0 (thread) response core/user.isOnlineID { isOnline => false, errorCode => ok, _type => core/user.isOnlineID }
+04.11 09:22:12 TIME: core/user.isOnlineID : 0.11 ms
+04.11 09:22:12 NET: vdl.0 (thread) request core/cache.get { type => user, v => -1, id => 114, _type => core/cache.get }
+04.11 09:22:12 READDB: SELECT * FROM Users WHERE ID = 114
+04.11 09:22:12 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {name => uid114, deleted => false, email => , networktype =>   , password => uid114, isbanned => false, regdate => 2016-11-03 17:12:46.234491+03, language => en, networkid => , params => { attrs => { _lastTime.24hr => 1478182566, lastLoginDate => 309, lastLoadDate => 1105 }, effects => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:22:12 TIME: core/cache.get : 1.66 ms
+04.11 09:22:12 NET: vdl.0 (thread) request core/cache.get { type => questdata, v => -1, id => 114, _type => core/cache.get }
+04.11 09:22:12 READDB: SELECT * FROM UserQuests WHERE ID = 114
+04.11 09:22:12 QUEUE: vdl.0 (thread) response core/cache.get { errorCode => ok, _type => core/cache.get, block => { list => {params => { quests => { list => [] } }}, version => 0, id => 114 } }
+04.11 09:22:12 TIME: core/cache.get : 1.16 ms
+04.11 09:22:12 NET: vdl.0 (thread) request core/user.loginPost { lang => en, networkid => , platform => web, networktype =>   , id => 114, _type => core/user.loginPost, ipAddr => 172.16.10.1 }
+04.11 09:22:12 QUEUE: vdl.0 (thread) response core/user.loginPost { _type => core/user.loginPost }
+04.11 09:22:12 TIME: core/user.loginPost : 0.12 ms
+04.11 09:22:20 NET: vdl.0 (thread) request core/cache.update { diff => {language => en}, type => user, unlock => false, id => 114, _type => core/cache.update }
+04.11 09:22:20 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:22:20 TIME: core/cache.update : 0.13 ms
+04.11 09:22:20 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:22:30 TIMER: Clans cache...
+04.11 09:22:30 TIMER: Clans cache: 0ms
+04.11 09:22:30 TIMER: Check tournament...
+04.11 09:22:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:22' OR rounddate = '2016-04-11 09:22' AND status <> 'finished'
+04.11 09:22:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.55063609' AND avaliable = true AND finished <> true
+04.11 09:22:30 TIMER: Check tournament: 1ms
+04.11 09:22:30 TIMER: Clans cache...
+04.11 09:22:30 TIMER: Clans cache: 0ms
+04.11 09:22:30 TIMER: Check tournament...
+04.11 09:22:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:23' OR rounddate = '2016-04-11 09:23' AND status <> 'finished'
+04.11 09:22:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.61064892' AND avaliable = true AND finished <> true
+04.11 09:22:30 TIMER: Check tournament: 2ms
+04.11 09:23:42 NET: vdl.0 (thread) request core/server.query { q => SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true, _type => core/server.query }
+04.11 09:23:42 DB: SELECT id FROM battle WHERE firstid=114 OR secondid=114 AND finished <> true
+04.11 09:23:42 QUEUE: vdl.0 (thread) response core/server.query { list => {}, errorCode => ok, _type => core/server.query }
+04.11 09:23:42 TIME: core/server.query : 1.06 ms
+04.11 09:23:42 NET: vdl.0 (thread) request vdl/cache.battle.infoRoom { roomId => 0, _type => vdl/cache.battle.infoRoom }
+04.11 09:23:42 STATS: cache [battle], get [25 calls, 5 cache hits, 19 cache misses, 0 same version, 11 not found]
+04.11 09:23:42 STATS: cache [battle], segments [36 calls, 16 hits, 19 misses]
+04.11 09:23:42 STATS: cache [battle], database [6671 calls, 19 reads, 6 writes]
+04.11 09:23:42 STATS: cache [battle], lock [0 calls, 0 attempts, 0 failures]
+04.11 09:23:42 READDB: SELECT * FROM Battle WHERE ID = 0
+04.11 09:23:42 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+04.11 09:23:42 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+04.11 09:23:42 QUEUE: vdl.0 (thread) response vdl/cache.battle.infoRoom { errorCode => _requestException, _type => vdl/cache.battle.infoRoom }
+04.11 09:23:42 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => user, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:23:42 STATS: cache [user], get [20 calls, 5 cache hits, 15 cache misses, 0 same version, 0 not found]
+04.11 09:23:42 STATS: cache [user], segments [81 calls, 46 hits, 30 misses]
+04.11 09:23:42 STATS: cache [user], database [6671 calls, 15 reads, 29 writes]
+04.11 09:23:42 STATS: cache [user], lock [16 calls, 16 attempts, 0 failures]
+04.11 09:23:42 STATS: cache manager [1], get [32 calls, total 0.05 sec spent, avg 1.53 ms]
+04.11 09:23:42 STATS: cache manager [1], update [45 calls, total 0.01 sec spent, avg 0.15 ms]
+04.11 09:23:42 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 2, _type => core/cache.update }
+04.11 09:23:42 TIME: core/cache.update : 0.42 ms
+04.11 09:23:42 NET: vdl.0 (thread) request core/cache.update { diff => {}, type => questdata, unlock => true, id => 114, _type => core/cache.update }
+04.11 09:23:42 STATS: cache [questdata], get [16 calls, 1 cache hits, 15 cache misses, 0 same version, 0 not found]
+04.11 09:23:42 STATS: cache [questdata], segments [63 calls, 32 hits, 30 misses]
+04.11 09:23:42 STATS: cache [questdata], database [6671 calls, 15 reads, 15 writes]
+04.11 09:23:42 STATS: cache [questdata], lock [16 calls, 16 attempts, 0 failures]
+04.11 09:23:42 QUEUE: vdl.0 (thread) response core/cache.update { errorCode => ok, version => 1, _type => core/cache.update }
+04.11 09:23:42 TIME: core/cache.update : 0.41 ms
+04.11 09:23:42 NET: vdl.0 (thread) request core/user.logoutPost { networkid => , networktype =>   , id => 114, _type => core/user.logoutPost }
+04.11 09:23:42 QUEUE: vdl.0 (thread) response core/user.logoutPost { errorCode => ok, _type => core/user.logoutPost }
+04.11 09:23:42 TIME: core/user.logoutPost : 0.12 ms
+04.11 09:23:42 WRITEDB: UPDATE Users SET name = E'uid114', deleted = E'false', email = E'', networktype = E'  ', password = E'uid114', isbanned = E'false', regdate = E'2016-11-03 17:12:46.234491+03', language = E'en', networkid = E'', params = E'{"attrs":{"_lastTime.24hr":1478182566,"lastLoginDate":309,"lastLoadDate":1105},"effects":{"list":[]}}' WHERE ID = 114
+04.11 09:23:42 WRITEDB: UPDATE UserQuests SET params = E'oy6:questsoy4:listahgg' WHERE ID = 114
+04.11 09:23:52 BLOCKREMOVE: user 114 removed
+04.11 09:23:52 BLOCKREMOVE: questdata 114 removed
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:24' OR rounddate = '2016-04-11 09:24' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.67065922' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:25' OR rounddate = '2016-04-11 09:25' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.73066961' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:26' OR rounddate = '2016-04-11 09:26' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.79068263' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:27' OR rounddate = '2016-04-11 09:27' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.85069277' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:28' OR rounddate = '2016-04-11 09:28' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.91070286' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:29' OR rounddate = '2016-04-11 09:29' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478240.97071431' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 2ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:30' OR rounddate = '2016-04-11 09:30' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.03072569' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:31' OR rounddate = '2016-04-11 09:31' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.09073577' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:32' OR rounddate = '2016-04-11 09:32' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.15074892' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:33' OR rounddate = '2016-04-11 09:33' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.21075938' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:34' OR rounddate = '2016-04-11 09:34' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.27076988' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:35' OR rounddate = '2016-04-11 09:35' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.33078038' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:36' OR rounddate = '2016-04-11 09:36' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.39079054' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:37' OR rounddate = '2016-04-11 09:37' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.45080189' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 4ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:38' OR rounddate = '2016-04-11 09:38' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.51081462' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:39' OR rounddate = '2016-04-11 09:39' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.57082438' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:40' OR rounddate = '2016-04-11 09:40' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.63083535' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:41' OR rounddate = '2016-04-11 09:41' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.69084693' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:42' OR rounddate = '2016-04-11 09:42' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.75085721' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:43' OR rounddate = '2016-04-11 09:43' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.81087196' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:44' OR rounddate = '2016-04-11 09:44' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.8708824' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:45' OR rounddate = '2016-04-11 09:45' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.93089239' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:46' OR rounddate = '2016-04-11 09:46' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478241.99090269' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:47' OR rounddate = '2016-04-11 09:47' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.05091309' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:48' OR rounddate = '2016-04-11 09:48' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.11092456' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:49' OR rounddate = '2016-04-11 09:49' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.17093801' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:50' OR rounddate = '2016-04-11 09:50' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.23094829' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:51' OR rounddate = '2016-04-11 09:51' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.29095841' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:52' OR rounddate = '2016-04-11 09:52' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.35096843' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:53' OR rounddate = '2016-04-11 09:53' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.41097988' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 3ms
+04.11 09:24:30 TIMER: Clans cache...
+04.11 09:24:30 TIMER: Clans cache: 0ms
+04.11 09:24:30 TIMER: Check tournament...
+04.11 09:24:30 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:54' OR rounddate = '2016-04-11 09:54' AND status <> 'finished'
+04.11 09:24:30 DB: SELECT * FROM battle WHERE endtime >= '1478242.47099057' AND avaliable = true AND finished <> true
+04.11 09:24:30 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:55' OR rounddate = '2016-04-11 09:55' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.53100716' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:56' OR rounddate = '2016-04-11 09:56' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.59101865' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:57' OR rounddate = '2016-04-11 09:57' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.65103052' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:58' OR rounddate = '2016-04-11 09:58' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.71104095' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 09:59' OR rounddate = '2016-04-11 09:59' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.77105234' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:00' OR rounddate = '2016-04-11 10:00' AND status <> 'finished'
+04.11 09:55:31 PENDING: INSERT INTO LogUserOnlineCount (Date, Min, Max, Avg) VALUES (now(), 0, 1, 0)
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.83106326' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:01' OR rounddate = '2016-04-11 10:01' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.89107849' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:02' OR rounddate = '2016-04-11 10:02' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478242.95108982' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:03' OR rounddate = '2016-04-11 10:03' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.011101' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:04' OR rounddate = '2016-04-11 10:04' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.07111252' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:05' OR rounddate = '2016-04-11 10:05' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.13112353' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:06' OR rounddate = '2016-04-11 10:06' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.19113438' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:07' OR rounddate = '2016-04-11 10:07' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.25114764' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:08' OR rounddate = '2016-04-11 10:08' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.31115803' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:09' OR rounddate = '2016-04-11 10:09' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.37116858' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:10' OR rounddate = '2016-04-11 10:10' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.43117888' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:11' OR rounddate = '2016-04-11 10:11' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.49118936' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:12' OR rounddate = '2016-04-11 10:12' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.5512041' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 5ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:13' OR rounddate = '2016-04-11 10:13' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.61121485' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:14' OR rounddate = '2016-04-11 10:14' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.67122563' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:15' OR rounddate = '2016-04-11 10:15' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.73123659' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:16' OR rounddate = '2016-04-11 10:16' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.79124694' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:17' OR rounddate = '2016-04-11 10:17' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.85125718' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:18' OR rounddate = '2016-04-11 10:18' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.91127048' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:19' OR rounddate = '2016-04-11 10:19' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478243.97128068' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:20' OR rounddate = '2016-04-11 10:20' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.0312912' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:21' OR rounddate = '2016-04-11 10:21' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.09130189' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:22' OR rounddate = '2016-04-11 10:22' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.15131256' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:23' OR rounddate = '2016-04-11 10:23' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.21132264' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:24' OR rounddate = '2016-04-11 10:24' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.27133586' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:25' OR rounddate = '2016-04-11 10:25' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.33134619' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:26' OR rounddate = '2016-04-11 10:26' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.39135643' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:27' OR rounddate = '2016-04-11 10:27' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.4513668' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:28' OR rounddate = '2016-04-11 10:28' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.51137731' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:29' OR rounddate = '2016-04-11 10:29' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.57138753' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:30' OR rounddate = '2016-04-11 10:30' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.63140089' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:31' OR rounddate = '2016-04-11 10:31' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.69141134' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:32' OR rounddate = '2016-04-11 10:32' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.75142193' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:33' OR rounddate = '2016-04-11 10:33' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.81143247' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:34' OR rounddate = '2016-04-11 10:34' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.87144325' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:35' OR rounddate = '2016-04-11 10:35' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.93145352' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:36' OR rounddate = '2016-04-11 10:36' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478244.99146772' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:37' OR rounddate = '2016-04-11 10:37' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.05147793' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:38' OR rounddate = '2016-04-11 10:38' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.11148837' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:39' OR rounddate = '2016-04-11 10:39' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.17149882' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:40' OR rounddate = '2016-04-11 10:40' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.23150977' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:41' OR rounddate = '2016-04-11 10:41' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.29152053' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:42' OR rounddate = '2016-04-11 10:42' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.35153467' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:43' OR rounddate = '2016-04-11 10:43' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.41154495' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:44' OR rounddate = '2016-04-11 10:44' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.47155494' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:45' OR rounddate = '2016-04-11 10:45' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.53156512' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:46' OR rounddate = '2016-04-11 10:46' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.59157557' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:47' OR rounddate = '2016-04-11 10:47' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.65158635' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:48' OR rounddate = '2016-04-11 10:48' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.71160007' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:49' OR rounddate = '2016-04-11 10:49' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.77161024' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:50' OR rounddate = '2016-04-11 10:50' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.83162098' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:51' OR rounddate = '2016-04-11 10:51' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.89163171' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:52' OR rounddate = '2016-04-11 10:52' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478245.95164197' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:53' OR rounddate = '2016-04-11 10:53' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.01165477' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:54' OR rounddate = '2016-04-11 10:54' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.07166485' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:55' OR rounddate = '2016-04-11 10:55' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.13167604' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:56' OR rounddate = '2016-04-11 10:56' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.19168853' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:57' OR rounddate = '2016-04-11 10:57' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.25169902' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:58' OR rounddate = '2016-04-11 10:58' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.31171138' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 10:59' OR rounddate = '2016-04-11 10:59' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.37172613' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 PENDING: INSERT INTO LogUserOnlineCount (Date, Min, Max, Avg) VALUES (now(), 0, 0, 0)
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:00' OR rounddate = '2016-04-11 11:00' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.43173696' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:01' OR rounddate = '2016-04-11 11:01' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.49174815' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:02' OR rounddate = '2016-04-11 11:02' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.55175871' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:03' OR rounddate = '2016-04-11 11:03' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.61177018' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:04' OR rounddate = '2016-04-11 11:04' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.67178021' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:05' OR rounddate = '2016-04-11 11:05' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.73179359' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:06' OR rounddate = '2016-04-11 11:06' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.79180382' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:07' OR rounddate = '2016-04-11 11:07' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.85181394' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:08' OR rounddate = '2016-04-11 11:08' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.91182462' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:09' OR rounddate = '2016-04-11 11:09' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478246.97183516' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:10' OR rounddate = '2016-04-11 11:10' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.03184629' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:11' OR rounddate = '2016-04-11 11:11' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.09186192' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:12' OR rounddate = '2016-04-11 11:12' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.15187185' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:13' OR rounddate = '2016-04-11 11:13' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.21188218' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:14' OR rounddate = '2016-04-11 11:14' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.27189261' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:15' OR rounddate = '2016-04-11 11:15' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.33190333' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:16' OR rounddate = '2016-04-11 11:16' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.39191467' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:17' OR rounddate = '2016-04-11 11:17' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.45192884' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:18' OR rounddate = '2016-04-11 11:18' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.5119393' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:19' OR rounddate = '2016-04-11 11:19' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.57195011' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:20' OR rounddate = '2016-04-11 11:20' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.63196045' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 2ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:21' OR rounddate = '2016-04-11 11:21' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.69197145' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:22' OR rounddate = '2016-04-11 11:22' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.75198132' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms
+04.11 09:55:31 TIMER: Clans cache...
+04.11 09:55:31 TIMER: Clans cache: 0ms
+04.11 09:55:31 TIMER: Check tournament...
+04.11 09:55:31 DB: SELECT * FROM tournament WHERE startdate = '2016-04-11 11:23' OR rounddate = '2016-04-11 11:23' AND status <> 'finished'
+04.11 09:55:31 DB: SELECT * FROM battle WHERE endtime >= '1478247.8119971' AND avaliable = true AND finished <> true
+04.11 09:55:31 TIMER: Check tournament: 1ms

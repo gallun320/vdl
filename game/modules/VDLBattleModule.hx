@@ -1,9 +1,10 @@
 package modules;
 
+import rules.*;
 import snipe.slave.Server;
 import snipe.slave.Module;
 import snipe.lib.Params;
-
+using Lambda;
 
 class VDLBattleModule extends Module<VDLClient, ServerVDL>
 {
@@ -12,6 +13,9 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
   public var secondID: Int;
   public var turnID: Int;
   public var roomID: Int;
+  public var FieldData: Map<Int,Array<Array<Int>>>;
+  public var CubesData: Map<Int, Array<Int>>;
+  public var FieldFunc: Field;
   //public var TournamentModule: modules.VDLTournamentModule;
 
   public function new(srv: ServerVDL)
@@ -21,6 +25,9 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
 
       server.subscribeModule("core/user.logoutPost", this);
       server.subscribeModule("core/user.loginPost", this);
+      FieldData = new Map<Int,Array<Array<Int>>>();
+      CubesData = new Map<Int,Array<Int>>();
+      FieldFunc = new Field();
       //TournamentModule  = untyped server.getModule('tournament');
     }
 
@@ -33,8 +40,10 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
             response = FindRoomCall(c, params);
           case "battle.sendtask":
               response = TaskCall(c, params);
-          case "battle.cubes":
-              response = CubeCall(c, params);
+          case "battle.access":
+              response = AccessBattle(c, params);
+          case "battle.message":
+              response = BattleMessage(c, params);
           /*case "battle.lose":
               response = LoseCall(c, params);*/
           case "battle.end":
@@ -51,7 +60,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       }
 
       public function TaskCall(c: VDLClient, params: Params): Dynamic {
-        var roomId = params.get("roomId");
+        var roomId = params.get("battleId");
         var ret = Task(c, c.id, roomId, params);
         return ret;
       }
@@ -63,7 +72,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       }
 
       public function CubeCall(c: VDLClient, params: Params): Dynamic {
-        var ret = Cube();
+        var ret = Cube(c.id);
 
         return ret;
       }
@@ -76,7 +85,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         var idSend: Int = (c.id == battle.firstId) ? battle.secondId : battle.firstId;
         var winner: Int = (type == "winGame") ? c.id : idSend;
         var typeNotify: String = (type == "winGame") ? "battle.end" : "battle.leave";
-        
+
         server.sendTo(idSend, {
             _type: typeNotify
           });
@@ -86,7 +95,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
             var tournamentId: Int = params.get('tournamentId');
             var paramsData: Params = new Params({tournamentId: tournamentId, battleId: battleId, winner: winner});
             server.TournamentModule.FinishCall(c, paramsData);
-          case "random":
+          case "battle":
             var paramsData: Params = new Params({ battleId: battleId, winner: winner });
             FinishCall(c, paramsData);
         }
@@ -95,19 +104,94 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         return { errorCode: 'ok' };
       }
 
-      public function enemyEvent(msg: { id: Int, data: Dynamic }) {
+      public function enemyEvent(msg: { id: Int, data: Dynamic}) {
+        var ret = new Field();
+        FieldData.set(msg.data.battleId, ret.Field);
         server.sendTo(msg.id, {
           _type: "battle.enemy",
           data: msg.data
         });
       }
 
-    public function FindBattle(c: VDLClient, cid: Int, params: Params): Dynamic {
-      var type = params.get('type');
+      public function skipEvent(msg: { id: Int, type: String}) {
+        if(msg.type == "skip") {
+          server.sendTo(msg.id, {
+              _type: "battle.task",
+              name: "skip"
+            });
+        } else {
+          server.sendTo(msg.id, {
+              _type: "battle.task",
+              name: "endStep"
+            });
+        }
+      }
 
+      public function endEvent( msg: Dynamic) {
+
+        var c: VDLClient = server.TournamentModule.getClient(server.slaveID);
+        c.id = msg.win;
+        var params: Params = new Params({ typeBattle: msg.typeBattle, type: msg.type, tournamentId: msg.tournamentId, battleId: msg.battleId });
+        var ret = EndCall(c, params);
+      }
+
+    public function AccessBattle(c: VDLClient, params: Params): Dynamic {
+      var ready: Bool = params.get('ready');
+      var player1: Int = params.get('player1');
+      var player2: Int = params.get('player2');
+
+      if(ready) {
+        FindBattlCheck(player1, player2);
+      } else {
+        server.sendTo(player1, {
+            _type: "battle.not",
+            type: "battle.access"
+          });
+      }
+
+      return {errorCode: "ok"};
+    }
+
+    public function BattleMessage(c, params): Dynamic {
+      var battleId: Int = params.get('battleId');
+      var msg = params.get('message');
+      var idSend: Int = 0;
+      var player: Int = 0;
+      var battle: Dynamic = server.BattleModule.RoomInfo(battleId);
+
+      if(c.id == battle.firstId) {
+        player = 1;
+        idSend = battle.secondId;
+      } else {
+        player = 2;
+        idSend = battle.firstId;
+      }
+
+      server.sendTo(idSend, {
+         _type: "battle.message",
+         message: msg,
+         player: player
+        });
+
+      return { errorCode: "ok" };
+    }
+
+    public function FindBattle(c: VDLClient, cid: Int, params: Params): Dynamic {
+      var type: String = params.get('type');
+      var roundTime: Int = params.get('roundTime');
       switch (type) {
         case "random":
-          FindRandomBattle(cid);
+          FindRandomBattle(cid, roundTime);
+        case "byName":
+          var player2 = params.get('userId');
+          var player1 = c.id;
+          server.sendTo(player2, {
+             player1: player1,
+             player2: player2,
+             _type: "battle.access"
+            });
+          //FindBattlCheck(player1, player2);
+
 
       }
 
@@ -146,13 +230,22 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       return { errorCode: "ok" };
     }
 
-    public function FindRandomBattle(userId: Int): Void {
+    public function FindRandomBattle(userId: Int, roundTime: Int): Void {
+      var user: Dynamic = { player: userId, time: roundTime };
       var ret = server.cacheRequest({
           _type: 'vdl/cache.battle.findRandom',
-          userId: userId
+          user: user
         });
     }
 
+
+    public function FindBattlCheck(player1: Int, player2: Int): Void {
+      var ret = server.cacheRequest({
+          _type: 'vdl/cache.battle.findCheck',
+          player1: player1,
+          player2: player2
+        });
+    }
 /*public function Enemy(c: VDLClient,selfId: Int, enemId: Int): Dynamic {
         var selfName = server.query('SELECT name FROM users WHERE id=' + selfId);
         var enemName = server.query('SELECT name FROM users WHERE id=' + enemId);
@@ -169,33 +262,147 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         return {errorCode: 'ok'};
     }*/
 
-    public function Task(c: VDLClient, cid: Int, roomId: Int, params: Params) {
+    public function Task(c: VDLClient, cid: Int, roomId: Int, params: Params): Dynamic {
+      var name: String = params.get('name');
+      var player: Int = 0;
+
       var user = RoomInfo(roomId);
       var enemId = 0;
       if(cid == user.firstId) {
+        player = 2;
         enemId = user.secondId;
       } else if(cid == user.secondId){
+        player = 1;
         enemId = user.firstId;
       }
-    /*  var obj = {
+
+      if(name == "throw") {
+        var arr: Array<Int> = new Array<Int>();
+        for (i in 0 ... 6) {
+          arr.push(Std.random(6));
+        }
+        CubesData.set(cid, arr);
+        var dices = CubesData.get(cid).copy();
+        var obj: Dynamic = {name: name, dices: dices, errorCode: "ok"};
+        c.response("battle.sendtask", obj);
+        obj._type = "battle.task";
+        server.sendTo(enemId, obj);
+
+        return { errorCode: "ok" };
+      }
+
+      if(name == "skip") {
+        if(user.turnId == cid) {
+          params.params.type = "battle.task";
+          params.params._type = "battle.task";
+
+          var obj: Dynamic = params.params;
+
+          server.sendTo(enemId, obj);
+
+          MakeTurn(cid, roomId);
+
+          return {errorCode: 'ok'};
+        } else {
+          return { errorCode: "cannotSkip" };
+        }
+      }
+
+
+      var dice: Int = params.get('dice');
+      var side: Int = params.get('side');
+
+      var from: Array<Int> = params.get('from');
+      var to: Array<Int> = params.get('to');
+      var battleId: Int = params.get('battleId');
+
+      var cubes: Array<Int> = CubesData.get(cid).copy();
+      //var cubesLocal: Array<Int> = cubes.copy();
+
+      var field: Array<Array<Int>> = FieldData.get(roomId).copy();
+      FieldFunc.Field = FieldData.get(roomId).copy();
+      trace( '================================================' );
+      trace( 'From: ', field[from[0]][from[1]] );
+
+      trace( '=================================================' );
+      trace( 'To: ', field[to[0]][to[1]] );
+
+      var stateTo: Int = Rules.CalcState(field[to[0]][to[1]]);
+      var state: Int = Rules.CalcState(field[from[0]][from[1]]);
+      trace( '================================================' );
+      trace( 'State: ', state );
+      var winBlock: Bool = FieldFunc.IsWinblockFigure(from);
+      trace( '=========================================' );
+      trace( 'winBlock: ', winBlock );
+      var winBlockTo: Bool = FieldFunc.IsWinblockFigure(to);
+      var sideTo: Int = FieldFunc.GetSideFrom(to);
+
+
+
+
+
+      if(!Rules.IsCanTake(dice, player, state, side, from[0], winBlock) ) {
+        trace( '======================================================' );
+        trace( 'take' );
+        var dices: Array<Int> = CubesData.get(cid).copy();
+        var field: Array<Array<Int>> =  FieldFunc.Field;
+
+        var obj: Dynamic = { dices: dices, pole: field, errorCode: "cannotSwap"};
+        return obj;
+      }
+
+      if(!Rules.IsCanSwapTo(dice, state, to[0], stateTo, sideTo, winBlockTo, side)) {
+        trace( '======================================================' );
+        trace( 'swap' );
+        var dices: Array<Int> = CubesData.get(cid).copy();
+        var field: Array<Array<Int>> =  FieldFunc.Field;
+
+        var obj: Dynamic = { dices: dices, pole: field, errorCode: "cannotSwap"};
+        return obj;
+      }
+
+      if(cubes.has(dice)) {
+        cubes.remove(dice);
+        //CubesData.set(cid, cubes);
+      } else {
+        trace( '======================================================' );
+        trace( 'dice' );
+        var dices: Array<Int> = CubesData.get(cid).copy();
+        var field: Array<Array<Int>> = FieldFunc.Field;
+
+        var obj: Dynamic = { dices: dices, pole: field, errorCode: "cannotSwap"};
+        return obj;
+      }
+
+      params.params.dices = cubes;
+      var obj: Dynamic = params.params;
+      FieldFunc.Swap(obj);
+
+      var scores: Array<Int> = FieldFunc.GetScoreForPlayers();
+      SetBattleScores(user.firstId, user.secondId, scores, battleId);
+      trace( FieldFunc.Field );
+      FieldData.set(roomId, FieldFunc.Field);
+      CubesData.set(cid, cubes);
+      //var dices = CubesData.get(cid).toString();
+    /*var obj = {
         type: "battle.task",
         _type: "battle.task",
-        roomId: params.get('roomId'),
-        name: params.get('name'),
-        side: params.get('side'),
-        diceID: params.get('diceID'),
-        dice: params.get('dice'),
-        dices: params.get('dices'),
-        from: params.get('from'),
-        to: params.get('to')
+        battleId: roomId,
+        name: name,
+        side: side,
+        dice: dice,
+        dices: dices,
+        from: from.toString(),
+        to: to.toString()
       }*/
       params.params.type = "battle.task";
       params.params._type = "battle.task";
+      params.params.dices = CubesData.get(cid).copy();
       var obj: Dynamic = params.params;
       //c.listStatistic.push(params);
       server.sendTo(enemId, obj);
 
-      return {errorCode: 'ok'}
+      return {errorCode: 'ok'};
     }
 
     public function Finish(roomId: Int): Dynamic {
@@ -206,12 +413,23 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       return {errorCode: 'ok'}
     }
 
-    public function Cube(): Dynamic {
+    public function Cube(cid: Int): Dynamic {
       var arr: Array<Int> = new Array<Int>();
       for (i in 0 ... 6) {
         arr.push(Std.random(6));
       }
+      CubesData.set(cid, arr);
       return { errorCode: 'ok', cube: arr};
+    }
+
+    public function SetBattleScores(player1: Int, player2: Int, scores: Array<Int>, battleId: Int): Void {
+      var ret = server.cacheRequest({
+          _type: 'vdl/cache.battle.setScores',
+          player1: player1,
+          player2: player2,
+          scores: scores,
+          battleId: battleId
+        });
     }
 
     public function GetAvaliableRooms(): Dynamic {
@@ -247,14 +465,13 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         });
       return ret;
     }
-    /*public function MakeTurn(userId: Int, roomId: Int) {
+    public function MakeTurn(userId: Int, roomId: Int): Void {
       var ret = server.cacheRequest({
          _type: 'vdl/cache.battle.makeTurn',
          userId: userId,
          roomId: roomId
         });
-      return ret;
-    }*/
+    }
 
     public function DeleteRoom(roomId: Int) {
       var ret = server.cacheRequest({
@@ -286,7 +503,8 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         enemId = user.firstId;
       }
       DeleteRoom(roomId);
-      server.sendTo(enemId, {_type: 'battle.end'});
+      FinishRoom(roomId);
+      server.sendTo(enemId, {_type: 'battle.leave'});
       trace('room destroy');
     }
 

@@ -1,0 +1,42 @@
+03.11 18:21:11 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+03.11 18:21:11 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+03.11 18:23:23 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+03.11 18:23:23 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+03.11 18:24:51 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+03.11 18:24:51 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+03.11 18:26:21 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+03.11 18:26:21 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+03.11 18:30:10 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+03.11 18:30:10 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+03.11 18:34:25 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+03.11 18:34:25 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
+03.11 18:35:11 TRACE: vdl/cache.battle.infoRoom : Invalid field access : get
+03.11 18:35:11 TRACE: vdl/cache.battle.infoRoom : 
+Called from modules/VDLCache.hx line 179
+Called from modules/VDLCache.hx line 172
+Called from modules/VDLCache.hx line 117
+Called from snipe/cache/CacheServer.hx line 487
