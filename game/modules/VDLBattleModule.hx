@@ -82,6 +82,12 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         var type: String = params.get('type');
         var battleId: Int = params.get('battleId');
         var battle: Dynamic = RoomInfo(battleId);
+
+        if(type == "closeGame") {
+          CloseFind( c.id);
+          return { errorCode: "ok" };
+        }
+
         var idSend: Int = (c.id == battle.firstId) ? battle.secondId : battle.firstId;
         var winner: Int = (type == "winGame") ? c.id : idSend;
         var typeNotify: String = (type == "winGame") ? "battle.end" : "battle.leave";
@@ -321,19 +327,13 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
 
       var field: Array<Array<Int>> = FieldData.get(roomId).copy();
       FieldFunc.Field = FieldData.get(roomId).copy();
-      trace( '================================================' );
-      trace( 'From: ', field[from[0]][from[1]] );
 
-      trace( '=================================================' );
-      trace( 'To: ', field[to[0]][to[1]] );
 
       var stateTo: Int = Rules.CalcState(field[to[0]][to[1]]);
       var state: Int = Rules.CalcState(field[from[0]][from[1]]);
-      trace( '================================================' );
-      trace( 'State: ', state );
+
       var winBlock: Bool = FieldFunc.IsWinblockFigure(from);
-      trace( '=========================================' );
-      trace( 'winBlock: ', winBlock );
+
       var winBlockTo: Bool = FieldFunc.IsWinblockFigure(to);
       var sideTo: Int = FieldFunc.GetSideFrom(to);
 
@@ -342,8 +342,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
 
 
       if(!Rules.IsCanTake(dice, player, state, side, from[0], winBlock) ) {
-        trace( '======================================================' );
-        trace( 'take' );
+
         var dices: Array<Int> = CubesData.get(cid).copy();
         var field: Array<Array<Int>> =  FieldFunc.Field;
 
@@ -352,8 +351,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       }
 
       if(!Rules.IsCanSwapTo(dice, state, to[0], stateTo, sideTo, winBlockTo, side)) {
-        trace( '======================================================' );
-        trace( 'swap' );
+
         var dices: Array<Int> = CubesData.get(cid).copy();
         var field: Array<Array<Int>> =  FieldFunc.Field;
 
@@ -365,8 +363,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         cubes.remove(dice);
         //CubesData.set(cid, cubes);
       } else {
-        trace( '======================================================' );
-        trace( 'dice' );
+
         var dices: Array<Int> = CubesData.get(cid).copy();
         var field: Array<Array<Int>> = FieldFunc.Field;
 
@@ -479,6 +476,13 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
          roomId: roomId
         });
       return ret;
+    }
+
+    public function CloseFind(userId: Int): Void {
+      var ret = server.cacheRequest({
+         _type: 'vdl/cache.battle.closeFind',
+         userId: userId
+        });
     }
 
     public function RoomInfo(roomId: Int) {

@@ -133,13 +133,20 @@ using Lambda;
         case 'vdl/cache.battle.join':
           response = JoinRoomCall(c, params);
         case 'vdl/cache.battle.makeTurn':
-            response = MakeTurnCall(c, params);
+          response = MakeTurnCall(c, params);
+        case 'vdl/cache.battle.findRandom':
+          response = FindRandomBattle(c, params);
+        case 'vdl/cache.battle.setScores':
+          response = SetScores(c, params);
         case 'vdl/cache.battle.deleteRoom':
           response = DeleteRoomCall(c, params);
         case 'vdl/cache.battle.infoRoom':
           response = RoomInfoCall(c, params);
         case 'vdl/cache.battle.finishRoom':
           response = FinishRoomCall(c, params);
+        case 'vdl/cache.battle.closeFind':
+          response = CloseFind(c, params);
+
         case 'vdl/cache.tournament.addUsers':
           response = AddUsersCall(c, params);
           case 'vdl/cache.tournament.deleteUsers':
@@ -168,10 +175,8 @@ using Lambda;
           response = FinishTournament(c, params);
         case 'vdl/cache.tournament.getStatus':
           response = GetTournamentStatus(c, params);
-        case 'vdl/cache.battle.findRandom':
-          response = FindRandomBattle(c, params);
-        case 'vdl/cache.battle.setScores':
-          response = SetScores(c, params);
+        case "vdl/cache.user.addFriend":
+          response = AddFriend(c, params);
 
         /*case 'vdl/cache.battle.findCheck':
           response = FindCheckBattle(c, params);*/
@@ -335,6 +340,47 @@ using Lambda;
      tournament.set(null, "status", "active");
      server.cacheManager.updated(0, 'tournament', tournamentId);
      return 0;
+   }
+
+   function AddFriend(c: SlaveClient, params: Params): Dynamic {
+     var player: Int = params.get("player");
+     var friend: Int = params.get("friend");
+     var type: String = params.get("type");
+
+     var ret = server.cacheManager.getUnlocked(0, 'user', player, -1);
+     var user = ret.block;
+
+     if(type == "prepare") {
+       var prepareList: Array<Int> = user.get('params', 'friendPrepare');
+       if(prepareList == null) prepareList = [];
+       prepareList.push(friend);
+       user.set('params', 'friendPrepare', prepareList);
+     } else if(type == "add") {
+       var prepareList: Array<Int> =  user.get('params', 'friendPrepare');
+       var addList: Array<Int> = user.get('params', 'friendList');
+       if(prepareList == null) prepareList = [];
+       if(addList == null) addList = [];
+
+       addList.push(friend);
+       if(prepareList.has(friend)) {
+         prepareList.remove(friend);
+       }
+
+       user.set('params', 'friendPrepare', prepareList);
+       user.set('params', 'friendList', addList);
+     } else {
+       var prepareList: Array<Int> = user.get('params', 'friendPrepare');
+       if(prepareList == null) prepareList = [];
+       if(prepareList.has(friend)) {
+         prepareList.remove(friend);
+       }
+
+       user.set('params', 'friendPrepare', prepareList);
+     }
+
+     server.cacheManager.updated(0, 'user', player);
+
+     return { errorCode: "ok" };
    }
 
    function SkipTurn(data: Dynamic): Void {
@@ -927,9 +973,24 @@ using Lambda;
 
    public function DeleteRoomCall(c: SlaveClient, params: Params): Dynamic {
      var roomId = params.get('roomId');
+
      var ret = deleteRoom(roomId);
 
      return ret;
+   }
+
+   public function CloseFind(c: SlaveClient, params: Params): Dynamic {
+     var userId: Int = params.get("userId");
+
+     for( el in usersRandomList ) {
+      if(el.player == userId) {
+           usersRandomList.remove(el);
+         }
+       }
+
+
+
+     return {errorCode: "ok"};
    }
 
    public function AddUsers(userId: Int, tournamentId: Int, ?passTournament: String): Dynamic {
