@@ -32,6 +32,10 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
             response = UserAll(c, params);
           case "user.addFriend":
             response = UserFriends(c, params);
+          case "user.getPrepare":
+            response = UserPrepare(c, params);
+          case "user.getFriendList":
+            response = UserFriendList(c, params);
 
 
 
@@ -123,6 +127,24 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
         return {errorCode: "ok"};
 
       }
+        
+        public function UserPrepare(c: VDLClient, params: Params): Array<Dynamics> {
+          var ret = server.cacheRequest({
+            _type: "vdl/cache.user.getPrepareFriend",
+            player: c.id
+          });
+          
+          return ret.list;
+        }
+
+public function UserFriendList(c: VDLClient, params: Params): Array<Dynamic> {
+  var ret = server.cacheRequest({
+            _type: "vdl/cache.user.getFriendList",
+            player: c.id
+          });
+          
+          return ret.list;
+}
 
       public function FriendAdd(player: Int, friend: Int, type: String): Void {
         var ret = server.cacheRequest({
@@ -132,5 +154,7 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
             type: type
           });
       }
+
+      
 
 }

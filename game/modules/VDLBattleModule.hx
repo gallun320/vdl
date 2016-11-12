@@ -145,9 +145,10 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       var ready: Bool = params.get('ready');
       var player1: Int = params.get('player1');
       var player2: Int = params.get('player2');
+      var roundTime: Int = params.get('roundTime');
 
       if(ready) {
-        FindBattlCheck(player1, player2);
+        FindBattlCheck(player1, player2, roundTime);
       } else {
         server.sendTo(player1, {
             _type: "battle.not",
@@ -163,7 +164,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       var msg = params.get('message');
       var idSend: Int = 0;
       var player: Int = 0;
-      var battle: Dynamic = server.BattleModule.RoomInfo(battleId);
+      var battle: Dynamic = RoomInfo(battleId);
 
       if(c.id == battle.firstId) {
         player = 1;
@@ -188,12 +189,13 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       switch (type) {
         case "random":
           FindRandomBattle(cid, roundTime);
-        case "byName":
+        case "specific":
           var player2 = params.get('userId');
           var player1 = c.id;
           server.sendTo(player2, {
              player1: player1,
              player2: player2,
+             roundTime: roundTime,  
              _type: "battle.access"
             });
           //FindBattlCheck(player1, player2);
@@ -245,11 +247,12 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
     }
 
 
-    public function FindBattlCheck(player1: Int, player2: Int): Void {
+    public function FindBattlCheck(player1: Int, player2: Int, roundTime: Int): Void {
       var ret = server.cacheRequest({
           _type: 'vdl/cache.battle.findCheck',
           player1: player1,
-          player2: player2
+          player2: player2,
+          roundTime: roundTime
         });
     }
 /*public function Enemy(c: VDLClient,selfId: Int, enemId: Int): Dynamic {
