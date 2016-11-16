@@ -1,0 +1,1280 @@
+14.11 13:31:46 TIMER: Starting timer...
+14.11 13:31:46 TIMER: Timer running...
+14.11 13:31:46 DB: SELECT * FROM GameVars
+14.11 13:31:46 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+14.11 13:31:46 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+14.11 13:31:46 DB: SELECT * FROM Shops WHERE ID = 1
+14.11 13:31:46 TEMP: load ./tmp/quest_daily_ids
+14.11 13:31:46 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+14.11 13:31:46 TEMP: save ./tmp/quest_daily_ids
+14.11 13:31:46 NET: ??? request core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+14.11 13:31:46 QUEUE: vdl.0 (thread) response server.login
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM LocalizationStrings
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 116.17 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM GameVars
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 0.8 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 1.56 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 0.7 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 0.63 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 1.16 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/quest.getDaily
+14.11 13:31:46 TIME: core/quest.getDaily : 0.02 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM UserAttributeTypes
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 6.63 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM UserVariableTypes
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 0.81 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+14.11 13:31:46 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 2.07 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM ItemGroups
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 0.56 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM Bundles ORDER BY ID
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 30.91 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM BundleItems ORDER BY ID
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 14.13 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/shop.getList { _type => core/shop.getList }
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/shop.getList
+14.11 13:31:46 TIME: core/shop.getList : 0.05 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM EffectAttributeTypes
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 15 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM Effects
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 1.09 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+14.11 13:31:46 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 0.97 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+14.11 13:31:46 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 0.71 ms
+14.11 13:31:46 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+14.11 13:31:46 DB: SELECT * FROM Badges
+14.11 13:31:46 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:31:46 TIME: core/server.query : 10.4 ms
+14.11 13:31:51 TIMER: Check step...
+14.11 13:31:51 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:31:51 TIMER: Check step: 17ms
+14.11 13:31:56 TIMER: Check step...
+14.11 13:31:56 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:31:56 TIMER: Check step: 14ms
+14.11 13:33:39 TIMER: Starting timer...
+14.11 13:33:39 TIMER: Timer running...
+14.11 13:33:39 DB: SELECT * FROM GameVars
+14.11 13:33:39 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd + '1day'::interval) AS TimeEnd FROM CalendarEvents ORDER BY ID
+14.11 13:33:39 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+14.11 13:33:39 DB: SELECT * FROM Shops WHERE ID = 1
+14.11 13:33:39 TEMP: load ./tmp/quest_daily_ids
+14.11 13:33:39 DB: SELECT ID FROM QuestChains WHERE IsEnabled = 't' AND Params LIKE '%"isDaily":true%' ORDER BY ID
+14.11 13:33:39 TEMP: save ./tmp/quest_daily_ids
+14.11 13:33:39 NET: ??? request core/server.login { host => 172.16.35.23, name => vdl.0, port => 2010, type => game, _type => core/server.login, externalHost => 172.16.35.23, externalPort => 2010 }
+14.11 13:33:39 QUEUE: vdl.0 (thread) response server.login
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM LocalizationStrings, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM LocalizationStrings
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 5.23 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM GameVars, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM GameVars
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.89 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestParameterTypes ORDER BY ID, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM QuestParameterTypes ORDER BY ID
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 1.02 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestConditionTypes ORDER BY ID, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM QuestConditionTypes ORDER BY ID
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.56 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM QuestChains WHERE IsEnabled = 't', _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM QuestChains WHERE IsEnabled = 't'
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.69 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f'), _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM Quests WHERE ChainID NOT IN (SELECT ID FROM QuestChains WHERE IsEnabled = 'f')
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.85 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/quest.getDaily { _type => core/quest.getDaily }
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/quest.getDaily
+14.11 13:33:39 TIME: core/quest.getDaily : 0.04 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserAttributeTypes, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM UserAttributeTypes
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.37 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM UserVariableTypes, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM UserVariableTypes
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.47 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID, _type => core/server.query }
+14.11 13:33:39 DB: SELECT i.ID, i.GroupID, i.StringID, i.Name, i.Note, i.Params, i.TypeID, it.StringID AS Type, it.SlotID AS SlotID, ig.Name AS Group FROM Items AS i JOIN ItemTypes AS it ON i.TypeID = it.ID JOIN ItemGroups AS ig ON i.GroupID = ig.ID
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 1.1 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM ItemGroups, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM ItemGroups
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.43 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Bundles ORDER BY ID, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM Bundles ORDER BY ID
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.46 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM BundleItems ORDER BY ID, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM BundleItems ORDER BY ID
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.5 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/shop.getList { _type => core/shop.getList }
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/shop.getList
+14.11 13:33:39 TIME: core/shop.getList : 0.04 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM EffectAttributeTypes, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM EffectAttributeTypes
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.3 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Effects, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM Effects
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.43 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID, _type => core/server.query }
+14.11 13:33:39 DB: SELECT *, date_part('epoch', DateStart) AS TimeStart, date_part('epoch', DateEnd) AS TimeEnd FROM CalendarEvents ORDER BY ID
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.61 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID, _type => core/server.query }
+14.11 13:33:39 DB: SELECT *, date_part('epoch', Date) AS TimeStart FROM CalendarEventStages ORDER BY EventID, StageID
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.59 ms
+14.11 13:33:39 NET: vdl.0 (thread) request core/server.query { q => SELECT * FROM Badges, _type => core/server.query }
+14.11 13:33:39 DB: SELECT * FROM Badges
+14.11 13:33:39 QUEUE: vdl.0 (thread) response core/server.query
+14.11 13:33:39 TIME: core/server.query : 0.37 ms
+14.11 13:33:44 TIMER: Check step...
+14.11 13:33:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:33:44 TIMER: Check step: 1ms
+14.11 13:33:49 TIMER: Check step...
+14.11 13:33:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:33:49 TIMER: Check step: 1ms
+14.11 13:33:54 TIMER: Check step...
+14.11 13:33:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:33:54 TIMER: Check step: 2ms
+14.11 13:33:59 TIMER: Check step...
+14.11 13:33:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:33:59 TIMER: Check step: 1ms
+14.11 13:34:04 TIMER: Check step...
+14.11 13:34:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:04 TIMER: Check step: 1ms
+14.11 13:34:09 TIMER: Check step...
+14.11 13:34:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:09 TIMER: Check step: 0ms
+14.11 13:34:14 TIMER: Check step...
+14.11 13:34:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:14 TIMER: Check step: 1ms
+14.11 13:34:19 TIMER: Check step...
+14.11 13:34:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:19 TIMER: Check step: 1ms
+14.11 13:34:24 TIMER: Check step...
+14.11 13:34:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:24 TIMER: Check step: 1ms
+14.11 13:34:29 TIMER: Check step...
+14.11 13:34:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:29 TIMER: Check step: 1ms
+14.11 13:34:34 TIMER: Check step...
+14.11 13:34:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:34 TIMER: Check step: 1ms
+14.11 13:34:39 TIMER: Clans cache...
+14.11 13:34:39 TIMER: Clans cache: 0ms
+14.11 13:34:39 TIMER: Check step...
+14.11 13:34:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:39 TIMER: Check step: 0ms
+14.11 13:34:39 TIMER: Check round...
+14.11 13:34:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:34' OR rounddate = '2016-14-11 16:34' AND status <> 'finished'
+14.11 13:34:39 DB: SELECT * FROM battle WHERE endtime >= '1479119.67938716' AND avaliable = true AND finished <> true
+14.11 13:34:39 TIMER: Check round: 20ms
+14.11 13:34:44 TIMER: Check step...
+14.11 13:34:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:44 TIMER: Check step: 0ms
+14.11 13:34:49 TIMER: Check step...
+14.11 13:34:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:49 TIMER: Check step: 0ms
+14.11 13:34:54 TIMER: Check step...
+14.11 13:34:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:54 TIMER: Check step: 0ms
+14.11 13:34:59 TIMER: Check step...
+14.11 13:34:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:34:59 TIMER: Check step: 0ms
+14.11 13:35:04 TIMER: Check step...
+14.11 13:35:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:04 TIMER: Check step: 0ms
+14.11 13:35:09 TIMER: Check step...
+14.11 13:35:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:09 TIMER: Check step: 0ms
+14.11 13:35:14 TIMER: Check step...
+14.11 13:35:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:14 TIMER: Check step: 0ms
+14.11 13:35:19 TIMER: Check step...
+14.11 13:35:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:19 TIMER: Check step: 0ms
+14.11 13:35:24 TIMER: Check step...
+14.11 13:35:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:24 TIMER: Check step: 0ms
+14.11 13:35:29 TIMER: Check step...
+14.11 13:35:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:29 TIMER: Check step: 0ms
+14.11 13:35:34 TIMER: Check step...
+14.11 13:35:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:34 TIMER: Check step: 0ms
+14.11 13:35:39 TIMER: Clans cache...
+14.11 13:35:39 TIMER: Clans cache: 0ms
+14.11 13:35:39 TIMER: Check step...
+14.11 13:35:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:39 TIMER: Check step: 0ms
+14.11 13:35:39 TIMER: Check round...
+14.11 13:35:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:35' OR rounddate = '2016-14-11 16:35' AND status <> 'finished'
+14.11 13:35:39 DB: SELECT * FROM battle WHERE endtime >= '1479119.73940521' AND avaliable = true AND finished <> true
+14.11 13:35:39 TIMER: Check round: 1ms
+14.11 13:35:44 TIMER: Check step...
+14.11 13:35:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:44 TIMER: Check step: 0ms
+14.11 13:35:49 TIMER: Check step...
+14.11 13:35:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:49 TIMER: Check step: 0ms
+14.11 13:35:54 TIMER: Check step...
+14.11 13:35:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:54 TIMER: Check step: 0ms
+14.11 13:35:59 TIMER: Check step...
+14.11 13:35:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:35:59 TIMER: Check step: 0ms
+14.11 13:36:04 TIMER: Check step...
+14.11 13:36:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:04 TIMER: Check step: 0ms
+14.11 13:36:09 TIMER: Check step...
+14.11 13:36:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:09 TIMER: Check step: 0ms
+14.11 13:36:14 TIMER: Check step...
+14.11 13:36:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:14 TIMER: Check step: 0ms
+14.11 13:36:19 TIMER: Check step...
+14.11 13:36:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:19 TIMER: Check step: 0ms
+14.11 13:36:24 TIMER: Check step...
+14.11 13:36:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:24 TIMER: Check step: 0ms
+14.11 13:36:29 TIMER: Check step...
+14.11 13:36:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:29 TIMER: Check step: 0ms
+14.11 13:36:34 TIMER: Check step...
+14.11 13:36:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:34 TIMER: Check step: 0ms
+14.11 13:36:39 TIMER: Clans cache...
+14.11 13:36:39 TIMER: Clans cache: 0ms
+14.11 13:36:39 TIMER: Check step...
+14.11 13:36:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:39 TIMER: Check step: 0ms
+14.11 13:36:39 TIMER: Check round...
+14.11 13:36:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:36' OR rounddate = '2016-14-11 16:36' AND status <> 'finished'
+14.11 13:36:39 DB: SELECT * FROM battle WHERE endtime >= '1479119.79942233' AND avaliable = true AND finished <> true
+14.11 13:36:39 TIMER: Check round: 1ms
+14.11 13:36:44 TIMER: Check step...
+14.11 13:36:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:44 TIMER: Check step: 0ms
+14.11 13:36:49 TIMER: Check step...
+14.11 13:36:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:49 TIMER: Check step: 1ms
+14.11 13:36:54 TIMER: Check step...
+14.11 13:36:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:54 TIMER: Check step: 0ms
+14.11 13:36:59 TIMER: Check step...
+14.11 13:36:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:36:59 TIMER: Check step: 0ms
+14.11 13:37:04 TIMER: Check step...
+14.11 13:37:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:04 TIMER: Check step: 0ms
+14.11 13:37:09 TIMER: Check step...
+14.11 13:37:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:09 TIMER: Check step: 0ms
+14.11 13:37:14 TIMER: Check step...
+14.11 13:37:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:14 TIMER: Check step: 0ms
+14.11 13:37:19 TIMER: Check step...
+14.11 13:37:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:19 TIMER: Check step: 0ms
+14.11 13:37:24 TIMER: Check step...
+14.11 13:37:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:24 TIMER: Check step: 0ms
+14.11 13:37:29 TIMER: Check step...
+14.11 13:37:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:29 TIMER: Check step: 0ms
+14.11 13:37:34 TIMER: Check step...
+14.11 13:37:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:34 TIMER: Check step: 0ms
+14.11 13:37:39 TIMER: Clans cache...
+14.11 13:37:39 TIMER: Clans cache: 0ms
+14.11 13:37:39 TIMER: Check step...
+14.11 13:37:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:39 TIMER: Check step: 1ms
+14.11 13:37:39 TIMER: Check round...
+14.11 13:37:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:37' OR rounddate = '2016-14-11 16:37' AND status <> 'finished'
+14.11 13:37:39 DB: SELECT * FROM battle WHERE endtime >= '1479119.85944082' AND avaliable = true AND finished <> true
+14.11 13:37:39 TIMER: Check round: 1ms
+14.11 13:37:44 TIMER: Check step...
+14.11 13:37:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:44 TIMER: Check step: 0ms
+14.11 13:37:49 TIMER: Check step...
+14.11 13:37:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:49 TIMER: Check step: 0ms
+14.11 13:37:54 TIMER: Check step...
+14.11 13:37:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:54 TIMER: Check step: 0ms
+14.11 13:37:59 TIMER: Check step...
+14.11 13:37:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:37:59 TIMER: Check step: 0ms
+14.11 13:38:04 TIMER: Check step...
+14.11 13:38:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:04 TIMER: Check step: 0ms
+14.11 13:38:09 TIMER: Check step...
+14.11 13:38:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:09 TIMER: Check step: 0ms
+14.11 13:38:14 TIMER: Check step...
+14.11 13:38:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:14 TIMER: Check step: 0ms
+14.11 13:38:19 TIMER: Check step...
+14.11 13:38:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:19 TIMER: Check step: 0ms
+14.11 13:38:24 TIMER: Check step...
+14.11 13:38:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:24 TIMER: Check step: 0ms
+14.11 13:38:29 TIMER: Check step...
+14.11 13:38:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:29 TIMER: Check step: 0ms
+14.11 13:38:34 TIMER: Check step...
+14.11 13:38:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:34 TIMER: Check step: 0ms
+14.11 13:38:39 TIMER: Clans cache...
+14.11 13:38:39 TIMER: Clans cache: 0ms
+14.11 13:38:39 TIMER: Check step...
+14.11 13:38:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:39 TIMER: Check step: 0ms
+14.11 13:38:39 TIMER: Check round...
+14.11 13:38:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:38' OR rounddate = '2016-14-11 16:38' AND status <> 'finished'
+14.11 13:38:39 DB: SELECT * FROM battle WHERE endtime >= '1479119.91945876' AND avaliable = true AND finished <> true
+14.11 13:38:39 TIMER: Check round: 1ms
+14.11 13:38:44 TIMER: Check step...
+14.11 13:38:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:44 TIMER: Check step: 0ms
+14.11 13:38:49 TIMER: Check step...
+14.11 13:38:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:49 TIMER: Check step: 0ms
+14.11 13:38:54 TIMER: Check step...
+14.11 13:38:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:54 TIMER: Check step: 0ms
+14.11 13:38:59 TIMER: Check step...
+14.11 13:38:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:38:59 TIMER: Check step: 1ms
+14.11 13:39:04 TIMER: Check step...
+14.11 13:39:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:04 TIMER: Check step: 0ms
+14.11 13:39:09 TIMER: Check step...
+14.11 13:39:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:09 TIMER: Check step: 0ms
+14.11 13:39:14 TIMER: Check step...
+14.11 13:39:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:14 TIMER: Check step: 0ms
+14.11 13:39:19 TIMER: Check step...
+14.11 13:39:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:19 TIMER: Check step: 0ms
+14.11 13:39:24 TIMER: Check step...
+14.11 13:39:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:24 TIMER: Check step: 0ms
+14.11 13:39:29 TIMER: Check step...
+14.11 13:39:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:29 TIMER: Check step: 0ms
+14.11 13:39:34 TIMER: Check step...
+14.11 13:39:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:34 TIMER: Check step: 0ms
+14.11 13:39:39 TIMER: Clans cache...
+14.11 13:39:39 TIMER: Clans cache: 0ms
+14.11 13:39:39 TIMER: Check step...
+14.11 13:39:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:39 TIMER: Check step: 0ms
+14.11 13:39:39 TIMER: Check round...
+14.11 13:39:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:39' OR rounddate = '2016-14-11 16:39' AND status <> 'finished'
+14.11 13:39:39 DB: SELECT * FROM battle WHERE endtime >= '1479119.97947922' AND avaliable = true AND finished <> true
+14.11 13:39:39 TIMER: Check round: 1ms
+14.11 13:39:44 TIMER: Check step...
+14.11 13:39:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:44 TIMER: Check step: 0ms
+14.11 13:39:49 TIMER: Check step...
+14.11 13:39:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:49 TIMER: Check step: 0ms
+14.11 13:39:54 TIMER: Check step...
+14.11 13:39:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:54 TIMER: Check step: 1ms
+14.11 13:39:59 TIMER: Check step...
+14.11 13:39:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:39:59 TIMER: Check step: 0ms
+14.11 13:40:04 TIMER: Check step...
+14.11 13:40:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:04 TIMER: Check step: 0ms
+14.11 13:40:09 TIMER: Check step...
+14.11 13:40:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:09 TIMER: Check step: 0ms
+14.11 13:40:14 TIMER: Check step...
+14.11 13:40:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:14 TIMER: Check step: 0ms
+14.11 13:40:19 TIMER: Check step...
+14.11 13:40:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:19 TIMER: Check step: 0ms
+14.11 13:40:24 TIMER: Check step...
+14.11 13:40:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:24 TIMER: Check step: 0ms
+14.11 13:40:29 TIMER: Check step...
+14.11 13:40:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:29 TIMER: Check step: 1ms
+14.11 13:40:34 TIMER: Check step...
+14.11 13:40:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:34 TIMER: Check step: 0ms
+14.11 13:40:39 TIMER: Clans cache...
+14.11 13:40:39 TIMER: Clans cache: 0ms
+14.11 13:40:39 TIMER: Check step...
+14.11 13:40:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:39 TIMER: Check step: 1ms
+14.11 13:40:39 TIMER: Check round...
+14.11 13:40:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:40' OR rounddate = '2016-14-11 16:40' AND status <> 'finished'
+14.11 13:40:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.03950006' AND avaliable = true AND finished <> true
+14.11 13:40:39 TIMER: Check round: 1ms
+14.11 13:40:44 TIMER: Check step...
+14.11 13:40:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:44 TIMER: Check step: 1ms
+14.11 13:40:49 TIMER: Check step...
+14.11 13:40:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:49 TIMER: Check step: 1ms
+14.11 13:40:54 TIMER: Check step...
+14.11 13:40:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:54 TIMER: Check step: 1ms
+14.11 13:40:59 TIMER: Check step...
+14.11 13:40:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:40:59 TIMER: Check step: 0ms
+14.11 13:41:04 TIMER: Check step...
+14.11 13:41:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:04 TIMER: Check step: 0ms
+14.11 13:41:09 TIMER: Check step...
+14.11 13:41:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:09 TIMER: Check step: 1ms
+14.11 13:41:14 TIMER: Check step...
+14.11 13:41:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:14 TIMER: Check step: 1ms
+14.11 13:41:19 TIMER: Check step...
+14.11 13:41:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:19 TIMER: Check step: 0ms
+14.11 13:41:24 TIMER: Check step...
+14.11 13:41:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:24 TIMER: Check step: 0ms
+14.11 13:41:29 TIMER: Check step...
+14.11 13:41:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:29 TIMER: Check step: 1ms
+14.11 13:41:34 TIMER: Check step...
+14.11 13:41:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:34 TIMER: Check step: 1ms
+14.11 13:41:39 TIMER: Clans cache...
+14.11 13:41:39 TIMER: Clans cache: 0ms
+14.11 13:41:39 TIMER: Check step...
+14.11 13:41:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:39 TIMER: Check step: 1ms
+14.11 13:41:39 TIMER: Check round...
+14.11 13:41:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:41' OR rounddate = '2016-14-11 16:41' AND status <> 'finished'
+14.11 13:41:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.09952351' AND avaliable = true AND finished <> true
+14.11 13:41:39 TIMER: Check round: 1ms
+14.11 13:41:44 TIMER: Check step...
+14.11 13:41:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:44 TIMER: Check step: 1ms
+14.11 13:41:49 TIMER: Check step...
+14.11 13:41:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:49 TIMER: Check step: 1ms
+14.11 13:41:54 TIMER: Check step...
+14.11 13:41:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:54 TIMER: Check step: 1ms
+14.11 13:41:59 TIMER: Check step...
+14.11 13:41:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:41:59 TIMER: Check step: 0ms
+14.11 13:42:04 TIMER: Check step...
+14.11 13:42:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:04 TIMER: Check step: 1ms
+14.11 13:42:09 TIMER: Check step...
+14.11 13:42:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:09 TIMER: Check step: 0ms
+14.11 13:42:14 TIMER: Check step...
+14.11 13:42:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:14 TIMER: Check step: 1ms
+14.11 13:42:19 TIMER: Check step...
+14.11 13:42:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:19 TIMER: Check step: 1ms
+14.11 13:42:24 TIMER: Check step...
+14.11 13:42:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:24 TIMER: Check step: 0ms
+14.11 13:42:29 TIMER: Check step...
+14.11 13:42:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:29 TIMER: Check step: 0ms
+14.11 13:42:34 TIMER: Check step...
+14.11 13:42:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:34 TIMER: Check step: 0ms
+14.11 13:42:39 TIMER: Clans cache...
+14.11 13:42:39 TIMER: Clans cache: 0ms
+14.11 13:42:39 TIMER: Check step...
+14.11 13:42:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:39 TIMER: Check step: 0ms
+14.11 13:42:39 TIMER: Check round...
+14.11 13:42:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:42' OR rounddate = '2016-14-11 16:42' AND status <> 'finished'
+14.11 13:42:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.15954769' AND avaliable = true AND finished <> true
+14.11 13:42:39 TIMER: Check round: 2ms
+14.11 13:42:44 TIMER: Check step...
+14.11 13:42:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:44 TIMER: Check step: 1ms
+14.11 13:42:49 TIMER: Check step...
+14.11 13:42:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:49 TIMER: Check step: 1ms
+14.11 13:42:54 TIMER: Check step...
+14.11 13:42:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:54 TIMER: Check step: 1ms
+14.11 13:42:59 TIMER: Check step...
+14.11 13:42:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:42:59 TIMER: Check step: 1ms
+14.11 13:43:04 TIMER: Check step...
+14.11 13:43:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:04 TIMER: Check step: 1ms
+14.11 13:43:09 TIMER: Check step...
+14.11 13:43:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:09 TIMER: Check step: 1ms
+14.11 13:43:14 TIMER: Check step...
+14.11 13:43:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:14 TIMER: Check step: 0ms
+14.11 13:43:19 TIMER: Check step...
+14.11 13:43:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:19 TIMER: Check step: 1ms
+14.11 13:43:24 TIMER: Check step...
+14.11 13:43:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:24 TIMER: Check step: 1ms
+14.11 13:43:29 TIMER: Check step...
+14.11 13:43:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:29 TIMER: Check step: 1ms
+14.11 13:43:34 TIMER: Check step...
+14.11 13:43:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:34 TIMER: Check step: 1ms
+14.11 13:43:39 TIMER: Clans cache...
+14.11 13:43:39 TIMER: Clans cache: 0ms
+14.11 13:43:39 TIMER: Check step...
+14.11 13:43:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:39 TIMER: Check step: 0ms
+14.11 13:43:39 TIMER: Check round...
+14.11 13:43:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:43' OR rounddate = '2016-14-11 16:43' AND status <> 'finished'
+14.11 13:43:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.21957292' AND avaliable = true AND finished <> true
+14.11 13:43:39 TIMER: Check round: 1ms
+14.11 13:43:44 TIMER: Check step...
+14.11 13:43:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:44 TIMER: Check step: 0ms
+14.11 13:43:49 TIMER: Check step...
+14.11 13:43:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:49 TIMER: Check step: 1ms
+14.11 13:43:54 TIMER: Check step...
+14.11 13:43:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:54 TIMER: Check step: 0ms
+14.11 13:43:59 TIMER: Check step...
+14.11 13:43:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:43:59 TIMER: Check step: 1ms
+14.11 13:44:04 TIMER: Check step...
+14.11 13:44:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:04 TIMER: Check step: 0ms
+14.11 13:44:09 TIMER: Check step...
+14.11 13:44:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:09 TIMER: Check step: 0ms
+14.11 13:44:14 TIMER: Check step...
+14.11 13:44:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:14 TIMER: Check step: 0ms
+14.11 13:44:19 TIMER: Check step...
+14.11 13:44:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:19 TIMER: Check step: 1ms
+14.11 13:44:24 TIMER: Check step...
+14.11 13:44:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:24 TIMER: Check step: 0ms
+14.11 13:44:29 TIMER: Check step...
+14.11 13:44:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:29 TIMER: Check step: 1ms
+14.11 13:44:34 TIMER: Check step...
+14.11 13:44:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:34 TIMER: Check step: 0ms
+14.11 13:44:39 TIMER: Clans cache...
+14.11 13:44:39 TIMER: Clans cache: 0ms
+14.11 13:44:39 TIMER: Check step...
+14.11 13:44:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:39 TIMER: Check step: 1ms
+14.11 13:44:39 TIMER: Check round...
+14.11 13:44:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:44' OR rounddate = '2016-14-11 16:44' AND status <> 'finished'
+14.11 13:44:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.27959764' AND avaliable = true AND finished <> true
+14.11 13:44:39 TIMER: Check round: 2ms
+14.11 13:44:44 TIMER: Check step...
+14.11 13:44:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:44 TIMER: Check step: 1ms
+14.11 13:44:49 TIMER: Check step...
+14.11 13:44:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:49 TIMER: Check step: 0ms
+14.11 13:44:54 TIMER: Check step...
+14.11 13:44:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:54 TIMER: Check step: 0ms
+14.11 13:44:59 TIMER: Check step...
+14.11 13:44:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:44:59 TIMER: Check step: 0ms
+14.11 13:45:04 TIMER: Check step...
+14.11 13:45:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:04 TIMER: Check step: 1ms
+14.11 13:45:09 TIMER: Check step...
+14.11 13:45:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:09 TIMER: Check step: 0ms
+14.11 13:45:14 TIMER: Check step...
+14.11 13:45:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:14 TIMER: Check step: 0ms
+14.11 13:45:19 TIMER: Check step...
+14.11 13:45:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:19 TIMER: Check step: 1ms
+14.11 13:45:24 TIMER: Check step...
+14.11 13:45:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:24 TIMER: Check step: 0ms
+14.11 13:45:29 TIMER: Check step...
+14.11 13:45:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:29 TIMER: Check step: 4ms
+14.11 13:45:34 TIMER: Check step...
+14.11 13:45:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:34 TIMER: Check step: 0ms
+14.11 13:45:39 TIMER: Clans cache...
+14.11 13:45:39 TIMER: Clans cache: 0ms
+14.11 13:45:39 TIMER: Check step...
+14.11 13:45:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:39 TIMER: Check step: 1ms
+14.11 13:45:39 TIMER: Check round...
+14.11 13:45:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:45' OR rounddate = '2016-14-11 16:45' AND status <> 'finished'
+14.11 13:45:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.33962478' AND avaliable = true AND finished <> true
+14.11 13:45:39 TIMER: Check round: 2ms
+14.11 13:45:44 TIMER: Check step...
+14.11 13:45:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:44 TIMER: Check step: 1ms
+14.11 13:45:49 TIMER: Check step...
+14.11 13:45:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:49 TIMER: Check step: 0ms
+14.11 13:45:54 TIMER: Check step...
+14.11 13:45:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:54 TIMER: Check step: 2ms
+14.11 13:45:59 TIMER: Check step...
+14.11 13:45:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:45:59 TIMER: Check step: 0ms
+14.11 13:46:04 TIMER: Check step...
+14.11 13:46:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:04 TIMER: Check step: 1ms
+14.11 13:46:09 TIMER: Check step...
+14.11 13:46:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:09 TIMER: Check step: 2ms
+14.11 13:46:14 TIMER: Check step...
+14.11 13:46:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:14 TIMER: Check step: 0ms
+14.11 13:46:19 TIMER: Check step...
+14.11 13:46:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:19 TIMER: Check step: 1ms
+14.11 13:46:24 TIMER: Check step...
+14.11 13:46:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:24 TIMER: Check step: 0ms
+14.11 13:46:29 TIMER: Check step...
+14.11 13:46:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:29 TIMER: Check step: 1ms
+14.11 13:46:34 TIMER: Check step...
+14.11 13:46:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:34 TIMER: Check step: 0ms
+14.11 13:46:39 TIMER: Clans cache...
+14.11 13:46:39 TIMER: Clans cache: 0ms
+14.11 13:46:39 TIMER: Check step...
+14.11 13:46:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:39 TIMER: Check step: 1ms
+14.11 13:46:39 TIMER: Check round...
+14.11 13:46:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:46' OR rounddate = '2016-14-11 16:46' AND status <> 'finished'
+14.11 13:46:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.39965247' AND avaliable = true AND finished <> true
+14.11 13:46:39 TIMER: Check round: 1ms
+14.11 13:46:44 TIMER: Check step...
+14.11 13:46:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:44 TIMER: Check step: 0ms
+14.11 13:46:49 TIMER: Check step...
+14.11 13:46:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:49 TIMER: Check step: 0ms
+14.11 13:46:54 TIMER: Check step...
+14.11 13:46:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:54 TIMER: Check step: 1ms
+14.11 13:46:59 TIMER: Check step...
+14.11 13:46:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:46:59 TIMER: Check step: 1ms
+14.11 13:47:04 TIMER: Check step...
+14.11 13:47:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:04 TIMER: Check step: 1ms
+14.11 13:47:09 TIMER: Check step...
+14.11 13:47:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:09 TIMER: Check step: 0ms
+14.11 13:47:14 TIMER: Check step...
+14.11 13:47:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:14 TIMER: Check step: 0ms
+14.11 13:47:19 TIMER: Check step...
+14.11 13:47:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:19 TIMER: Check step: 1ms
+14.11 13:47:24 TIMER: Check step...
+14.11 13:47:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:24 TIMER: Check step: 0ms
+14.11 13:47:29 TIMER: Check step...
+14.11 13:47:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:29 TIMER: Check step: 1ms
+14.11 13:47:34 TIMER: Check step...
+14.11 13:47:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:34 TIMER: Check step: 0ms
+14.11 13:47:39 TIMER: Clans cache...
+14.11 13:47:39 TIMER: Clans cache: 0ms
+14.11 13:47:39 TIMER: Check step...
+14.11 13:47:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:39 TIMER: Check step: 0ms
+14.11 13:47:39 TIMER: Check round...
+14.11 13:47:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:47' OR rounddate = '2016-14-11 16:47' AND status <> 'finished'
+14.11 13:47:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.45967673' AND avaliable = true AND finished <> true
+14.11 13:47:39 TIMER: Check round: 2ms
+14.11 13:47:44 TIMER: Check step...
+14.11 13:47:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:44 TIMER: Check step: 0ms
+14.11 13:47:49 TIMER: Check step...
+14.11 13:47:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:49 TIMER: Check step: 0ms
+14.11 13:47:54 TIMER: Check step...
+14.11 13:47:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:54 TIMER: Check step: 1ms
+14.11 13:47:59 TIMER: Check step...
+14.11 13:47:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:47:59 TIMER: Check step: 1ms
+14.11 13:48:04 TIMER: Check step...
+14.11 13:48:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:04 TIMER: Check step: 1ms
+14.11 13:48:09 TIMER: Check step...
+14.11 13:48:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:09 TIMER: Check step: 1ms
+14.11 13:48:14 TIMER: Check step...
+14.11 13:48:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:14 TIMER: Check step: 1ms
+14.11 13:48:19 TIMER: Check step...
+14.11 13:48:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:19 TIMER: Check step: 1ms
+14.11 13:48:24 TIMER: Check step...
+14.11 13:48:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:24 TIMER: Check step: 0ms
+14.11 13:48:29 TIMER: Check step...
+14.11 13:48:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:29 TIMER: Check step: 1ms
+14.11 13:48:34 TIMER: Check step...
+14.11 13:48:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:34 TIMER: Check step: 1ms
+14.11 13:48:39 TIMER: Clans cache...
+14.11 13:48:39 TIMER: Clans cache: 0ms
+14.11 13:48:39 TIMER: Check step...
+14.11 13:48:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:39 TIMER: Check step: 2ms
+14.11 13:48:39 TIMER: Check round...
+14.11 13:48:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:48' OR rounddate = '2016-14-11 16:48' AND status <> 'finished'
+14.11 13:48:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.51970772' AND avaliable = true AND finished <> true
+14.11 13:48:39 TIMER: Check round: 4ms
+14.11 13:48:44 TIMER: Check step...
+14.11 13:48:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:44 TIMER: Check step: 1ms
+14.11 13:48:49 TIMER: Check step...
+14.11 13:48:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:49 TIMER: Check step: 1ms
+14.11 13:48:54 TIMER: Check step...
+14.11 13:48:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:54 TIMER: Check step: 1ms
+14.11 13:48:59 TIMER: Check step...
+14.11 13:48:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:48:59 TIMER: Check step: 0ms
+14.11 13:49:04 TIMER: Check step...
+14.11 13:49:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:04 TIMER: Check step: 0ms
+14.11 13:49:09 TIMER: Check step...
+14.11 13:49:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:09 TIMER: Check step: 0ms
+14.11 13:49:14 TIMER: Check step...
+14.11 13:49:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:14 TIMER: Check step: 0ms
+14.11 13:49:19 TIMER: Check step...
+14.11 13:49:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:19 TIMER: Check step: 1ms
+14.11 13:49:24 TIMER: Check step...
+14.11 13:49:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:24 TIMER: Check step: 0ms
+14.11 13:49:29 TIMER: Check step...
+14.11 13:49:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:29 TIMER: Check step: 0ms
+14.11 13:49:34 TIMER: Check step...
+14.11 13:49:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:34 TIMER: Check step: 0ms
+14.11 13:49:39 TIMER: Clans cache...
+14.11 13:49:39 TIMER: Clans cache: 0ms
+14.11 13:49:39 TIMER: Check step...
+14.11 13:49:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:39 TIMER: Check step: 0ms
+14.11 13:49:39 TIMER: Check round...
+14.11 13:49:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:49' OR rounddate = '2016-14-11 16:49' AND status <> 'finished'
+14.11 13:49:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.57973071' AND avaliable = true AND finished <> true
+14.11 13:49:39 TIMER: Check round: 1ms
+14.11 13:49:44 TIMER: Check step...
+14.11 13:49:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:44 TIMER: Check step: 0ms
+14.11 13:49:49 TIMER: Check step...
+14.11 13:49:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:49 TIMER: Check step: 0ms
+14.11 13:49:54 TIMER: Check step...
+14.11 13:49:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:54 TIMER: Check step: 0ms
+14.11 13:49:59 TIMER: Check step...
+14.11 13:49:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:49:59 TIMER: Check step: 1ms
+14.11 13:50:04 TIMER: Check step...
+14.11 13:50:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:04 TIMER: Check step: 0ms
+14.11 13:50:09 TIMER: Check step...
+14.11 13:50:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:09 TIMER: Check step: 0ms
+14.11 13:50:14 TIMER: Check step...
+14.11 13:50:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:14 TIMER: Check step: 1ms
+14.11 13:50:19 TIMER: Check step...
+14.11 13:50:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:19 TIMER: Check step: 0ms
+14.11 13:50:24 TIMER: Check step...
+14.11 13:50:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:24 TIMER: Check step: 0ms
+14.11 13:50:29 TIMER: Check step...
+14.11 13:50:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:29 TIMER: Check step: 0ms
+14.11 13:50:34 TIMER: Check step...
+14.11 13:50:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:34 TIMER: Check step: 0ms
+14.11 13:50:39 TIMER: Clans cache...
+14.11 13:50:39 TIMER: Clans cache: 0ms
+14.11 13:50:39 TIMER: Check step...
+14.11 13:50:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:39 TIMER: Check step: 0ms
+14.11 13:50:39 TIMER: Check round...
+14.11 13:50:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:50' OR rounddate = '2016-14-11 16:50' AND status <> 'finished'
+14.11 13:50:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.63975407' AND avaliable = true AND finished <> true
+14.11 13:50:39 TIMER: Check round: 1ms
+14.11 13:50:44 TIMER: Check step...
+14.11 13:50:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:44 TIMER: Check step: 0ms
+14.11 13:50:49 TIMER: Check step...
+14.11 13:50:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:49 TIMER: Check step: 0ms
+14.11 13:50:54 TIMER: Check step...
+14.11 13:50:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:54 TIMER: Check step: 0ms
+14.11 13:50:59 TIMER: Check step...
+14.11 13:50:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:50:59 TIMER: Check step: 0ms
+14.11 13:51:04 TIMER: Check step...
+14.11 13:51:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:04 TIMER: Check step: 0ms
+14.11 13:51:09 TIMER: Check step...
+14.11 13:51:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:09 TIMER: Check step: 0ms
+14.11 13:51:14 TIMER: Check step...
+14.11 13:51:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:14 TIMER: Check step: 0ms
+14.11 13:51:19 TIMER: Check step...
+14.11 13:51:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:19 TIMER: Check step: 0ms
+14.11 13:51:24 TIMER: Check step...
+14.11 13:51:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:24 TIMER: Check step: 0ms
+14.11 13:51:29 TIMER: Check step...
+14.11 13:51:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:29 TIMER: Check step: 0ms
+14.11 13:51:34 TIMER: Check step...
+14.11 13:51:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:34 TIMER: Check step: 0ms
+14.11 13:51:39 TIMER: Clans cache...
+14.11 13:51:39 TIMER: Clans cache: 0ms
+14.11 13:51:39 TIMER: Check step...
+14.11 13:51:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:39 TIMER: Check step: 0ms
+14.11 13:51:39 TIMER: Check round...
+14.11 13:51:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:51' OR rounddate = '2016-14-11 16:51' AND status <> 'finished'
+14.11 13:51:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.6997739' AND avaliable = true AND finished <> true
+14.11 13:51:39 TIMER: Check round: 0ms
+14.11 13:51:44 TIMER: Check step...
+14.11 13:51:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:44 TIMER: Check step: 0ms
+14.11 13:51:49 TIMER: Check step...
+14.11 13:51:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:49 TIMER: Check step: 0ms
+14.11 13:51:54 TIMER: Check step...
+14.11 13:51:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:54 TIMER: Check step: 0ms
+14.11 13:51:59 TIMER: Check step...
+14.11 13:51:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:51:59 TIMER: Check step: 0ms
+14.11 13:52:04 TIMER: Check step...
+14.11 13:52:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:04 TIMER: Check step: 0ms
+14.11 13:52:09 TIMER: Check step...
+14.11 13:52:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:09 TIMER: Check step: 0ms
+14.11 13:52:14 TIMER: Check step...
+14.11 13:52:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:14 TIMER: Check step: 0ms
+14.11 13:52:19 TIMER: Check step...
+14.11 13:52:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:19 TIMER: Check step: 0ms
+14.11 13:52:24 TIMER: Check step...
+14.11 13:52:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:24 TIMER: Check step: 1ms
+14.11 13:52:29 TIMER: Check step...
+14.11 13:52:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:29 TIMER: Check step: 0ms
+14.11 13:52:34 TIMER: Check step...
+14.11 13:52:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:34 TIMER: Check step: 0ms
+14.11 13:52:39 TIMER: Clans cache...
+14.11 13:52:39 TIMER: Clans cache: 0ms
+14.11 13:52:39 TIMER: Check step...
+14.11 13:52:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:39 TIMER: Check step: 0ms
+14.11 13:52:39 TIMER: Check round...
+14.11 13:52:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:52' OR rounddate = '2016-14-11 16:52' AND status <> 'finished'
+14.11 13:52:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.7597942' AND avaliable = true AND finished <> true
+14.11 13:52:39 TIMER: Check round: 2ms
+14.11 13:52:44 TIMER: Check step...
+14.11 13:52:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:44 TIMER: Check step: 0ms
+14.11 13:52:49 TIMER: Check step...
+14.11 13:52:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:49 TIMER: Check step: 0ms
+14.11 13:52:54 TIMER: Check step...
+14.11 13:52:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:54 TIMER: Check step: 0ms
+14.11 13:52:59 TIMER: Check step...
+14.11 13:52:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:52:59 TIMER: Check step: 0ms
+14.11 13:53:04 TIMER: Check step...
+14.11 13:53:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:04 TIMER: Check step: 0ms
+14.11 13:53:09 TIMER: Check step...
+14.11 13:53:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:09 TIMER: Check step: 0ms
+14.11 13:53:14 TIMER: Check step...
+14.11 13:53:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:14 TIMER: Check step: 1ms
+14.11 13:53:19 TIMER: Check step...
+14.11 13:53:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:19 TIMER: Check step: 0ms
+14.11 13:53:24 TIMER: Check step...
+14.11 13:53:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:24 TIMER: Check step: 0ms
+14.11 13:53:29 TIMER: Check step...
+14.11 13:53:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:29 TIMER: Check step: 0ms
+14.11 13:53:34 TIMER: Check step...
+14.11 13:53:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:34 TIMER: Check step: 0ms
+14.11 13:53:39 TIMER: Clans cache...
+14.11 13:53:39 TIMER: Clans cache: 0ms
+14.11 13:53:39 TIMER: Check step...
+14.11 13:53:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:39 TIMER: Check step: 0ms
+14.11 13:53:39 TIMER: Check round...
+14.11 13:53:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:53' OR rounddate = '2016-14-11 16:53' AND status <> 'finished'
+14.11 13:53:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.81981398' AND avaliable = true AND finished <> true
+14.11 13:53:39 TIMER: Check round: 1ms
+14.11 13:53:44 TIMER: Check step...
+14.11 13:53:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:44 TIMER: Check step: 0ms
+14.11 13:53:49 TIMER: Check step...
+14.11 13:53:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:49 TIMER: Check step: 0ms
+14.11 13:53:54 TIMER: Check step...
+14.11 13:53:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:54 TIMER: Check step: 1ms
+14.11 13:53:59 TIMER: Check step...
+14.11 13:53:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:53:59 TIMER: Check step: 1ms
+14.11 13:54:04 TIMER: Check step...
+14.11 13:54:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:04 TIMER: Check step: 0ms
+14.11 13:54:09 TIMER: Check step...
+14.11 13:54:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:09 TIMER: Check step: 1ms
+14.11 13:54:14 TIMER: Check step...
+14.11 13:54:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:14 TIMER: Check step: 0ms
+14.11 13:54:19 TIMER: Check step...
+14.11 13:54:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:19 TIMER: Check step: 1ms
+14.11 13:54:24 TIMER: Check step...
+14.11 13:54:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:24 TIMER: Check step: 1ms
+14.11 13:54:29 TIMER: Check step...
+14.11 13:54:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:29 TIMER: Check step: 0ms
+14.11 13:54:34 TIMER: Check step...
+14.11 13:54:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:34 TIMER: Check step: 0ms
+14.11 13:54:39 TIMER: Clans cache...
+14.11 13:54:39 TIMER: Clans cache: 0ms
+14.11 13:54:39 TIMER: Check step...
+14.11 13:54:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:39 TIMER: Check step: 0ms
+14.11 13:54:39 TIMER: Check round...
+14.11 13:54:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:54' OR rounddate = '2016-14-11 16:54' AND status <> 'finished'
+14.11 13:54:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.87983606' AND avaliable = true AND finished <> true
+14.11 13:54:39 TIMER: Check round: 1ms
+14.11 13:54:44 TIMER: Check step...
+14.11 13:54:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:44 TIMER: Check step: 0ms
+14.11 13:54:49 TIMER: Check step...
+14.11 13:54:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:49 TIMER: Check step: 1ms
+14.11 13:54:54 TIMER: Check step...
+14.11 13:54:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:54 TIMER: Check step: 0ms
+14.11 13:54:59 TIMER: Check step...
+14.11 13:54:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:54:59 TIMER: Check step: 1ms
+14.11 13:55:04 TIMER: Check step...
+14.11 13:55:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:04 TIMER: Check step: 0ms
+14.11 13:55:09 TIMER: Check step...
+14.11 13:55:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:09 TIMER: Check step: 0ms
+14.11 13:55:14 TIMER: Check step...
+14.11 13:55:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:14 TIMER: Check step: 0ms
+14.11 13:55:19 TIMER: Check step...
+14.11 13:55:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:19 TIMER: Check step: 0ms
+14.11 13:55:24 TIMER: Check step...
+14.11 13:55:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:24 TIMER: Check step: 0ms
+14.11 13:55:29 TIMER: Check step...
+14.11 13:55:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:29 TIMER: Check step: 0ms
+14.11 13:55:34 TIMER: Check step...
+14.11 13:55:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:34 TIMER: Check step: 0ms
+14.11 13:55:39 TIMER: Clans cache...
+14.11 13:55:39 TIMER: Clans cache: 0ms
+14.11 13:55:39 TIMER: Check step...
+14.11 13:55:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:39 TIMER: Check step: 0ms
+14.11 13:55:39 TIMER: Check round...
+14.11 13:55:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:55' OR rounddate = '2016-14-11 16:55' AND status <> 'finished'
+14.11 13:55:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.93985897' AND avaliable = true AND finished <> true
+14.11 13:55:39 TIMER: Check round: 1ms
+14.11 13:55:44 TIMER: Check step...
+14.11 13:55:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:44 TIMER: Check step: 0ms
+14.11 13:55:49 TIMER: Check step...
+14.11 13:55:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:49 TIMER: Check step: 0ms
+14.11 13:55:54 TIMER: Check step...
+14.11 13:55:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:54 TIMER: Check step: 1ms
+14.11 13:55:59 TIMER: Check step...
+14.11 13:55:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:55:59 TIMER: Check step: 0ms
+14.11 13:56:04 TIMER: Check step...
+14.11 13:56:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:04 TIMER: Check step: 1ms
+14.11 13:56:09 TIMER: Check step...
+14.11 13:56:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:09 TIMER: Check step: 0ms
+14.11 13:56:14 TIMER: Check step...
+14.11 13:56:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:14 TIMER: Check step: 0ms
+14.11 13:56:19 TIMER: Check step...
+14.11 13:56:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:19 TIMER: Check step: 0ms
+14.11 13:56:24 TIMER: Check step...
+14.11 13:56:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:24 TIMER: Check step: 1ms
+14.11 13:56:29 TIMER: Check step...
+14.11 13:56:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:29 TIMER: Check step: 0ms
+14.11 13:56:34 TIMER: Check step...
+14.11 13:56:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:34 TIMER: Check step: 0ms
+14.11 13:56:39 TIMER: Clans cache...
+14.11 13:56:39 TIMER: Clans cache: 0ms
+14.11 13:56:39 TIMER: Check step...
+14.11 13:56:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:39 TIMER: Check step: 0ms
+14.11 13:56:39 TIMER: Check round...
+14.11 13:56:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:56' OR rounddate = '2016-14-11 16:56' AND status <> 'finished'
+14.11 13:56:39 DB: SELECT * FROM battle WHERE endtime >= '1479120.9998804' AND avaliable = true AND finished <> true
+14.11 13:56:39 TIMER: Check round: 1ms
+14.11 13:56:44 TIMER: Check step...
+14.11 13:56:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:44 TIMER: Check step: 0ms
+14.11 13:56:49 TIMER: Check step...
+14.11 13:56:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:49 TIMER: Check step: 1ms
+14.11 13:56:54 TIMER: Check step...
+14.11 13:56:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:54 TIMER: Check step: 1ms
+14.11 13:56:59 TIMER: Check step...
+14.11 13:56:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:56:59 TIMER: Check step: 0ms
+14.11 13:57:04 TIMER: Check step...
+14.11 13:57:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:04 TIMER: Check step: 0ms
+14.11 13:57:09 TIMER: Check step...
+14.11 13:57:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:09 TIMER: Check step: 0ms
+14.11 13:57:14 TIMER: Check step...
+14.11 13:57:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:14 TIMER: Check step: 0ms
+14.11 13:57:19 TIMER: Check step...
+14.11 13:57:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:19 TIMER: Check step: 0ms
+14.11 13:57:24 TIMER: Check step...
+14.11 13:57:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:24 TIMER: Check step: 0ms
+14.11 13:57:29 TIMER: Check step...
+14.11 13:57:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:29 TIMER: Check step: 0ms
+14.11 13:57:34 TIMER: Check step...
+14.11 13:57:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:34 TIMER: Check step: 1ms
+14.11 13:57:39 TIMER: Clans cache...
+14.11 13:57:39 TIMER: Clans cache: 0ms
+14.11 13:57:39 TIMER: Check step...
+14.11 13:57:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:39 TIMER: Check step: 0ms
+14.11 13:57:39 TIMER: Check round...
+14.11 13:57:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:57' OR rounddate = '2016-14-11 16:57' AND status <> 'finished'
+14.11 13:57:39 DB: SELECT * FROM battle WHERE endtime >= '1479121.05990326' AND avaliable = true AND finished <> true
+14.11 13:57:39 TIMER: Check round: 2ms
+14.11 13:57:44 TIMER: Check step...
+14.11 13:57:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:44 TIMER: Check step: 1ms
+14.11 13:57:49 TIMER: Check step...
+14.11 13:57:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:49 TIMER: Check step: 0ms
+14.11 13:57:54 TIMER: Check step...
+14.11 13:57:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:54 TIMER: Check step: 1ms
+14.11 13:57:59 TIMER: Check step...
+14.11 13:57:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:57:59 TIMER: Check step: 0ms
+14.11 13:58:04 TIMER: Check step...
+14.11 13:58:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:04 TIMER: Check step: 1ms
+14.11 13:58:09 TIMER: Check step...
+14.11 13:58:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:09 TIMER: Check step: 0ms
+14.11 13:58:14 TIMER: Check step...
+14.11 13:58:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:14 TIMER: Check step: 0ms
+14.11 13:58:19 TIMER: Check step...
+14.11 13:58:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:19 TIMER: Check step: 0ms
+14.11 13:58:24 TIMER: Check step...
+14.11 13:58:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:24 TIMER: Check step: 0ms
+14.11 13:58:29 TIMER: Check step...
+14.11 13:58:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:29 TIMER: Check step: 0ms
+14.11 13:58:34 TIMER: Check step...
+14.11 13:58:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:34 TIMER: Check step: 0ms
+14.11 13:58:39 TIMER: Clans cache...
+14.11 13:58:39 TIMER: Clans cache: 0ms
+14.11 13:58:39 TIMER: Check step...
+14.11 13:58:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:39 TIMER: Check step: 0ms
+14.11 13:58:39 TIMER: Check round...
+14.11 13:58:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:58' OR rounddate = '2016-14-11 16:58' AND status <> 'finished'
+14.11 13:58:39 DB: SELECT * FROM battle WHERE endtime >= '1479121.11992531' AND avaliable = true AND finished <> true
+14.11 13:58:39 TIMER: Check round: 1ms
+14.11 13:58:44 TIMER: Check step...
+14.11 13:58:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:44 TIMER: Check step: 0ms
+14.11 13:58:49 TIMER: Check step...
+14.11 13:58:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:49 TIMER: Check step: 0ms
+14.11 13:58:54 TIMER: Check step...
+14.11 13:58:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:54 TIMER: Check step: 0ms
+14.11 13:58:59 TIMER: Check step...
+14.11 13:58:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:58:59 TIMER: Check step: 0ms
+14.11 13:59:04 TIMER: Check step...
+14.11 13:59:04 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:04 TIMER: Check step: 0ms
+14.11 13:59:09 TIMER: Check step...
+14.11 13:59:09 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:09 TIMER: Check step: 1ms
+14.11 13:59:14 TIMER: Check step...
+14.11 13:59:14 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:14 TIMER: Check step: 0ms
+14.11 13:59:19 TIMER: Check step...
+14.11 13:59:19 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:19 TIMER: Check step: 1ms
+14.11 13:59:24 TIMER: Check step...
+14.11 13:59:24 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:24 TIMER: Check step: 1ms
+14.11 13:59:29 TIMER: Check step...
+14.11 13:59:29 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:29 TIMER: Check step: 0ms
+14.11 13:59:34 TIMER: Check step...
+14.11 13:59:34 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:34 TIMER: Check step: 1ms
+14.11 13:59:39 TIMER: Clans cache...
+14.11 13:59:39 TIMER: Clans cache: 0ms
+14.11 13:59:39 TIMER: Check step...
+14.11 13:59:39 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:39 TIMER: Check step: 0ms
+14.11 13:59:39 TIMER: Check round...
+14.11 13:59:39 DB: SELECT * FROM tournament WHERE startdate = '2016-14-11 16:59' OR rounddate = '2016-14-11 16:59' AND status <> 'finished'
+14.11 13:59:39 DB: SELECT * FROM battle WHERE endtime >= '1479121.17994808' AND avaliable = true AND finished <> true
+14.11 13:59:39 TIMER: Check round: 1ms
+14.11 13:59:44 TIMER: Check step...
+14.11 13:59:44 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:44 TIMER: Check step: 1ms
+14.11 13:59:49 TIMER: Check step...
+14.11 13:59:49 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:49 TIMER: Check step: 1ms
+14.11 13:59:54 TIMER: Check step...
+14.11 13:59:54 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:54 TIMER: Check step: 1ms
+14.11 13:59:59 TIMER: Check step...
+14.11 13:59:59 DB: SELECT * FROM battle WHERE avaliable = true AND finished <> true AND steptime <> -1
+14.11 13:59:59 TIMER: Check step: 0ms

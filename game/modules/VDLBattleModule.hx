@@ -71,11 +71,11 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         return ret;
       }
 
-      public function CubeCall(c: VDLClient, params: Params): Dynamic {
+      /*public function CubeCall(c: VDLClient, params: Params): Dynamic {
         var ret = Cube(c.id);
 
         return ret;
-      }
+      }*/
 
       public function EndCall(c: VDLClient, params: Params): Dynamic {
         var typeBattle: String = params.get("typeBattle");
@@ -128,7 +128,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
         } else {
           server.sendTo(msg.id, {
               _type: "battle.task",
-              name: "endStep"
+              name: "skip"
             });
         }
       }
@@ -195,7 +195,7 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
           server.sendTo(player2, {
              player1: player1,
              player2: player2,
-             roundTime: roundTime,  
+             roundTime: roundTime,
              _type: "battle.access"
             });
           //FindBattlCheck(player1, player2);
@@ -413,14 +413,14 @@ class VDLBattleModule extends Module<VDLClient, ServerVDL>
       return {errorCode: 'ok'}
     }
 
-    public function Cube(cid: Int): Dynamic {
+    /*public function Cube(cid: Int): Dynamic {
       var arr: Array<Int> = new Array<Int>();
       for (i in 0 ... 6) {
         arr.push(Std.random(6));
       }
       CubesData.set(cid, arr);
       return { errorCode: 'ok', cube: arr};
-    }
+    }*/
 
     public function SetBattleScores(player1: Int, player2: Int, scores: Array<Int>, battleId: Int): Void {
       var ret = server.cacheRequest({

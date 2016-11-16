@@ -7,6 +7,7 @@ create table Tournament
   StartDate text DEFAULT '' NOT NULL, -- startDate
   RoundDate text DEFAULT '' NOT NULL, -- roundDate
   Round int DEFAULT 1 NOT NULL, -- round
+  Price int DEFAULT -1 NOT NULL,
   Status text DEFAULT 'starting' NOT NULL, -- status
   Type text DEFAULT 'once' NOT NULL, -- type
   PasswordTournament text DEFAULT '' NOT NULL, -- password for tournament

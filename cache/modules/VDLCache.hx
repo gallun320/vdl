@@ -179,10 +179,16 @@ using Lambda;
           response = GetTournamentStatus(c, params);
         case "vdl/cache.user.addFriend":
           response = AddFriend(c, params);
-        case "vdl/cache.user.getPrepareFriend":
-          response = GetPrepareFriend(c, params);
+        case "vdl/cache.user.getAccessFriend":
+          response = GetAccessFriend(c, params);
         case "vdl/cache.user.getFriendList":
           response = GetFriendList(c, params);
+        case "vdl/cache.user.editProfile":
+          response = EditProfile(c, params);
+        case "vdl/cache.user.searchEnemy":
+          response = SearchEnemy(c, params);
+
+
 
      }
      return response;
@@ -233,21 +239,21 @@ using Lambda;
 
      return ret;
    }
-  
-         
+
+
   public function FindCheckBattle(c: SlaveClient, params: Params): Dynamic {
     var player1: Int = params.get('player1');
     var player2: Int = params.get('player2');
     var roundTime: Int = params.get('roundTime');
-    
+
     var ret = createRoom(player1, roundTime);
     var res = joinRoom(player2, ret.room);
     var suc = EnemyRandom(player1, player2, ret.room);
-    
+
     return { errorCode: "ok" };
   }
-         
-         
+
+
   public function FindRandomBattle(c: SlaveClient, params: Params): Dynamic {
     var user: Dynamic = params.get('user');
 
@@ -364,23 +370,33 @@ using Lambda;
      var user = ret.block;
 
      if(type == "prepare") {
-       var prepareList: Array<Int> = user.get('params', 'friendPrepare');
-       if(prepareList == null) prepareList = [];
+       var ret = server.cacheManager.getUnlocked(0, 'user', friend, -1);
+       var friendBlock = ret.block;
+       var prepareList: Array<Int> = (user.get('params', 'friendPrepare') == null) ? [] : user.get('params', 'friendPrepare');
+       var accessList: Array<Int> = (user.get('params', 'friendAccess') == null) ? [] : user.get('params', 'friendAccess');
        prepareList.push(friend);
+       accessList.push(player);
        user.set('params', 'friendPrepare', prepareList);
+       user.set('params', 'friendAccess', accessList);
+       server.cacheManager.updated(0, 'user', friend);
      } else if(type == "add") {
-       var prepareList: Array<Int> =  user.get('params', 'friendPrepare');
-       var addList: Array<Int> = user.get('params', 'friendList');
-       if(prepareList == null) prepareList = [];
-       if(addList == null) addList = [];
+       var prepareList: Array<Int> =  (user.get('params', 'friendPrepare') == null) ? [] : user.get('params', 'friendPrepare');
+       var accessList: Array<Int> = (user.get('params', 'friendAccess') == null) ? [] : user.get('params', 'friendAccess');
+       var addList: Array<Int> = (user.get('params', 'friendList') == null) ? [] : user.get('params', 'friendList');
+
 
        addList.push(friend);
        if(prepareList.has(friend)) {
          prepareList.remove(friend);
        }
 
+       if(accessList.has(friend)) {
+         accessList.remove(friend);
+       }
+
        user.set('params', 'friendPrepare', prepareList);
        user.set('params', 'friendList', addList);
+       user.set('params', 'friendAccess', accessList);
      } else {
        var prepareList: Array<Int> = user.get('params', 'friendPrepare');
        if(prepareList == null) prepareList = [];
@@ -399,46 +415,48 @@ using Lambda;
 function GetFriendList(c: SlaveClient, params: Params): Dynamic {
   var player: Int = params.get('player');
   var friendList: Array<Dynamic> = [];
-  
+
   var ret = server.cacheManager.getUnlocked(0, 'user', player, -1);
   var user = ret.block;
-  
+
   var list: Array<Int> = user.get('params', 'friendList');
-  
+
   if(list == null) list = [];
-  
+
   for( el in list ) {
-      var isOnline: Bool = false;
-      var ret = server.query('SELECT name FROM users WHERE id = ' + el); 
+      var ret = server.query('SELECT name FROM users WHERE id = ' + el);
       var slaveId = server.coreUserModule.getServerID(el);
-      if(slaveId != null) isOnline = true;
-  
+      var client = server.getClient(slaveId);
+      var isOnline: Bool = (client == null) ? false : true;
+
+
       friendList.push({ id: el, name: ret.results().first().name, isOnline: isOnline });
     }
-  
-  
+
+
   return { errorCode: "ok", list: friendList };
 }
 
-function GetPrepareFriend(c: SlaveClient, params: Params): Dynamic {
+function GetAccessFriend(c: SlaveClient, params: Params): Dynamic {
   var player: Int = params.get('player');
-  
+
   var waitingList: Array<Dynamic> = [];
-  
+
   var ret = server.cacheManager.getUnlocked(0, 'user', player, -1);
   var user = ret.block;
-  
-  var prepareList: Array<Int> = user.get('params', 'friendPrepare');
-  
+
+  var prepareList: Array<Int> = user.get('params', 'friendAccess');
+
   if(prepareList == null) prepareList = [];
-  
+
   for( el in prepareList) {
+
        var ret = server.query('SELECT name FROM users WHERE id = ' + el);
        waitingList.push({ id: el, name: ret.results().first().name });
       }
-  
+
   return { errorCode: "ok", list: waitingList };
-  
+
 }
 
    function SkipTurn(data: Dynamic): Void {
@@ -467,7 +485,7 @@ function GetPrepareFriend(c: SlaveClient, params: Params): Dynamic {
 
        client2.notify({
          _type:"battle.skipEvent",
-          id: turn.turnId,
+          id: enemId,
           type: "endStep"
          });
    }
@@ -987,6 +1005,48 @@ function GetPrepareFriend(c: SlaveClient, params: Params): Dynamic {
       var ret = server.query("SELECT * FROM tournament WHERE id = " + tournamentId);
       var tournament: Dynamic = ret.results().first();
       return tournament;
+    }
+
+
+    function EditProfile(c: SlaveClient, params: Params): Dynamic {
+      var id: Int = params.get('id');
+      var city: String = params.get('city');
+      var email: String = params.get('email');
+      var year: String = params.get('year');
+
+      var ret = server.cacheManager.getUnlocked(0, 'user', id, -1);
+
+      var user = ret.block;
+      var obj: Dynamic = { city: city, year: year, email: email };
+
+      user.set(null, 'city', city);
+      user.set(null, 'year', year);
+      user.set(null, 'email', email);
+      user.set('params', 'info', obj);
+
+      server.cacheManager.updated(0, 'user', id);
+
+      return { errorCode: "ok" };
+
+    }
+
+    function SearchEnemy(c: SlaveClient, params: Params): Dynamic {
+      var id: Int = params.get('id');
+      var name: String = params.get('name');
+      var ret = server.query("SELECT id, name FROM users WHERE name LIKE '%" + name + "%'");
+      var users: Array<Dynamic> = [];
+
+      for( el in ret ) {
+        if( el.id != id) {
+          var slaveId = server.coreUserModule.getServerID(el.id);
+          var client = server.getClient(slaveId);
+          var isOnline: Bool = (client == null) ? false : true;
+          users.push({id: el.id, name: el.name, isOnline: isOnline});
+        }
+
+      }
+
+      return { errorCode: "ok", users: users };
     }
     /*function CheckPrepare(c: SlaveClient, params: Params): Dynamic {
       var tournamentId: Int = params.get('tournamentId');

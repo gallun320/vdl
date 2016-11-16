@@ -28,12 +28,12 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
             response = UserData(c, params);
           case "user.ping":
             response = UserPing(c, params);
-          case "user.takeAll":
-            response = UserAll(c, params);
+          case "user.searchEnemy":
+            response = UserSearchEnemy(c, params);
           case "user.addFriend":
             response = UserFriends(c, params);
-          case "user.getPrepare":
-            response = UserPrepare(c, params);
+          case "user.getAccessFriend":
+            response = UserAccess(c, params);
           case "user.getFriendList":
             response = UserFriendList(c, params);
 
@@ -79,16 +79,15 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
         return ret;
       }
 
-      public function UserAll(c: VDLClient, params: Params): Dynamic {
-        var name = params.get('name');
-        var ret = server.query("SELECT id, name FROM users WHERE name LIKE '%" + name + "%'");
-        var users: Array<Dynamic> = [];
+      public function UserSearchEnemy(c: VDLClient, params: Params): Dynamic {
+        var name: String = params.get('name');
+        var ret = server.cacheRequest({
+           _type: "vdl/cache.user.searchEnemy",
+           id: c.id,
+           name: name
+          });
 
-        for( el in ret ) {
-          users.push({id: el.id, name: el.name});
-        }
-
-        return {errorCode: "ok", list: users };
+        return {errorCode: "ok", list: ret.users };
 
       }
 
@@ -120,31 +119,31 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
             FriendAdd(userId, c.id, "denied");
             server.sendTo(c.id, {
                player: userId,
-               _type: "user.denied"
+               _type: "user.friendDenied"
               });
         }
 
         return {errorCode: "ok"};
 
       }
-        
-        public function UserPrepare(c: VDLClient, params: Params): Array<Dynamics> {
+
+        public function UserAccess(c: VDLClient, params: Params): Dynamic {
           var ret = server.cacheRequest({
-            _type: "vdl/cache.user.getPrepareFriend",
+            _type: "vdl/cache.user.getAccessFriend",
             player: c.id
           });
-          
-          return ret.list;
+
+          return ret;
         }
 
-public function UserFriendList(c: VDLClient, params: Params): Array<Dynamic> {
-  var ret = server.cacheRequest({
-            _type: "vdl/cache.user.getFriendList",
-            player: c.id
-          });
-          
-          return ret.list;
-}
+        public function UserFriendList(c: VDLClient, params: Params): Dynamic {
+          var ret = server.cacheRequest({
+                    _type: "vdl/cache.user.getFriendList",
+                    player: c.id
+                  });
+
+                  return ret;
+        }
 
       public function FriendAdd(player: Int, friend: Int, type: String): Void {
         var ret = server.cacheRequest({
@@ -155,6 +154,22 @@ public function UserFriendList(c: VDLClient, params: Params): Array<Dynamic> {
           });
       }
 
-      
+      public function UserRewrite(c: VDLClient, params: Params): Dynamic {
+        var city: String = params.get('city');
+        var year: String = params.get('year');
+        var email: String = params.get('email');
+
+        var ret = server.cacheRequest({
+           _type: "vdl/cache.user.editProfile",
+           id: c.id,
+          city: city,
+          email: email,
+          year: year
+          });
+
+          return { errorCode: "ok", city: city, email: email, year: year };
+      }
+
+
 
 }
