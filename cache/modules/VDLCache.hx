@@ -1033,7 +1033,7 @@ function GetAccessFriend(c: SlaveClient, params: Params): Dynamic {
     function SearchEnemy(c: SlaveClient, params: Params): Dynamic {
       var id: Int = params.get('id');
       var name: String = params.get('name');
-      var ret = server.query("SELECT id, name FROM users WHERE name LIKE '%" + name + "%'");
+      var ret = server.query("SELECT id, name FROM users WHERE name LIKE '%" + name + "% LIMIT 50'");
       var users: Array<Dynamic> = [];
 
       for( el in ret ) {
