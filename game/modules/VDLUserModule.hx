@@ -98,6 +98,7 @@ class VDLUserModule extends Module<VDLClient, ServerVDL>
         switch (type) {
           case "add":
             friendPrepareList = userPrepareFriend.get(c.id);
+            if(friendPrepareList == null) friendPrepareList = [];
             friendPrepareList.push(userId);
             FriendAdd(c.id, userId, "prepare");
             server.sendTo(userId, {
